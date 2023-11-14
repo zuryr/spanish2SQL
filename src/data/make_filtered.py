@@ -8,7 +8,7 @@ if __name__ == "__main__":
     input_path = "../../data/external/spider/train_spider.json"  # sys.argv[0]
     esp_path = "../../data/interim/out_esp.txt"
     output_path = "./out_json.txt"  # sys.argv[1]
-    output_csv_path = "./out_questions.csv"
+    output_csv_path = "./out_questions.txt"
 
     input_file = open(input_path)
     esp_file = open(esp_path, encoding="utf-8")

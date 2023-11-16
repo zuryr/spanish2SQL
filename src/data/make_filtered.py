@@ -51,6 +51,14 @@ if __name__ == "__main__":
         if second_token in AGG_OPS:
             continue
 
+        flag = False
+        for token in obj["query_toks"]:
+            if token == "JOIN":
+                flag = True
+
+        if flag:
+            continue
+
         obj["question"] = esp_queries[i]
         # Only questions csv
         output_csv_file.write(f"{obj['question']}")

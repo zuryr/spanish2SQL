@@ -1,40 +1,22 @@
 Indique el año de creación, nombre y presupuesto de cada departamento.
 ¿Cómo se llaman los jefes que nacen fuera del estado de California?
-¿Cuáles son los distintos años de creación de los departamentos gestionados por un secretario nacido en el estado de 'Alabama'?
-¿Mostrar el nombre y el número de empleados de los departamentos gestionados por jefes cuyo valor de actuación temporal es "Sí"?
-¿Cuáles son las distintas edades de los jefes que actúan?
 ¿El nombre de qué cabeza tiene la subcadena 'Ha'? Enumere la identificación y el nombre.
 ¿Cuáles son los anfitriones de concursos cuyo tema no es "Alienígenas"?
 ¿Devuelven los anfitriones de concursos cuyo tema no es Aliens?
-Muestra los años y los nombres oficiales de las ciudades sede de las competiciones.
-Indique los años y nombres oficiales de las ciudades de cada competición.
-Muestre los temas de las competiciones en ciudades anfitrionas con poblaciones superiores a 1000 habitantes.
-¿Cuáles son los temas de los concursos que tienen las correspondientes ciudades anfitrionas con más de 1000 habitantes?
 Enumera los nombres oficiales de las ciudades que no han celebrado ninguna competición.
 ¿Cuáles son los nombres oficiales de las ciudades que no han acogido un concurso agrícola?
 Encuentre los nombres oficiales de ciudades con una población mayor a 1500 o menor a 500.
 ¿Cuáles son los nombres oficiales de las ciudades que tienen una población superior a 1500 o inferior a 500?
 Muestra la clasificación censal de las ciudades cuyo estado no es "Pueblo".
 ¿Cuáles son las clasificaciones censales de las ciudades que no tienen el estatus de "pueblo"?
-¿Cuáles son el nombre y apellido de todos los candidatos?
-¿Cuáles son los nombres y apellidos de todos los candidatos?
 ¿Enumere la identificación de los estudiantes que nunca asisten a cursos?
 ¿Cuáles son las identificaciones de cada estudiante que nunca ha asistido a un curso?
 ¿Enumerar la identificación de los estudiantes que asistieron a algunos cursos?
 ¿Cuáles son las identificaciones de todos los estudiantes que han asistido al menos a un curso?
-¿Cuáles son las identificaciones de todos los estudiantes de los cursos y cuáles son los nombres de esos cursos?
-¿Encontrar la identificación del candidato cuyo correo electrónico es stanley.monahan@example.org?
-¿Cuál es la identificación del candidato cuyo correo electrónico es stanley.monahan@example.org?
 ¿Encontrar la identificación de los candidatos cuyo código de evaluación es "Aprobar"?
 ¿Cuáles son los identificadores de los candidatos que tienen un código de resultado Aprobado?
-¿Encontrar el número de móvil de los candidatos cuyo código de evaluación es "Reprobado"?
-¿Cuáles son los números de teléfono celular de los candidatos que recibieron un código de evaluación de "Reprobado"?
 ¿Cuáles son los ID de los estudiantes que se registraron en el curso 301?
 ¿Cuáles son las identificaciones de los estudiantes que se registraron en el curso 301?
-¿Encontrar distintas ciudades de direcciones de personas?
-¿Cuáles son las diferentes ciudades donde vive la gente?
-¿Encontrar distintas ciudades de dirección de los estudiantes?
-¿Cuáles son las diferentes ciudades donde viven los estudiantes?
 ¿Cuál es toda la información de los estudiantes que se registraron en cursos pero no asistieron a cursos?
 ¿Cuáles son todos los detalles de los estudiantes que se registraron pero no asistieron a ningún curso?
 Dame las fechas en las que la temperatura máxima fue superior a 85.
@@ -43,16 +25,12 @@ Dame las fechas en las que la temperatura máxima fue superior a 85.
 ¿Cuáles son los nombres de todas las estaciones con una latitud menor que 37,5?
 ¿Cuántas estaciones tiene la ciudad de Mountain View?
 ¿Cuántas estaciones hay en Mountain View?
-Devuelve el nombre único de las estaciones que alguna vez han tenido 7 bicicletas disponibles.
-¿Cuáles son los diferentes nombres de cada estación que alguna vez ha tenido 7 bicicletas disponibles?
 ¿Cuántos días tuvieron una humedad media superior a 50 y una visibilidad media superior a 8?
 ¿Cuál es el número de días que tuvieron una humedad promedio superior a 50 y una visibilidad promedio superior a 8?
 ¿Cuándo y en qué código postal la temperatura máxima alcanzó los 80 grados?
 ¿Qué códigos postales tienen una estación con una temperatura máxima mayor o igual a 80 y cuándo alcanzó esa temperatura?
 ¿En qué día y en qué código postal el punto de rocío mínimo fue menor que cualquier día en el código postal 94107?
 ¿Qué días tuvieron un punto de rocío mínimo menor que cualquier día en el código postal 94107 y en qué códigos postales se tomaron esas mediciones?
-Para cada viaje, devuelva la fecha de instalación de su estación final.
-¿Cuál es la fecha de instalación de cada estación final en todos los viajes?
 En el código postal 94107, ¿en qué día no se observó Niebla ni Lluvia?
 ¿En qué día no ha habido niebla ni lluvia en el código postal 94107?
 Enumere todas las distintas estaciones desde las que comenzó un viaje de duración inferior a 100.
@@ -61,13 +39,9 @@ Encuentre la identificación de los viajes que duraron al menos tanto como la du
 ¿Cuáles son los identificadores de todos los viajes que tuvieron una duración igual a la duración promedio del viaje en el código postal 94103?
 ¿Cuáles son las fechas en las que la presión media del nivel del mar estuvo entre 30,3 y 31?
 ¿Cuáles son las fechas que tienen una presión promedio a nivel del mar entre 30,3 y 31?
-¿Cuáles son el id y el nombre de las estaciones que alguna vez han tenido más de 12 bicicletas disponibles?
-¿Cuáles son las diferentes identificaciones y nombres de las estaciones que han tenido más de 12 bicicletas disponibles?
 ¿Cuáles son los títulos de los libros cuya escritora no es "Elaine Lee"?
 ¿Cuáles son el título y los números de los libros?
 ¿Cuáles son las distintas editoriales de publicaciones con precio superior a 5000000?
-Muestra el título y las fechas de publicación de los libros.
-Mostrar escritores que han publicado un libro con un precio superior a 4000000.
 Enumere los títulos de los libros que no están publicados.
 ¿Cuál es el número de fechas de publicación distintas?
 ¿Cuántas fechas de publicación distintas hay en nuestro registro?
@@ -80,10 +54,6 @@ Indique el nombre de los actores cuya edad no sea 20 años.
 Devuelve los nombres de los musicales que tienen al nominado Bob Fosse.
 ¿Cuáles son los distintos nominados de los musicales con premio que no es "Premio Tony"?
 Devuelve los diferentes nominados de musicales que tienen algún premio que no es el premio Tony.
-Muestra los nombres de los actores y los nombres de los musicales en los que participan.
-¿Cuáles son los nombres de los actores y los musicales en los que participan?
-Mostrar nombres de actores que han aparecido en musical con el nombre "El Fantasma de la Ópera".
-¿Cuáles son los nombres de los actores que han estado en el musical titulado El fantasma de la ópera?
 Enumere el nombre de los musicales que no tienen actores.
 ¿Cómo se llaman los musicales que no tienen actores?
 Muestre el musical nominado con el premio "Bob Fosse" o "Cleavant Derricks".
@@ -94,7 +64,6 @@ Busque el nombre y el correo electrónico del usuario cuyo nombre contiene la pa
 Busque los nombres de los usuarios cuyos correos electrónicos contengan "superstar" o "edu".
 Devuelve el texto de los tweets sobre el tema 'pasante'.
 Encuentra el nombre y correo electrónico de los usuarios que tienen más de 1000 seguidores.
-Encuentre la identificación de los usuarios seguidos por Mary o Susan.
 Encuentre los nombres de todas las entradas del catálogo.
 ¿Cuáles son todos los nombres de las entradas del catálogo?
 ¿Cuál es el tipo de datos del atributo con el nombre "Verde"?
@@ -103,18 +72,10 @@ Encuentre el nombre y el nivel de la estructura del catálogo con un nivel entre
 ¿Cuál es el nombre y el nivel de la estructura del catálogo con un número de nivel entre 5 y 10?
 Encuentre todos los editores de catálogos cuyo nombre contenga "Murray"
 ¿Qué editores de catálogos tienen la subcadena "Murray" en sus nombres?
-Busque los nombres y las fechas de publicación de todos los catálogos que tengan un número de nivel de catálogo mayor que 5.
-¿Cuáles son el nombre y la fecha de publicación de los catálogos con un número de nivel de catálogo superior a 5?
-¿Cuáles son los nombres de las entradas del catálogo con el atributo que poseen la mayoría de las entradas?
-Busque los nombres de las entradas del catálogo con el atributo que tenga más entradas.
 Encuentre los nombres de todos los productos cuyo número de stock comience con "2".
 ¿Qué contenidos del catálogo tienen un número de stock de producto que comienza en "2"? Muestra los nombres de las entradas del catálogo.
-Busque los nombres de las entradas del catálogo con el nivel número 8.
-¿Cuáles son los nombres de las entradas del catálogo con el nivel número 8?
 Encuentra los nombres de los productos con una longitud menor que 3 o una altura mayor que 5.
 ¿Qué contenidos del catálogo tienen una longitud inferior a 3 o superior a 5? Busque los nombres de las entradas del catálogo.
-Busque el nombre y el ID de atributo de las definiciones de atributo con valor de atributo 0.
-¿Qué definiciones de atributos tienen valor de atributo 0? Dame el nombre del atributo y el ID del atributo.
 Encuentra el nombre y capacidad de productos con precio mayor a 700 (en USD).
 ¿Qué contenidos del catálogo tienen un precio superior a 700 dólares? Muestre sus nombres y capacidades de entradas de catálogo.
 Nombra todos los productos con el siguiente ID de entrada mayor que 8.
@@ -145,14 +106,6 @@ Muestra el número de vuelo para todos los vuelos con más de 2000 distancias.
 ¿Cuál es el número de todos los vuelos que pueden cubrir una distancia de más de 2000?
 Mostrar origen y destino para vuelos con precio superior a 300.
 ¿Cuál es el origen y destino de todos los vuelos cuyo precio sea superior a 300?
-¿Cómo se llama el avión del vuelo número 99?
-¿Cómo se llama el avión que iba en el vuelo número 99?
-Mostrar todos los números de vuelo con aviones Airbus A340-300.
-¿Cuáles son los números de vuelo del avión Airbus A340-300?
-Muestra los nombres de todas las aeronaves de las que John Williams tiene certificados.
-¿Cuáles son los nombres de todos los aviones que John Williams tiene certificados para poder volar?
-Mostrar los nombres de todos los empleados que tienen certificado de Boeing 737-800.
-¿Cuáles son los nombres de todos los empleados que tienen un certificado para volar el Boeing 737-800?
 Mostrar todos los tipos de alergia.
 ¿Cuáles son los diferentes tipos de alergia?
 Mostrar todas las alergias y sus tipos.
@@ -185,10 +138,6 @@ Encuentre el apellido y la edad del estudiante que tiene alergia tanto a la lech
 ¿Cuáles son los apellidos y edades de los estudiantes alérgicos a la leche y al gato?
 Encuentre el nombre y el sexo del estudiante que tiene alergia a la leche pero no a los gatos.
 ¿Cuál es el nombre y el sexo de los estudiantes que tienen alergia a la leche pero pueden tolerar a los gatos?
-Indique el nombre y apellido de los estudiantes que no tienen ningún tipo de alergia a algún alimento.
-Cuál es el nombre completo de cada alumno que no es alérgico a ningún tipo de alimento.
-Encuentre los diferentes nombres y ciudades de los estudiantes que tienen alergia a la leche o al gato.
-¿Cuáles son los nombres y ciudades distintos de los estudiantes que tienen alergia a la leche o al gato?
 Encuentre el nombre y la especialidad de los estudiantes que no son alérgicos a la soja.
 ¿Cuáles son el nombre y la especialidad de los estudiantes que pueden consumir soja?
 Enumera el título de cada álbum.
@@ -197,20 +146,14 @@ Indique el número de facturas de Chicago, IL.
 ¿Cuántas facturas se facturaron desde Chicago, IL?
 Enumere el número de facturas y el total de las facturas de California.
 ¿Cuál es el número de facturas y el dinero total facturado en ellas por CA?
-Lista los álbumes de Aerosmith.
-¿Cuáles son los títulos de todos los álbumes de Aerosmith?
 ¿Eduardo Martins es cliente de qué empresa?
 ¿Cuál es la empresa de la que Eduardo Martins es cliente?
 ¿Cuál es el correo electrónico y el número de teléfono de Astrid Gruber?
 ¿Cuál es el correo electrónico y número de teléfono de Astrid Gruber el cliente?
 ¿En qué país vive Roberto Almeida?
 ¿En qué país vive Roberto Almeida?
-Enumere el nombre de los álbumes lanzados por un artista cuyo nombre tiene 'Led'
-¿Cuál es el título del álbum que lanzó el artista cuyo nombre tiene la frase 'Led'?
 ¿Cuál es el título, teléfono y fecha de contratación de Nancy Edwards?
 ¿Cuál es el cargo, número de teléfono y fecha de contratación de la empleada llamada Nancy Edwards?
-¿Encontrar el nombre completo de los empleados que reportan a Nancy Edwards?
-¿Cuál es el nombre y apellido del empleado que reporta a Nancy Edwards?
 Cual es la direccion de la empleada Nancy Edwards?
 ¿Cuál es la dirección de Nancy Edwards?
 ¿Cuál es el número de teléfono de la empleada Nancy Edwards?
@@ -225,40 +168,17 @@ Enumere el nombre de todas las listas de reproducción.
 ¿Cuál es el compositor que creó el tema "Fast As a Shark"?
 ¿Cuánto dura la pista Fast As a Shark?
 ¿Cuántos milisegundos dura Fast As a Shark?
-¿Cómo se llaman los temas cuyo género es Rock?
-¿Cómo se llaman todas las pistas del género Rock?
-¿Cuál es el título del álbum al que pertenece Balls to the Wall?
-¿Cómo se llama el álbum que tiene el tema Ball to the Wall?
-Lista el nombre de todas las pistas en Balls to the Wall.
-¿Cómo se llaman todas las pistas del álbum llamado Balls to the Wall?
-Enumere el nombre de las pistas que pertenecen al género Rock y cuyo tipo de medio es un archivo de audio MPEG.
-¿Cuáles son los nombres de todas las pistas de Rock almacenadas en archivos de audio MPEG?
-Enumere el nombre de las pistas que pertenecen al género Rock o el tipo de medio es un archivo de audio MPEG.
-¿Cuáles son los nombres de todas las pistas que pertenecen al género Rock y cuyo tipo de medio es MPEG?
-Enumere el nombre de las pistas que pertenecen al género Rock o al género Jazz.
-¿Cómo se llaman los tracks que son canciones de Rock o Jazz?
-Enumere el nombre de todas las pistas en las listas de reproducción de Películas.
-¿Cuáles son los nombres de todas las pistas que están en las listas de reproducción tituladas Películas?
-Enumere todas las pistas compradas por el cliente Daan Peeters.
-¿Cuáles son las pistas que compró Dean Peeters?
 ¿Cuánto cuesta la canción Fast As a Shark?
 ¿Cuál es el precio unitario de la canción "Fast As a Shark"?
 ¿Cuáles son los nombres y edades de los editores?
 Enumere los nombres de los editores mayores de 25 años.
 Muestre los nombres de los editores de 24 o 25 años.
 Mostrar las distintas temáticas de las revistas.
-Muestre los nombres de los editores y el tema de las revistas para las que forman parte de los comités.
-Para cada comité_de_diario, busque el nombre del editor y el tema de la revista.
-Mostrar los nombres de los editores que forman parte del comité de revistas con ventas superiores a 3000.
 Enumere los nombres de los editores que no forman parte de ningún comité de la revista.
 Mostrar identificaciones, identificaciones de clientes y nombres de todas las cuentas.
 ¿Cuáles son los identificadores de cuenta, los identificadores de cliente y los nombres de cuenta de todas las cuentas?
 Mostrar otros detalles de la cuenta con el nombre 338.
 ¿Cuáles son los otros detalles de la cuenta con el nombre 338?
-¿Cuál es el nombre, apellido y teléfono del cliente con el nombre de cuenta 162?
-Indique el nombre completo y el teléfono del cliente que tiene el nombre de cuenta 162.
-Muestre nombres y apellidos distintos para todos los clientes con una cuenta.
-¿Cuáles son los nombres completos de los clientes que tienen cuentas?
 Muestre identificaciones, nombres, apellidos y teléfonos de todos los clientes.
 ¿Cuáles son las identificaciones, nombres completos y teléfonos de cada cliente?
 ¿Cuál es el teléfono y el correo electrónico del cliente con nombre Aniyah y apellido Feest?
@@ -267,8 +187,6 @@ Muestra identificaciones, identificaciones de clientes, códigos de tipo de tarj
 ¿Cuáles son los identificadores de tarjeta, los identificadores de cliente, los tipos de tarjeta y los números de tarjeta de cada tarjeta de cliente?
 Muestra la fecha válida desde y la fecha válida hasta para la tarjeta con número de tarjeta '4560596484842'.
 ¿Cuáles son las fechas de inicio y fin de validez de la tarjeta con el número 4560596484842?
-¿Cuál es el nombre, apellido y teléfono del cliente con tarjeta 4560596484842?
-Devolver el nombre completo y teléfono del cliente que tiene número de tarjeta 4560596484842.
 Mostrar todos los códigos de tipo de tarjeta.
 ¿Cuáles son los diferentes códigos de tipo de tarjeta?
 Mostrar todos los tipos de transacciones.
@@ -287,13 +205,10 @@ Mostrar todos los nombres de pistas que no han tenido carreras.
 Devuelve los nombres de las pistas que no han tenido carreras.
 Muestre el año en el que se abrió una pista con capacidad para al menos 5000 personas y una pista con capacidad para no más de 4000 personas.
 ¿Cuáles son los años de apertura de pistas con capacidad entre 4000 y 5000?
-Muestra el nombre y la fecha de cada carrera y el nombre de su pista.
-¿Cuáles son los nombres y fechas de las carreras y los nombres de las pistas donde se llevan a cabo?
 Dame los nombres de los miembros cuya dirección esté en Harford o Waterbury.
 Encuentre las identificaciones y nombres de miembros menores de 30 años o con tarjeta de membresía negra.
 Encuentre la identificación y la dirección de las tiendas cuyo puntaje está por debajo del puntaje promedio.
 Encuentra la dirección y el número de personal de las tiendas que no tienen happy hour.
-¿Cuáles son el ID y la dirección de las tiendas que tienen happy hour en mayo?
 Enumere los nombres de todos los géneros musicales.
 ¿Cuáles son los nombres de los diferentes géneros musicales?
 Encuentra toda la información de clientes en el estado NY.
@@ -304,44 +219,18 @@ Encuentre los nombres completos de los empleados que viven en la ciudad de Calga
 Encuentre los diferentes países de facturación para todas las facturas.
 Encuentra los nombres de todos los artistas que tienen "a" en sus nombres.
 ¿Cuáles son los nombres de los artistas que tienen la letra 'a' en su nombre?
-Encuentra el título de todos los álbumes del artista "AC/DC".
-¿Cuáles son los títulos de los álbumes del artista "AC/DC"?
-¿Cuántos álbumes tiene el artista "Metallica"?
-Encuentra el número de álbumes del artista "Metallica".
-¿A qué artista pertenece el disco "Balls to the Wall"?
-Encuentra el nombre del artista que hizo el álbum "Balls to the Wall".
 Encuentra los nombres de todas las pistas que contienen la palabra "tú".
 ¿Cuáles son los nombres de las pistas que contienen la palabra tú?
 ¿Cuál es el precio unitario promedio de todas las pistas?
 Encuentre el precio unitario promedio de una pista.
-¿Cuántas pistas pertenecen al género rock?
-Cuente la cantidad de temas que forman parte del género rock.
-¿Cuál es el precio unitario promedio de las pistas que pertenecen al género Jazz?
-Encuentre el precio unitario promedio de las pistas de jazz.
 ¿Cuál es el nombre y apellido del cliente que tiene el correo electrónico "luisg@embraer.com.br"?
 Encuentre el nombre completo del cliente con el correo electrónico "luisg@embraer.com.br".
 ¿Cuántos clientes tienen un correo electrónico que contiene "gmail.com"?
 Cuente la cantidad de clientes que tienen un correo electrónico que contiene "gmail.com".
-¿Cuál es el nombre y apellido del empleado que ayuda al cliente con el nombre Leonie?
-Encuentre los nombres completos de los empleados que ayudan a los clientes con el nombre Leonie.
-¿En qué ciudad vive el empleado que atiende al cliente con código postal 70174?
-Encuentra las ciudades correspondientes a los empleados que ayudan a los clientes con el código postal 70174.
 ¿En cuántas ciudades distintas viven los empleados?
 Encuentre el número de ciudades diferentes en las que viven los empleados.
-Encuentre todas las fechas de factura correspondientes a clientes con nombre Astrid y apellido Gruber.
-¿Cuáles son las fechas de facturación para los clientes con el nombre Astrid y el apellido Gruber?
-Encuentre los nombres de todos los clientes que viven en Brasil y tienen factura.
-¿Cuáles son los diferentes nombres de los clientes de Brasil que también han recibido una factura?
-Encuentre la dirección de todos los clientes que viven en Alemania y tienen factura.
-¿Cuáles son las direcciones de los clientes que viven en Alemania y que han recibido una factura?
 Enumere los números de teléfono de todos los empleados.
 ¿Cuáles son los números de teléfono de cada empleado?
-¿Cuántas pistas hay en el tipo de archivo de audio AAC?
-Cuente el número de pistas que son del tipo de medio "archivo de audio AAC".
-¿Cuál es la duración promedio en milisegundos de las pistas que pertenecen al género latino o pop?
-Encuentra la duración promedio de milisegundos de las pistas latinas y pop.
-¿Cuál es el precio unitario promedio de las orugas de roca?
-Encuentre el precio unitario promedio de las pistas del género Rock.
 ¿Cuáles son las fechas de nacimiento de los empleados que viven en Edmonton?
 Encuentre las fechas de nacimiento correspondientes a los empleados que viven en la ciudad de Edmonton.
 ¿Cuáles son los distintos precios unitarios de todas las pistas?
@@ -352,16 +241,8 @@ Encuentra todos los números de teléfono.
 ¿Cuáles son los números de teléfono de los clientes que utilizan la póliza con el código "Seguro de Vida"?
 ¿Cuáles son todos los números de teléfono de los clientes bajo el tipo de póliza más popular?
 Encuentre los números de teléfono de los clientes que utilizan el tipo de póliza más común entre las pólizas disponibles.
-¿Cuáles son todos los tipos de póliza del cliente llamado "Dayana Robel"?
-Dígame los tipos de póliza que utiliza la cliente llamada "Dayana Robel".
-¿Cuáles son todos los tipos de pólizas del cliente que tiene más pólizas enumeradas?
-Enumere todos los tipos de póliza utilizados por el cliente inscrito en la mayoría de las pólizas.
-Encuentre los nombres de los clientes que han utilizado el servicio "Cerrar una póliza" o el servicio "Actualizar una póliza".
-¿Qué clientes han utilizado el servicio denominado "Cerrar una póliza" o "Actualizar una póliza"? Dame los nombres de los clientes.
 Encuentre las identificaciones de los clientes cuyo nombre contenga "Diana".
 ¿Cuáles son las identificaciones de los clientes que tienen "Diana" en parte de sus nombres?
-Recuperar las fechas de apertura y cierre de todas las pólizas asociadas al cliente cuyo nombre contiene "Diana"
-¿Cuáles son las fechas de apertura y cierre de todas las pólizas utilizadas por el cliente que tiene "Diana" en parte de su nombre?
 Enumere los nombres y los lugares donde las enzimas pueden producir un efecto.
 ¿Cuáles son los nombres y ubicaciones de todas las enzimas enumeradas?
 ¿Cuál es el producto, cromosoma y porfiria relacionados con las enzimas que actúan en el lugar 'Citosol'?
@@ -370,35 +251,17 @@ Enumere los nombres y los lugares donde las enzimas pueden producir un efecto.
 ¿Cuáles son los nombres de las enzimas cuyo producto no es 'hemo'?
 ¿Cuáles son los nombres y nombres comerciales de los medicamentos que tienen el valor "Sí" en el registro de la FDA?
 ¿Cuáles son los nombres y nombres comerciales de los medicamentos aprobados por la FDA?
-¿Cuáles son los nombres de las enzimas del medicamento llamado 'amisulprida' que pueden servir como 'inhibidores'?
-¿Cuáles son los nombres de las enzimas utilizadas en el medicamento Amisulprida que actúa como inhibidores?
-¿Cuál es el tipo de interacción de la enzima llamada 'ALA sintasa' y el medicamento llamado 'Aripiprazol'?
-¿Cuál es el tipo de interacción entre la enzima denominada 'ALA sintasa' y el medicamento denominado 'Aripiprazol'?
-¿Cuáles son los distintos nombres, ubicaciones y productos de las enzimas que tienen alguna interacción "inhibidora"?
-¿Cuáles son los diferentes nombres, ubicaciones y productos de las enzimas que son capaces de interactuar con inhibidores?
 ¿Qué nombres de enzimas tienen la subcadena "ALA"?
 ¿Cuáles son los nombres de las enzimas que incluyen la cadena 'ALA'?
 Enumere todas las escuelas públicas y sus ubicaciones.
 ¿Cuáles son las escuelas públicas y cuáles son sus ubicaciones?
-Encuentre la ubicación y la puntuación de todos los juegos de la escuela que tiene Clemson como nombre de equipo.
-¿Cuáles son los puntajes de todos los juegos y la ubicación de la escuela llamada Clemson?
 Encuentre las escuelas que fueron fundadas después de 1850 o públicas.
 ¿Cuáles son las escuelas que se fundaron antes de 1850 o son públicas?
-Encuentre los nombres de los equipos de las universidades cuyas inscripciones son menores que el tamaño promedio de inscripción.
-¿Cómo se llaman los equipos de universidades que tienen una matrícula inferior al promedio?
 Enumera toda la información relativa al partido de baloncesto.
 ¿Cuál es toda la información sobre el partido de baloncesto?
 los nombres de los modelos que se lanzaron entre 2002 y 2004.
 ¿Cuáles son el modelo de chip y el modo de pantalla del teléfono con el nombre de modelo de hardware "LG-P760"?
-Indique el nombre del modelo de hardware y el nombre de la empresa de todos los teléfonos que se lanzaron en el año 2002 o que tengan un tamaño de RAM superior a 32.
 Encuentre todos los teléfonos que tengan la palabra "Completo" en sus tipos de acreditación. Indique el nombre del modelo de hardware y el nombre de la empresa.
-Busque las celdas Char, los píxeles y los colores del hardware para la pantalla del teléfono cuyo nombre de modelo de hardware es "LG-P760".
-Indique el nombre del modelo de hardware y el nombre de la empresa del teléfono cuyo tipo de modo de pantalla es "Gráficos".
-¿Cuáles son el tipo de modo de pantalla y wifi del modelo de hardware llamado "LG-P760"?
-Indique el nombre del modelo de hardware para los teléfonos que tienen un modo de pantalla tipo "Texto" o un tamaño de RAM superior a 32.
-Indique el nombre del modelo de hardware de los teléfonos fabricados por "Nokia Corporation" o cuyo tipo de modo de pantalla sea "Gráficos".
-Indique el nombre del modelo de hardware de los teléfonos fabricados por "Nokia Corporation" pero cuyo tipo de modo de pantalla no es Texto.
-Indique el modelo de hardware del teléfono y el nombre de la empresa para los teléfonos cuyo uso de pantalla en kb esté entre 10 y 15.
 Encuentre los detalles de todos los modelos de chips.
 Muestra el nombre del país y la capital de todos los países.
 ¿Cuáles son los nombres y capitales de cada país?
@@ -416,20 +279,6 @@ Muestra los jugadores y los años jugados.
 ¿Quiénes son los diferentes jugadores y cuántos años ha jugado cada uno?
 Mostrar todos los nombres de los equipos.
 ¿Cuáles son los nombres de todos los equipos?
-Muestra la temporada, el jugador y el nombre del país al que pertenece ese jugador.
-Para cada jugador, ¿cuál es su nombre, temporada y país al que pertenece?
-¿Qué jugadores son de Indonesia?
-¿Quiénes son los jugadores de Indonesia?
-¿Cuáles son las distintas posiciones de los jugadores de un país cuya capital es Dublín?
-Indique las diferentes posiciones de los jugadores que juegan para el país con la capital Dublín.
-¿Cuáles son los idiomas oficiales de los países de los jugadores de Maryland o Duke College?
-Devuelve los idiomas nativos oficiales de los países que tienen jugadores de las universidades de Maryland o Duke.
-Muestra la temporada, el jugador y el nombre del equipo al que pertenecen los jugadores.
-¿Quiénes son los diferentes jugadores, en qué temporada juegan y cómo se llama el equipo en el que están?
-Muestra las posiciones de los jugadores del equipo con nombre "Ryley Goldner".
-Devuelve las posiciones de los jugadores del equipo Ryley Goldner.
-Muestra los jugadores y los años jugados por los jugadores del equipo "Columbus Crew".
-¿Cuáles son los jugadores que jugaron en el Columbus Crew y durante cuántos años jugó cada uno?
 ¿Cuáles son los nombres de los equipos que no tienen récord de temporada de partidos?
 Devuelve los nombres de los equipos que no tienen récord de temporada de partidos.
 Enumere los nombres de escaladores cuyo país no sea Suiza.
@@ -438,30 +287,15 @@ Enumere los nombres de escaladores cuyo país no sea Suiza.
 Cuente el número de países diferentes de donde provienen los escaladores.
 ¿Cuáles son los países de montañas con una altura mayor a 5000?
 Devuelven los países de las montañas que tengan una altura mayor a 5000.
-Muestra los nombres de los escaladores y los nombres de las montañas que escalan.
-¿Cuáles son los nombres de los escaladores y los nombres correspondientes de las montañas que escalan?
-Muestre los nombres de los escaladores y las alturas de las montañas que escalan.
-¿Cuáles son los nombres de los escaladores y las alturas correspondientes de las montañas que escalan?
-Muestre los distintos nombres de las montañas escaladas por escaladores del país "Alemania Occidental".
-¿Cuáles son los diferentes nombres de las montañas ascendidas por escaladores del país de Alemania Occidental?
-Muestra los tiempos utilizados por los escaladores para escalar montañas en el País Uganda.
-¿Cuáles son los tiempos utilizados por los escaladores que escalaron montañas en el país de Uganda?
 Enumere los nombres de las montañas que no tienen ningún escalador.
 ¿Cómo se llaman las montañas que ningún escalador ha escalado?
 Muestra los nombres de las montañas con una altura superior a 5000 o una prominencia superior a 1000.
 ¿Cómo se llaman las montañas que tienen una altura de más de 5000 o una prominencia de más de 1000?
-¿Cuáles son los nombres de los culturistas?
-¿Cómo se llaman los culturistas cuya puntuación total es superior a 300?
-¿Cuáles son las alturas de los culturistas con una puntuación total inferior a 315?
 Muestra toda la información sobre cada carrocero.
-Enumere el peso de los culturistas que tienen una puntuación de arranque superior a 140 o una altura superior a 200.
-¿Cuáles son las puntuaciones totales de los culturistas cuyo cumpleaños contiene la cadena "enero"?
 Enumere las fechas y los porcentajes de votos de las elecciones.
 ¿Cuáles son los nombres y partidos de los representantes?
 ¿Cuáles son los nombres de los representantes cuyo partido no es "republicano"?
 ¿Cuál es la esperanza de vida de los representantes del estado de Nueva York o del estado de Indiana?
-¿Cuáles son los nombres de los representantes y las fechas de las elecciones en las que participaron?
-¿Cuáles son los nombres de los representantes con más de 10000 votos en las elecciones?
 Enumere los nombres de los representantes que no han participado en las elecciones enumeradas aquí.
 Muestra las fechas de inicio y finalización de todas las reservas de apartamentos.
 ¿Cuáles son la fecha de inicio y finalización de cada reserva de apartamento?
@@ -481,43 +315,12 @@ Devolver los nombres y apellidos de todos los invitados.
 ¿Cuáles son los nombres y apellidos de todos los invitados?
 Devuelve la fecha de nacimiento de todos los invitados con el código de género "Masculino".
 ¿Cuáles son las fechas de nacimiento de todos los invitados cuyo género es "masculino"?
-Muestra los números de apartamento, las fechas de inicio y finalización de todas las reservas de apartamentos.
-¿Cuáles son el número de apartamento, la fecha de inicio y la fecha de finalización de cada reserva de apartamento?
-¿Cuáles son las fechas de inicio y fin de reserva de los apartamentos con código de tipo "Duplex"?
-Devolver la fecha de inicio y finalización de la reserva de los apartamentos que tengan código de tipo "Dúplex".
-¿Cuáles son las fechas de inicio y fin de reserva de los apartamentos de más de 2 dormitorios?
-Encuentra la fecha de inicio y finalización de la reserva de los apartamentos de más de dos dormitorios.
-¿Cuál es el código de estado de reserva del apartamento con número de apartamento "Suite 634"?
-Dime el código de estado de la reserva del apartamento con el número "Suite 634".
-Muestra los distintos números de apartamento de los apartamentos que tienen reservas con código de estado "Confirmado".
-¿Qué apartamentos tienen reservas con el código de estado "Confirmado"? Devuélvales los números de sus apartamentos.
-Muestre los nombres de los huéspedes, las fechas de inicio y finalización de todas las reservas de apartamentos.
-¿Cuáles son el nombre del huésped, la fecha de inicio y la fecha de finalización de cada reserva de apartamento?
-Muestra las fechas de inicio y finalización de todas las reservas de apartamentos realizadas por huéspedes con código de género "Mujer".
-¿Cuáles son las fechas de inicio y finalización de las reservas de apartamentos realizadas por huéspedes femeninas (código de género "Mujer")?
-Muestra los nombres y apellidos de todos los huéspedes que tienen reservas de apartamentos con código de estado "Confirmado".
-¿Qué huéspedes tienen reservas de apartamentos con el código de estado "Confirmado"? Devuelve sus nombres y apellidos.
-Mostrar los códigos de instalaciones de apartamentos de más de 4 dormitorios.
-¿Cuáles son los códigos de instalación de los apartamentos de más de cuatro dormitorios?
-Muestra las direcciones de los edificios que cuentan con departamentos con más de 2 baños.
-¿Qué edificios tienen apartamentos que tienen más de dos baños? Dame las direcciones de los edificios.
-Muestre los códigos de tipo de apartamento y los números de apartamento en los edificios administrados por "Kyle".
-¿Qué códigos de tipo de departamento y números de departamento tienen los edificios administrados por "Kyle"?
 Enumere la temporada, equipo local, equipo visitante de todos los juegos.
 ¿Cuál es la asistencia promedio de los estadios con porcentaje de capacidad superior al 100%?
 ¿Cuáles son el nombre del jugador, el número de partidos y la fuente de información de los jugadores que no sufren la lesión del "problema de rodilla"?
-¿Cuál es la temporada del partido que provoca que el jugador 'Walter Samuel' se lesione?
-¿En qué temporada y en qué estadio algún jugador tuvo alguna lesión de 'Lesión en el pie' o 'Problema de rodilla'?
 ¿Qué nombre de estadio contiene la subcadena "Banco"?
-Enumere todos los nombres de países y ligas.
-Enumere todos los nombres de jugadores que tengan una calificación general superior al promedio.
-¿Cuáles son los nombres de los jugadores que tienen mejor regate?
-Enumere los nombres de todos los jugadores que tienen una puntuación de cruce superior a 90 y prefieren su pie derecho.
-Enumere los nombres de todos los jugadores zurdos que tengan una calificación general entre 85 y 90.
 ¿Cuáles son las fechas y lugares de las actuaciones?
 Mostrar la asistencia a las actuaciones en el lugar "TD Garden" o "Bell Centre"
-Muestra los nombres de los miembros y la ubicación de las actuaciones a las que asistieron.
-Muestre las fechas de las actuaciones con los miembros asistentes cuyos roles son "Violín".
 Enumere los nombres de los miembros que no asistieron a ninguna actuación.
 Encuentra los edificios que tienen habitaciones con capacidad para más de 50.
 ¿Cuáles son los distintos edificios con capacidades superiores a 50?
@@ -533,50 +336,20 @@ Busque el nombre del departamento del instructor cuyo nombre contiene 'Soisalon'
 ¿Cómo se llama el departamento con una estructura que se llama 'Soisalon'?
 Encuentre el nombre y el presupuesto de los departamentos cuyos presupuestos son superiores al presupuesto promedio.
 ¿Cuáles son los nombres y presupuestos de los departamentos con presupuestos superiores al promedio?
-Encuentre el nombre de los estudiantes que tomaron alguna clase en los años 2009 y 2010.
-¿Cómo se llaman los estudiantes que tomaron clases en 2009 o 2010?
-¿Cuál es la identificación del instructor que asesora a todos los estudiantes del departamento de Historia?
-Dar identificación del instructor que asesora a los estudiantes en el departamento de Historia.
-¿Encontrar el nombre y salario de los instructores que son asesores de cualquier estudiante del departamento de Historia?
-¿Cuáles son los nombres y salarios de los instructores que asesoran a los estudiantes en el departamento de Historia?
 ¿Encontrar el nombre de los cursos que no tienen ningún requisito previo?
 ¿Cuáles son los nombres de los cursos sin requisitos previos?
-¿Cuál es el título de la clase de requisito previo del curso de Finanzas Internacionales?
-Indique el título del prerrequisito del curso Finanzas Internacionales.
-Encuentre el título del curso cuyo prerrequisito es el curso Geometría Diferencial.
-¿Cuál es el título del curso con Geometría Diferencial como prerrequisito?
 Encuentre los nombres de los estudiantes que tomaron algún curso en el semestre de otoño del año 2003.
 ¿Cuáles son los nombres de los estudiantes que tomaron un curso en el otoño de 2003?
-¿Cuál es el título del curso que se ofreció en el edificio Chandler durante el semestre de otoño del año 2010?
-Dé el título del curso ofrecido en Chandler durante el otoño de 2010.
-Busque el nombre de los instructores que impartieron el curso de programación C anteriormente.
-¿Cuáles son los nombres de los instructores que han impartido cursos de programación en C?
-Encuentre el nombre y salario de los instructores que son asesores de los estudiantes del departamento de Matemáticas.
-¿Cuáles son los nombres y salarios de los profesores que asesoran a los estudiantes en el departamento de Matemáticas?
-¿Cuál es el título del curso de prerrequisito del curso Computación móvil?
-¿Cuál es el título del curso que es un requisito previo para la Computación Móvil?
 ¿Encontrar el nombre de los instructores que no impartieron ningún curso?
 ¿Cuáles son los nombres de los instructores que no enseñaron?
 Encuentre los nombres de los instructores que no tomaron ningún curso en ningún semestre de primavera.
 ¿Cuáles son los nombres de los instructores que no impartieron cursos en la primavera?
-¿Cuál es el título y créditos del curso que se imparte en el aula más grande (con mayor capacidad)?
-Dar el título y créditos del curso que se imparte en el aula con mayor capacidad.
-Busque el nombre de los estudiantes que no tomaron ningún curso del departamento de Biología.
-¿Cómo se llaman los estudiantes que no han tomado ningún curso de Biología?
-Busque el nombre de los estudiantes que han tomado el curso de requisito previo del curso con título Finanzas Internacionales.
-¿Cuáles son los nombres de los estudiantes que han tomado el requisito previo para el curso de Finanzas Internacionales?
 Encuentre el nombre y el salario de los instructores cuyo salario está por debajo del salario promedio de los instructores del departamento de Física.
 ¿Cuáles son los nombres y salarios de los instructores que ganan menos que el salario promedio de los instructores del departamento de Física?
-Encuentre el nombre de los estudiantes que tomaron algún curso ofrecido por el departamento de Estadística.
-¿Cómo se llaman los estudiantes que han tomado cursos de Estadística?
 Encuentre los nombres de todos los profesores del departamento de informática.
 ¿Cuáles son los nombres de todos los instructores del Comp. Ciencia. ¿departamento?
 Encuentre los nombres de todos los instructores en Comp. Ciencia. departamento con salario > 80000.
 ¿Cuáles son los nombres de los instructores del Comp. Ciencia. departamento que gana más de 80000?
-Busque los nombres de todos los instructores que han impartido algún curso y el course_id.
-¿Cuáles son los nombres de todos los instructores que han impartido un curso, así como la identificación del curso correspondiente?
-Busque los nombres de todos los instructores del departamento de Arte que hayan impartido algún curso y el course_id.
-¿Cuáles son los nombres de los instructores de arte que han impartido un curso y la identificación del curso correspondiente?
 Busque los nombres de todos los instructores cuyo nombre incluya la subcadena "dar".
 ¿Cuáles son los nombres de todos los instructores con nombres que incluyen "dar"?
 Encuentre los salarios de todos los instructores distintos que sean menores que el salario más alto.
@@ -591,50 +364,23 @@ Encuentre los nombres de todos los instructores cuyo salario es mayor que el sal
 Enumere las fechas de los debates con un número de audiencia superior a 150
 Muestra los nombres de personas de 35 o 36 años.
 Mostrar los distintos lugares de debate
-Muestre los nombres de las personas, fechas y lugares de los debates si están en el lado afirmativo.
-Muestra los nombres de las personas que están en el lado afirmativo de los debates con un número de audiencia superior a 200.
 Enumere los nombres de las personas que no han estado del lado afirmativo de los debates.
-Encuentra todos los códigos de tipos de póliza asociados al cliente "Dayana Robel"
-¿Cuáles son los códigos de tipo de las pólizas utilizadas por el cliente "Dayana Robel"?
-¿Cómo se llama el cliente que ha realizado la mayor cantidad de reclamo en un solo reclamo?
-¿Qué cliente presentó la mayor cantidad de reclamo en un solo reclamo? Devolver los datos del cliente.
-¿Cómo se llama el cliente que ha realizado el pago mínimo en un solo reclamo?
-¿Qué cliente presentó la menor cantidad de reclamo en un solo reclamo? Devolver los datos del cliente.
 Encuentre los nombres de los clientes cuyo nombre contiene "Diana".
 ¿Qué clientes tienen la subcadena "Diana" en sus nombres? Devolver los datos del cliente.
-Encuentre los nombres de los clientes que tienen una póliza adjunta.
-¿Qué clientes tienen una póliza de seguro con el código tipo "Diputado"? Dame los datos del cliente.
-Encuentre los nombres de los clientes que tienen una póliza adjunta o una póliza uniformada.
-¿Qué clientes tienen una póliza de seguro con el código tipo "Diputado" o "Uniforme"? Devolver los datos del cliente.
 ¿Cuál es la descripción del estado del reclamo "Abierto"?
 Encuentre la descripción del estado del reclamo "Abierto".
-¿Qué cliente está asociado con la última póliza?
-Encuentre el cliente que inició una póliza más recientemente.
 Muestre la identificación, la fecha de apertura de la cuenta, el nombre de la cuenta y otros detalles de la cuenta para todas las cuentas.
 ¿Cuáles son los identificadores, la fecha de apertura, el nombre y otros detalles de todas las cuentas?
-Muestre la identificación, el nombre de la cuenta y otros detalles de la cuenta para todas las cuentas del cliente con el nombre 'Meaghan'.
-¿Cuáles son los identificadores, nombres, fechas de apertura y otros detalles de las cuentas correspondientes al cliente con el nombre "Meaghan"?
-Muestre el nombre de la cuenta y otros detalles de la cuenta para todas las cuentas del cliente con el nombre Meaghan y el apellido Keeling.
-¿Cuáles son los nombres y otros detalles de las cuentas correspondientes al cliente llamado Meaghan Keeling?
-Muestre el nombre y apellido del cliente con nombre de cuenta 900.
-¿Cuáles son los nombres completos de los clientes con el nombre de cuenta 900?
-Muestre los nombres, apellidos y números de teléfono únicos de todos los clientes con cualquier cuenta.
-¿Cuáles son los nombres, apellidos y números de teléfono distintos de los clientes con cuentas?
 Muestra identificadores de todas las transacciones cuyos montos sean mayores que el promedio.
 ¿Cuáles son los identificadores de las transacciones que tienen un monto mayor que el monto promedio de una transacción?
 Mostrar todos los tamaños de productos.
 ¿Cuáles son los diferentes tamaños de productos?
 Mostrar todos los colores del producto.
 ¿Cuáles son los diferentes colores de los productos?
-Muestre las fechas de las facturas, la identificación del pedido y los detalles de todas las facturas.
-¿Cuáles son las fechas de las facturas, los identificadores de los pedidos y los detalles de los pedidos de todas las facturas?
 Muestre el nombre, la fecha de apertura y el organizador de todas las iglesias.
 Muestre el organizador y el nombre de las iglesias que abrieron entre 1830 y 1840.
 Muestra el nombre y el país de todas las personas cuya edad sea menor que el promedio.
-Mostrar la pareja de nombres masculino y femenino en todas las bodas posteriores al año 2014.
 Muestra el nombre y la edad de todos los hombres que no se casan.
-Muestre los nombres de todas las mujeres de Canadá que se casarán en el año 2016.
-Muestre los nombres de las iglesias para las bodas de todas las personas mayores de 30 años.
 ¿Cuántas iglesias tienen una boda en el año 2016?
 ¿Cuáles son todos los países distintos para los artistas?
 Devolver los diferentes países para artistas.
@@ -644,55 +390,18 @@ Tema del espectáculo y año para todas las exposiciones con precios de entradas
 ¿Cuál es el tema y el año de todas las exposiciones cuyo precio de entrada es menor de 15 años?
 Mostrar nombres de artistas sin exposición alguna.
 ¿Cómo se llaman los artistas que no han tenido exposiciones?
-¿Cuál es el tema y el nombre del artista para la exposición con un precio de entrada superior al promedio?
-Devolver los nombres de los artistas y los temas de sus exposiciones que tuvieron un precio de entrada superior al promedio.
-¿Cuál es el tema, fecha y asistencia a la exposición en el año 2004?
-Devuelva los temas, fechas y asistencia a las exposiciones realizadas en 2004.
 Busque la identificación del elemento cuyo título es "naranja".
 Enumere toda la información en la tabla de elementos.
 Encuentra los nombres de los usuarios que no dejaron ninguna reseña.
-Encuentre los nombres de los productos que reciben una calificación de 10.
-Encuentre los títulos de los elementos cuya calificación sea superior a la calificación promedio de revisión de todos los elementos.
-Encuentre los títulos de los elementos que recibieron una calificación inferior a 5.
 Busque los nombres de los artículos que no recibieron ninguna reseña.
 Encuentra los nombres de los usuarios que no dejaron ninguna reseña.
 ¿Cuáles son el género y la ocupación de los jugadores?
 Indique el nombre y la residencia de los jugadores cuya ocupación no sea "Investigador".
 Muestra los nombres de los patrocinadores de los jugadores cuya residencia es "Brandon" o "Birtle".
-Muestra los nombres de los jugadores y los nombres de sus entrenadores.
-Muestra los nombres de los jugadores entrenados por el entrenador de rango 1.
-Muestra los nombres y géneros de los jugadores con entrenador a partir de 2011.
 Enumere los nombres de los jugadores que no tienen entrenador.
-¿Cómo se llaman las gimnastas?
-Devuelve los nombres de las gimnastas.
-¿Cómo se llaman las gimnastas cuya ciudad natal no es "Santo Domingo"?
-Devuelve los nombres de gimnastas que no crecieron en Santo Domingo.
-¿Cuáles son las distintas ciudades de origen de las gimnastas con un total de puntos superior a 57,5?
-Indique las diferentes ciudades de origen de las gimnastas que tienen una puntuación total superior a 57,5.
-Encuentre el nombre y la identificación de las cuentas cuyo saldo corriente está por debajo del saldo corriente máximo.
-¿Cuáles son la identificación y el nombre del cliente correspondientes a las cuentas con un saldo corriente menor que el saldo corriente más grande?
-¿Cuál es el saldo corriente de la cuenta cuyo nombre del propietario contiene la subcadena 'ee'?
-Encuentre el saldo de la cuenta corriente perteneciente a un propietario cuyo nombre contiene 'ee'.
-Encuentre el saldo corriente y el saldo de ahorro en la cuenta de Brown.
-¿Cuáles son los saldos de cheques y ahorros en las cuentas que pertenecen a Brown?
-Encuentre el saldo corriente de las cuentas cuyo saldo de ahorro es mayor que el saldo de ahorro promedio.
-¿Cuáles son los saldos de las cuentas corrientes de personas con saldos de ahorro superiores al saldo de ahorro promedio?
-Encuentre los nombres y los saldos totales de cheques y de ahorro de las cuentas cuyo saldo de ahorro es mayor que el saldo de ahorro promedio.
-¿Cuáles son los nombres y la suma de los saldos de cheques y de ahorro para las cuentas con saldos de ahorro superiores al saldo de ahorro promedio?
-Encuentre el nombre de las cuentas cuyo saldo corriente está por debajo del saldo corriente promedio.
-¿Cuáles son los nombres de los clientes con saldos de cheques inferiores al saldo de cheques promedio?
-Encuentre el nombre, el saldo corriente y el saldo de ahorro de todas las cuentas del banco.
-¿Cuáles son los nombres, saldos de cheques y saldos de ahorro de todos los clientes?
-Encuentre el nombre de las cuentas cuyo saldo corriente es mayor que el saldo de ahorro correspondiente.
-¿Cuáles son los nombres de los clientes con un saldo corriente más alto que el saldo de ahorro?
-Encuentre el nombre y el saldo total de cheques y de ahorro de las cuentas cuyo saldo de ahorro es menor que el saldo de cheques correspondiente.
-¿Cuáles son los nombres de los clientes que tienen un saldo de ahorro inferior a su saldo de cheques y cuál es el total de sus saldos de cheques y de ahorros?
 Enumere los identificadores, nombres y cuotas de mercado de todos los navegadores.
 ¿Cuál es la identificación y la cuota de mercado del navegador Safari?
 ¿Cuáles son el nombre y el sistema operativo de los aceleradores de clientes web que no funcionan únicamente con una conexión de tipo "Banda ancha"?
-¿Cómo se llama el navegador que se volvió compatible con el acelerador 'CProxy' después del año 1998?
-¿Cuándo se volvieron compatibles el acelerador web 'CACHEbox' y el navegador 'Internet Explorer'?
-¿Qué nombres distintos de aceleradores son compatibles con los navegadores que tienen una cuota de mercado superior a 15?
 ¿Qué nombre de acelerador contiene la subcadena "Opera"?
 ¿Cuáles son los distintos reinados de los luchadores cuya ubicación no es "Tokio, Japón"?
 Da los diferentes reinados de luchadores que no se encuentran ubicados en Tokio, Japón.
@@ -700,10 +409,6 @@ Da los diferentes reinados de luchadores que no se encuentran ubicados en Tokio,
 Da los nombres y ubicaciones de todos los luchadores.
 ¿Cuáles son los movimientos de eliminación de los luchadores cuyo equipo es el "Team Orton"?
 Devuelve las películas de eliminación de luchadores del Equipo Orton.
-¿Cuáles son los nombres de los luchadores y los movimientos de eliminación?
-Da los nombres de los luchadores y sus movimientos de eliminación.
-Mostrar tiempos de eliminación de luchadores con jornadas celebradas más de 50.
-¿Cuáles son los tiempos de eliminación para los luchadores con más de 50 días celebrados?
 Muestra el reinado y los días de los luchadores.
 ¿Cuáles son los reinados y días de todos los luchadores?
 ¿Cuáles son los nombres de los luchadores que tienen menos de 100 días?
@@ -717,14 +422,12 @@ Muestra los tiempos de eliminación por parte de "Punk" u "Orton".
 Indique el nombre, la ubicación y la mascota de todas las escuelas.
 ¿Cuáles son las mascotas de los colegios con matrículas superiores a la media?
 Enumere los nombres de las escuelas sin dotación alguna.
-Muestre el nombre de cada escuela, su monto presupuestado y el monto invertido en el año 2002 o después.
 Mostrar todos los nombres de los donantes.
 Enumere los nombres de edificios con al menos 200 pies de altura y con al menos 20 pisos.
 Muestra los nombres y ubicaciones de las instituciones fundadas después de 1990 y que tienen el tipo "Privada".
 Muestre el tipo de institución con una institución fundada después de 1990 y una institución con al menos 1000 inscritos.
 Mostrar el nombre de los edificios que no cuentan con ninguna institución.
 Mostrar todos los distintos tipos de instituciones.
-Muestre el nombre de la proteína y el nombre de la institución.
 Nombre del espectáculo, año de apertura y aforo de cada sala de cine.
 Muestra el nombre del cine y la ubicación de los cines con capacidad superior al promedio.
 ¿Cuáles son todas las ubicaciones con cine?
@@ -733,12 +436,7 @@ Muestra el título y director de todas las películas.
 ¿Cuáles son el título y director de cada película?
 Mostrar todos los directores.
 ¿Quiénes son todos los directores?
-Muestra el nombre del cine, el título de la película, la fecha y el precio de cada grabación en la programación.
 ¿Cuáles son el título y director de las películas sin programación?
-¿Los clientes que tienen cupones con un monto de 500 son malos o buenos?
-¿Cuál es la descripción del producto reservado con un importe de 102,76?
-¿Cuáles son la fecha de inicio y la fecha de finalización de la reserva que ha reservado el producto denominado 'Colección de libros A'?
-¿Cómo se llaman los productos cuya disponibilidad es igual a 1?
 ¿Cuáles son los distintos tipos de pago?
 ¿Cuáles son los costos de alquiler diarios para los productos con la subcadena 'Libro' en su nombre?
 ¿Cuál es la fecha de pago del pago con un monto pagado superior a 300 o con el tipo de pago es 'Cheque'?
@@ -746,8 +444,6 @@ Muestra el nombre del cine, el título de la película, la fecha y el precio de 
 ¿Cuáles son las memorias y portadores de los teléfonos?
 Enumere los distintos operadores de teléfonos con memorias mayores a 32.
 Muestra los nombres de los teléfonos con operador "Sprint" o "TMobile".
-Muestra los nombres de los teléfonos y los distritos de mercados en los que se encuentran.
-Muestra los nombres de los teléfonos que hay en el mercado con un número de tiendas superior a 50.
 Enumere los nombres de los teléfonos que no están en ningún mercado.
 Muestre el nombre de la empresa y la industria principal de todas las empresas cuyas oficinas centrales no sean de EE. UU.
 ¿Cuáles son las empresas y principales industrias de todas las empresas que no tienen su sede en Estados Unidos?
@@ -755,27 +451,15 @@ Mostrar todas las industrias principales para todas las empresas.
 ¿Cuáles son las diferentes industrias principales para todas las empresas?
 Mostrar el nombre de la empresa y la industria principal sin gasolinera.
 ¿Cuáles son las principales industrias de las empresas sin gasolineras y cuáles son las empresas?
-Muestra el nombre del administrador de las gasolineras pertenecientes a la empresa ExxonMobil.
-¿Cómo se llaman los gerentes de las gasolineras operadas por la empresa ExxonMobil?
-Mostrar todas las ubicaciones donde se encuentra una gasolinera para empresa con valor de mercado superior a 100.
-¿Cuáles son las localidades que cuentan con gasolineras propiedad de una empresa con un valor de mercado superior a 100?
 Muestre el ministro que asumió el cargo después de 1961 o antes de 1959.
 ¿Quiénes son los ministros que asumieron el cargo después de 1961 o antes de 1959?
 Mostrar todos los ministros que no pertenecen al Partido del Progreso.
 ¿Qué ministros no forman parte del Partido del Progreso?
-Enumere los nombres de los miembros y los nombres de sus partidos.
-¿Cuáles son los nombres de los miembros y sus partidos correspondientes?
-Muestra todos los nombres de los partidos y los nombres de sus regiones.
-¿Cuáles son los nombres de los partidos y sus respectivas regiones?
 Mostrar nombres de partidos que no tienen miembros.
 ¿Cómo se llaman los partidos que no tienen miembros?
-Mostrar nombres de miembros que no están en el Partido del Progreso.
-¿Qué nombres de miembros corresponden a miembros que no están en el Partido del Progreso?
 ¿Cuáles son las posiciones y equipos de pilotos?
 Enumere los distintos puestos de los pilotos mayores de 30 años.
 Muestra los nombres de los pilotos del equipo "Bradley" o "Fordham".
-Muestra los nombres de los pilotos y modelos de aeronaves con las que han volado.
-Mostrar la serie de flota de las aeronaves pilotadas por pilotos menores de 34 años.
 Enumere los nombres de los pilotos que no tienen ningún registro.
 ¿Qué códigos de estado de documentos tenemos?
 ¿Cuál es la descripción del código de estado del documento "en funcionamiento"?
@@ -785,43 +469,22 @@ Enumere los nombres de los pilotos que no tienen ningún registro.
 ¿Cuál es el código del agente de envío del agente de envío UPS?
 ¿Cuáles son todos los códigos de rol?
 ¿Cuál es la descripción del código de función ED?
-¿Cuál es el papel del empleado llamado Koby?
 Enumere todos los identificadores de documentos y las fechas de recepción de los documentos.
-¿Cuál es la descripción del estado del documento con ID 1?
 Enumere el código de tipo de documento para el documento con la identificación 2.
 Enumere los identificadores de documentos para cualquier documento con el código de estado realizado y el código de tipo de papel.
-¿Cuál es el nombre del transportista del documento con id 2?
 ¿Cuál es la fecha de recepción del documento con id 3?
-¿A qué dirección se envió el documento con identificación 4?
 ¿Cuál es la fecha de envío del documento con id 7?
 ¿Cuál es el detalle del borrador del documento con id 7?
-Enumere todos los empleados en el historial de circulación del documento con ID 1. Indique el nombre del empleado.
 busque todos los nombres de dependientes que tengan una relación de cónyuge con algún empleado.
-Encuentre los nombres de los departamentos que están ubicados en Houston.
 Devuelva los nombres y apellidos de los empleados que ganan más de 30000 en salario.
-¿Cuáles son los detalles del evento de los servicios que tienen el código de tipo 'Matrimonio'?
 ¿Cuáles son todas las identificaciones de los participantes, el código de tipo y los detalles?
 Enumere la identificación del servicio y los detalles de los eventos.
 Encuentra los nombres de todas las carreras celebradas en 2017.
 ¿Cuáles son los nombres de todas las carreras que ocurrieron en el año 2017?
 ¿Encuentra los nombres distintos de todas las carreras celebradas entre 2014 y 2017?
 ¿Cuáles son los nombres únicos de todas las carreras celebradas entre 2014 y 2017?
-¿Enumere el nombre y apellido de todos los conductores distintos que alguna vez tuvieron un tiempo de vuelta inferior a 93000 milisegundos?
-¿Cuáles son los nombres y apellidos de todos los conductores únicos que tuvieron un tiempo de vuelta de menos de 93000 milisegundos?
-¿Encontrar todas las identificaciones y nacionalidades distintas de los conductores que han tenido un tiempo de vuelta de más de 100000 milisegundos?
-¿Cuáles son las diferentes identificaciones y nacionalidades de todos los conductores que tuvieron un tiempo de vuelta de más de 100.000 milisegundos?
-¿Dame una lista de nombres y años de carreras que tuvo algún piloto cuyo nombre sea Lewis?
-¿Cuáles son los nombres y años de todas las carreras que tuvieron un piloto con el apellido Lewis?
 ¿Encontrar el nombre y apellido de los conductores cuya nacionalidad es alemana?
 ¿Cuál es el nombre y apellido de todos los conductores alemanes?
-¿Encontrar todos los nombres de los distintos pilotos que estaban en la posición 1 y ganaron?
-¿Cuáles son los diferentes nombres de los pilotos que están en posición de estar en pie y ganaron?
-¿Encontrar todos los nombres de los distintos pilotos que ganaron en la posición 1 como piloto y obtuvieron más de 20 puntos?
-¿Cuáles son los nombres de los diferentes pilotos que ganaron en la posición 1 como piloto permanente y obtuvieron más de 20 puntos?
-¿Cómo se llaman las carreras que se disputaron después de 2017 y los circuitos fueron en el país de España?
-¿Cómo se llaman las carreras que se celebran después de 2017 en España?
-¿Cuáles son los nombres únicos de las carreras que se celebraron después del 2000 y los circuitos fueron en España?
-¿Cómo se llaman todas las carreras celebradas después del 2000 en España?
 Encuentre la identificación distintiva del conductor y el número de parada de todos los conductores que tienen una duración de parada en boxes más corta que algunos conductores en la carrera con identificación 841.
 ¿Cuál es la identificación y el número de parada de cada piloto que tiene una parada en boxes más corta que el piloto de la carrera con identificación 841?
 ¿Encontrar la identificación distintiva del conductor de todos los conductores que tienen una duración de parada más larga que algunos conductores en la carrera cuya identificación es 841?
@@ -834,33 +497,18 @@ Encuentre la identificación distintiva del conductor y el número de parada de 
 ¿Cómo se llaman todos los circuitos que hay en Reino Unido o Malasia?
 ¿Encontrar el id y ubicación de circuitos que pertenecen a Francia o Bélgica?
 ¿Cuáles son los identificadores y ubicaciones de todos los circuitos en Francia o Bélgica?
-¿Encontrar los nombres de los constructores japoneses que alguna vez obtuvieron más de 5 puntos?
-¿Cómo se llaman todos los constructores japoneses que han obtenido más de 5 puntos?
 ¿Cuál es el equipo y año de inicio de los técnicos?
 ¿Cuál es el equipo y año de inicio de cada técnico?
 Indique el nombre de los técnicos cuyo equipo no sea "NYY".
 ¿Cómo se llama el técnico cuyo equipo no es 'NYY'?
 Mostrar el nombre de los técnicos de 36 o 37 años.
 ¿Cómo se llaman los técnicos de 36 o 37 años?
-Muestra los nombres de los técnicos y la serie de máquinas que deben reparar.
-¿Cómo se llaman los técnicos y las series de máquinas que reparan?
-Muestra los nombres de los técnicos asignados a reparar máquinas con un valor superior a 70.
-¿Cuáles son los nombres de los técnicos asignados a reparar máquinas con valores superiores a 70?
 Enumere los nombres de los técnicos que no han sido asignados a reparar máquinas.
 ¿Cómo se llaman los técnicos que no han sido asignados a reparar máquinas?
 Enumerar las empresas y los inversores de los emprendedores.
 ¿Cuáles son las empresas e inversores que corresponden a cada emprendedor?
-¿Cómo se llaman los emprendedores?
-Devuelve los nombres de los empresarios.
-¿Cómo se llaman los empresarios cuyo inversor no es "Rachel Elnaugh"?
-Devolver los nombres de los empresarios no tiene la inversionista Rachel Elnaugh.
-¿Cuáles son las fechas de nacimiento de los emprendedores con el inversor "Simon Woodroffe" o "Peter Jones"?
-Devuelve las fechas de nacimiento de los empresarios que tienen al inversor Simon Woodroffe o Peter Jones.
 Enumere los nombres de personas que no sean empresarios.
 ¿Cómo se llaman las personas que no son emprendedoras?
-¿Cuáles son los nombres de los perpetradores?
-¿Cómo se llaman los perpetradores cuyo país no es "China"?
-¿Cuáles son los nombres de los perpetradores en el país "China" o "Japón"?
 Enumere los nombres de las personas que no son perpetradores.
 Informe el nombre de todos los campus en el condado de Los Ángeles.
 ¿Qué campus están ubicados en el condado de Los Ángeles?
@@ -872,38 +520,14 @@ Encuentre el nombre de los campus abiertos antes de 1800.
 ¿Qué campus abrieron antes de 1800?
 ¿Qué campus se abrió entre 1935 y 1939?
 ¿Qué campus abrieron entre 1935 y 1939?
-¿Cuál es la tarifa del campus de la "Universidad Estatal de San José" en el año 1996?
-¿Cuál es la tarifa del campus de la Universidad Estatal de San José en 1996?
-¿Cuál es la tarifa del campus de la "Universidad Estatal de San Francisco" en el año 1996?
-¿Cuál fue la tarifa del campus de la Universidad Estatal de San Francisco en 1996?
 ¿Qué universidad está en el condado de Los Ángeles y abrió después de 1950?
 ¿Qué campus están ubicados en el condado de Los Ángeles y abrieron después de 1950?
-Encuentre los nombres del campus que tenía más facultades en 2002 que todos los campus del condado de Orange.
-¿Cuáles son los nombres de los campus que tienen más facultades en 2002 que el número máximo en el condado de Orange?
-¿Qué campus tenía más de 400 inscritos en total pero más de 200 inscritos a tiempo completo en el año 1956?
-¿Qué campus comenzó en el año 1956, tiene más de 200 estudiantes de tiempo completo y más de 400 estudiantes matriculados?
 Enumere los campus en el condado de Los Ángeles.
 ¿Qué campus hay en el condado de Los Ángeles?
-¿Cuántos títulos se otorgaron en la "Universidad Estatal de San José" en 2000?
-¿Cuántos títulos se otorgaron en la Universidad Estatal de San José en 2000?
-¿Cuáles son los títulos otorgados en la "Universidad Estatal de San Francisco" en 2001?
-¿Qué títulos se otorgaron en la Universidad Estatal de San Francisco en el año 2001?
-¿Cuál es el número de líneas de profesores en el campus de la "Universidad Estatal de Long Beach" en 2002?
-¿Cuál es el número de profesores de la Universidad Estatal de Long Beach en 2002?
-¿Cuántas líneas de profesores hay en la "Universidad Estatal de San Francisco" en el año 2004?
-¿Cuántas líneas de profesores había en la Universidad Estatal de San Francisco en 2004?
-Enumere los campus que tienen entre 600 y 1000 líneas de profesores en el año 2004.
-¿Cuáles son los campus que tenían entre 600 y 1000 profesores en 2004?
-¿Cuál es la tarifa del campus de la "Universidad Estatal de San Francisco" en el año 2000?
-En el año 2000, ¿cuál es la tarifa del campus de la Universidad Estatal de San Francisco?
-Encuentre la tarifa del campus de la "Universidad Estatal de San José" en el año 2000.
-¿Cuál es la tarifa del campus en el año 2000 para la Universidad Estatal de San José?
 encuentre los nombres de personas que midan más de 200 o menos de 190.
 ¿Cómo se llaman las personas que tienen una altura mayor a 200 o menor a 190?
 ¿Cuáles son los nombres de las personas que no participaron en la elección de candidatos?
 Dé los nombres de las personas que no participaron en la elección de candidatos.
-Encuentre los nombres de los candidatos cuyo porcentaje de apoyo es menor que su tasa de oposición.
-¿Cuáles son los nombres de los candidatos que tienen una tasa de apoyo más baja que la tasa de oposición?
 Encuentra el nombre de personas cuya altura es inferior a la media.
 ¿Cómo se llaman las personas que son más bajas que el promedio?
 Enumere toda la información sobre todas las personas.
@@ -918,48 +542,22 @@ Encuentra los títulos de todas las películas dirigidas por Steven Spielberg.
 ¿Cuál es la identificación del revisor cuyo nombre incluye la palabra "Mike"?
 ¿Cuál es la identificación del revisor de Daniel Lewis?
 ¿Cuál es la identificación del crítico llamado Daniel Lewis?
-¿Cómo se llaman los directores que dirigieron películas con calificación de 5 estrellas? También devuelva el título de estas películas.
-¿Cuáles son los nombres de los directores que crearon una película con una calificación de 5 estrellas y cómo se llamaban esas películas?
 Encuentra los títulos de todas las películas que no tienen calificaciones.
 ¿Cuáles son los títulos de todas las películas que no han sido calificadas?
-Busque los nombres de todos los revisores que tengan calificaciones con un valor NULL para la fecha.
-¿Cuáles son los diferentes nombres de todos los revisores cuyas calificaciones no tienen un campo de fecha?
 ¿Cómo se llama la película más reciente?
 ¿Cuál es el título de la película más nueva?
 ¿Cuáles son los nombres de las películas cuyo año de creación es, después de todo, películas dirigidas por Steven Spielberg?
 ¿Cuáles son los nombres de todas las películas que se crearon después de la película más reciente de Steven Spielberg?
-¿Cuáles son los títulos y directores de las películas cuya estrella es mayor que el promedio de estrellas de las películas dirigidas por James Cameron?
-¿Cuáles son los títulos y directores de todas las películas que tienen una calificación superior a la calificación promedio de las películas de James Cameron?
-Encuentre los nombres de todos los críticos que calificaron Lo que el viento se llevó.
-¿Cuáles son los nombres de los diferentes críticos que califican Lo que el viento se llevó?
-Encuentre los nombres de todos los directores cuyas películas están calificadas por Sarah Martinez.
-¿Cuáles son los nombres de todos los directores cuyas películas han sido reseñadas por Sarah Martinez?
-Para cualquier calificación en la que el nombre del crítico sea el mismo que el del director de la película, devuelva el nombre del crítico, el título de la película y el número de estrellas.
-¿Cuáles son los diferentes nombres de críticos, títulos de películas y estrellas para cada calificación en la que el crítico tenía el mismo nombre que el director?
-Para directores que tuvieron más de una película, devuelva los títulos y los años de producción de todas las películas dirigidas por ellos.
-Para cada director que dirigió más de una película, ¿cuáles son los títulos y fechas de estreno de todas esas películas?
-¿Cuáles son los títulos de todas las películas que tienen calificación de estrellas entre 3 y 5?
-¿Cuáles son los títulos de todas las películas que tienen entre 3 y 5 estrellas?
-Encuentre los nombres de los revisores que otorgaron calificaciones superiores a 3 estrellas.
-¿Cuáles son los nombres de los críticos que han calificado una película con más de 3 estrellas anteriormente?
 Encuentre las identificaciones de los revisores que no solo dieron 4 estrellas.
 ¿Cuáles son los identificadores de todos los revisores que no han dado 4 estrellas al menos una vez?
-¿Cuáles son los nombres de las películas realizadas después del 2000 o reseñadas por Brittany Harris?
-¿Cuáles son los nombres de todas las películas realizadas después del 2000 o reseñadas por Brittany Harris?
 ¿Cuáles son los nombres de las películas realizadas antes de 1980 o dirigidas por James Cameron?
 ¿Cuáles son los nombres de todas las películas realizadas antes de 1980 o que tuvieron a James Cameron como director?
 Enumere las distintas fuerzas policiales de los condados cuya ubicación no está en el lado este.
 ¿Cuáles son las diferentes fuerzas policiales de los condados que no están ubicados en el Este?
 ¿Cuál es el porcentaje de hispanos en ciudades con un porcentaje de negros superior a 10?
 Devuelve el porcentaje de hispanos para las ciudades en las que el porcentaje de negros es mayor que 10.
-Muestra los nombres de las ciudades y los nombres de los condados en los que se encuentran.
-¿Cuáles son los nombres de las ciudades, así como los nombres de los condados a los que corresponden?
-Muestra los porcentajes de blancos de las ciudades y las tasas de criminalidad de los condados en los que se encuentran.
-¿Cuáles son los porcentajes de blancos en las ciudades y las tasas de criminalidad correspondientes de los condados a los que corresponden?
 Muestra el nombre de las ciudades del condado que tiene la mayor cantidad de agentes de policía.
 ¿Cuáles son los nombres de las ciudades que se encuentran en el condado con más agentes de policía?
-Muestre la tasa de criminalidad de los condados con una ciudad que tiene un porcentaje de blancos superior al 90.
-¿Cuáles son las tasas de criminalidad de los condados que contienen ciudades que tienen porcentajes de blancos superiores al 90?
 Enumere los nombres de los condados que no tienen ciudades.
 ¿Cuáles son los nombres de los condados que no contienen ciudades?
 Muestre los nombres de las ciudades en los condados que tienen una tasa de criminalidad inferior a 100.
@@ -976,8 +574,6 @@ Encuentre el número de adultos para la habitación reservada y registrada por C
 Devuelva el número de niños para la habitación reservada y registrada por DAMIEN TRACHSEL el 21 de septiembre de 2010.
 ¿Cuál es la decoración de la habitación Reclusa y desafiante?
 Devuelve la decoración de la habitación llamada "Reclusa y desafío".
-Encuentre los nombres y apellidos de las personas que pagaron más que el precio base de las habitaciones.
-¿Cuáles son los nombres y apellidos de las personas que pagaron más que el precio base de las habitaciones?
 Indique el tipo de cama y el nombre de todas las habitaciones tradicionales.
 ¿Cuáles son el tipo de cama y el nombre de todas las habitaciones con decoración tradicional?
 Indique el nombre de las habitaciones con cama king o queen.
@@ -986,25 +582,12 @@ Encuentra el nombre de las habitaciones cuyo precio es superior al precio medio.
 ¿Cómo se llaman las habitaciones que cuestan más que la media?
 Encuentra el nombre de las habitaciones cuyo precio base está entre 120 y 150.
 ¿Qué habitaciones cuestan entre 120 y 150? Dame los nombres de las habitaciones.
-Busque el nombre de las habitaciones reservadas por algunos clientes cuyo nombre contiene ROY.
-¿Cómo se llaman las habitaciones reservadas por clientes cuyo nombre tiene en parte "ROY"?
-¿Cuáles son los detalles de los cmi masters que tienen el código de referencia cruzada 'Impuestos'?
-¿Cuál es el código del sistema de fuente de impuestos y la identificación maestra del cliente de los impuestos relacionados con cada identificación de multa de estacionamiento?
-¿Cuáles son los identificadores fiscales de los atrasos en el alquiler relacionados con el índice maestro de clientes cuyo detalle no es 'Schmidt, Kertzmann y Lubowitz'?
-¿Cuáles son los identificadores de registro de los registros electorales que tienen el código fuente del sistema de referencia cruzada 'Electoral' o 'Tax'?
 Enumere los números de identificación fiscal del consejo y sus referencias cruzadas cmi relacionadas de todas las multas de estacionamiento.
-¿Cuáles son los distintos códigos fuente del sistema de referencia cruzada que están relacionados con los datos maestros del cliente 'Gottlieb, Becker and Wyman'?
 ¿Qué código fuente distinto del sistema incluye la subcadena 'en'?
 ¿Cuáles son los temas y ubicaciones de las fiestas?
 Dame la temática y ubicación de cada fiesta.
 Muestra el primer año y último año de fiestas con temática "Primavera" o "Tecnología".
 ¿Cuáles son el primer año y el último año de las fiestas cuyo tema es "Primavera" o "Tecnología"?
-Muestre los temas de las fiestas y los nombres de los anfitriones de las fiestas.
-Para cada fiesta, devuelva su tema y el nombre de su anfitrión.
-Muestra las ubicaciones de fiestas con anfitriones mayores de 50 años.
-¿Qué fiestas tienen anfitriones mayores de 50 años? Dame los lugares de la fiesta.
-Muestra los nombres de los anfitriones para grupos con un número de anfitriones superior a 20.
-¿Qué partidos tienen más de 20 anfitriones? Dame los nombres de los anfitriones de estas fiestas.
 Enumere los nombres de los anfitriones que no sirvieron como anfitriones de ninguna parte en nuestro registro.
 ¿Cuáles son los nombres de los anfitriones que no organizaron ninguna fiesta en nuestro registro?
 Mostrar nombres de todas las regiones excepto Dinamarca.
@@ -1015,10 +598,6 @@ Muestra el nombre de las regiones no afectadas.
 ¿Cuáles son los nombres de las regiones que no se vieron afectadas?
 Muestra el nombre de las tormentas que no tienen registrada la región afectada.
 ¿Cómo se llaman las tormentas que no afectaron a ninguna región?
-¿Cómo se llaman las regiones afectadas por la tormenta con un número de muertes de al menos 10?
-Devuelve los nombres de las regiones afectadas por tormentas que tuvieron un recuento de muertes de al menos 10.
-Mostrar todos los nombres de tormentas que afectan a la región "Dinamarca".
-¿Cómo se llaman las tormentas que afectaron a Dinamarca?
 Muestre el nombre del condado y la población de todos los condados.
 ¿Cuáles son el nombre y la población de cada condado?
 Mostrar todos los distintos distritos para las elecciones.
@@ -1035,25 +614,10 @@ Muestre al vicegobernador y al contralor del partido demócrata.
 Encuentre los distintos años en que el gobernador fue nombrado "Eliot Spitzer".
 Mostrar toda la información sobre las elecciones.
 Devolver toda la información de cada acta electoral.
-Mostrar los delegados y los nombres del condado al que pertenecen.
-¿Cuáles son el delegado y nombre del condado al que pertenecen, para cada condado?
-¿Qué delegados son de condados con una población inferior a 100.000 habitantes?
-Encuentre los delegados que provienen de condados con una población inferior a 100.000 habitantes.
-¿Cuáles son los nombres del condado al que pertenecen los delegados del comité de "Asignaciones"?
-¿A qué condado pertenecen los delegados del comité de "Asignaciones"? Dame los nombres de los condados.
-Mostrar los delegados y los nombres del partido al que pertenecen.
-Para cada delegado, busque los nombres del partido al que pertenece.
-¿Quiénes fueron los gobernadores de los partidos asociados a los delegados del distrito 1?
-Encuentre los partidos asociados con los delegados del distrito 1. ¿Quiénes sirvieron como gobernadores de los partidos?
-¿Quiénes eran los contralores de los partidos asociados a los delegados del distrito 1 o del distrito 2?
-Encuentre los partidos asociados con los delegados del distrito 1 o 2. ¿Quiénes fungieron como contralores de los partidos?
-Devolver todos los comités que tengan delegados del partido demócrata.
-¿Qué comités tienen delegados del partido demócrata?
 ¿Cómo se llaman los partidos que no tienen delegados en las elecciones?
 ¿Qué partidos no tuvieron delegados en las elecciones?
 ¿Cuáles son las nacionalidades y edades de los periodistas?
 Muestra los nombres de periodistas de "Inglaterra" o "Gales".
-Muestra los nombres de los periodistas y las fechas de los hechos que informaron.
 Enumere los nombres de los periodistas que no han informado de ningún hecho.
 Muéstrame todos los restaurantes.
 ¿Cuál es la dirección del restaurante Subway?
@@ -1066,71 +630,23 @@ Enumere los nombres y apellidos de todos los estudiantes que se especializaron e
 ¿En qué ciudad vive la estudiante Linda Smith?
 ¿Qué estudiante tiene más de 18 años y se especializa en 600? Escriba el nombre y apellido de cada estudiante.
 Enumere todas las estudiantes mujeres mayores de 18 años que no se especialicen en 600. Enumere el nombre y apellido de los estudiantes.
-¿Cuándo visitó Linda Smith Subway?
 Encuentre los identificadores de los pedidos cuyo estado sea "Éxito".
 Enumere los nombres y correos electrónicos de los clientes que pagaron con tarjeta Visa.
-Encuentre los nombres y números de teléfono de clientes que viven en el estado de California.
 Encuentre los estados que no tienen ningún empleado en su registro.
-¿Cuáles son los títulos de los artículos publicados por "Jeremy Gibbons"?
-Encuentre los títulos de todos los artículos escritos por "Jeremy Gibbons"
-Encuentre todos los artículos publicados por "Aaron Turon".
-Encuentre los títulos de todos los artículos escritos por "Aaron Turon".
-¿Cómo se llama la institución a la que pertenece "Matthias Blume"?
-¿A qué institución pertenece el autor "Matthias Blume"? Dame el nombre de la institución.
-¿A qué institución pertenece "Katsuhiro Ueno"?
-¿Cómo se llama la institución a la que pertenece el autor "Katsuhiro Ueno"?
-¿Quiénes pertenecen a la institución "Universidad de Oxford"? Muestra los nombres y apellidos.
-Encuentre los nombres y apellidos de los autores cuya institución afiliada es la "Universidad de Oxford".
-¿Qué autores pertenecen a la institución "Google"? Muestra los nombres y apellidos.
-Encuentre los nombres y apellidos de los autores cuya institución afiliada es "Google".
-¿Cuáles son los apellidos del autor del artículo titulado "Binders Unbound"?
-¿Quién es el autor del artículo titulado "Binders Unbound"? Dame el apellido.
-Encuentre el nombre y apellido del autor(es) que escribieron el artículo "Sin nombre, sin dolor".
-¿Cuál es el nombre y apellido del autor que publicó el artículo titulado "Sin nombre, sin dolor"?
-¿Cuáles son los artículos publicados bajo la institución "Universidad de Indiana"?
-Enumere los títulos de los artículos cuyos autores sean de la institución "Indiana University".
-Encuentra todos los artículos publicados por la institución "Google".
-¿Qué artículos fueron escritos por autores de la institución "Google"?
-Encuentre los artículos que tienen a "Olin Shivers" como autor.
-¿Qué artículos escribió el autor "Olin Shivers"? Dame los títulos de los artículos.
-¿Qué artículos tienen como autora a "Stephanie Weirich"?
-Encuentre los títulos de los artículos que escribió la autora "Stephanie Weirich".
-¿Qué artículo se publica en una institución de "EE. UU." y tiene a "Turón" como segundo autor?
-Buscar artículos cuyo segundo autor tenga apellido "Turon" y esté afiliado a una institución en el país "USA".
-¿Encontrar los títulos de artículos cuyo primer autor está afiliado a una institución en el país "Japón" y tiene el apellido "Ohori"?
-¿El primer autor de qué artículo está afiliado a una institución en el país "Japón" y tiene el apellido "Ohori"? Dame los títulos de los artículos.
 Busque los títulos de los artículos que contienen la palabra "ML".
 ¿Qué artículos tienen la subcadena "ML" en sus títulos? Devuelve los títulos de los artículos.
 ¿El título de qué artículo contiene la palabra "Base de datos"?
 ¿Qué artículos tienen la subcadena "Base de datos" en sus títulos? Mostrar los títulos de los artículos.
-Busque los nombres de todos los autores que han escrito un artículo cuyo título contenga la palabra "Funcional".
-¿Quién ha escrito un artículo que tiene la palabra "Funcional" en su título? Devuelve los nombres de los autores.
-Encuentre los apellidos de todos los autores que han escrito un artículo cuyo título contenga la palabra "Monadic".
-¿Qué autores han escrito un artículo cuyo título contiene la palabra "monádico"? Devuelve sus apellidos.
-Recupera el título del artículo que tiene el mayor número de autores.
-¿Qué artículo tiene más autores? Dame el título del artículo.
 ¿Cuál es el nombre del autor con apellido "Ueno"?
 ¿Qué autores tienen el apellido "Ueno"? Enumere sus nombres.
 Busque el apellido del autor con el nombre "Amal".
 ¿Qué autores se llaman "Amal"? Enumere sus apellidos.
 ¿Cuál es el número de teléfono y código postal de la dirección 1031 Daugavpils Parkway?
 Indique el teléfono y el código postal correspondientes a la dirección '1031 Daugavpils Parkway'.
-¿Cuál es el nombre de género de la película HUNGER ROOF?
-Devuelve el nombre de la categoría a la que pertenece la película 'HUNGER ROOF'.
 ¿Cuáles son todas las películas clasificadas como R? Enumere los títulos.
 Devuelve los títulos de cualquier película con clasificación R.
-¿Dónde está ubicada la tienda 1?
-Devuelve la dirección de la tienda 1.
-¿Qué idioma utiliza la película AIRPORT POLLOCK? Enumere el nombre del idioma.
-¿Cómo se llama el idioma en el que está la película 'AIRPORT POLLOCK'?
 ¿Qué películas tienen 'Escenas eliminadas' como subcadena en la función especial?
 Devuelve los títulos de las películas que incluyen 'Escenas eliminadas' en su sección de funciones especiales.
-¿Dónde vive el cliente con el nombre Linda? ¿Y cuál es su correo electrónico?
-Devuelva la dirección y el correo electrónico del cliente con el nombre Linda.
-¿Cuál es el nombre completo del miembro del personal que alquiló una película a un cliente con el nombre April y el apellido Burns?
-Devuelva el nombre completo del personal que le proporcionó un alquiler de película a un cliente con el nombre April y el apellido Burns.
-¿Dónde vive el miembro del personal con el nombre de Elsa?
-Indique la dirección del miembro del personal que se llama Elsa.
 ¿Cuáles son los nombres de los clientes que no han alquilado ninguna película después de '2005-08-23 02:06:01'?
 Devuelva los nombres de los clientes que no alquilaron una película después de la fecha '2005-08-23 02:06:01'.
 Encuentre la ciudad y el estado de la sucursal bancaria llamada Morningside.
@@ -1143,16 +659,6 @@ Encuentre el nombre y el saldo de la cuenta del cliente cuyo nombre incluye la l
 ¿Cuáles son los nombres y saldos de cuentas de los clientes con la letra a en sus nombres?
 Encuentre el nombre de los clientes cuyo puntaje crediticio está por debajo del puntaje crediticio promedio de todos los clientes.
 ¿Cuáles son los nombres de los clientes con un puntaje crediticio menor que el puntaje crediticio promedio de todos los clientes?
-Busque el nombre de las sucursales bancarias que otorgaron algunos préstamos.
-¿Cuáles son los nombres de los diferentes bancos que han otorgado préstamos?
-Encuentre el nombre y el puntaje crediticio de los clientes que tienen algunos préstamos.
-¿Cuáles son los diferentes nombres y puntajes crediticios de los clientes que han solicitado un préstamo?
-Encuentre el nombre de los clientes que tienen un préstamo con un monto superior a 3000.
-¿Cuáles son los nombres de los clientes que tienen un préstamo de más de 3000?
-Encuentre la ciudad y el nombre de las sucursales bancarias que brindan préstamos comerciales.
-¿Cuáles son los nombres y ciudades de las sucursales bancarias que ofrecen préstamos para empresas?
-Encuentre los nombres de las sucursales bancarias que han otorgado un préstamo a cualquier cliente cuyo puntaje crediticio sea inferior a 100.
-¿Cuáles son los nombres de los bancos que han prestado dinero a clientes con puntajes de crédito inferiores a 100?
 ¿Cuáles son las fechas de las notas de evaluación?
 Devuelve todos los códigos de tipo de detención distintos.
 ¿Cuáles son las fechas de inicio y finalización de los incidentes con el código de tipo de incidente "RUIDO"?
@@ -1162,31 +668,14 @@ Devuelva el número de teléfono celular y la dirección de correo electrónico 
 ¿Cuál es el sexo del profesor de apellido "Medhurst"?
 ¿Cuál es la descripción del tipo de incidente para el tipo de incidente con el código "VIOLENCIA"?
 Encuentre los nombres de los profesores cuya dirección de correo electrónico contiene la palabra "hombre".
-Encuentre las fechas de las notas de evaluación para los estudiantes con el nombre "Fanny".
-Encuentra los textos de las notas de evaluación de los profesores con apellido "Schuster".
-Encuentre las fechas de inicio y finalización de los incidentes de conducta de los estudiantes con el apellido "Fahey".
-Encuentre las fechas de inicio y finalización de las detenciones de profesores con apellido "Schultz".
-¿Cuáles son los alquileres mensuales de direcciones de estudiantes en el estado de Texas?
-¿Cuáles son los nombres y apellidos de los estudiantes con dirección en el estado de Wisconsin?
-¿Cuál es el código postal de la dirección donde vive la maestra de nombre "Lyla"?
-¿Cuáles son las direcciones de correo electrónico de los maestros cuya dirección tiene el código postal "918"?
-Enumere el nombre, el apellido, los detalles y la descripción de la habilidad correspondiente de cada ingeniero.
-Para todas las fallas de diferentes partes, ¿cuáles son todas las descripciones de las habilidades necesarias para solucionarlas? Enumere el nombre de las fallas y la descripción de la habilidad.
-¿Cuáles son todas las descripciones de fallas y el estado de todas las fallas registradas en los registros?
 ¿Cuáles son los apellidos distintos de todos los ingenieros?
 ¿Cuántos códigos de estado de falla se registran en la tabla de piezas del registro de fallas?
 ¿Qué ingenieros nunca han visitado para mantener los activos? Indique el nombre y apellido del ingeniero.
 Enumere la identificación del activo, los detalles, la marca y el modelo de cada activo.
-¿Qué personal se ha puesto en contacto con qué ingenieros? Indique el nombre del personal y el nombre y apellido del ingeniero.
 ¿Cuáles son todos los distintos modelos de activos?
 ¿Qué activos no incurrieron en ningún registro de fallas? Enumere el modelo de activo.
 enumerar las autoridades locales y los servicios proporcionados por todas las estaciones.
 Encuentra el número y horario del tren que va de Chennai a Guruvayur.
-Encuentre nombres y horarios de trenes que pasan por las estaciones de la autoridad local de Chiltern.
-¿Cuál es el nombre y apellido del profesor del departamento de biología?
-¿Cuáles son el nombre y apellido de todos los profesores de biología?
-¿Cuáles son los nombres y la fecha de nacimiento de los profesores que imparten el curso ACCT-211?
-¿Cuáles son los nombres y fechas de nacimiento de los profesores a cargo de ACCT-211?
 ¿Cuál es el código de la escuela a la que pertenece el departamento de contabilidad?
 ¿Cuál es el código escolar del departamento de contabilidad?
 ¿Cuántos créditos tiene el curso CIS-220 y cuál es su descripción?
@@ -1195,71 +684,21 @@ Encuentre nombres y horarios de trenes que pasan por las estaciones de la autori
 ¿Dónde está el departamento de historia?
 ¿Encontrar la descripción y crédito del curso QM-261?
 ¿Cuál es la descripción del curso y la cantidad de créditos para QM-261?
-¿Cuál es el nombre de cada estudiante matriculado en la clase ACCT-211?
-¿Cuáles son los nombres de todos los estudiantes del curso ACCT-211?
-¿Cuál es el nombre de los estudiantes matriculados en la clase ACCT-211 y obtuvieron la calificación C?
-¿Cuáles son los nombres de todos los estudiantes que tomaron ACCT-211 y recibieron una C?
 Lista los códigos de todos los cursos que se realizan en la sala KLR209.
 ¿Cuáles son los códigos de todos los cursos que se encuentran en la sala KLR209?
-¿Cuál es el nombre de los estudiantes que obtuvieron la calificación C en cualquier clase?
-¿Cuáles son los nombres de todos los estudiantes que obtuvieron una calificación C en una clase?
-¿Cuál es el apellido y cargo del profesor del departamento de historia?
-¿Cuáles son el apellido y el cargo de todos los profesores de historia?
-¿Cuál es el nombre del departamento y la oficina del profesor cuyo apellido es Heffington?
-¿Cuál es el nombre del departamento y la oficina del profesor con el apellido Heffington?
-Encuentre el apellido y fecha de contratación del profesor que se encuentra en el despacho DRE 102.
-¿Cuál es el apellido del profesor cuya oficina está ubicada en DRE 102 y cuándo fue contratado?
-¿Cuál es el código del curso que tomó el estudiante de apellido Smithson?
-¿Cuáles son los códigos de curso para cada clase que tomó el estudiante de apellido Smithson?
-¿Cuáles son la descripción y créditos del curso que tomó el estudiante cuyo apellido es Smithson?
-¿Cuántos créditos tiene el curso que tomó el estudiante de apellido Smithson y cuál es su descripción?
 Encuentre el nombre y el promedio de los estudiantes cuyo promedio es inferior al promedio de todos los estudiantes.
 ¿Cuál es el nombre y el GPA de cada estudiante que tiene un GPA inferior al promedio?
-Busque el nombre y la oficina del profesor que está en el departamento de historia y tiene un doctorado. grado.
-¿Cuáles son los nombres y el cargo de los profesores que están en el departamento de historia y tienen un doctorado?
-Encuentre los nombres de todos los instructores que han impartido algún curso y el código del curso.
-¿Cuáles son los nombres de todos los profesores que han impartido un curso y los códigos de curso correspondientes?
-Encuentre los nombres de todos los instructores que han impartido algún curso y la descripción del curso.
-¿Cuáles son los nombres de todos los profesores que han impartido un curso y las descripciones correspondientes?
-Encuentre los nombres y oficinas de todos los instructores que han impartido algún curso y también encuentre la descripción del curso.
-¿Cuáles son los nombres y la ubicación de las oficinas de todos los profesores que han impartido algún curso?
-Encuentre los nombres y oficinas de todos los instructores que han impartido algún curso y la descripción del curso y el nombre del departamento.
-¿Cuáles son los nombres, ubicaciones de las oficinas y departamentos de todos los instructores, y también cuáles son las descripciones de los cursos que imparten?
-Encuentre los nombres de todos los estudiantes que tomaron algún curso y la descripción del curso.
-¿Cuáles son los nombres de todos los estudiantes que tomaron una clase y las descripciones de los cursos correspondientes?
-Encuentre los nombres de todos los estudiantes que tomaron algún curso y obtuvieron A o C.
-¿Cuáles son los nombres de todos los estudiantes que tomaron un curso y recibieron una A o C?
-Encuentre los nombres de todos los profesores del departamento de Contabilidad que imparten algún curso y el aula.
-¿Cuáles son los nombres de todos los profesores de Contabilidad que imparten clases y cuáles son las aulas de los cursos que imparten?
-Encuentre los nombres y el título de todos los profesores que imparten alguna clase de Información informática. Departamento de sistemas.
-¿Cuáles son los diferentes nombres y el título más alto obtenido por los profesores que enseñan en el departamento de Sistemas de Información Informática?
-¿Cuál es el apellido del estudiante que obtuvo una calificación A en la clase con el código 10018?
-¿Cuál es el apellido del estudiante que recibió una A en la clase con el código 10018?
-Encuentre el nombre y el cargo del profesor de historia que no obtuvo un doctorado. grado.
-¿Cuáles son los nombres y cargos de los profesores de historia que no tienen doctorados?
-Busque el nombre del departamento que ofrece la clase cuya descripción tiene la palabra "Estadísticas".
-¿Cómo se llama el departamento que ofrece un curso que tiene una descripción que incluye la palabra "Estadística"?
-¿Cuál es el nombre del estudiante cuyo apellido comienza con la letra S y está tomando la clase ACCT-211?
-¿Cuál es el nombre del estudiante cuyo apellido comienza con la letra S y está tomando ACCT-211?
 ¿Cuáles son los tipos y países de las competiciones?
 ¿Cuáles son los tipos de cada competición y en qué países se encuentran?
 ¿Cuáles son los distintos años en los que el tipo de competición no es "Torneo"?
 ¿Cuáles son los diferentes años para todas las competiciones que no son del mismo tipo que un torneo?
-Por favor muestre los nombres y los jugadores de los clubes.
-¿Cuáles son los nombres y jugadores de todos los clubes?
-Muestra los nombres de los clubes que tienen jugadores con la posición "Derecha".
-¿Cómo se llaman los clubes que tienen jugadores en la posición de “Derecha”?
 Enumere los nombres de los clubes que no tienen jugadores.
 ¿Cómo se llaman todos los clubes que no tienen jugadores?
 ¿Cómo se llaman los jugadores que obtienen más puntos que el promedio?
 ¿Cuáles son los nombres de todos los jugadores que obtuvieron más puntos que el promedio?
 Encuentre las cantidades de componentes y los nombres de todos los muebles que tienen más de 10 componentes.
-Encuentra los nombres de los muebles cuyos precios son inferiores al precio más alto.
 Dame el nombre y año de apertura de los fabricantes que tienen menos de 10 fábricas o más de 10 tiendas.
-Dame los nombres y precios de los muebles que fabrican algunas empresas.
 Encuentre las cuotas de mercado y los nombres de los muebles que ninguna empresa produce en nuestros registros.
-Muestre el nombre y el nombre del departamento de cada empleado.
-¿Cuáles son el nombre y el nombre del departamento de todos los empleados?
 Indique el nombre completo (nombre y apellido) y el salario de aquellos empleados que ganan menos de 6000.
 ¿Cuáles son los nombres completos y los salarios de los empleados que ganan menos de 6000?
 Muestre el nombre y el número de departamento de todos los empleados cuyo apellido sea "McEwen".
@@ -1296,10 +735,6 @@ muestra el título del trabajo, la diferencia entre los salarios mínimo y máxi
 ¿Cuáles son los títulos de los puestos y el rango de salarios para trabajos con un salario máximo entre 12000 y 18000?
 muestra los correos electrónicos de los empleados que no tienen porcentaje de comisión y salario dentro del rango de 7000 a 12000 y trabajan en ese departamento cuyo número es 50.
 ¿Cuáles son los correos electrónicos de los empleados con comisión nula, salario entre 7000 y 12000 y que trabajan en el departamento 50?
-Encuentre el empleado con identificación y nombre del país donde trabaja actualmente.
-¿Cuáles son todas las identificaciones de los empleados y los nombres de los países en los que trabajan?
-¿Puede devolver toda la información detallada de los trabajos realizados por cualquiera de los empleados que actualmente ganan un salario igual o superior a 12000?
-¿Cuál es toda la información del historial laboral realizada por los empleados que ganan un salario mayor o igual a 12000?
 ¿Cuál es el nombre completo (nombre y apellido) de los empleados que reciben más salario que el empleado cuya identificación es 163?
 Proporcione los nombres completos de los empleados que ganan más que el empleado con identificación 163.
 Encuentre el nombre, apellido y la identificación del departamento de aquellos empleados que ganan dicha cantidad de salario, que es el salario más pequeño de cualquiera de los departamentos.
@@ -1308,16 +743,8 @@ Encuentre la identificación de empleado de todos los empleados que ganan más q
 ¿Cuáles son las identificaciones de los empleados que ganan más que el promedio?
 muestra la identificación del empleado y el salario de todos los empleados que reportan a Payam (nombre).
 ¿Cuáles son las identificaciones de los empleados que reportan a Payam y cuáles son sus salarios?
-busque el nombre de todos los departamentos que realmente tienen uno o más empleados asignados.
-¿Cuáles son los nombres de los departamentos que tienen al menos un empleado?
-Obtenga los detalles de los empleados que administran un departamento.
-¿Cuál es toda la información sobre los empleados que son gerentes?
 visualizar toda la información sobre el departamento de Marketing.
 ¿Cuál es toda la información sobre el departamento de Marketing?
-muestra la identificación del empleado y el nombre del trabajo para todos esos trabajos en el departamento 80.
-¿Cuáles son las identificaciones de los empleados y los títulos de trabajo de los empleados del departamento 80?
-¿Cuál es el nombre y la identificación del trabajo de todos los empleados del departamento de Finanzas?
-Proporcione el nombre y la identificación del trabajo de todos los empleados del departamento de Finanzas.
 muestra toda la información de los empleados cuyo salario está dentro del rango del salario más pequeño y 2500.
 ¿Cuál es toda la información sobre empleados con salarios superiores al mínimo y inferiores a 2500?
 Encuentre las identificaciones de los empleados que no trabajan en aquellos departamentos donde trabajan algunos empleados cuya identificación de gerente está dentro del rango 100 y 200.
@@ -1336,34 +763,14 @@ muestra el número de empleado, el nombre (nombre y apellido) y el puesto de tra
 ¿Cuáles son los identificadores de empleado, los nombres completos y los identificadores de trabajo de los empleados que ganan más que el empleado con mayores ingresos con el título PU_MAN?
 visualizar toda la información de aquellos empleados que no tuvieron ningún trabajo en el pasado.
 ¿Cuál es toda la información sobre los empleados que nunca han tenido un trabajo en el pasado?
-muestra el nombre y apellido, departamento, ciudad y provincia del estado de cada empleado.
-¿Cuáles son los nombres completos, departamentos, ciudades y provincias estatales de cada empleado?
-muestra aquellos empleados que contienen una letra z en su nombre y también muestra su apellido y ciudad.
-¿Cuáles son los nombres completos y las ciudades de los empleados que tienen la letra Z en su nombre?
-muestra el nombre del departamento, la ciudad y la provincia del estado para cada departamento.
-¿Cuáles son los nombres de los departamentos, ciudades y provincias estatales de cada departamento?
-muestra el nombre completo (nombre y apellido) del empleado con identificación y nombre del país donde trabaja actualmente.
-¿Cuáles son los nombres completos, identificaciones de cada empleado y el nombre del país en el que se encuentran?
-muestra el nombre completo (nombre y apellido) y el salario de los empleados que trabajan en cualquier departamento ubicado en Londres.
-¿Cuáles son los nombres completos y los salarios de los empleados que trabajan en la ciudad de Londres?
 Encuentra los nombres de todas las canciones en inglés.
 ¿Cuáles son los nombres de todas las canciones en inglés?
 ¿Cuáles son los id de las canciones cuyo formato es mp3?
 ¿Cuáles son los ID de todos los archivos en formato mp3?
-Indique el nombre y el país de origen de todos los cantantes que hayan producido canciones con una calificación superior a 9.
-¿Cuáles son los diferentes nombres y países de origen de todos los artistas cuyas calificaciones de canciones son superiores a 9?
-Enumere el tamaño y formato de archivo de todas las canciones que tengan una resolución inferior a 800.
-¿Cuáles son los tamaños y formatos de archivo para todas las canciones con una resolución inferior a 800?
-¿Cuál es el país de origen de la artista que es mujer y produjo una canción en bengalí?
-¿De qué países son las artistas femeninas que cantaron en bengalí?
 Encuentra los nombres distintos de todas las canciones que tienen una resolución más alta que algunas canciones en inglés.
 ¿Cuáles son los diferentes nombres de todas las canciones que tienen una resolución más alta que las canciones en inglés?
 ¿Cuáles son los nombres de todas las canciones que tienen una calificación más baja que alguna canción del género blues?
 ¿Cuáles son los nombres de las canciones que tienen una calificación más baja que al menos una canción de blues?
-¿Cuál es el nombre y país de origen del artista que lanzó una canción que tiene "amor" en su título?
-¿Cuáles son los nombres de los artistas que lanzaron una canción que tiene la palabra amor en su título y de dónde son los artistas?
-Indique el nombre y el género de todos los artistas que lanzaron canciones en marzo.
-¿Cuáles son los nombres y géneros de todos los artistas que lanzaron canciones en el mes de marzo?
 ¿Cuáles son los nombres de los artistas masculinos y del Reino Unido?
 ¿Cuáles son los nombres de todos los artistas británicos masculinos?
 Encuentra los nombres de canciones cuyo género sea moderno o el idioma sea el inglés.
@@ -1374,23 +781,17 @@ Encuentra los nombres de canciones cuyo género sea moderno o el idioma sea el i
 ¿Cuál es el id de cada canción que tiene una resolución superior a la de una canción con una calificación inferior a 8?
 ¿Cuáles son los identificadores de las canciones cuya resolución es superior a la resolución promedio de las canciones del género moderno?
 ¿Cuáles son los identificadores de todas las canciones que tienen una resolución más alta que la resolución promedio en el género moderno?
-¿Cuáles son los nombres y apellidos de los jugadores que participaron en el All Star Game de 1998?
-Indique el nombre y apellido de los jugadores que participaron en el All Star Game en 1998.
 Encuentre el nombre y apellido de todos los jugadores que tienen un registro de defunción vacío.
 ¿Cuáles son el nombre y apellido de los jugadores cuyo registro de defunción está vacío?
 Enumere el nombre y apellido de los jugadores que tengan un peso superior a 220 o una altura inferior a 75.
 ¿Cuáles son el nombre y apellido de los jugadores que pesan más de 220 o miden menos de 75?
 Enumere la identificación, la combinación de colores y el nombre de todas las fotos.
 ¿Cuáles son el nombre, la altura y la prominencia de las montañas que no pertenecen a la cordillera 'Aberdare Range'?
-¿Cuáles son el id y el nombre de las fotos de las montañas?
-¿Cómo se llaman las fotografías tomadas con la marca de lentes 'Sigma' u 'Olympus'?
 Enumere los nombres de las lentes de la cámara que contienen la subcadena "Digital".
 Encuentre los nombres de los canales que no son propiedad de CCTV.
 ¿Qué canales no son propiedad de CCTV? Dame los nombres de los canales.
 Indique el nombre, origen y propietario de cada programa.
 ¿Cuáles son el nombre, origen y propietario de cada programa?
-Encuentra los nombres de los canales que se emiten por la mañana.
-¿Qué canales transmiten por la mañana? Dame los nombres de los canales.
 Encuentre los nombres de programas cuyo origen no está en Beijing.
 ¿Qué orígenes de programas no son "Beijing"? Dame los nombres de los programas.
 ¿Cuáles son los nombres de los canales propiedad de CCTV o HBS?
@@ -1415,24 +816,6 @@ Encuentre la última fecha de inicio de sesión de los estudiantes cuyo apellido
 Encuentre la cantidad de estudiantes que tienen la palabra "hijo" en sus nombres personales.
 Enumere todos los nombres de los sujetos.
 ¿Cuáles son los nombres de todos los sujetos?
-Busque el nombre de inicio de sesión del autor del curso que imparte el curso con el nombre "base de datos avanzada".
-¿Qué autor del curso imparte el curso "base de datos avanzada"? Dame su nombre de usuario.
-Encuentre las direcciones de los autores del curso que imparten el curso con el nombre "sistema operativo" o "estructura de datos".
-¿Cuáles son las direcciones de los autores del curso que imparten el curso "sistema operativo" o "estructura de datos"?
-Encuentra los nombres de los cursos impartidos por el tutor que tiene nombre personal "Julio".
-¿Cómo se llaman los cursos que imparte el tutor cuyo nombre personal es "Julio"?
-Busque los nombres y descripciones de los cursos que pertenecen a la materia denominada "Ciencias de la Computación".
-¿Cuáles son los nombres y descripciones de todos los cursos de la asignatura "Ciencias de la Computación"?
-¿Cuál es la fecha de inscripción al curso denominado "Español"?
-Encuentra la fecha de inscripción al curso de "español".
-¿Cuáles son las fechas de inscripción de todas las pruebas que tienen resultado "Aprobado"?
-Encuentre la fecha de inscripción para todas las pruebas que tengan resultado "Aprobado".
-¿Cuáles son las fechas de finalización de todas las pruebas que tienen resultado "Fallo"?
-Devuelve la fecha de finalización de todas las pruebas que tienen un resultado "Fallo".
-Indique las fechas de inscripción y finalización del estudiante con nombre personal "Karson".
-¿En qué fechas se matriculó y completó los cursos el estudiante cuyo nombre personal es "Karson"?
-Indique las fechas de inscripción y finalización del estudiante con el apellido "Zieme" y el nombre personal "Bernie".
-¿En qué fechas se matriculó y completó los cursos el estudiante de apellido "Zieme" y nombre personal "Bernie"?
 Entre todas las reclamaciones, ¿cuáles tienen un monto reclamado mayor que el promedio? Indique la fecha en que se realizó el reclamo y la fecha en que se resolvió.
 Dame la fecha de reclamación, la fecha de liquidación de todas las reclamaciones cuyo importe reclamado sea superior al promedio.
 Entre todas las reclamaciones, ¿qué acuerdos tienen un monto reclamado que no supera el promedio? Indique la fecha de inicio del reclamo.
@@ -1443,54 +826,22 @@ Dígame la fecha de reclamo y la fecha de liquidación para cada caso de liquida
 Devuelve los distintos datos del cliente.
 ¿Qué pagos se procesaron con Visa? Indique el ID de pago, la fecha y el monto.
 Dame el ID de pago, la fecha y el monto de todos los pagos procesados con Visa.
-¿Cuáles son los nombres de los pacientes que programaron una cita?
-Enumere los nombres de los pacientes que han concertado citas.
-Indique el nombre de los médicos que tomaron alguna cita.
-¿Cuáles son los nombres de todos los médicos que tomaron citas?
-Encuentre los nombres de todos los médicos y los nombres de sus principales departamentos afiliados.
-¿Cuáles son el nombre y el nombre del departamento principalmente afiliado de cada médico?
-¿Encontrar el nombre del medicamento utilizado en el paciente que se queda en la habitación 111?
-¿Cómo se llama el medicamento que se le administró al paciente que se hospeda en la habitación 111?
 ¿Cuáles son los códigos de bloqueo únicos que tienen las habitaciones disponibles?
 Dime los distintos códigos de bloque donde están disponibles algunas habitaciones.
-¿Cómo se llaman los médicos que prescriben el medicamento Thesisin?
-Enumere los nombres de todos los médicos que recetan Thesisin como medicamento.
-Encuentre el nombre y cargo de los médicos que prescriben algún medicamento cuya marca es X?
-¿Qué médicos prescriben un medicamento de marca X? Dígame el nombre y cargo de esos médicos.
 Busque el nombre de los médicos cuyo título de puesto contiene la palabra "senior".
 ¿Cuáles son los nombres de los médicos que tienen "senior" en sus títulos?
-Encuentre los nombres de todos los pacientes que están en tratamiento y se alojan en la habitación 111.
-¿Cómo se llaman los pacientes que se alojan en la habitación 111 y están en tratamiento?
-Encuentre los nombres de las enfermeras que están atendiendo un tratamiento.
-¿Qué enfermeras están a cargo de los pacientes en tratamiento?
 Enumere las identificaciones de los empleados de los médicos junto con las identificaciones de sus departamentos de afiliación principal.
 ¿Cuáles son la identificación de empleado de cada médico y la identificación de departamento a la que está afiliado principalmente?
-Enumere los nombres de los departamentos a los que están afiliados principalmente algunos médicos.
-¿Cuáles son los nombres de los departamentos que tienen principalmente médicos afiliados?
 ¿Qué enfermeras están de guardia en el piso del bloque 1 y en el código de bloque 1? Dime sus nombres.
 Encuentre las identificaciones de las enfermeras que están de guardia en el piso del bloque 1 y el código del bloque 1.
 ¿Cuáles son el costo más alto, el costo más bajo y el costo promedio de los procedimientos?
 Dígame el costo más alto, más bajo y promedio de los procedimientos.
-Encuentre médicos capacitados en un procedimiento que cuesta más de 5000.
-¿Qué médicos están capacitados en procedimientos que cuestan más de 5000?
-Encuentre los nombres de los procedimientos en los que se capacitó el médico John Wen.
-¿Cuáles son los nombres de los procedimientos en los que se formó el médico John Wen?
-Busque el nombre de los médicos afiliados al departamento de Cirugía o Psiquiatría.
-¿Qué médicos están afiliados al departamento de Cirugía o Psiquiatría? Dame sus nombres.
-Encuentre los nombres de las enfermeras que están de guardia.
-¿Cuáles son los nombres distintos de las enfermeras de guardia?
 ¿Cuáles son el tipo y nacionalidad de los barcos?
 ¿Cuáles son los tipos y nacionalidades de cada barco?
 Indique el nombre de los barcos cuya nacionalidad no sea "Estados Unidos".
 ¿Cómo se llaman los barcos que no son de Estados Unidos?
 Mostrar el nombre de los barcos cuya nacionalidad sea Estados Unidos o Reino Unido.
 ¿Cuáles son los nombres de los barcos que son de EE. UU. o del Reino Unido?
-Muestra códigos y destinos de misiones y nombres de barcos involucrados.
-¿Cuáles son los códigos de misión, destinos y nombres de los barcos involucrados?
-Muestra los nombres de los barcos involucrados en una misión lanzada después de 1928.
-¿Cuáles son los nombres de los barcos que participaron en una misión lanzada después de 1928?
-Mostrar el destino distinto de las misiones que involucran barcos con nacionalidad "Estados Unidos"
-¿Cuáles son los diferentes destinos de la misión en la que participaron barcos de Estados Unidos?
 Enumere el nombre de los barcos que no participan en ninguna misión.
 ¿Cuáles son los nombres de los barcos que no participan en ninguna misión?
 Encuentra los apellidos de los estudiantes que estudian en la habitación 111.
@@ -1509,10 +860,6 @@ Encuentra el grado que estudia en la habitación 105.
 Encuentra las aulas en las que se estudia 4º grado.
 ¿Qué aulas utiliza el quinto grado?
 Muéstrame las aulas que usa el grado 5.
-Encuentra los apellidos de los profesores que imparten clases de quinto grado.
-¿Cuáles son los apellidos de los profesores que imparten el grado 5?
-Encuentre los nombres de los maestros que enseñan primer grado.
-¿Cuáles son los nombres de los profesores que enseñan el primer grado?
 Encuentra los nombres de todos los profesores que enseñan en el aula 110.
 ¿Qué profesores enseñan en el aula 110? Dame sus nombres.
 Encuentra los apellidos de los profesores que enseñan en el aula 109.
@@ -1521,20 +868,8 @@ Informar el nombre y apellido de todos los docentes.
 ¿Cuáles son el nombre y apellido de todos los profesores?
 Informar el nombre y apellido de todos los estudiantes.
 Muestre el nombre y apellido de cada estudiante.
-Encuentra todos los estudiantes impartidos por OTHA MOYER. Genere los nombres y apellidos de los estudiantes.
-¿Qué estudiantes estudian con la maestra llamada OTHA MOYER? Dame el nombre y apellido de los estudiantes.
-Encuentra todos los estudiantes enseñados por MARROTTE KIRK. Generar nombres y apellidos de los estudiantes.
-¿Cuáles son los nombres y apellidos de los alumnos de MARROTTE KIRK?
-Encuentra el nombre y apellido de todos los profesores que imparten clases a EVELINA BROMLEY.
-¿Qué profesores enseñan a la estudiante llamada EVELINA BROMLEY? Dame el nombre y apellido de los profesores.
-Encuentra los apellidos de todos los profesores que imparten GELL TAMI.
-¿Cuales son los apellidos de los profesores que dan clases a la alumna llamada GELL TAMI?
-Encuentra los apellidos de los estudiantes de tercer grado que no son enseñados por COVIN JEROME.
-¿A qué alumnos de tercer grado no les enseña el maestro COVIN JEROME? Dame los apellidos de los estudiantes.
 ¿Cuáles son las sedes e industrias de todas las empresas?
 ¿Mostrar los nombres de empresas del sector bancario o minorista?
-Mostrar los nombres de empresas y de empleados.
-Muestra los nombres de los empleados que trabajan para empresas con ventas superiores a 200.
 Enumere los nombres de las personas que no son empleadas de ninguna empresa.
 Enumere el director distintivo de todas las películas.
 ¿Cuáles son los diferentes directores de cine?
@@ -1542,18 +877,10 @@ Enumere el director distintivo de todas las películas.
 Devuelva las estimaciones mínimas y máximas de todos los mercados cinematográficos.
 ¿Cuáles son los tipos de estimaciones del mercado cinematográfico en el año 1995?
 Devuelva los tipos de estimaciones del mercado cinematográfico en 1995.
-Muestre los títulos de las películas y los tipos de estimaciones de mercado.
-¿Cuáles son los títulos de las películas y los tipos correspondientes de estimaciones de mercado?
-Mostrar el director distintivo de películas con estimación de mercado en el año 1995.
-¿Quiénes son los diferentes directores de películas que tuvieron estimación de mercado en 1995?
-Enumere los países y los años de estimaciones del mercado cinematográfico.
-¿Cuáles son los países de los mercados y sus correspondientes años de estimación del mercado?
 Enumere el título de las películas que no tienen ninguna estimación de mercado.
 ¿Cuáles son los títulos de las películas que no tienen estimación del mercado cinematográfico?
 Encuentre los títulos y estudios de las películas producidas por algunos estudios cinematográficos que contenían la palabra "Universal".
 ¿Cuáles son los títulos y estudios de las películas que han sido producidas por un estudio cuyo nombre contiene "Universal"?
-¿Cuáles son los títulos y directores de las películas que nunca se presentaron en China?
-Devolver los títulos y directores de películas que nunca estuvieron en el mercado de China.
 Mostrar todas las fechas del calendario y los números de días.
 ¿Cuáles son todas las fechas del calendario y los números de días?
 Enumere todos los códigos de tipos de documentos y los nombres de tipos de documentos.
@@ -1564,10 +891,6 @@ Dame el nombre y descripción del código de tipo de documento RV.
 Busque el código del tipo de documento "Papel".
 ¿Cuál es la fecha en que se almacenó el documento "Casarse CV"?
 ¿Cuándo se almacenó el documento denominado "Marry CV"? Dame la fecha.
-¿Cuál es el día Número y fecha de todos los documentos?
-Devuelve el número de día y la fecha almacenada de todos los documentos.
-¿Cuál es el nombre del tipo de documento para el documento con el nombre "Cómo leer un libro"?
-Busque el nombre del tipo de documento del documento denominado "Cómo leer un libro".
 Enumere todos los códigos de ubicación y los nombres de ubicación.
 ¿Cuáles son todos los códigos de ubicación y nombres de ubicación?
 ¿Cuáles son el nombre y la descripción del código de ubicación x?
@@ -1586,22 +909,10 @@ Muestre el nombre, código de función y fecha de nacimiento del empleado con el
 Muestra la identificación del empleado llamado Ebba.
 Muestra los nombres de todos los empleados con rol "RR.HH.".
 ¿Qué empleados tienen el rol con el código "HR"? Encuentra sus nombres.
-¿Cuál es el nombre y la descripción del puesto del empleado llamado Ebba?
-Muestra el nombre y descripción del rol desempeñado por el empleado llamado Ebba.
-Muestra los nombres de los empleados con el rol de Editor.
-Busque los nombres de todos los empleados cuyo nombre de función es "Editor".
-Muestre las identificaciones de empleados de todos los empleados con el nombre de función "Recursos humanos" o "Gerente".
-¿Cuáles son los ID de los empleados cuyo nombre de función es "Recursos Humanos" o "Gerente"?
 ¿Cuáles son los diferentes códigos de ubicación para documentos?
 Dame todos los códigos de ubicación distintos de los documentos.
-Muestra el nombre de la ubicación del documento "Robin CV".
-¿Cuál es el nombre de la ubicación del documento "Robin CV"?
 Muestra el código de ubicación, la fecha de inicio y los datos de finalización en esa ubicación para todos los documentos.
 ¿Cuáles son el código de ubicación de cada documento y los datos de fecha de inicio y finalización en esa ubicación?
-¿Cuál es "la fecha en la ubicación desde" y "la fecha en la ubicación hasta" para el documento con el nombre "Robin CV"?
-Busque la fecha de inicio y los datos de finalización en la ubicación del documento denominado "Robin CV".
-¿Cómo se llaman los empleados que autorizaron la destrucción y los empleados que destruyeron los documentos correspondientes?
-Enumere los nombres de los empleados que autorizaron la destrucción de documentos y de los empleados que destruyeron los documentos correspondientes.
 Muestra las identificaciones de todos los empleados que han autorizado la destrucción.
 ¿Cuáles son las identificaciones de todos los empleados que autorizan la destrucción de documentos?
 Muestra los identificadores de todos los empleados que han destruido un documento.
@@ -1610,16 +921,6 @@ Muestra los identificadores de todos los empleados que han destruido un document
 Dame el nombre de cada club.
 ¿Cuáles son los nombres de todos los estudiantes?
 Encuentre el nombre de cada estudiante.
-Encuentra los apellidos de los miembros del club "Bootup Baltimore".
-¿Quiénes son los miembros del club llamado "Bootup Baltimore"? Dame sus apellidos.
-¿Quiénes son los miembros del club llamado "Hopkins Student Enterprises"? Mostrar el apellido.
-Devuelve el apellido de los miembros del club llamado "Hopkins Student Enterprises".
-Encuentra a todas las socias del club "Bootup Baltimore". Muestra el nombre y apellido.
-Dame el nombre y apellido de todas las socias del club "Bootup Baltimore".
-Encuentra todos los miembros masculinos del club "Hopkins Student Enterprises". Muestra el nombre y apellido.
-¿Cuáles son el nombre y apellido de cada miembro masculino del club "Hopkins Student Enterprises"?
-Encuentra a todos los miembros de "Bootup Baltimore" cuya especialidad es "600". Muestra el nombre y apellido.
-¿Qué miembros de "Bootup Baltimore" son los principales en "600"? Dame sus nombres y apellidos.
 ¿Cuál es la descripción del club llamado "Club de Tenis"?
 Encuentra la descripción del club llamado "Club de Tenis".
 Encuentra la descripción del club "Pen and Paper Gaming".
@@ -1632,44 +933,20 @@ Encuentre la ubicación del club "Pen and Paper Gaming".
 Dime la ubicación del club "Hopkins Student Enterprises".
 Encuentra el nombre de todos los clubes en "AKW".
 ¿Qué clubes se encuentran en "AKW"? Devuelve los nombres de los clubes.
-¿Cuáles son el nombre y apellido del presidente del club "Bootup Baltimore"?
-¿Quién es el presidente del club "Bootup Baltimore"? Dame el nombre y apellido.
-¿Quién es el "CTO" del club "Hopkins Student Enterprises"? Muestra el nombre y apellido.
-¿Encontrar el nombre y apellido del "CTO" del club "Hopkins Student Enterprises"?
-Encuentre los nombres de todos los clubes que tienen al menos un miembro de la ciudad con el código de ciudad "BAL".
-¿Qué clubes tienen uno o más socios de la ciudad con código "BAL"? Dame los nombres de los clubes.
-Encuentre los nombres de los clubes que tienen al menos un miembro de la ciudad con el código de ciudad "HOU".
-¿Qué clubes tienen uno o más socios de la ciudad con código "HOU"? Dame los nombres de los clubes.
-Enumere los clubes que tienen a "Davis Steven" como miembro.
-¿Cuáles son los nombres de los clubes que tienen a "Davis Steven" como miembro?
-Enumere los clubes que tienen al menos un socio con asesor "1121".
-¿Qué clubes tienen uno o más socios cuyo asesor es "1121"?
-Conozca las fechas de envío de los documentos con un monto de subvención superior a 5000 otorgados por tipo de organización descrito
-¿Cuáles son las fechas de envío de todos los documentos que tienen un monto de subvención superior a 5000 y están relacionados con la investigación?
-¿Cuáles son las fechas de respuesta recibida para los documentos calificados como 'Regulares' o otorgados con más de 100?
-¿Cuál es la fecha de recepción de respuesta del documento calificado como Regular al que se le otorgaron más de 100 dólares?
 Enumere los detalles de los proyectos que no contrataron personal para el rol de investigador.
 ¿Cuáles son los detalles de todos los proyectos que no contrataron personal para una función de investigación?
 ¿Cuándo comienza a trabajar todo el personal del rol de investigador y cuándo deja de trabajar?
 ¿Cuándo empezaron y dejaron de trabajar los investigadores?
-Enumere los detalles de los proyectos con el resultado de la investigación descrito con la subcadena 'Publicado'.
-¿Cuáles son los detalles del proyecto cuya investigación se ha publicado?
 Cuál es la descripción completa del rol del investigador.
 ¿Cuál es la descripción completa del trabajo de un investigador?
 ¿Qué proyectos no tienen resultados? Enumere los detalles del proyecto.
 ¿Cuáles son los detalles del proyecto sin resultados?
 ¿Qué tipo de documento se describe con el prefijo 'Inicial'?
 ¿Cuál es el tipo de documento cuya descripción comienza con la palabra 'Inicial'?
-Encuentre la descripción del tipo de organización de la organización detallada como 'quo'.
-¿Cuál es el tipo de descripción de la organización cuyo detalle figura como 'quo'?
-¿Cuál es la descripción del resultado del proyecto cuyo detalle es 'sint'?
-¿Cuál es la descripción de los resultados cuyo detalle del proyecto es 'sint'?
 Enumere los detalles del proyecto de los proyectos lanzados por la organización.
 ¿Cuáles son los detalles de los proyectos que lanzó la organización con más proyectos?
 ¿Cuáles son las funciones del personal que
 ¿Qué roles desempeñaron los miembros del personal entre '2003-04-19 15:06:20' y '2016-03-15 00:33:18'?
-¿Cuáles son las descripciones de todos los resultados del proyecto?
-Enumere la descripción de los resultados de todos los proyectos.
 ¿Quién es la persona mayor?
 ¿Cómo se llama la persona que es mayor?
 ¿Quién es la persona de mayor edad cuyo trabajo es estudiante?
@@ -1680,46 +957,16 @@ Enumere la descripción de los resultados de todos los proyectos.
 ¿Cuál es la edad del médico llamado Zach?
 ¿Quién es la persona cuya edad es menor de 30 años?
 ¿Cómo se llama la persona que tiene menos de 30 años?
-Encuentra el nombre y la edad de la persona que es amiga de Dan o Alice.
-¿Cuáles son los diferentes nombres y edades de cada amigo de Dan o Alice?
-¿Quiénes son los amigos de Bob?
-¿Quiénes son los amigos de Bob?
-Encuentra el nombre de las personas que son amigos de Bob.
-¿Cuáles son los nombres de todos los amigos de Bob?
-Encuentra los nombres de mujeres que son amigas de Zach.
-¿Cuáles son los nombres de todas las mujeres que son amigas de Zach?
-Encuentra a las amigas de Alice.
-¿Cuáles son todas las amigas de Alice que son mujeres?
-¿Encontrar al amigo de Alice cuyo trabajo es médico?
-¿Quiénes son los amigos de Alice que son médicos?
-¿Quién tiene un amigo que sea de la ciudad de Nueva York?
-¿Cómo se llaman todos los amigos que son de Nueva York?
-¿Quién tiene amigos que son más jóvenes que la edad promedio?
-¿Cuáles son los diferentes nombres de amigos que son más jóvenes que la edad promedio de un amigo?
-¿Quién tiene amigos mayores que la edad promedio? Imprime sus amigos y sus edades también.
-¿Dónde están los nombres, amigos y edades de todas las personas que son mayores que la edad promedio de una persona?
 ¿Quién es el amigo de Zach con la relación de más años?
 ¿Qué amigo de Zach tiene la amistad más duradera?
-¿Cuál es la edad del amigo de Zach con el año de relación más largo?
-¿Cuáles son las edades de todos los amigos de Zach que tienen la relación más larga?
 Encuentra el nombre de las personas que son amigas de Alice durante los años más cortos.
 ¿Cuáles son los nombres de todas las personas que son amigas de Alice durante el menor tiempo posible?
-Encuentre el nombre, la edad y el puesto de trabajo de las personas que son amigas de Alice durante más años.
-¿Cuáles son los nombres, edades y trabajos de todas las personas que son amigas de Alice durante más tiempo?
-Encuentra los amigos de los amigos de Alice.
-¿Cuáles son los nombres de todos los amigos de los amigos de Alice?
 ¿Cuáles son los nombres y países de los miembros?
 Muestra los nombres de los miembros cuyo país es "Estados Unidos" o "Canadá".
 Muestre los nombres de los líderes y las ubicaciones de las universidades.
-Muestre los nombres de los miembros y los nombres de las universidades a las que asisten.
-Muestre los distintos nombres de los líderes de las universidades asociadas con miembros del país "Canadá".
-Muestra los nombres de los integrantes y los temas de decoración que tienen.
-Muestra los nombres de los miembros que tienen un rango en la ronda superior a 3.
 Enumere los nombres de los miembros que no participaron en ninguna ronda.
 ¿Cuál es el tipo de documento denominado "David CV"?
 Devuelve el código de tipo del documento denominado "David CV".
-¿Cuáles son todos los títulos de las secciones del documento denominado "David CV"?
-Indique los títulos de las secciones del documento con el nombre "David CV".
 Encuentre todos los nombres de los documentos sin ninguna sección.
 ¿Cuáles son los nombres de los documentos que no tienen secciones?
 Enumere todos los nombres de documentos que contengan "CV".
@@ -1728,8 +975,6 @@ Encuentre la descripción del rol más popular entre los usuarios que han inicia
 ¿Cuál es la descripción del rol más popular entre los usuarios que han iniciado sesión?
 ¿Cuáles son los nombres de las empresas cuyas oficinas centrales no son "EE. UU."?
 Encuentre los nombres de las empresas cuyas oficinas centrales no se encuentran en "EE. UU.".
-Indique el nombre de un edificio junto con el nombre de una empresa cuya oficina esté en el edificio.
-Para cada empresa, proporcione el nombre de la empresa y el nombre del edificio en el que se encuentra su oficina.
 Enumere los nombres de los edificios que no tienen oficinas de la empresa.
 ¿Qué edificios no tienen oficinas de empresa? Dame los nombres de los edificios.
 ¿Cuáles son los nombres y códigos de tipo de los productos?
@@ -1738,18 +983,12 @@ Enumere los nombres de los productos que no lo son en ningún caso.
 Listar el nombre de las obras de arte cuyo tipo no sea "Programa Talent Show".
 ¿Cuáles son los nombres y lugares de los festivales?
 ¿Cuáles son los nombres de los festivales celebrados en el año 2007?
-Para cada nominación, muestra el nombre de la obra de arte y el nombre del festival donde está nominada.
-Mostrar distintos tipos de obras de arte nominadas en festivales en 2007.
-Mostrar los nombres de los festivales que han nominado obras de arte del tipo "Programa Talent Show".
 Indique el nombre de las obras de arte que no están nominadas.
 Muestra el número de audiencia en el año 2008 o 2010.
 ¿Cuáles son todos los distintos tipos de premisas?
 Muestra el nombre y teléfono del cliente sin ningún mailing.
-Muestre el nombre y el teléfono de los clientes con un correo electrónico con el código de resultado "Sin respuesta".
-Muestre el tipo de local y el código de tipo de dirección para todas las direcciones de los clientes.
 ¿Cuáles son los distintos códigos de tipo de dirección para todas las direcciones de clientes?
 Muestre el cargo de envío y la identificación del cliente para los pedidos de clientes con estado de pedido Cancelado o Pagado.
-Muestra los nombres de los clientes que tienen un pedido con el método de envío FedEx y el estado del pedido Pagado.
 ¿Enumere todos los nombres de los cursos con 1 crédito?
 ¿Cómo se llaman los cursos con 1 crédito?
 ¿Qué cursos se imparten los días MTW?
@@ -1766,30 +1005,8 @@ Encuentra las habitaciones de las facultades con rango de profesor que viven en 
 ¿Cuáles son las habitaciones para los miembros del cuerpo docente que son profesores y que viven en el edificio NEB?
 Busque el nombre del departamento que se encuentra en el edificio "Mergenthaler".
 ¿Cómo se llama el departamento del edificio Mergenthaler?
-Encuentre el nombre y apellido del instructor del curso que tiene el nombre del curso
-¿Cuál es el nombre completo del instructor que tiene un curso llamado ALFABETIZACIÓN INFORMÁTICA?
-Encuentra el nombre del departamento y sala del curso INTRODUCCIÓN A LA INFORMÁTICA.
-¿Cuál es el nombre del departamento y sala del curso INTRODUCCIÓN A LA INFORMÁTICA?
-Encuentre el nombre y apellido del estudiante y las calificaciones de todas las inscripciones.
-¿Cuáles son los nombres completos y las calificaciones de todas las inscripciones?
-Encuentre los nombres distintos de todos los estudiantes que tengan una calificación de al menos 3.8 en un curso.
-¿Cuáles son los nombres distintivos de los estudiantes con una calificación de 3.8 o superior en al menos un curso?
-Encuentre los nombres completos de las facultades que son miembros del departamento con el número de departamento 520.
-¿Cuáles son los nombres completos de los profesores que forman parte del departamento 520?
-Cuáles son los nombres y apellidos de los estudiantes menores del departamento con DNO 140.
-¿Cuáles son los nombres completos de los estudiantes que se especializan en el departamento 140?
-Encuentre los apellidos de las facultades que son miembros del departamento de informática.
-¿Cuáles son los apellidos de los profesores que forman parte del departamento de informática?
 Encuentre el nombre de los estudiantes que no están matriculados en ningún curso.
 ¿Cuáles son los nombres de todos los estudiantes que no están matriculados en cursos?
-Devuelve la dirección del cliente 10.
-¿Cuál es la dirección del cliente con id 10?
-¿Cuáles son los identificadores y géneros del personal de todo el personal cuyo puesto es Gerente de Departamento?
-Devuelva los ID y géneros del personal de cualquier miembro del personal con el título de Gerente de departamento.
-Dame el tipo de producto, el nombre y el precio de todos los productos suministrados por el proveedor 3.
-Devolver el tipo de producto, nombre y precio de los productos suministrados por el proveedor 3.
-Identificadores de devolución de todos los productos suministrados por el identificador de proveedor 2 y que son más caros que el precio promedio de todos los productos.
-¿Cuáles son los identificadores de los productos del proveedor con identificador 2, que son más caros que el precio promedio de todos los productos?
 Devuelve los nombres y los identificadores de todos los productos cuyo precio esté entre 600 y 700.
 ¿Cuáles son los nombres y los identificadores de los productos que cuestan entre 600 y 700?
 Encuentre las identificaciones de todos los clientes distintos que realizaron pedidos después de que algunos pedidos fueron cancelados.
@@ -1798,14 +1015,8 @@ Encuentre las identificaciones de todos los clientes distintos que realizaron pe
 Devuelve la identificación del personal cuya Asignación de Departamento de Personal fue anterior a la de cualquier Personal Administrativo.
 ¿Cuáles son los nombres y los identificadores de los clientes cuya dirección contiene TN?
 Devuelve los nombres e identificaciones de los clientes que tienen TN en su dirección.
-Devuelva el nombre y sexo del personal asignado en 2016.
-¿Cuáles son los nombres y géneros del personal asignado en 2016?
 ¿Cuáles son el id y el nombre de los productos cuyo precio es inferior a 600 o superior a 900?
 Proporcione los identificadores y nombres de los productos con precio inferior a 600 o superior a 900.
-Enumere los nombres de todos los distintos clientes que compraron un teclado.
-¿Cuáles son los nombres distintos de los clientes que han comprado un teclado?
-Enumere los nombres y números de teléfono de todos los distintos proveedores que suministran jeans rojos.
-¿Cuáles son los nombres y números de teléfono distintos de los proveedores que tienen jeans rojos?
 Encuentre la identificación y el nombre de los clientes cuya dirección contenga el estado de WY y no utilice tarjeta de crédito para realizar el pago.
 ¿Cuáles son los identificadores y nombres de los clientes con direcciones que contienen WY y que no utilizan tarjeta de crédito para realizar pagos?
 Enumere la descripción de todas las aeronaves.
@@ -1814,29 +1025,15 @@ Enumere la descripción de todas las aeronaves.
 ¿Cuántos pasajeros nacionales e internacionales hay en el aeropuerto de Londres Heathrow?
 ¿Cómo se llaman los pilotos de 25 años o más?
 ¿Cómo se llama todo piloto que tenga al menos 25 años?
-Muestre los nombres de las aeronaves asociadas con el aeropuerto con el nombre "Londres Gatwick".
-¿Cuáles son los nombres de todos los aviones asociados con el aeropuerto de Londres Gatwick?
-Favor mostrar los nombres y descripciones de las aeronaves asociadas a aeropuertos que tengan un número total de pasajeros mayor a 10000000.
-¿Cuáles son los nombres y descripciones de las aeronaves asociadas con un aeropuerto que tiene más pasajeros en total que 10000000?
-Indique la ubicación y el nombre del avión ganador.
-¿Cuál es la ubicación y el nombre del avión ganador?
 Enumere los nombres de los aviones que no ganaron ningún partido.
 ¿Cómo se llaman todos los aviones que nunca han ganado ningún partido?
 encuentra el nombre de los pilotos que no ganaron los partidos celebrados en el país de Australia.
 ¿Cómo se llaman los pilotos que no han ganado ningún partido en Australia?
-¿Cuáles son los distintos tipos de servicios que proporciona la organización que detalla 'Denesik and Sons Party'?
-Enumere la identificación y el tipo de cada cosa, y los detalles de la organización propietaria.
-¿Cuál es la fecha de entrada de cada cliente y la identificación y los detalles del cliente correspondientes?
-¿Cuáles son la identificación distintiva y el tipo de cosa que tiene el estado "Cerrar" o tiene un registro de estado antes de la fecha "2017-06-19 02:59:21"?
 ¿Cuáles son los detalles del residente que contienen la subcadena 'Señorita'?
 Indique la identificación del evento del cliente y la fecha de mudanza correspondiente y la identificación de la propiedad.
 ¿Cuáles son las distintas fechas de mudanza de los residentes?
 ¿Cuáles son las matrículas de escuelas cuya denominación no es "católica"?
 Enumere la matrícula de cada escuela que no tenga la denominación "Católica".
-Para cada jugador, muestra el equipo y la ubicación de la escuela a la que pertenece.
-¿Cuál es el equipo y la ubicación de la escuela a la que pertenece cada jugador?
-Mostrar ubicaciones y apodos de escuelas.
-¿Cuáles son la ubicación y el apodo de cada escuela?
 Enumera las ubicaciones de las escuelas que no tienen ningún jugador.
 ¿Qué colegios no tienen ningún jugador? Dame la ubicación de la escuela.
 Muestra los apodos de las escuelas que no están en la división 1.
@@ -1845,14 +1042,6 @@ Encuentre el nombre y la población del distrito con una población entre 200000
 ¿Cuáles son los nombres de los distritos y las poblaciones de las ciudades de todos los distritos que tienen entre 200.000 y 2.000.000 de residentes?
 Encuentre el nombre de todos los distritos con un área de ciudad mayor que 10 o una población mayor que 100000
 ¿Cuáles son los nombres de todos los distritos con un área de ciudad mayor a 10 o donde viven más de 100000 personas?
-Encuentre los nombres de todas las tiendas en el distrito de Khanewal.
-¿Cuáles son los nombres de todas las tiendas ubicadas en el distrito de Khanewal?
-Encuentra todas las tiendas del distrito con más población.
-¿Cuáles son los nombres de todas las tiendas del distrito más grande por población?
-¿En qué ciudad está la sede de la tienda llamada "Blackville"?
-¿Qué ciudad es la sede de la tienda Blackville?
-¿Qué productos están disponibles en la tienda llamada "Miramichi"?
-¿Qué productos se venden en la tienda llamada Miramichi?
 Encuentre productos con un tamaño de página máximo como "A4" y páginas por minuto en color inferiores a 5.
 ¿Cuáles son los productos con un tamaño de página máximo A4 que también tienen un color de páginas por minuto inferior a 5?
 Encuentre productos con un tamaño de página máximo como "A4" o páginas por minuto en color inferiores a 5.
@@ -1869,32 +1058,10 @@ Encuentra los jugadores cuyos nombres contienen la letra 'a'.
 ¿Quiénes son los jugadores que tienen nombres que contienen la letra a?
 Encuentre el nombre, la inscripción de las universidades cuyo tamaño sea mayor a 10000 y la ubicación esté en el estado de Los Ángeles.
 ¿Cuáles son los nombres y números de inscripción de las universidades que tienen más de 10000 inscritos y están ubicadas en Luisiana?
-Encuentre los estados donde hay algunos estudiantes universitarios en prueba.
-¿Cuáles son los diferentes estados que tienen estudiantes haciendo pruebas?
-Encuentre los estados donde hay algunos estudiantes universitarios en prueba y sus decisiones son afirmativas.
-¿Cuáles son los diferentes estados en los que los estudiantes probaron con éxito?
-Encuentre el nombre y la universidad de los estudiantes cuyas decisiones fueron afirmativas en la prueba.
-¿Cuáles son los nombres de todos los jugadores que recibieron un sí durante las pruebas y también cuáles son los nombres de sus universidades?
-Encuentre el nombre y el horario de los estudiantes cuya decisión de prueba fue sí.
-¿Cuáles son los nombres y las horas de práctica de cada estudiante que recibió un sí en las pruebas?
-Encuentre los estados de las universidades que tienen estudiantes en la prueba que jugaron en posición de delantero.
-¿Cuáles son los estados de las universidades a las que asisten los estudiantes que se postularon para el puesto de delantero?
-Encuentre los nombres de los estudiantes que están en la posición de delantero y obtuvieron una decisión afirmativa en la prueba.
-¿Cómo se llaman todos los estudiantes que se presentaron con éxito al puesto de delantero?
-Encuentra el estado de la universidad a la que asiste el jugador Charles.
-¿En qué estado está la universidad a la que asiste Charles?
-¿A qué universidades van los jugadores de prueba cuyo nombre comienza con la letra D?
-¿A qué universidades va cada jugador con un nombre que comienza con la letra D que intentó ir?
 ¿Qué universidad tiene algún estudiante que sea portero y haya tenido éxito en la prueba?
 ¿En qué universidad tiene un estudiante que logró formar parte del equipo en el papel de portero?
-Encuentra el nombre de los jugadores de prueba que son de la universidad de mayor tamaño.
-¿Cuáles son los nombres de todos los participantes de la prueba que son de la universidad más grande?
-¿Cuál es el estado y la inscripción de las universidades donde tienen estudiantes que fueron aceptados en la decisión de prueba?
-¿Cuántos estudiantes están matriculados en universidades que aceptan estudiantes durante las pruebas y en qué estados se encuentran esas universidades?
 ¿Cuántas escuelas tienen algunos estudiantes jugando en posiciones de portero y medio?
 ¿Cuántas escuelas tienen estudiantes jugando en posiciones de portero y mediocampo?
-¿Cuántos estados tienen algunos estudiantes universitarios jugando en la posición media pero no en la posición de portero?
-¿Cuál es el recuento de estados con estudiantes universitarios que juegan en la posición media pero no como porteros?
 Encuentre los estados donde tienen universidades cuyas inscripciones son menores que las de mayor tamaño.
 ¿Cuáles son los estados con universidades que tienen menos matrículas que otras universidades?
 Encuentre nombres de universidades con una matrícula mayor que la de alguna (al menos una) universidad en el estado de Florida.
@@ -1905,8 +1072,6 @@ Encuentre nombres de todas las universidades cuya inscripción sea mayor que la 
 Devuelva los proveedores de dispositivos que no tengan Android como plataforma de software.
 Indique la fecha de apertura del año de apertura de la tienda denominada "Apple".
 ¿Cuáles son las fechas y años de apertura de la tienda llamada Apple?
-Muestra los nombres de las tiendas y los operadores de dispositivos que tienen en stock.
-¿Cuáles son los nombres de las tiendas de dispositivos y para qué operadores tienen dispositivos en existencia?
 Enumere los nombres de las tiendas que no tienen dispositivos en stock.
 ¿Cómo se llaman las tiendas que no tienen ningún dispositivo en stock?
 Enumere los operadores de dispositivos que no tienen dispositivos en stock.
@@ -1927,76 +1092,18 @@ Muestre todos los distintos nombres de productos con precios superiores al prome
 ¿Cuáles son los nombres distintos de los productos que cuestan más que el promedio?
 ¿Cuál es el número de teléfono de la intérprete Ashley?
 Encuentra el número de teléfono de la artista "Ashley".
-¿En qué ciudad está ubicada la dirección de la tienda llamada "FJA Filming"?
-Encuentra la ciudad en la que se encuentra la tienda llamada "FJA Filming".
-¿Cuáles son los estados o condados de las direcciones de las tiendas con el código de región de marketing "CA"?
-Busque los estados o condados donde se encuentran las tiendas con el código de región de marketing "CA".
-¿Cuál es el nombre de la región de marketing a la que pertenece la tienda Rob Dinning?
-Devuelve el nombre de la región de marketing en la que se encuentra la tienda Rob Dinning.
-¿Cuáles son las descripciones de los tipos de servicios con precios de producto superiores a 100?
-Dame las descripciones de los tipos de servicios que cuestan más de 100.
-¿Cuáles son los teléfonos y correos electrónicos de los grupos de talleres en los que se realizan servicios?
-Dame todos los números de teléfono y direcciones de correo electrónico de los grupos de taller donde se realizan los servicios.
-¿Cómo se llaman los grupos de talleres en los que se realizan servicios con el nombre de producto "película"?
-Encuentre los nombres de los grupos de talleres donde se realizan servicios con el nombre de producto "película".
-¿Cuáles son los detalles del pedido de los productos con precio superior a 2000?
-Encuentre el detalle del pedido de los productos con precio superior a 2000.
-¿Cuáles son las fechas de entrega reales de los pedidos con cantidad 1?
-Indique la fecha de entrega real para todos los pedidos con cantidad 1
-¿Cuáles son las fechas de pedido de los pedidos con precio superior a 1000?
-Encuentre las fechas de los pedidos con precio superior a 1000.
-¿Cómo se llaman los grupos del taller de teatro con dirección en la ciudad de Feliciaberg?
-Devuelve los nombres de los grupos del taller de teatro que se encuentran en la ciudad de Feliciaberg.
-¿Cuáles son las direcciones de correo electrónico de los grupos del taller de teatro con dirección en el estado de Alaska?
-Enumere las direcciones de correo electrónico de los grupos del taller de teatro ubicados en el estado de Alaska.
-¿Cuáles son los nombres de los grupos de talleres que tienen reservas con el código de estado "parada"?
-¿Qué grupos de talleres tienen reservas con el código de estado "detener"? Dame los nombres.
 ¿Cuáles son todas las etiquetas?
 ¿Cuáles son las diferentes etiquetas de álbumes enumeradas?
 Encuentra todos los álbumes de 2012.
 devolver todas las columnas de los álbumes creados en el año 2012.
-Encuentra todas las posiciones escénicas de los músicos con el nombre "Solveig"
-¿Cuáles son las diferentes posiciones escénicas para todos los músicos cuyo nombre de pila es "Solveig"?
-Encuentra todas las canciones interpretadas por el artista con apellido "Heilo"
-¿Cómo se llaman las canciones del artista cuyo apellido es "Heilo"?
-Encuentra todas las canciones producidas por artistas con el nombre "Marianne".
-¿Cuáles son los nombres de todas las canciones producidas por el artista con el nombre "Marianne"?
-¿Quién interpretó la canción llamada "Badlands"? Muestra el nombre y el apellido.
-¿Cuáles son el nombre y apellido del artista que interpretó la canción "Badlands"?
-¿Quién actúa en la posición detrás del escenario de la canción "Badlands"? Muestra el nombre y el apellido.
-¿Cuáles son el nombre y apellido del intérprete que estuvo detrás del escenario de la canción "Badlands"?
 Encuentra todas las canciones cuyo nombre contiene la palabra "el".
 ¿Cómo se llaman las canciones cuyo título tiene la palabra "the"?
 ¿Cuáles son todos los instrumentos utilizados?
 ¿Cuáles son los diferentes instrumentos que figuran en la base de datos?
-¿Qué instrumento utilizó el músico de apellido "Heilo" en la canción "Le Pop"?
-¿Qué instrumentos tocó el músico de apellido "Heilo" en la canción "Le Pop"?
-¿Qué instrumentos utiliza la canción "Le Pop"?
-¿Cuáles son los instrumentos que se utilizan en la canción "Le Pop"?
-¿Encontrar todos los instrumentos utilizados por el músico de apellido "Heilo"?
-¿Cuáles son todos los instrumentos que utiliza el músico de apellido "Heilo"?
-¿Cuáles son los tipos de voces utilizados en la canción "Le Pop"?
-¿Cuáles son los tipos de voces utilizadas en la canción "Le Pop"?
-¿Qué tipo de voz tocó el músico de nombre "Solveig" en la canción titulada "A Bar in Amsterdam"?
-¿Cuáles son los tipos de voz que tocó el músico de nombre "Solveig" en la canción "A Bar in Amsterdam"?
 Encuentra todos los tipos vocales.
 ¿Cuáles son los diferentes tipos de voces?
 ¿Cuáles son los álbumes producidos en el año 2010?
 ¿Qué información hay sobre los álbumes del 2010?
-¿Quién interpretó la canción llamada "Le Pop"?
-¿Cuál es el nombre y apellido del artista que interpretó "Le Pop"?
-¿Qué instrumento utilizó el músico de apellido "Heilo" en la canción "Badlands"?
-¿Qué instrumentos tocaba el músico de apellido "Heilo" en "Badlands"?
-¿Cuáles son los tipos de voces utilizados en la canción "Badlands"?
-¿Qué tipos de voces se utilizan en la canción "Badlands"?
-¿Qué tipo de voz interpretó el músico de apellido "Heilo" en la canción "Der Kapitan"?
-¿Cuáles son los tipos de voz que interpretó el músico de apellido "Heilo" en "Der Kapitan"?
-¿Quién actúa detrás del escenario de la canción "Der Kapitan"? Muestra el nombre y apellido.
-¿Cuál es el nombre y apellido del artista que actuó detrás del escenario de la canción "Der Kapitan"?
-¿Cuáles son las canciones del álbum "A Kiss Before You Go: Live in Hamburg"?
-¿Cuáles son los títulos de las canciones del álbum "A Kiss Before You Go: Live in Hamburg"?
-¿Cuáles son todas las canciones de los álbumes bajo el sello "Universal Music Group"?
-¿Cuáles son los nombres de todas las canciones cuyo álbum está bajo el sello de "Universal Music Group"?
 ¿Quién es el fundador de Sony?
 Vuelve el fundador de Sony.
 ¿Dónde está la sede de la empresa fundada por James?
@@ -2019,38 +1126,20 @@ Selecciona el nombre de los productos con un precio menor o igual a $200.
 ¿Cuáles son los nombres de los productos con un precio máximo de 200?
 Encuentra toda la información de todos los productos con un precio entre $60 y $120.
 ¿Cuál es toda la información de todos los productos que tienen un precio entre 60 y 120?
-Selecciona todos los datos de los productos y el fabricante de cada producto.
-¿Cuáles son todos los datos del producto, así como el fabricante de cada producto?
 Encuentre todos los identificadores y fechas de los registros del problema cuyo identificador es 10.
 Para el problema con el ID 10, devuelva los ID y las fechas de sus registros de problemas.
 Enumere todos los ID de registro y sus descripciones de los registros de problemas.
 ¿Cuáles son la identificación del registro y la descripción de la entrada de cada problema?
-Enumere los nombres y apellidos de todos los distintos miembros del personal asignados al problema cuya identificación sea 1.
-¿Qué miembros del personal están asignados al problema con el ID 1? Dame su nombre y apellido.
-Enumere la identificación del problema y la identificación del registro asignados al personal llamado Rylan Homenick.
-¿Qué ID de problema y de registro están asignados al personal llamado Rylan Homenick?
-Dame una lista de descripciones de los problemas que informa el personal cuyo nombre es Christop.
-¿Qué problemas informa el personal de nombre "Christop"? Muestre las descripciones de los problemas.
-Encuentre los identificadores de los problemas que reporta el personal cuyo apellido es Bosco.
-¿Qué problemas reporta el personal de apellido "Bosco"? Muestra los identificadores de los problemas.
 ¿Cuáles son los identificadores de los problemas que se informan después del 26 de junio de 1978?
 Encuentre los identificadores de los problemas informados después del 26 de junio de 1978.
 ¿Cuáles son los identificadores de los problemas que se informaron antes del 26 de junio de 1978?
 ¿Qué problemas se informaron antes del 26/06/1978? Dame los ids de los problemas.
-¿Cuáles son los identificadores de los problemas informados antes de la fecha de cualquier problema informado por Lysanne Turcotte?
-¿Qué problemas se informaron antes de la fecha de cualquier problema informado por el personal Lysanne Turcotte? Dame los ids de los problemas.
-¿Cuáles son los identificadores de los problemas informados después de la fecha de los problemas informados por Rylan Homenick?
-Encuentre los identificadores de los problemas informados después de la fecha de cualquier problema informado por el personal de Rylan Homenick.
-¿Enumere los identificadores de los problemas del producto "voluptatem" que se informaron después de 1995?
-¿Cuáles son los identificadores de los problemas relacionados con el producto "voluptatem" y que se reportan después de 1995?
 Muestra todas las ciudades distintas donde se encuentran sucursales con al menos 100 membresías.
 ¿Cuáles son las diferentes ciudades que tienen más de 100 membresías?
 Mostrar nombres de miembros sin ninguna sucursal registrada.
 ¿Cuáles son los nombres de los miembros que nunca se han registrado en ninguna sucursal?
 Indique el nombre de la sucursal y la ciudad sin ningún miembro registrado.
 ¿Cuáles son los nombres y ciudades de las sucursales que no tienen miembros registrados?
-Muestre el nombre del miembro y la ciudad natal que registró una sucursal en 2016.
-¿Cuáles son los nombres de los miembros y las ciudades de origen de quienes se registraron en una sucursal en 2016?
 Mostrar toda la ciudad con una sucursal abierta en 2001 y una sucursal con más de 100 miembros.
 ¿Cuáles son las ciudades que tienen una sucursal que abrió en 2001 y una sucursal con más de 100 miembros?
 indique el número de tarjeta de todos los miembros cuya dirección local incluya la palabra "Kentucky".
@@ -2071,20 +1160,6 @@ Informar la fecha de registro distinta y el ciclo electoral.
 ¿Cuáles son las distintas fechas de registro y los ciclos electorales?
 Informar el voto distinto del presidente y el voto del vicepresidente.
 Enumere todos los votos distintos del presidente y los votos del vicepresidente.
-Encuentre los apellidos distintos de los estudiantes que tienen votos de presidente de clase.
-¿Cuáles son los apellidos distintos de los estudiantes que tienen votos de presidente de clase?
-Encuentre los nombres distintos de los estudiantes que tienen votos de senador de clase.
-¿Cuáles son los nombres distintos de los estudiantes que tienen votos de presidente de clase?
-Encuentre las distintas edades de los estudiantes que tienen votos de secretario en el ciclo electoral de otoño.
-¿Cuáles son las distintas edades de los estudiantes que tienen votos de secretario en el ciclo electoral de otoño?
-Encuentre el asesor distintivo de los estudiantes que tienen votos de tesorero en el ciclo de elecciones de primavera.
-¿Quién sirvió como asesor para los estudiantes que tienen votos de tesorero en el ciclo electoral de primavera?
-Encuentre las distintas especialidades de los estudiantes que tienen votos de tesorero.
-¿Cuáles son las distintas especialidades que estudian los estudiantes con votos de tesorero?
-Encuentre el nombre y apellido de todas las estudiantes (el sexo es F) que tienen votos para presidente.
-¿Cuáles son los nombres y apellidos de todas las estudiantes que tienen votos de presidente?
-Encuentre el nombre y apellido de todos los estudiantes de 18 años que tienen votos de vicepresidente.
-¿Cuáles son los nombres y apellidos de los estudiantes que tienen 18 años y tienen votos de vicepresidente?
 ¿Cuáles son los nombres y precios de compra de todos los productos?
 Devuelve los nombres y precios de compra típicos de todos los productos.
 Enumere la descripción de todos los colores.
@@ -2093,64 +1168,28 @@ Encuentra los nombres de todas las características del producto.
 ¿Cuáles son los diferentes nombres de las características del producto?
 ¿Cuáles son los nombres de los productos de la categoría "Especias"?
 Devuelve los nombres de los productos en la categoría 'Especias'.
-Enumere los nombres, descripciones de colores y descripciones de productos de la categoría "Hierbas".
-¿Cuáles son los nombres, descripciones de colores y descripciones de productos de la categoría 'Hierbas'?
 ¿Cuál es la categoría y el precio de compra típico del producto con el nombre "comino"?
 Devuelve el código de categoría y el precio típico del 'comino'.
 ¿A qué categoría pertenece el producto denominado "lino"?
 ¿Cuál es el código de la categoría a la que pertenece el producto con el nombre 'lino'?
-¿Cómo se llama el producto con la descripción del color "amarillo"?
-Indique el nombre de los productos que tienen una descripción de color "amarillo".
-Encuentre las descripciones de categorías de los productos cuyas descripciones incluyen la letra 't'.
-¿Cuáles son las descripciones de las categorías en las que se encuentran los productos con descripciones de producto que contienen la letra t?
-¿Cuál es la descripción del color del producto con el nombre "catnip"?
-Proporcione la descripción del color del producto 'hierba gatera'.
-¿Cuál es el código de color y la descripción del producto denominado "perifollo"?
-Devuelve el código de color y la descripción del producto con el nombre 'perifollo'.
-Enumere todos los nombres de productos con la descripción del color "blanco".
-¿Cuáles son los nombres de los productos con "blanco" como descripción de color?
-¿Cuáles son el nombre y los precios típicos de compra y venta de los productos cuyo color se describe como "amarillo"?
-Devuelve los nombres y los precios típicos de compra y venta de productos que tienen "amarillo" como descripción de color.
-¿Cuáles son todos los nombres característicos del producto "sésamo"?
-Devuelve los nombres característicos del producto 'sésamo'.
-Enumere todos los nombres característicos y tipos de datos del producto "comino".
-¿Cuáles son los nombres y tipos de datos de las características del producto 'comino'?
-Enumere todas las características del producto denominado "sésamo" con el código de tipo "Grado".
-¿Cómo se llaman las características del producto 'sésamo' que tienen el código de tipo de característica 'Grado'?
-Busca el nombre de los productos que tienen la descripción de color "rojo" y tienen el nombre característico "rápido".
-¿Cuáles son los nombres de los productos que tienen una descripción de color "rojo" y la característica "rápido"?
-Enumere todos los nombres distintos de los productos con el nombre característico "caliente".
-¿Cuáles son los diferentes nombres de productos que tienen la característica "cálida":?
 ¿Cuál es la unidad de medida del código de categoría de producto "Hierbas"?
 Devuelve la unidad de medida de los productos 'Hierbas'.
 Encuentre la descripción de la categoría de producto de la categoría de producto con el código "Especias".
 ¿Cuál es la descripción de la categoría de producto con el código 'Especias'?
 ¿Cuál es la descripción de la categoría de producto y la unidad de medida de la categoría "Hierbas"?
 Devuelve la descripción y la unidad de medida de los productos de la categoría 'Hierbas'.
-¿Cuál es la unidad de medida del producto llamado "comino"?
-Indique la unidad de medida del producto con el nombre 'comino'.
-Encuentre la unidad de medida y el código de categoría del producto llamado "perifollo".
-¿Cuáles son la unidad de medida y el código de categoría del producto 'perifollo'?
-Busque los nombres de productos que están coloreados en "blanco" pero que no tienen la unidad de medida "Puñado".
-¿Cuáles son los nombres de los productos que no son de color "blanco" y no se miden con la unidad "Puñado"?
 Encuentra los nombres de los estadios cuya capacidad es menor que la capacidad promedio.
 Encuentra todos los resultados de 200 metros y 300 metros de los nadadores de nacionalidad "Australia".
-Encuentra los nombres de los nadadores que tienen un resultado de "ganar".
-Encuentra el nombre y la capacidad del estadio donde ocurrió el evento denominado "Mundial Junior".
 Encuentra los nombres de estadios que nunca han tenido ningún evento.
 Encuentra los nombres de los nadadores que no tienen registro.
-Encuentra los nombres de los estadios en los que han estado algunos nadadores australianos.
 Encuentra todos los detalles de cada nadador.
 Enumere las ruedas y ubicaciones de los ferrocarriles.
 ¿Cuáles son los nombres y horarios de llegada de los trenes?
-Muestra los nombres de los trenes y la ubicación de las vías en las que se encuentran.
-Muestre el constructor de ferrocarriles asociado con los trenes llamado "Andaman Exp".
 Enumere el número de objeto de los ferrocarriles que no tienen trenes.
 Mostrar los distintos países de los directivos.
 Muestra los países que tienen directivos mayores de 50 años o menores de 46 años.
 Mostrar todas las ciudades distintas en el registro de dirección.
 Muestra nombres y teléfonos de clientes que no tienen información de dirección.
-Muestre el nombre del cliente, la ciudad de la dirección del cliente, la fecha desde y hasta para el historial de direcciones de cada cliente.
 Muestra el tipo de producto y el nombre de los productos con precio superior a 1000 o inferior a 500.
 Encuentre el nombre de los dormitorios solo para mujeres (género F).
 ¿Cómo se llaman los dormitorios exclusivamente para mujeres?
@@ -2170,18 +1209,6 @@ Encuentre el nombre y apellido de los estudiantes cuya edad es menor que la edad
 ¿Cuál es el nombre y apellido de todos los estudiantes que son más jóvenes que el promedio?
 Encuentre el nombre y apellido de los estudiantes que no están en la especialidad más importante.
 ¿Cuál es el nombre y apellido de los estudiantes que no están en la carrera más importante?
-Encuentre el nombre de los estudiantes que viven en Smith Hall.
-¿Cuáles son los nombres de todos los estudiantes de Smith Hall?
-Encuentre el nombre de las comodidades que tiene el dormitorio Smith Hall.
-¿Cuáles son los nombres de las comodidades que tiene Smith Hall?
-Encuentre el nombre de los estudiantes que viven en el dormitorio que tiene la mayor cantidad de comodidades.
-¿Cuáles son los nombres de todos los estudiantes que viven en el dormitorio con más comodidades?
-Encuentre el nombre y apellido de los estudiantes que viven en los dormitorios que cuentan con TV Lounge.
-¿Cuáles son los nombres y apellidos de todos los estudiantes que viven en un dormitorio con sala de televisión?
-Encuentre el nombre y la edad de los estudiantes que viven en dormitorios que no cuentan con sala de TV.
-¿Cuál es el nombre y la edad de cada estudiante que vive en un dormitorio con sala de televisión?
-Encuentre el nombre de las comodidades del dormitorio donde vive el estudiante con apellido Smith.
-¿Cuáles son las comodidades en el dormitorio en el que vive un estudiante que tiene el apellido Smith?
 Encuentre el correo electrónico y el número de teléfono de los clientes que nunca antes han presentado una queja.
 ¿Cuáles son los correos electrónicos y números de teléfono de los clientes que nunca han presentado una queja?
 ¿Cuál es la descripción del producto denominado "Chocolate"?
@@ -2196,8 +1223,6 @@ Busque las líneas de dirección 1 y 2 del cliente con el correo electrónico "v
 Para cada envío, muestre el autor y su universidad afiliada.
 Mostrar los nombres de los autores de la universidad "Florida" o "Temple"
 ¿Qué autores con presentaciones son de la universidad "Florida" o "Temple"?
-Mostrar los autores de los envíos y los resultados de aceptación de sus envíos.
-Para cada envío, encuentre su autor y el resultado de aceptación.
 Listar los autores que no tienen inscripción a ningún taller.
 ¿Qué autores no se presentaron a ningún taller?
 Mostrar todos los detalles del inversor.
@@ -2207,15 +1232,8 @@ Muestra todos los identificadores de transacciones con el código de transacció
 Mostrar todas las fechas de transacciones cuyo código de tipo sea "VENTA".
 Muestra la descripción del tipo de transacción con el código "PUR".
 Muestre las fechas de las transacciones si el recuento de acciones es mayor que 100 o el monto es mayor que 1000.
-Muestre las descripciones y fechas del tipo de transacción si el recuento de acciones es inferior a 10.
-Muestre los detalles de todos los inversores si realizan alguna transacción con un número de acciones superior a 100.
 ¿Cuántos tipos de transacciones distintos se utilizan en las transacciones?
 Devuelva los detalles del lote y las identificaciones de los inversores.
-¿Devolver los detalles de los lotes que pertenecen a inversores con detalles "l"?
-¿Cuáles son los detalles de compra de transacciones con un monto superior a 10000?
-¿Cuáles son los detalles de venta y las fechas de las transacciones con un monto inferior a 3000?
-¿Cuáles son los detalles de los lotes asociados con transacciones con un recuento de acciones inferior a 50?
-¿Cuáles son los detalles de los lotes asociados con transacciones cuyo recuento de acciones es mayor que 100 y cuyo código de tipo es "PUR"?
 ¿Cuáles son las fechas de las transacciones con al menos 100 acciones o un monto mayor a 100?
 ¿Cuáles son los rangos de precios de los hoteles?
 Dime los rangos de precios de todos los hoteles.
@@ -2239,32 +1257,6 @@ Encuentra todas las distintas fechas de visita.
 ¿A qué lugares turísticos podemos llegar en autobús? Dime los nombres de las atracciones.
 ¿Cuáles son los nombres y horarios de apertura de los atractivos turísticos a los que se puede acceder en autobús o caminando?
 Encuentra los nombres y horarios de apertura de los atractivos turísticos a los que llegamos en autobús o caminando.
-¿Cuáles son las descripciones de las estrellas de los hoteles con precios superiores a 10000?
-Dame las descripciones de las estrellas de los hoteles que cuestan más de 10000.
-¿Cuáles son los detalles y horarios de apertura de los museos?
-Dame el detalle y horario de apertura de cada museo.
-¿Cómo se llama la atracción turística que está asociada a la foto "juego1"?
-¿Qué atracción turística está asociada con la foto "juego1"? Devuelve su nombre.
-¿Cuáles son los nombres y descripciones de las fotografías tomadas en la atracción turística "festival de cine"?
-Encuentra los nombres y descripciones de las fotografías tomadas en el atractivo turístico denominado "festival de cine".
-¿Cuáles son los detalles y formas de llegar a las atracciones turísticas relacionadas con la familia real?
-¿Qué atracciones turísticas están relacionadas con la familia real? Cuéntame sus datos y cómo podemos llegar.
-¿Cuáles son los detalles de los comercios a los que se puede acceder caminando?
-Encuentre los detalles de las tiendas a las que se puede llegar caminando.
-¿Cómo se llama el personal que está a cargo de la atracción denominada "museo de Estados Unidos"?
-Dime el nombre del personal a cargo de la atracción llamada "museo de EE. UU."
-¿Cuáles son los detalles de los mercados a los que se puede acceder caminando o en autobús?
-Encuentre los detalles de todos los mercados a los que se puede acceder a pie o en autobús.
-¿Cuáles son la fecha de la visita y los detalles del visitante cuyo detalle es 'Vincent'?
-Encuentra la fecha de visita y los datos del turista cuyo detalle es 'Vincent'
-¿Qué atractivos turísticos visita con detalle el visitante 'Vincent'?
-Mostrar los atractivos turísticos visitados por el turista cuyo detalle es 'Vicente'.
-¿Cuáles son los nombres de las atracciones turísticas y las fechas en que los turistas llamados Vincent o Vivian visitaron allí?
-Para cada atracción turística, devuelva su nombre y la fecha en que los turistas llamados Vincent o Vivian visitaron allí.
-¿Cuáles son los nombres de las atracciones turísticas a las que se puede llegar caminando o que se encuentran en la dirección 660 Shea Crescent?
-Encuentre los nombres de las atracciones turísticas a las que se puede acceder caminando o en la dirección 660 Shea Crescent.
-¿Cuáles son los nombres de las atracciones turísticas a las que se puede llegar en autobús o que se encuentran en la dirección 254 Ottilie Junction?
-Encuentre los nombres de las atracciones turísticas a las que se puede acceder en autobús o en la dirección 254 Ottilie Junction.
 Mostrar todos los tipos de videojuegos.
 ¿Cuáles son los diferentes tipos de videojuegos?
 Mostrar todos los videojuegos con tipo Juego de cartas coleccionables.
@@ -2279,16 +1271,8 @@ Mostrar el nombre de todos los estudiantes con especialidad 600.
 ¿Cuáles son los nombres de todos los estudiantes de la especialidad número 600?
 Enumere las identificaciones de todos los estudiantes que tienen una beca.
 ¿Cuáles son las identificaciones para todos los estudiantes deportistas que están becados?
-Mostrar los apellidos de todos los estudiantes que están becados.
-¿Cuáles son los apellidos de todos los estudiantes becados?
-Mostrar todos los nombres de los juegos jugados por Linda Smith
-¿Cuáles son los nombres de todos los juegos que juega Linda Smith?
-Encuentre el apellido y el nombre de los estudiantes que juegan fútbol o lacrosse.
-¿Cuál es el nombre y apellido de todos los estudiantes que juegan fútbol o lacrosse?
 Encuentre el nombre y la edad de los estudiantes que juegan fútbol y lacrosse.
 ¿Cuáles son los nombres y las edades de todos los estudiantes que juegan fútbol y lacrosse?
-Encuentra el apellido y el sexo de los estudiantes que juegan los juegos Call of Destiny y Works of Widenius.
-¿Cuál es el apellido y el sexo de todos los estudiantes que jugaron Call of Destiny y Works of Widenius?
 Encuentre el nombre de todos los clientes.
 ¿Cuáles son los nombres de todos los clientes?
 ¿Cuáles son los nombres de los clientes que utilizan el método de pago "Efectivo"?
@@ -2305,28 +1289,14 @@ Busque el nombre de todos los clientes cuyo nombre contenga "Alex".
 ¿Qué nombre de cliente contiene "Alex"? Encuentra el nombre completo.
 Encuentra el detalle de productos cuyo detalle contiene la palabra "Latte" o la palabra "Americano"
 ¿Qué detalle del producto contiene la palabra "Latte" o "Americano"? Devuelve el detalle completo.
-¿Cuál es el contenido de la dirección del cliente llamado "Maudie Kertzmann"?
-Devuelva el contenido de la dirección del cliente cuyo nombre es "Maudie Kertzmann".
-¿Encontrar el nombre de los clientes que viven en Colorado?
-¿Cuáles son los nombres de los clientes que viven en el estado de Colorado?
-Encuentre la lista de ciudades en las que no vive ningún cliente.
-¿Cuáles son las ciudades en las que no viven clientes?
 Recupera la lista de todas las ciudades.
 Lista todas las distintas ciudades
 Encuentra la ciudad con el código postal 255.
 ¿En qué ciudad se encuentra el código postal 255?
 Encuentre el estado y el país de todas las ciudades con códigos postales que comienzan con 4.
 ¿Cuáles son el estado y el país de todas las ciudades que tienen códigos postales que comienzan con 4?
-¿Qué canal de contacto ha utilizado el cliente llamado "Tillman Ernser"?
-Busque el código del canal de contacto que utilizó el cliente llamado "Tillman Ernser".
 ¿Cuál es el código de canal y número de contacto del canal de atención al cliente que estuvo activo durante más tiempo?
 Devuelve el código de canal y el número de contacto del canal de contacto con el cliente cuya duración activa fue la más larga.
-Encuentre el nombre y la fecha activa del cliente que utiliza el correo electrónico como canal de contacto.
-¿Cuáles son el nombre y fecha de actividad de los clientes cuyo código de canal de contacto es el correo electrónico?
-¿Cuál es el nombre del cliente que realizó el pedido con la mayor cantidad?
-Busque el nombre del cliente que realizó el pedido de la mayor cantidad de mercancías.
-Busque el nombre del cliente y la fecha de los pedidos que tienen el estado "Entregado".
-¿Cuáles son el nombre del cliente y la fecha de los pedidos cuyo estado es "Entregado"?
 Encuentre el nombre de los clientes que no pagaron en efectivo.
 ¿Cómo se llaman los clientes que no utilizan Efectivo como método de pago?
 Enumere la edad de todos los artistas musicales.
@@ -2343,28 +1313,15 @@ Devuelve las categorías de festivales de música que tienen el resultado "Premi
 Entregue las canciones incluidas en volúmenes que tengan más de 1 semana en la parte superior.
 ¿A cuántos artistas distintos se asocian los volúmenes?
 Cuente el número de artistas distintos que tienen volúmenes.
-Por favor mostrar en la parte superior la fecha de ceremonia de los volúmenes que duren más de 2 semanas.
-¿Cuáles son las fechas de ceremonia en los festivales de música correspondientes a volúmenes que duraron más de 2 semanas en la cima?
-Por favor muestra las canciones que han resultado "nominadas" en festivales de música.
-¿Cuáles son las canciones en volúmenes que han resultado nominadas en festivales de música?
-¿Cuáles son las fechas de publicación de los volúmenes asociados con el artista "Gorgoroth"?
-Devuelva las fechas de publicación de los volúmenes del artista llamado Gorgoroth.
-¿Cuáles son las canciones en volúmenes asociadas al artista de 32 años o más?
-Devuelve nombres de canciones en volúmenes de artistas que tienen al menos 32 años.
-¿Cuáles son los títulos famosos de los artistas asociados con volúmenes con más de 2 semanas de antigüedad?
-Devuelve los títulos famosos para artistas que tienen volúmenes que duraron más de 2 semanas en la parte superior.
 Encuentra los títulos famosos de artistas que no tienen ningún volumen.
 ¿Cuáles son los títulos famosos de artistas que no tienen volúmenes?
 ¿Cuáles son las fechas de ceremonia de los festivales de música con categoría "Mejor Canción" y resultado "Premiado"?
 Devuelve las fechas de ceremonia correspondientes a los festivales de música que tuvieron la categoría “Mejor Canción” y resultado “Premiada”.
 ¿Cuántos artistas distintos tienen volúmenes?
 Cuente el número de artistas que han tenido volúmenes.
-¿Cuáles son las fechas de publicación de los volúmenes asociados con el artista de 23 años o menos?
-¿Devolver las fechas de edición de volúmenes de artistas que tengan como máximo 23 años?
 ¿Cuáles son las longitudes y alturas de las montañas rusas?
 Enumere los nombres de países cuyo idioma no es "alemán".
 Muestra los estados de las montañas rusas de más de 3300 o más de 100.
-Muestra los nombres de las montañas rusas y los nombres del país en el que se encuentran.
 Encuentra el nombre, clase y rango de todos los capitanes.
 ¿Cuáles son los nombres, clases y rangos de todos los capitanes?
 Busque el nombre de los capitanes cuyo rango es Guardiamarina o Teniente.
@@ -2375,96 +1332,54 @@ Encuentra el nombre y la bandera de los barcos que no están gobernados por ning
 ¿Cuáles son los nombres y banderas de los barcos que no tienen un capitán con rango de Guardiamarina?
 ¿Encontrar los identificadores de los partidos de las ciudades que albergaron la competición "Clasificación para la Copa Mundial de la FIFA 1994"?
 ¿Cuál es el ID del partido de la competición llamada "Clasificación para la Copa Mundial de la FIFA 1994"?
-¿Encontrar las ciudades que alguna vez fueron ciudades anfitrionas después de 2010?
-¿Qué ciudades sirvieron como ciudad anfitriona después de 2010?
-¿Cuál es la sede de la competición "Clasificación para la Copa Mundial de la FIFA 1994" organizada por "Nanjing (Jiangsu)"?
-Encuentre la sede de la competición "Clasificación para la Copa Mundial de la FIFA 1994", que se celebró en "Nanjing (Jiangsu)".
-Dame la temperatura de Shanghai en enero.
-¿Cuál es la temperatura de la ciudad "Shanghai" en enero?
-¿Cuál es el año anfitrión de la ciudad "Taizhou (Zhejiang)"?
-¿En qué año la ciudad "Taizhou (Zhejiang)" sirvió como ciudad anfitriona?
-¿Dame una lista de ciudades cuya temperatura en marzo es más baja que la de julio o más alta que la de octubre?
-¿La temperatura de qué ciudades en marzo es más baja que en julio o más alta que en octubre?
 Por favor, dame una lista de ciudades cuya población regional sea superior a 10000000.
 ¿Qué ciudades tienen una población regional superior a 10000000?
 Enumere todos los tipos de formularios.
 ¿Cuáles son los diferentes tipos de formularios?
 Encuentra el método de pago y teléfono del partido con el correo electrónico "enrico09@example.com".
 ¿Cuál es el código de método de pago y teléfono del partido con el correo electrónico 'enrico09@example.com'?
-Encuentra los correos electrónicos de los partidos con el formulario de partido más popular.
-¿Cuáles son los correos electrónicos de partidos asociados con partidos que utilizaron el formulario de partido más común?
 Busque el nombre de las organizaciones cuyos nombres contienen "Partido".
 ¿Cuáles son los nombres de las organizaciones que contienen la palabra "Partido"?
 ¿En qué estado puede estar la dirección "6862 Kaitlyn Knolls"?
 Indique el estado correspondiente al número de línea del edificio "6862 Kaitlyn Knolls".
-Encuentre el apellido de las personas que han sido personas de contacto de una organización.
-¿Cuáles son los apellidos de las personas que han sido personas de contacto de una organización?
 Muestra el nombre, la ciudad de residencia y la edad de todos los conductores.
 Mostrar todas las diferentes ciudades de origen.
 Muestre la fiesta con conductores de Hartford y conductores mayores de 40 años.
 Muestre los nombres de los conductores sin autobús escolar.
-Muestre el nombre de la escuela y el nombre del conductor de todos los autobuses escolares.
 Muestre el nombre y el tipo de escuela para las escuelas sin autobús escolar.
 Enumere los nombres de los conductores de la ciudad de Hartford y menores de 40 años.
-¿Cuáles son los nombres y tipos de compañías que alguna vez han operado un vuelo?
 ¿Cómo se llaman los aeropuertos que no están en el país 'Islandia'?
-¿Cuáles son los distintos tipos de compañías que han operado vuelos con una velocidad inferior a 200?
-¿Cuáles son los diferentes nombres de pilotos que pilotaron un vuelo en el país 'Estados Unidos' o en el aeropuerto llamado 'Aeropuerto de Billund'?
 ¿Cuál de los nombres de aeropuertos contiene la palabra "internacional"?
 Mostrar todos los identificadores y detalles de la cuenta.
 ¿Cuáles son los identificadores y detalles de todas las cuentas?
 Enumere todos los identificadores y detalles de los extractos.
 ¿Cuáles son los identificadores y detalles de todas las declaraciones?
-Mostrar identificación del estado de cuenta, detalle del estado de cuenta, detalle de la cuenta para las cuentas.
-¿Cuáles son los identificadores de extracto, los detalles del extracto y los detalles de la cuenta para todas las cuentas?
 Enumere el código de tipo de documento, el nombre del documento y la descripción del documento con el nombre 'Noel CV' o el nombre 'King Book'.
 ¿Cuáles son el tipo, nombre y descripción del documento que tiene el nombre 'Noel CV' o 'King Book'?
 Muestra los identificadores y nombres de todos los documentos.
 ¿Cuáles son los identificadores y nombres de cada uno de los documentos?
 Encuentre nombres e identificaciones de todos los documentos con el código de tipo de documento BK.
 ¿Cuáles son los nombres y los identificadores de los documentos que tienen el código de tipo BK?
-Muestre el nombre del documento y la fecha del documento para todos los documentos del proyecto con detalles 'Proyecto de base de datos de gráficos'.
-¿Cuáles son los nombres y fechas de los documentos correspondientes al proyecto que tiene los detalles 'Proyecto de base de datos de gráficos'?
-Muestra el detalle del extracto y el nombre del documento correspondiente al extracto con detalle 'Proyecto Privado'.
-¿Cuáles son los detalles de las declaraciones con el detalle 'Proyecto Privado' y cómo se llaman los documentos correspondientes?
 Mostrar todos los códigos de tipos de documentos, nombres de tipos de documentos y descripciones de tipos de documentos.
 ¿Cuáles son los códigos, nombres y descripciones de los diferentes tipos de documentos?
 ¿Cuál es la descripción del tipo de documento para el tipo de documento denominado Película?
 Devuelve la descripción del nombre del tipo de documento 'Película'.
-¿Cuál es el nombre del tipo de documento y la descripción del tipo de documento y la fecha de creación de todos los documentos?
-Devuelve el nombre del tipo, la descripción del tipo y la fecha de creación de cada documento.
 Enumere los identificadores y detalles de todos los proyectos.
 ¿Cuáles son los identificadores y detalles de cada proyecto?
-¿Cuál es el detalle del proyecto con el documento "King Book"?
-Proporcione los detalles del proyecto con el nombre del documento 'King Book'.
 Enumere todos los códigos y descripciones de tipos de presupuesto.
 ¿Cuáles son los códigos de tipo y las descripciones de cada tipo de presupuesto?
 ¿Cuál es la descripción del tipo de presupuesto con código ORG?
 Devuelve la descripción del tipo de presupuesto que tiene el código ORG.
 ¿Cuáles son los identificadores de documentos para el código de tipo de presupuesto 'SF'?
 Proporcione los identificadores de los documentos con gastos que tengan el código de presupuesto 'SF'.
-Mostrar el código y descripción del tipo de presupuesto y el id del documento correspondiente.
-Devuelve los códigos de tipo de presupuesto, las descripciones de tipo de presupuesto y los identificadores de documentos para documentos con gastos.
-Mostrar identificadores de todos los documentos con tipos de presupuesto descritos como "Gobierno".
-Proporcione los identificadores de los documentos que tengan la descripción del presupuesto "Gobierno".
-¿Cuáles son los identificadores de los documentos con la letra 's' en el nombre con cualquier presupuesto de gastos?
-Dé los identificadores de los documentos que tengan gastos y contengan la letra s en sus nombres.
 Enumere el nombre de todos los proyectos que funcionan por más tiempo que las horas de trabajo promedio de todos los proyectos.
 ¿Cuáles son los nombres de los proyectos que han tardado más que el número promedio de horas para todos los proyectos?
-Busque el nombre del proyecto al que está asignado un científico cuyo nombre contiene "Smith".
-¿Cómo se llama el proyecto que tiene asignado un científico cuyo nombre contiene 'Smith'?
 Busque el nombre de proyectos que requieren entre 100 y 300 horas de trabajo.
 ¿Cómo se llaman los proyectos que requieren entre 100 y 300 horas?
-Encuentre el SSN y el nombre de los científicos asignados al proyecto con más horas.
-¿Cuáles son el SSN y los nombres de los científicos que trabajan en el proyecto con más horas?
-Encuentra el nombre de los científicos que están asignados a algún proyecto.
-¿Cuáles son los nombres de los científicos que están asignados a algún proyecto?
 Seleccione los nombres de los proyectos que aún no están asignados.
 ¿Cuáles son los nombres de los proyectos que no han sido asignados?
 Encuentre el nombre de los científicos que no están asignados a ningún proyecto.
 ¿Cómo se llaman los científicos a los que no se les ha asignado un proyecto?
-Encuentra el nombre del proyecto que necesita menos tiempo para terminar y el nombre de los científicos que trabajaron en él.
-¿Cómo se llama el proyecto que requiere la menor cantidad de horas y los nombres de los científicos asignados a él?
 Encuentre los nombres de todos los vinos producidos en 2008.
 ¿Cuáles son los nombres de todos los vinos producidos en 2008?
 Enumerar las uvas y denominaciones de todos los vinos.
@@ -2477,20 +1392,6 @@ Enumere el área y el condado de todas las denominaciones.
 Devolver los precios de los vinos elaborados antes de 2010.
 Enumere los nombres de todos los vinos distintos que tengan puntuaciones superiores a 90.
 ¿Cómo se llaman los vinos con puntuaciones superiores a 90?
-Enumere los nombres de todos los vinos distintos elaborados con uva de color tinto.
-¿Cómo se llaman los vinos elaborados con uvas tintas?
-Encuentre los nombres de todos los vinos distintos que tienen denominaciones en el área de la costa norte.
-¿Cuáles son los distintos nombres de los vinos que tienen denominaciones de origen en la zona de la costa norte?
-Dame los precios promedio de los vinos producidos por denominaciones de origen en el condado de Sonoma.
-¿Cuál es el precio promedio de los vinos producidos en las denominaciones de origen del condado de Sonoma?
-¿Cuáles son los nombres y las puntuaciones de los vinos que se elaboran con uvas de color blanco?
-Indique los nombres y puntuaciones de los vinos elaborados con uvas blancas.
-Encuentre la uva cuyas uvas de color blanco se utilizan para producir vinos con puntuaciones superiores a 90.
-Encuentre la uva blanca utilizada para producir vinos con puntuaciones superiores a 90.
-¿Cuáles son los vinos que tienen precios superiores a 50 y elaborados con uvas de color tinto?
-¿Cómo se llaman los vinos elaborados con uvas tintas y con precios superiores a 50?
-¿Cuáles son los vinos que tienen precios inferiores a 50 y tienen denominaciones de origen en el condado de Monterey?
-Indique los nombres de vinos con precios inferiores a 50 y con denominaciones de origen en el condado de Monterey.
 Encuentre los nombres distintos de todos los vinos que tienen precios más altos que algunos vinos de la bodega John Anthony.
 ¿Cuáles son los nombres distintos de los vinos con precios más altos que cualquier vino de la bodega John Anthony?
 Encuentre los distintos nombres de vinos producidos antes del año 2000 o después del año 2010.
@@ -2508,9 +1409,7 @@ Muestra el nombre, la ubicación y el número de andenes de todas las estaciones
 Muestra los nombres y el total de pasajeros de todas las estaciones de tren fuera de Londres.
 Mostrar todas las ubicaciones que tienen estaciones de tren con al menos 15 andenes y estaciones de tren con más de 25 pasajeros en total.
 Muestra el nombre, hora y servicio de todos los trenes.
-muestra el nombre del tren y el nombre de la estación de cada tren.
 Mostrar nombres de estaciones sin trenes.
-Encuentra los nombres de los trenes que no pasan por ninguna estación ubicada en Londres.
 Listar toda la identificación del vehículo
 ¿Cuáles son las identificaciones de todos los vehículos?
 Mostrar el detalle del vehículo con id 1.
@@ -2525,14 +1424,6 @@ Indique el nombre, segundo nombre y apellido de todo el personal.
 ¿Cuándo dejó la empresa Janessa Sawyn, miembro del personal?
 ¿Cuál es el apodo del personal cuyo nombre es Janessa y apellido Sawyn?
 ¿Cuál es el apodo de la empleada llamada Janessa Sawayn?
-¿En qué ciudad vive el personal con nombre Janessa y apellido Sawyn?
-¿En qué ciudad vive Janessa Sawyn?
-¿En qué país y estado vive el personal con el nombre Janessa y el apellido Sawyn?
-¿En qué país y estado vive Janessa Sawyn?
-¿Cuál es el código postal del personal con nombre Janessa y apellido Sawyn?
-¿Cuál es el código postal de la casa de la empleada llamada Janessa Sawayn?
-Descubra el nombre y apellido del personal que vive en la ciudad de Damianfort.
-¿Cuál es el nombre y apellido de todos los empleados que viven en la ciudad Damiánfort?
 Indique el nombre y apellido de todos los clientes.
 ¿Cuáles son los nombres y apellidos de todos los clientes?
 Indique la dirección de correo electrónico y la fecha de nacimiento del cliente cuyo nombre es Carole.
@@ -2547,14 +1438,6 @@ Indique el número de teléfono y la dirección de correo electrónico del clien
 ¿Cuándo se convirtió Carole Bernhard en cliente por primera vez?
 Indique el nombre y apellido de los clientes que tengan un monto pendiente entre 1000 y 3000.
 ¿Cuáles son el nombre y apellido de todos los clientes con entre 1000 y 3000 dólares pendientes?
-Indique el nombre y apellido de los clientes que viven en la ciudad de Lockmanfurt.
-¿Cuáles son los nombres y apellidos de todos los clientes que vivían en Lockmanfurt?
-¿En qué país vive el cliente con el nombre Carole y el apellido Bernhard?
-¿Cuál es el país en el que vivía la cliente Carole Bernhard?
-¿Cuál es el código postal del cliente con nombre Carole y apellido Bernhard?
-¿Cuál es el código postal del cliente Carole Bernhard?
-Enumere la identificación de todas las lecciones impartidas por el personal con el nombre Janessa, el apellido Sawyn y el apodo que contiene la letra 's'.
-¿Cuáles son los identificadores de las lecciones de todo el personal impartido por Janessa Sawayn cuyo apodo tiene la letra s?
 ¿Qué rangos tenemos para los profesores?
 Encuentre la lista de distintos rangos para los profesores.
 Muestra todos los distintos edificios que tienen salas de profesores.
@@ -2569,18 +1452,8 @@ Muestre el teléfono, la sala y el edificio de la facultad llamada Jerry Prince.
 ¿Cuáles son el teléfono, la habitación y el edificio del miembro de la facultad llamado Jerry Prince?
 Muestra el nombre y apellido de todos los instructores.
 ¿Cuáles son el nombre y apellido de todos los instructores?
-¿Cuáles son el nombre y apellido del asesor de Linda Smith?
-¿Quién es el asesor de Linda Smith? Dame el nombre y apellido.
-Mostrar los identificadores de los estudiantes cuyos asesores son profesores.
-¿Qué estudiantes tienen profesores como asesores? Encuentra sus identificaciones de estudiantes.
-Muestra el nombre y apellido de todos los estudiantes asesorados por Michael Goodrich.
-¿Qué estudiantes son asesorados por Michael Goodrich? Dame su nombre y apellido.
 ¿Qué actividades tenemos?
 Lista todas las actividades que tenemos.
-Muestra los nombres de todas las actividades en las que participa Mark Giuliano.
-¿Cuáles son los nombres de las actividades en las que participa Mark Giuliano?
-Encuentre los nombres de los miembros de la facultad que practican piragüismo o kayak.
-¿Qué profesores practican piragüismo o kayak? Dime sus nombres.
 Encuentra el nombre del aeropuerto de la ciudad de Goroka.
 ¿Cómo se llaman los aeropuertos de la ciudad de Goroka?
 Encuentre el nombre, ciudad, país y altitud (o elevación) de los aeropuertos de la ciudad de Nueva York.
@@ -2597,22 +1470,6 @@ Busque la identificación del pedido cuyo número de seguimiento de envío es "3
 ¿El número de seguimiento del envío de qué pedido es "3452"? Dame el id del pedido.
 Encuentre los identificadores de todos los artículos del pedido cuyo identificador de producto sea 11.
 Encuentre todos los artículos del pedido cuyo ID de producto sea 11. ¿Cuáles son los ID de los artículos del pedido?
-Enumere el nombre de todos los distintos clientes que tienen pedidos con estado "Embalaje".
-¿Qué clientes tienen pedidos con estado "Embalaje"? Dame los nombres de los clientes.
-Encuentre los detalles de todos los distintos clientes que tienen pedidos con estado "En carretera".
-¿Cuáles son los distintos clientes que tienen pedidos con estado "On Road"? ¿Dame los datos del cliente?
-Dame una lista de identificación y estado de los pedidos que pertenecen al cliente llamado "Jeramie".
-¿Qué pedidos realiza el cliente llamado "Jeramie"? Dame los ID y el estado del pedido.
-Encuentre las fechas de los pedidos que pertenecen al cliente llamado "Jeramie".
-¿Cuáles son las fechas de los pedidos realizados por el cliente llamado "Jeramie"?
-Dame los nombres de los clientes que han realizado pedidos entre el 2009-01-01 y el 2010-01-01.
-¿Qué clientes realizaron pedidos entre el 2009-01-01 y el 2010-01-01? Encuentra sus nombres.
-¿Dame una lista de identificadores de productos distintos de los pedidos realizados entre 1975-01-01 y 1976-01-01?
-¿Cuáles son los identificadores distintos de los productos pedidos entre 1975-01-01 y 1976-01-01?
-¿Cuándo se realizó el pedido cuyo número de seguimiento de envío es 3452? Dame la fecha.
-¿En qué día se realizó el pedido cuyo número de seguimiento de envío es 3452?
-¿Cuál es la fecha de realización del pedido cuyo número de factura es 10?
-¿Qué día se realizó el pedido con factura número 10?
 Encuentre los identificadores de los pedidos que se enviaron después del 2000-01-01.
 ¿Qué pedidos se envían después del 2000-01-01? Dame los identificadores del pedido.
 Busque la identificación del pedido enviado más recientemente.
@@ -2622,12 +1479,9 @@ Busque los números de factura creados antes del 3 de septiembre de 1989 o despu
 Encuentre los detalles distintos de las facturas creadas antes del 3 de septiembre de 1989 o después del 25 de diciembre de 2007.
 ¿Cuáles son los detalles distintos de las facturas creadas antes del 3 de septiembre de 1989 o después del 25 de diciembre de 2007?
 ¿Cuáles son los nombres y el año de construcción de los molinos del tipo 'Grondzeiler'?
-¿Cuáles son los distintos nombres y nacionalidades de los arquitectos que alguna vez construyeron un molino?
 ¿Cómo se llaman los molinos que no están situados en 'Donceel'?
-¿Cuáles son los distintos tipos de molinos construidos por arquitectos estadounidenses o canadienses?
 ¿Cuál es la ubicación del puente llamado 'Kolob Arch' o 'Rainbow Bridge'?
 ¿Cuál de los nombres de los molinos contiene la palabra francesa "Moulin"?
-¿Cómo se llaman los molinos construidos por los arquitectos que también construyeron un puente de más de 80 metros?
 muestre los títulos y autores o editores de todos los libros realizados después del año 1989.
 ¿Cuáles son los títulos y autores o editores que corresponden a libros realizados después de 1989?
 Mostrar todas las editoriales distintas de libros.
@@ -2636,9 +1490,3 @@ Mostrar todas las editoriales distintas de libros.
 Cuente el número de directores diferentes.
 Muestra todos los nombres de directores que tienen una película en el año 1999 o 2000.
 ¿Qué directores tuvieron una película en 1999 o 2000?
-Enumere todos los nombres de empresas con un libro publicado por Alyson.
-¿Cuáles son todos los nombres de empresas que tienen un libro publicado por Alyson?
-Muestre los títulos de películas y libros de todas las empresas en China.
-¿Cuáles son los títulos de películas y libros correspondientes a empresas constituidas en China?
-Mostrar todos los nombres de empresas con una película dirigida en el año 1999.
-¿Cuáles son todos los nombres de empresas que tienen una película correspondiente dirigida en el año 1999?

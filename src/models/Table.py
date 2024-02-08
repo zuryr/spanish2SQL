@@ -19,7 +19,7 @@ class Table:
         self.columns = columns
         self.rows = []  # Assuming each table has a list of rows for data storage
         
-        def create_row(self, values: list):
+    def create_row(self, values: list):
         """
         Creates a new row in the table.
 

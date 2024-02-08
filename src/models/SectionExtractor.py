@@ -6,48 +6,32 @@ from Section import Section
 
 class SectionExtractor:
     """
-    Class to load rules from CSV and apply them for text extraction.
+    Extracts potentially relevant sections following a given set of rules.
+
+    Attributes:
+        rules: list of rules that will be used to section respect with
     """
 
-    def __init__(self, rules_file_path: str, output_file_path: str):
+    def __init__(self, rules: List[Rule], output_file_path: str = None):
         """
-        Initializes an instance with rules loaded from a CSV file.
+        Initialize an instance with a list of rules.
 
         Args:
-            rules_file_path: path to the CSV file containing rules
-            output_file_path: path to the CSV file for storing extraction results
+            rules: list of rules that will be used to section respect with
+            output_file_path: optional path to the CSV file for storing extraction results
         """
-        self.rules = self.load_rules_from_csv(rules_file_path)
+        self.rules = rules
         self.output_file_path = output_file_path
 
-    def load_rules_from_csv(self, file_path: str) -> List[Rule]:
+    def extract(self, text: str) -> List[Section]:
         """
-        Loads rules from a CSV file.
+        Extracts all the possible relevant sections that match with the rules provided.
 
         Args:
-            file_path: path to the CSV file containing rules
-        Returns:
-            List of Rule objects
-        """
-        rules = []
-        with open(file_path, 'r') as csvfile:
-            csv_reader = csv.reader(csvfile, delimiter=',')
-            for row in csv_reader:
-                if len(row) == 3:
-                    rule = Rule(left_context=row[0], right_context=row[1], classification=row[2])
-                    rules.append(rule)
-                else:
-                    print("Invalid rule format in CSV:", row)
-        return rules
+            text: string to perform the extraction respect with
 
-    def extract_sections(self, text: str) -> List[Section]:
-        """
-        Applies rules to extract sections from the given text.
-
-        Args:
-            text: input text
         Returns:
-            List of Section objects extracted using rules
+            A list containing the sections that matches the rules in the extractor.
         """
         extracted_sections = []
         for rule in self.rules:
@@ -59,8 +43,8 @@ class SectionExtractor:
                 # Handle exception (e.g., rule delimiters not found)
                 print(e)
 
-        # Save extraction results to CSV only if sections are found
-        if extracted_sections:
+        # Save extraction results to CSV only if sections are found and output_file_path is provided
+        if self.output_file_path and extracted_sections:
             self.save_results_to_csv(text, extracted_sections)
 
         return extracted_sections
@@ -89,21 +73,49 @@ class SectionExtractor:
                     "Extracted Text": section.text,
                     "Classification": section.classification
                 })
+                
+    def load_rules_from_csv(self, file_path: str) -> List[Rule]:
+        """
+        Loads rules from a CSV file.
 
-# Example of how to use RuleExtractor and save results to CSV
-rules_file_path = "src\data\ctx_general.csv"
+        Args:
+            file_path: path to the CSV file containing rules
+        Returns:
+            List of Rule objects
+        """
+        rules = []
+        with open(file_path, 'r') as csvfile:
+            csv_reader = csv.reader(csvfile, delimiter=',')
+            for row in csv_reader:
+                if len(row) == 3:
+                    rule = Rule(left_context=row[0], right_context=row[1], classification=row[2])
+                    rules.append(rule)
+                else:
+                    print("Invalid rule format in CSV:", row)
+        return rules
+
+# Example of how to use SectionExtractor and save results to CSV
+rules = [
+    Rule(left_context="los", right_context="que", classification="TABLA")
+]
+
 timestamp = datetime.now().strftime("%Y_%m_%d%H_%M_%S")
+
+rules_file_path = "src\data\ctx_general.csv"
+
 file_output_name = f"results_rule_extraction_{timestamp}.csv"
 output_file_path = f"src/data/results/{file_output_name}"
-rule_extractor = SectionExtractor(rules_file_path, output_file_path)
+
+section_extractor = SectionExtractor(rules=SectionExtractor(rules=None).load_rules_from_csv(rules_file_path), output_file_path=output_file_path) # with CSV rules
+# section_extractor = SectionExtractor(rules=rules, output_file_path=output_file_path) # with fixed rules
 
 # Test sentences with SQL queries in natural language
 sentences = [
-    "Selecciona los jugadores que juega en el america.",
+    "Selecciona los jugadores que juegan en el america.",
     "Muestra todos los estudiantes que estudian en la escuela.",
     "Encuentra los animales que viven en Africa."
 ]
 
 # Extract sections from each sentence and save results to CSV
 for sentence in sentences:
-    extracted_sections = rule_extractor.extract_sections(sentence)
+    extracted_sections = section_extractor.extract(sentence)

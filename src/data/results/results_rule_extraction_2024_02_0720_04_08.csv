@@ -1,46 +1,46 @@
 Input Text,Left Context,Right Context,Extracted Text,Classification
-Selecciona los jugadores que juega en el america.,los,que,jugadores,TABLA
-Selecciona los jugadores que juega en el america.,que,end,juega en el america.,CONDICION
-Selecciona los jugadores que juega en el america.,que,end,juega en el america.,CONDICION
-Selecciona los jugadores que juega en el america.,los,que,jugadores,ATRIBUTO
-Selecciona los jugadores que juega en el america.,los,que,jugadores,ATRIBUTO
-Selecciona los jugadores que juega en el america.,los,que,jugadores,ATRIBUTO
-Selecciona los jugadores que juega en el america.,los,.,jugadores que juega en el america,TABLA
-Selecciona los jugadores que juega en el america.,el,.,america,ATRIBUTO
-Selecciona los jugadores que juega en el america.,los,.,jugadores que juega en el america,CONDICION
-Selecciona los jugadores que juega en el america.,el,end,america.,CONDICION
-Selecciona los jugadores que juega en el america.,los,en,jugadores que juega,TABLA
-Selecciona los jugadores que juega en el america.,el,end,america.,CONDICION
-Selecciona los jugadores que juega en el america.,los,que,jugadores,TABLA
-Selecciona los jugadores que juega en el america.,los,que,jugadores,TABLA
-Selecciona los jugadores que juega en el america.,el,end,america.,CONDICION
-Selecciona los jugadores que juega en el america.,el,end,america.,CONDICION
-Selecciona los jugadores que juega en el america.,los,end,jugadores que juega en el america.,TABLA
-Selecciona los jugadores que juega en el america.,los,que,jugadores,TABLA
-Selecciona los jugadores que juega en el america.,en,end,el america.,CONDICION
-Selecciona los jugadores que juega en el america.,los,que,jugadores,TABLA
-Selecciona los jugadores que juega en el america.,los,end,jugadores que juega en el america.,ATRIBUTO
-Selecciona los jugadores que juega en el america.,los,end,jugadores que juega en el america.,ATRIBUTO
-Selecciona los jugadores que juega en el america.,el,end,america.,CONDICION
-Selecciona los jugadores que juega en el america.,el,end,america.,CONDICION
-Selecciona los jugadores que juega en el america.,que,end,juega en el america.,CONDICION
-Selecciona los jugadores que juega en el america.,los,que,jugadores,TABLA
-Selecciona los jugadores que juega en el america.,el,end,america.,TABLA
-Selecciona los jugadores que juega en el america.,el,end,america.,CONDICION
-Selecciona los jugadores que juega en el america.,los,end,jugadores que juega en el america.,TABLA
-Selecciona los jugadores que juega en el america.,los,end,jugadores que juega en el america.,TABLA
-Selecciona los jugadores que juega en el america.,los,end,jugadores que juega en el america.,ATRIBUTO
-Selecciona los jugadores que juega en el america.,los,end,jugadores que juega en el america.,TABLA
-Selecciona los jugadores que juega en el america.,los,end,jugadores que juega en el america.,TABLA
-Selecciona los jugadores que juega en el america.,los,que,jugadores,TABLA
-Selecciona los jugadores que juega en el america.,los,end,jugadores que juega en el america.,TABLA
-Selecciona los jugadores que juega en el america.,los,end,jugadores que juega en el america.,ATRIBUTO
-Selecciona los jugadores que juega en el america.,los,end,jugadores que juega en el america.,TABLA
-Selecciona los jugadores que juega en el america.,los,end,jugadores que juega en el america.,TABLA
-Selecciona los jugadores que juega en el america.,el,end,america.,CONDICION
-Selecciona los jugadores que juega en el america.,los,end,jugadores que juega en el america.,TABLA
-Selecciona los jugadores que juega en el america.,que,end,juega en el america.,CONDICION
-Selecciona los jugadores que juega en el america.,el,end,america.,CONDICION
+Selecciona los jugadores que juegan en el america.,los,que,jugadores,TABLA
+Selecciona los jugadores que juegan en el america.,que,end,juegan en el america.,CONDICION
+Selecciona los jugadores que juegan en el america.,que,end,juegan en el america.,CONDICION
+Selecciona los jugadores que juegan en el america.,los,que,jugadores,ATRIBUTO
+Selecciona los jugadores que juegan en el america.,los,que,jugadores,ATRIBUTO
+Selecciona los jugadores que juegan en el america.,los,que,jugadores,ATRIBUTO
+Selecciona los jugadores que juegan en el america.,los,.,jugadores que juegan en el america,TABLA
+Selecciona los jugadores que juegan en el america.,el,.,america,ATRIBUTO
+Selecciona los jugadores que juegan en el america.,los,.,jugadores que juegan en el america,CONDICION
+Selecciona los jugadores que juegan en el america.,el,end,america.,CONDICION
+Selecciona los jugadores que juegan en el america.,los,en,jugadores que juegan,TABLA
+Selecciona los jugadores que juegan en el america.,el,end,america.,CONDICION
+Selecciona los jugadores que juegan en el america.,los,que,jugadores,TABLA
+Selecciona los jugadores que juegan en el america.,los,que,jugadores,TABLA
+Selecciona los jugadores que juegan en el america.,el,end,america.,CONDICION
+Selecciona los jugadores que juegan en el america.,el,end,america.,CONDICION
+Selecciona los jugadores que juegan en el america.,los,end,jugadores que juegan en el america.,TABLA
+Selecciona los jugadores que juegan en el america.,los,que,jugadores,TABLA
+Selecciona los jugadores que juegan en el america.,en,end,el america.,CONDICION
+Selecciona los jugadores que juegan en el america.,los,que,jugadores,TABLA
+Selecciona los jugadores que juegan en el america.,los,end,jugadores que juegan en el america.,ATRIBUTO
+Selecciona los jugadores que juegan en el america.,los,end,jugadores que juegan en el america.,ATRIBUTO
+Selecciona los jugadores que juegan en el america.,el,end,america.,CONDICION
+Selecciona los jugadores que juegan en el america.,el,end,america.,CONDICION
+Selecciona los jugadores que juegan en el america.,que,end,juegan en el america.,CONDICION
+Selecciona los jugadores que juegan en el america.,los,que,jugadores,TABLA
+Selecciona los jugadores que juegan en el america.,el,end,america.,TABLA
+Selecciona los jugadores que juegan en el america.,el,end,america.,CONDICION
+Selecciona los jugadores que juegan en el america.,los,end,jugadores que juegan en el america.,TABLA
+Selecciona los jugadores que juegan en el america.,los,end,jugadores que juegan en el america.,TABLA
+Selecciona los jugadores que juegan en el america.,los,end,jugadores que juegan en el america.,ATRIBUTO
+Selecciona los jugadores que juegan en el america.,los,end,jugadores que juegan en el america.,TABLA
+Selecciona los jugadores que juegan en el america.,los,end,jugadores que juegan en el america.,TABLA
+Selecciona los jugadores que juegan en el america.,los,que,jugadores,TABLA
+Selecciona los jugadores que juegan en el america.,los,end,jugadores que juegan en el america.,TABLA
+Selecciona los jugadores que juegan en el america.,los,end,jugadores que juegan en el america.,ATRIBUTO
+Selecciona los jugadores que juegan en el america.,los,end,jugadores que juegan en el america.,TABLA
+Selecciona los jugadores que juegan en el america.,los,end,jugadores que juegan en el america.,TABLA
+Selecciona los jugadores que juegan en el america.,el,end,america.,CONDICION
+Selecciona los jugadores que juegan en el america.,los,end,jugadores que juegan en el america.,TABLA
+Selecciona los jugadores que juegan en el america.,que,end,juegan en el america.,CONDICION
+Selecciona los jugadores que juegan en el america.,el,end,america.,CONDICION
 Muestra todos los estudiantes que estudian en la escuela.,los,que,estudiantes,TABLA
 Muestra todos los estudiantes que estudian en la escuela.,que,end,estudian en la escuela.,CONDICION
 Muestra todos los estudiantes que estudian en la escuela.,la,.,escuela,ATRIBUTO

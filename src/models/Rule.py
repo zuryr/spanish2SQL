@@ -11,7 +11,7 @@ class Rule:
 
         Args:
             left_context: keyword where the relevant section starts (exclusive)
-            right_context: keyword where the relevant section ends (exclusive), use "?" to indicate optional delimiter
+            right_context: keyword where the relevant section ends (exclusive)
                            use "end" to indicate no delimiter
             classification: classification assigned to sections following this rule
         """
@@ -26,7 +26,7 @@ class Rule:
         Args:
             text: string to perform the extraction with
         Returns:
-            Section of the text that follows the rule (including the delimiters)
+            Section of the text that follows the rule (excluding the delimiters)
         """
         start_index = text.find(f" {self.left_context} ")  # Include spaces before and after left_context
         if start_index == -1:

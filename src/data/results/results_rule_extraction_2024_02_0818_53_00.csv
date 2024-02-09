@@ -1,0 +1,4 @@
+Input Text,Left Context,Right Context,Extracted Text,Classification
+Selecciona los jugadores que juega en el america.,los,que,jugadores,TABLA
+Muestra todos los estudiantes que estudian en la escuela.,los,que,estudiantes,TABLA
+Encuentra los animales que viven en Africa.,los,que,animales,TABLA

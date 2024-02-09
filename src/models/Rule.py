@@ -1,6 +1,5 @@
 from Section import Section
 
-
 class Rule:
     """
     Rule to perform section extraction.
@@ -13,6 +12,7 @@ class Rule:
         Args:
             left_context: keyword where the relevant section starts (exclusive)
             right_context: keyword where the relevant section ends (exclusive)
+                           use "end" to indicate no delimiter
             classification: classification assigned to sections following this rule
         """
         self.left_context = left_context
@@ -28,19 +28,30 @@ class Rule:
         Returns:
             Section of the text that follows the rule (excluding the delimiters)
         """
-        start_index = text.find(self.left_context)
-        end_index = text.find(self.right_context, start_index + len(self.left_context))
+        start_index = text.find(f" {self.left_context} ")  # Include spaces before and after left_context
+        if start_index == -1:
+            return None  # No left delimiter found, return None
 
-        if start_index != -1 and end_index != -1:
-            extracted_text = text[start_index + len(self.left_context):end_index].strip()
-            return Section(classification=self.classification, text=extracted_text)
+        if self.right_context == "?":
+            end_index = text.find("?", start_index + len(self.left_context))
+        elif self.right_context == "end":
+            end_index = len(text)
         else:
-            raise ValueError("Rule delimiters not found in the text")
-        
-# Example of how to use the Rule class
-rule_example = Rule(left_context="los", right_context="que", classification="TABLA")
-text_example = "Lorem ipsum dolor sit amet, los consectetur adipiscing elit, que sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-extracted_section = rule_example.extract(text_example)
-print(f"Classification: {extracted_section.classification}")
-print(f"Extracted content: {extracted_section.text}")
+            end_index = text.find(self.right_context, start_index + len(self.left_context))
 
+        if end_index == -1:
+            return None  # No right delimiter found, return None
+
+        extracted_text = text[start_index + len(self.left_context) + 1:end_index].strip()
+        return Section(classification=self.classification, text=extracted_text, left_context=self.left_context, right_context=self.right_context)
+
+# # Example of how to use the Rule class
+# rule_example = Rule(left_context="los", right_context="en", classification="TABLA")
+# text_example = "Selecciona los jugadores que juegan en el america."
+# extracted_section = rule_example.extract(text_example)
+
+# if extracted_section is not None:
+#     print(f"Classification: {extracted_section.classification}")
+#     print(f"Extracted content: {extracted_section.text}")
+# else:
+#     print("Left or right delimiter not found, nothing extracted.")

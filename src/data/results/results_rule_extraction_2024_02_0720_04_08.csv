@@ -1,0 +1,116 @@
+Input Text,Left Context,Right Context,Extracted Text,Classification
+Selecciona los jugadores que juegan en el america.,los,que,jugadores,TABLA
+Selecciona los jugadores que juegan en el america.,que,end,juegan en el america.,CONDICION
+Selecciona los jugadores que juegan en el america.,que,end,juegan en el america.,CONDICION
+Selecciona los jugadores que juegan en el america.,los,que,jugadores,ATRIBUTO
+Selecciona los jugadores que juegan en el america.,los,que,jugadores,ATRIBUTO
+Selecciona los jugadores que juegan en el america.,los,que,jugadores,ATRIBUTO
+Selecciona los jugadores que juegan en el america.,los,.,jugadores que juegan en el america,TABLA
+Selecciona los jugadores que juegan en el america.,el,.,america,ATRIBUTO
+Selecciona los jugadores que juegan en el america.,los,.,jugadores que juegan en el america,CONDICION
+Selecciona los jugadores que juegan en el america.,el,end,america.,CONDICION
+Selecciona los jugadores que juegan en el america.,los,en,jugadores que juegan,TABLA
+Selecciona los jugadores que juegan en el america.,el,end,america.,CONDICION
+Selecciona los jugadores que juegan en el america.,los,que,jugadores,TABLA
+Selecciona los jugadores que juegan en el america.,los,que,jugadores,TABLA
+Selecciona los jugadores que juegan en el america.,el,end,america.,CONDICION
+Selecciona los jugadores que juegan en el america.,el,end,america.,CONDICION
+Selecciona los jugadores que juegan en el america.,los,end,jugadores que juegan en el america.,TABLA
+Selecciona los jugadores que juegan en el america.,los,que,jugadores,TABLA
+Selecciona los jugadores que juegan en el america.,en,end,el america.,CONDICION
+Selecciona los jugadores que juegan en el america.,los,que,jugadores,TABLA
+Selecciona los jugadores que juegan en el america.,los,end,jugadores que juegan en el america.,ATRIBUTO
+Selecciona los jugadores que juegan en el america.,los,end,jugadores que juegan en el america.,ATRIBUTO
+Selecciona los jugadores que juegan en el america.,el,end,america.,CONDICION
+Selecciona los jugadores que juegan en el america.,el,end,america.,CONDICION
+Selecciona los jugadores que juegan en el america.,que,end,juegan en el america.,CONDICION
+Selecciona los jugadores que juegan en el america.,los,que,jugadores,TABLA
+Selecciona los jugadores que juegan en el america.,el,end,america.,TABLA
+Selecciona los jugadores que juegan en el america.,el,end,america.,CONDICION
+Selecciona los jugadores que juegan en el america.,los,end,jugadores que juegan en el america.,TABLA
+Selecciona los jugadores que juegan en el america.,los,end,jugadores que juegan en el america.,TABLA
+Selecciona los jugadores que juegan en el america.,los,end,jugadores que juegan en el america.,ATRIBUTO
+Selecciona los jugadores que juegan en el america.,los,end,jugadores que juegan en el america.,TABLA
+Selecciona los jugadores que juegan en el america.,los,end,jugadores que juegan en el america.,TABLA
+Selecciona los jugadores que juegan en el america.,los,que,jugadores,TABLA
+Selecciona los jugadores que juegan en el america.,los,end,jugadores que juegan en el america.,TABLA
+Selecciona los jugadores que juegan en el america.,los,end,jugadores que juegan en el america.,ATRIBUTO
+Selecciona los jugadores que juegan en el america.,los,end,jugadores que juegan en el america.,TABLA
+Selecciona los jugadores que juegan en el america.,los,end,jugadores que juegan en el america.,TABLA
+Selecciona los jugadores que juegan en el america.,el,end,america.,CONDICION
+Selecciona los jugadores que juegan en el america.,los,end,jugadores que juegan en el america.,TABLA
+Selecciona los jugadores que juegan en el america.,que,end,juegan en el america.,CONDICION
+Selecciona los jugadores que juegan en el america.,el,end,america.,CONDICION
+Muestra todos los estudiantes que estudian en la escuela.,los,que,estudiantes,TABLA
+Muestra todos los estudiantes que estudian en la escuela.,que,end,estudian en la escuela.,CONDICION
+Muestra todos los estudiantes que estudian en la escuela.,la,.,escuela,ATRIBUTO
+Muestra todos los estudiantes que estudian en la escuela.,que,end,estudian en la escuela.,CONDICION
+Muestra todos los estudiantes que estudian en la escuela.,los,que,estudiantes,ATRIBUTO
+Muestra todos los estudiantes que estudian en la escuela.,los,que,estudiantes,ATRIBUTO
+Muestra todos los estudiantes que estudian en la escuela.,la,end,escuela.,CONDICION
+Muestra todos los estudiantes que estudian en la escuela.,los,que,estudiantes,ATRIBUTO
+Muestra todos los estudiantes que estudian en la escuela.,los,.,estudiantes que estudian en la escuela,TABLA
+Muestra todos los estudiantes que estudian en la escuela.,los,.,estudiantes que estudian en la escuela,CONDICION
+Muestra todos los estudiantes que estudian en la escuela.,estudiantes,.,que estudian en la escuela,CONDICION
+Muestra todos los estudiantes que estudian en la escuela.,los,en,estudiantes que estudian,TABLA
+Muestra todos los estudiantes que estudian en la escuela.,los,que,estudiantes,TABLA
+Muestra todos los estudiantes que estudian en la escuela.,la,end,escuela.,CONDICION
+Muestra todos los estudiantes que estudian en la escuela.,los,que,estudiantes,TABLA
+Muestra todos los estudiantes que estudian en la escuela.,la,end,escuela.,CONDICION
+Muestra todos los estudiantes que estudian en la escuela.,los,end,estudiantes que estudian en la escuela.,TABLA
+Muestra todos los estudiantes que estudian en la escuela.,los,que,estudiantes,TABLA
+Muestra todos los estudiantes que estudian en la escuela.,en,end,la escuela.,CONDICION
+Muestra todos los estudiantes que estudian en la escuela.,los,que,estudiantes,TABLA
+Muestra todos los estudiantes que estudian en la escuela.,la,end,escuela.,CONDICION
+Muestra todos los estudiantes que estudian en la escuela.,los,end,estudiantes que estudian en la escuela.,ATRIBUTO
+Muestra todos los estudiantes que estudian en la escuela.,los,end,estudiantes que estudian en la escuela.,ATRIBUTO
+Muestra todos los estudiantes que estudian en la escuela.,la,end,escuela.,CONDICION
+Muestra todos los estudiantes que estudian en la escuela.,la,end,escuela.,CONDICION
+Muestra todos los estudiantes que estudian en la escuela.,que,end,estudian en la escuela.,CONDICION
+Muestra todos los estudiantes que estudian en la escuela.,los,que,estudiantes,TABLA
+Muestra todos los estudiantes que estudian en la escuela.,los,end,estudiantes que estudian en la escuela.,TABLA
+Muestra todos los estudiantes que estudian en la escuela.,los,end,estudiantes que estudian en la escuela.,TABLA
+Muestra todos los estudiantes que estudian en la escuela.,la,end,escuela.,CONDICION
+Muestra todos los estudiantes que estudian en la escuela.,la,end,escuela.,CONDICION
+Muestra todos los estudiantes que estudian en la escuela.,los,end,estudiantes que estudian en la escuela.,ATRIBUTO
+Muestra todos los estudiantes que estudian en la escuela.,los,end,estudiantes que estudian en la escuela.,TABLA
+Muestra todos los estudiantes que estudian en la escuela.,los,end,estudiantes que estudian en la escuela.,TABLA
+Muestra todos los estudiantes que estudian en la escuela.,los,que,estudiantes,TABLA
+Muestra todos los estudiantes que estudian en la escuela.,los,end,estudiantes que estudian en la escuela.,TABLA
+Muestra todos los estudiantes que estudian en la escuela.,los,end,estudiantes que estudian en la escuela.,ATRIBUTO
+Muestra todos los estudiantes que estudian en la escuela.,los,end,estudiantes que estudian en la escuela.,TABLA
+Muestra todos los estudiantes que estudian en la escuela.,los,end,estudiantes que estudian en la escuela.,TABLA
+Muestra todos los estudiantes que estudian en la escuela.,los,end,estudiantes que estudian en la escuela.,TABLA
+Muestra todos los estudiantes que estudian en la escuela.,que,end,estudian en la escuela.,CONDICION
+Muestra todos los estudiantes que estudian en la escuela.,la,a,,ATRIBUTO
+Encuentra los animales que viven en Africa.,los,que,animales,TABLA
+Encuentra los animales que viven en Africa.,que,end,viven en Africa.,CONDICION
+Encuentra los animales que viven en Africa.,que,end,viven en Africa.,CONDICION
+Encuentra los animales que viven en Africa.,los,que,animales,ATRIBUTO
+Encuentra los animales que viven en Africa.,los,que,animales,ATRIBUTO
+Encuentra los animales que viven en Africa.,los,que,animales,ATRIBUTO
+Encuentra los animales que viven en Africa.,los,.,animales que viven en Africa,TABLA
+Encuentra los animales que viven en Africa.,los,.,animales que viven en Africa,CONDICION
+Encuentra los animales que viven en Africa.,los,en,animales que viv,TABLA
+Encuentra los animales que viven en Africa.,los,que,animales,TABLA
+Encuentra los animales que viven en Africa.,los,que,animales,TABLA
+Encuentra los animales que viven en Africa.,los,end,animales que viven en Africa.,TABLA
+Encuentra los animales que viven en Africa.,los,que,animales,TABLA
+Encuentra los animales que viven en Africa.,en,end,Africa.,CONDICION
+Encuentra los animales que viven en Africa.,los,que,animales,TABLA
+Encuentra los animales que viven en Africa.,los,end,animales que viven en Africa.,ATRIBUTO
+Encuentra los animales que viven en Africa.,los,end,animales que viven en Africa.,ATRIBUTO
+Encuentra los animales que viven en Africa.,que,end,viven en Africa.,CONDICION
+Encuentra los animales que viven en Africa.,los,que,animales,TABLA
+Encuentra los animales que viven en Africa.,los,end,animales que viven en Africa.,TABLA
+Encuentra los animales que viven en Africa.,los,end,animales que viven en Africa.,TABLA
+Encuentra los animales que viven en Africa.,los,end,animales que viven en Africa.,ATRIBUTO
+Encuentra los animales que viven en Africa.,los,end,animales que viven en Africa.,TABLA
+Encuentra los animales que viven en Africa.,los,end,animales que viven en Africa.,TABLA
+Encuentra los animales que viven en Africa.,los,que,animales,TABLA
+Encuentra los animales que viven en Africa.,los,end,animales que viven en Africa.,TABLA
+Encuentra los animales que viven en Africa.,los,end,animales que viven en Africa.,ATRIBUTO
+Encuentra los animales que viven en Africa.,los,end,animales que viven en Africa.,TABLA
+Encuentra los animales que viven en Africa.,los,end,animales que viven en Africa.,TABLA
+Encuentra los animales que viven en Africa.,los,end,animales que viven en Africa.,TABLA
+Encuentra los animales que viven en Africa.,que,end,viven en Africa.,CONDICION

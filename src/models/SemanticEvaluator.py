@@ -26,6 +26,12 @@ class SemanticEvaluator:
     def query_is_correct(self, query: Query) -> bool:
         """
         Determines if a query is semantically correct respecting to a database.
+        
+        A query is semantically correct if:
+        - The table exists in the database
+        - The column exists in the table
+        - The operators used are valid with the column's data type
+        - The aggregators used are valid with the column's data type
 
         Args:
             query: query to evaluate

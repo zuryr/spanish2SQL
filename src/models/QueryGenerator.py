@@ -38,6 +38,10 @@ class QueryGenerator:
         # Extract relevant sections from the natural language query
         extracted_sections = self.section_extractor.extract(natural_language_query)
 
+        #TODO: clean sections with pipelines
+
+        #TODO: evaluate condition and column sections
+
         # Generate possible valid triplets of sections
         possible_triplets = self.section_extractor.generate_triplets(extracted_sections)
 
@@ -72,25 +76,31 @@ class QueryGenerator:
         # Check if the table exists in the database
         # TODO: Implement logic to evaluate the existence of the table
         # if table_name and self.evaluator.table_exists(table_name):
-        if table_name:
+        if not table_name:
 
-            # table = self.database.get_table_by_name(table_name)
-            table: Table = Table(table_name, columns=None)
+            return None
 
-            # Check if the attribute exists in the table
-            # TODO: Given a table, implement logic to extract the existence of the column
-            # if attribute_name and self.evaluator.column_exists(table, attribute_name):
-            if attribute_name:
+        # table = self.database.get_table_by_name(table_name)
+        table: Table = Table(table_name, columns=None)
 
-                # column = table.get_column_by_name(attribute_name)
-                column: Column = Column(attribute_name, 'char')
+        # Check if the attribute exists in the table
+        # TODO: Given a table, implement logic to extract the existence of the column
+        # if attribute_name and self.evaluator.column_exists(table, attribute_name):
+        if not attribute_name:
 
-                if condition_text:
-
-                    # TODO: Implement logic to convert condition_text into a Condition object
-                    # condition = Condition(...)  # Replace with the actual Condition object
-
-                    return Query(table=table, columns=[column], condition=None)
-                return Query(table=table, columns=[column], condition=None)
             return Query(table=table, columns=[None], condition=None)
-        return None
+
+        # column = table.get_column_by_name(attribute_name)
+        column: Column = Column(attribute_name, 'char')
+
+        if not condition_text:
+
+            # TODO: Implement logic to convert condition_text into a Condition object
+            # condition = Condition(...)  # Replace with the actual Condition object
+
+            return Query(table=table, columns=[column], condition=None)
+        
+        return Query(table=table, columns=[column], condition=None)
+                
+            
+        

@@ -1,12 +1,14 @@
 from Database import Database
 from Query import Query
 from Table import Table
+from Exceptions.TableNotFoundError import TableNotFoundError
+from Exceptions.ColumnNotFoundError import ColumnNotFoundError
 
 
 class SemanticEvaluator:
     """Utilities for evaluating if a SQL query (or any of its parts) is semantically correct respecting to a database."""
 
-    def __init__(self, database: Database):
+    def __init__(self, database: Database, tableNotFound: TableNotFoundError, columnNotFound:ColumnNotFoundError):
         """
         Initializes a SemanticEvaluator instance respecting to a database.
 
@@ -14,6 +16,8 @@ class SemanticEvaluator:
             database: schema to evaluate respect with
         """
         self.database = database
+        self.tableNotFound = tableNotFound
+        self.columnNotFound = columnNotFound
 
     def table_exists(self, table_name: str) -> bool:
         """Check if the table exists in the database."""
@@ -43,12 +47,12 @@ class SemanticEvaluator:
         """
         table_name = query.table.name
         if not self.table_exists(table_name):
-            raise f"The table '{table_name}' doesn't exist in the database"
+            raise self.tableNotFound(self.database,table_name)
 
         table = self.database.get_table(table_name)
         for column in query.columns:
             if not self.column_exists(table, column.name):
-                raise f"The column '{column.name}' doesn't exist in the table '{table_name}'"
+                raise self.columnNotFound(table_name, column.name)
 
         # TODO: Add more checks for operators, data types, etc.
         return True

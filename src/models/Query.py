@@ -6,7 +6,7 @@ from Exceptions.TableNotFoundError import TableNotFoundError
 class Query:
     """SQL query container."""
 
-    def __init__(self, table: Table, columns: list[Column], condition: Condition, tableNotFound: TableNotFoundError):
+    def __init__(self, table: Table, columns: list[Column], condition: Condition):
         """
         Initializes an abstraction of an SQL query.
 
@@ -18,7 +18,7 @@ class Query:
         self.table = table
         self.columns = columns
         self.condition = condition
-        self.tableNotFound = tableNotFound
+        self.tableNotFound = TableNotFoundError
 
     def to_SQL_string(self) -> str:
         """
@@ -31,7 +31,7 @@ class Query:
         where_clause = ''
         
         if not self.table:
-            raise self.tableNotFound(self.table, "Nombre tabla")
+            raise TableNotFoundError("", self.table.name)
         
         # FROM statement
         from_clause = f"FROM {self.table.name}"

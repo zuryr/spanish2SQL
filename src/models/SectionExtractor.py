@@ -5,6 +5,8 @@ from CsvHandler import CsvHandler
 from Rule import Rule
 from Section import Section
 
+from itertools import combinations
+
 
 class SectionExtractor:
     """
@@ -44,33 +46,58 @@ class SectionExtractor:
                 print(e)
 
         return extracted_sections
+    
+    def generate_triplets(self, extracted_sections: list[Section]) -> list[tuple[Section]]:
+        """
+        Generates all possible valid triplets of sections.
+
+        Args:
+            extracted_sections: list of extracted sections
+
+        Returns:
+            A list of tuples, where each tuple represents a valid triplet of sections.
+        """
+        valid_classifications = ["TABLA", "ATRIBUTO", "CONDICION"]
+        possible_triplets = []
+        
+        # A dictionary who defines the weights of each clasiffication
+        classification_weights = {"TABLA": 1, "ATRIBUTO": 2, "CONDICION": 3}
+        extracted_sections = sorted(extracted_sections, key=lambda x: classification_weights.get(x.classification, float('inf')))
+
+        # Genera todas las combinaciones posibles de tripletas
+        for triplet in combinations(extracted_sections, 3):
+            # Verifica si las clasificaciones son válidas
+            if all(section.classification in valid_classifications for section in triplet):
+                possible_triplets.append(triplet)
+
+        return possible_triplets
 
 
 # Example of how to use SectionExtractor and save results to CSV
-# rules = [
-#     Rule(left_context="los", right_context="que", classification="TABLA")
+# # rules = [
+# #     Rule(left_context="los", right_context="que", classification="TABLA")
+# # ]
+# rules_file_path = "src\data\ctx_general.csv" 
+# rules = CsvHandler.load_rules_from_csv(rules_file_path)
+
+# section_extractor = SectionExtractor(rules=rules)
+# # section_extractor = SectionExtractor(rules=rules, output_file_path=output_file_path) # with fixed rules
+
+# # Test sentences with SQL queries in natural language
+# sentences = [
+#     "Selecciona los jugadores que juega en el america.",
+#     "Muestra todos los estudiantes que estudian en la escuela.",
+#     "Encuentra los animales que viven en Africa."
 # ]
-rules_file_path = "src\data\ctx_general.csv" 
-rules = CsvHandler.load_rules_from_csv(rules_file_path)
 
-section_extractor = SectionExtractor(rules=rules)
-# section_extractor = SectionExtractor(rules=rules, output_file_path=output_file_path) # with fixed rules
+# timestamp = datetime.now().strftime("%Y_%m_%d%H_%M_%S")
+# file_output_name = f"results_rule_extraction_{timestamp}.csv"
+# output_file_path = f"src/data/results/{file_output_name}"
 
-# Test sentences with SQL queries in natural language
-sentences = [
-    "Selecciona los jugadores que juega en el america.",
-    "Muestra todos los estudiantes que estudian en la escuela.",
-    "Encuentra los animales que viven en Africa."
-]
+# # Extract sections from each sentence
+# for sentence in sentences:
+#     extracted_sections = section_extractor.extract(sentence)
 
-timestamp = datetime.now().strftime("%Y_%m_%d%H_%M_%S")
-file_output_name = f"results_rule_extraction_{timestamp}.csv"
-output_file_path = f"src/data/results/{file_output_name}"
-
-# Extract sections from each sentence
-for sentence in sentences:
-    extracted_sections = section_extractor.extract(sentence)
-
-    # Save extraction results to CSV only if sections are found
-    if extracted_sections:
-        CsvHandler.save_results_to_csv(output_file_path, sentence, extracted_sections)
+#     # Save extraction results to CSV only if sections are found
+#     if extracted_sections:
+#         CsvHandler.save_results_to_csv(output_file_path, sentence, extracted_sections)

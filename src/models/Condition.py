@@ -1,4 +1,4 @@
-from src.models.Column import Column
+from Column import Column
 
 
 class Condition:

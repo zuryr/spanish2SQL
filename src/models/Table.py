@@ -1,4 +1,4 @@
-from src.models.Column import Column
+from Column import Column
 
 
 # TODO: handle relations between tables
@@ -7,7 +7,7 @@ class Table:
     Information about a table in a Database
     """
 
-    def __init__(self, name: str, columns: list[Column]):
+    def __init__(self, name: str, columns: list[Column] = None):
         """
         Initializes an instance with information about the table.
 

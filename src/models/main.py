@@ -4,12 +4,16 @@ from SectionExtractor import SectionExtractor
 from QueryGenerator import QueryGenerator
 from CsvHandler import CsvHandler
 from Rule import Rule
-
+from Column import Column
 
 # Definir la estructura básica de la base de datos
-database = Database('PRUEBA')
-database.add_table("Estudiantes", ["id", "nombre", "edad"])
-database.add_table("Cursos", ["id", "nombre", "profesor"])
+database = Database('Estudiantes')
+columns_1 = [Column('id', 'varchar'), Column('nombre', 'varchar'), Column('pais','varchar')]
+database.add_table("Estudiantes", columns_1)
+columns_2 = [Column('id','varchar'), Column('nombre','varchar'), Column('profesor','varchar')]
+database.add_table("Cursos", columns_2)
+
+print(database.tables)
 
 # rules_file_path = "src\data\ctx_general.csv" 
 # rules = CsvHandler.load_rules_from_csv(rules_file_path)

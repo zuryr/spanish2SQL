@@ -45,7 +45,7 @@ class QueryGenerator:
         possible_triplets = self.section_extractor.generate_triplets(extracted_sections)
         
         # Initialize the semantic evaluator and section extractor
-        semantic_evaluators = ['fixed', 'word_processing', 'embeddings']
+        semantic_evaluators = ['fixed', 'embeddings', 'word_processing']
         
         generated_queries = []
         
@@ -86,8 +86,8 @@ class QueryGenerator:
 
         # Convert condition text into Condition object
         condition = None
-        if condition_text:
-            condition = Condition(condition_text)
+        # if condition_text:
+        #     condition = Condition(condition_text)
 
         # Return Query object
         return Query(table=table, columns=[column], condition=condition)

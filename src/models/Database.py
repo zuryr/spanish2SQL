@@ -19,15 +19,14 @@ class Database:
         self.tables: Dict[str, Table] = {}
 
     def table_exists(self, table_name: str) -> bool:
-        """
-        Checks if a table exists in the database.
-
-        Args:
-            table_name: name of the table
-        Returns:
-            True if the table exists, False otherwise
-        """
+        """Check if the table exists in the database."""
         return table_name in self.tables
+
+    def column_exists(self, table: Table, column_name: str) -> bool:
+        """Check if the column exists in the given table."""
+        if self.table_exists(table):
+            return column_name in table.columns
+        return False
 
     def get_table_by_name(self, table_name: str) -> Table:
         """

@@ -11,8 +11,6 @@ database = Database('PRUEBA')
 database.add_table("Estudiantes", ["id", "nombre", "edad"])
 database.add_table("Cursos", ["id", "nombre", "profesor"])
 
-# Inicializar el evaluador semántico y el extractor de secciones
-evaluator = SemanticEvaluator(database)
 # rules_file_path = "src\data\ctx_general.csv" 
 # rules = CsvHandler.load_rules_from_csv(rules_file_path)
 rules = [
@@ -23,7 +21,7 @@ rules = [
 section_extractor = SectionExtractor(rules=rules)
 
 # Inicializar el generador de consultas
-query_generator = QueryGenerator(database, evaluator, section_extractor)
+query_generator = QueryGenerator(database, section_extractor)
 
 # Consulta en lenguaje natural
 natural_language_query = "Muestra todos los estudiantes que estudian en Mexico"

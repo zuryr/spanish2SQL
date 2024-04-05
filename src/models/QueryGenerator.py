@@ -13,7 +13,7 @@ class QueryGenerator:
     Generates semantically correct queries using information about a specific database.
     """
 
-    def __init__(self, database: Database, evaluator: SemanticEvaluator, section_extractor: SectionExtractor):
+    def __init__(self, database: Database, section_extractor: SectionExtractor):
         """
         Creates an instance of a query generator for a specific database.
 
@@ -23,7 +23,6 @@ class QueryGenerator:
             section_extractor: instance of SectionExtractor for extracting relevant sections
         """
         self.database = database
-        self.evaluator = evaluator
         self.section_extractor = section_extractor
 
     def generate_queries(self, natural_language_query: str) -> list[Query]:
@@ -44,63 +43,54 @@ class QueryGenerator:
 
         # Generate possible valid triplets of sections
         possible_triplets = self.section_extractor.generate_triplets(extracted_sections)
-
+        
+        # Initialize the semantic evaluator and section extractor
+        semantic_evaluators = ['fixed', 'word_processing', 'embeddings']
+        
         generated_queries = []
+        
+        for evaluator_type in semantic_evaluators:
+            evaluator = SemanticEvaluator(self.database, evaluator_type)
 
-        # Iterate through possible triplets and generate queries
-        for triplet in possible_triplets:
-            # TODO: Implement the logic to generate queries based on the triplet
-            query = self.generate_query_from_triplet(triplet)
-            if query:
-                generated_queries.append(query)
+            # Iterate through possible triplets and generate queries
+            for triplet in possible_triplets:
+                query = self.generate_query_from_triplet(triplet, evaluator)
+                if query:
+                    generated_queries.append(query)
 
         return generated_queries
 
-    def generate_query_from_triplet(self, triplet: tuple[Section]) -> Query:
+    def generate_query_from_triplet(self, triplet: tuple[Section], evaluator_type: SemanticEvaluator) -> Query:
         """
         Generates a semantically valid query from a triplet of sections.
 
         Args:
             triplet: tuple containing three sections (TABLA, ATRIBUTO, CONDICION)
+            evaluator: Type of semantic evaluator
         Returns:
             A Query object representing the generated query.
         """
         
-        table_section, attribute_section, condition_section = triplet
-
-        # Extract relevant information from sections
-        table_name = table_section.text
-        attribute_name = attribute_section.text
-        condition_text = condition_section.text
+        # Evaluate sections using the selected evaluator
+        table_name, attribute_name, condition_text = evaluator_type.evaluator.evaluate_sections(triplet)
 
         # Check if the table exists in the database
-        # TODO: Implement logic to evaluate the existence of the table
-        # if table_name and self.evaluator.table_exists(table_name):
         if not table_name:
-
             return None
 
-        # table = self.database.get_table_by_name(table_name)
-        table: Table = Table(table_name, columns=None)
+        # Get table and column objects
+        table = self.database.get_table_by_name(table_name)
+        column = None
+        if attribute_name:
+            column = table.get_column_by_name(attribute_name)
 
-        # Check if the attribute exists in the table
-        # TODO: Given a table, implement logic to extract the existence of the column
-        # if attribute_name and self.evaluator.column_exists(table, attribute_name):
-        if not attribute_name:
+        # Convert condition text into Condition object
+        condition = None
+        if condition_text:
+            condition = Condition(condition_text)
 
-            return Query(table=table, columns=[None], condition=None)
-
-        # column = table.get_column_by_name(attribute_name)
-        column: Column = Column(attribute_name, 'char')
-
-        if not condition_text:
-
-            # TODO: Implement logic to convert condition_text into a Condition object
-            # condition = Condition(...)  # Replace with the actual Condition object
-
-            return Query(table=table, columns=[column], condition=None)
-        
-        return Query(table=table, columns=[column], condition=None)
+        # Return Query object
+        return Query(table=table, columns=[column], condition=condition)
                 
             
         

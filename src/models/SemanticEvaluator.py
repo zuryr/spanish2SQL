@@ -3,12 +3,15 @@ from Query import Query
 from Table import Table
 from Exceptions.TableNotFoundError import TableNotFoundError
 from Exceptions.ColumnNotFoundError import ColumnNotFoundError
+from WordProcessingSemanticEvaluator import WordProcessingSemanticEvaluator
+from FixedSemanticEvaluator import FixedSemanticEvaluator
+from EmbeddingSemanticEvaluator import EmbeddingSemanticEvaluator
 
 
 class SemanticEvaluator:
     """Utilities for evaluating if a SQL query (or any of its parts) is semantically correct respecting to a database."""
 
-    def __init__(self, database: Database, tableNotFound: TableNotFoundError, columnNotFound:ColumnNotFoundError):
+    def __init__(self, database: Database, evaluator_type: str = 'fixed'):
         """
         Initializes a SemanticEvaluator instance respecting to a database.
 
@@ -16,16 +19,19 @@ class SemanticEvaluator:
             database: schema to evaluate respect with
         """
         self.database = database
-        self.tableNotFound = tableNotFound
-        self.columnNotFound = columnNotFound
+        self.tableNotFound = TableNotFoundError(database, '')
+        self.columnNotFound = ColumnNotFoundError(database, '')
+        self.evaluator_type = evaluator_type
+        
+        if self.evaluator_type == 'fixed':
+            self.evaluator = FixedSemanticEvaluator(self.database)
+        elif self.evaluator_type == 'word_processing':
+            self.evaluator = WordProcessingSemanticEvaluator(self.database)
+        elif self.evaluator_type == 'embeddings':
+            self.evaluator = EmbeddingSemanticEvaluator(self.database)
+        else:
+            raise ValueError("Invalid evaluator type")
 
-    def table_exists(self, table_name: str) -> bool:
-        """Check if the table exists in the database."""
-        return table_name in self.database.tables
-
-    def column_exists(self, table: Table, column_name: str) -> bool:
-        """Check if the column exists in the given table."""
-        return column_name in table.columns
 
     def query_is_correct(self, query: Query) -> bool:
         """

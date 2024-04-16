@@ -6,6 +6,7 @@ from Section import Section
 from Table import Table
 from Column import Column
 from Condition import Condition
+from TextPipeline import TextPipeline
 
 
 class QueryGenerator:
@@ -13,7 +14,7 @@ class QueryGenerator:
     Generates semantically correct queries using information about a specific database.
     """
 
-    def __init__(self, database: Database, section_extractor: SectionExtractor):
+    def __init__(self, database: Database, evaluator: SemanticEvaluator, section_extractor: SectionExtractor, pipeline: TextPipeline):
         """
         Creates an instance of a query generator for a specific database.
 
@@ -21,9 +22,12 @@ class QueryGenerator:
             database: schema to generate the queries respect with
             evaluator: previously initialized semantic evaluator with the same database
             section_extractor: instance of SectionExtractor for extracting relevant sections
+            pipeline: instance of TextPipeline
         """
         self.database = database
         self.section_extractor = section_extractor
+        self.evaluator = evaluator
+        self.pipeline = pipeline
 
     def generate_queries(self, natural_language_query: str) -> list[Query]:
         """
@@ -38,29 +42,28 @@ class QueryGenerator:
         extracted_sections = self.section_extractor.extract(natural_language_query)
 
         #TODO: clean sections with pipelines
+        cleaned_sections = self.pipeline.transform_sections(extracted_sections)
 
-        #TODO: evaluate condition and column sections
+        # TODO: filter sections by classification
 
-        # Generate possible valid triplets of sections
-        possible_triplets = self.section_extractor.generate_triplets(extracted_sections)
-        
-        # Initialize the semantic evaluator and section extractor
-        semantic_evaluators = ['fixed', 'embeddings', 'word_processing']
-        
+        # TODO: generate combinations of query elements and save in queries
+        possible_triplets = self.section_extractor.generate_triplets(cleaned_sections)
+
         generated_queries = []
-        
-        for evaluator_type in semantic_evaluators:
-            evaluator = SemanticEvaluator(self.database, evaluator_type)
 
-            # Iterate through possible triplets and generate queries
-            for triplet in possible_triplets:
-                query = self.generate_query_from_triplet(triplet, evaluator)
-                if query:
-                    generated_queries.append(query)
+        for triplet in possible_triplets:
+            query = self.generate_query_from_triplet(triplet)
+            generated_queries.append(query)
 
-        return generated_queries
+        # TODO: evaluate queries and conserve those that are semantically correct
+        final = []
+        for query in generated_queries:
+            if self.evaluator.query_is_correct(query):
+                final.append(query)
 
-    def generate_query_from_triplet(self, triplet: tuple[Section], evaluator_type: SemanticEvaluator) -> Query:
+        return final
+
+    def generate_query_from_triplet(self, triplet: tuple[Section]) -> Query:
         """
         Generates a semantically valid query from a triplet of sections.
 
@@ -72,7 +75,8 @@ class QueryGenerator:
         """
         
         # Evaluate sections using the selected evaluator
-        table_name, attribute_name, condition_text = evaluator_type.evaluator.evaluate_sections(triplet)
+        table, attribute, condition = triplet
+        table_name, attribute_name, condition_text = table.text, attribute.text, condition.text
 
         # Check if the table exists in the database
         if not table_name:

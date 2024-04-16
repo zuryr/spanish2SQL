@@ -1,17 +1,13 @@
 from Database import Database
-from Query import Query
-from Table import Table
-from Exceptions.TableNotFoundError import TableNotFoundError
 from Exceptions.ColumnNotFoundError import ColumnNotFoundError
-from WordProcessingSemanticEvaluator import WordProcessingSemanticEvaluator
-from FixedSemanticEvaluator import FixedSemanticEvaluator
-from EmbeddingSemanticEvaluator import EmbeddingSemanticEvaluator
+from Exceptions.TableNotFoundError import TableNotFoundError
+from Query import Query
 
 
 class SemanticEvaluator:
     """Utilities for evaluating if a SQL query (or any of its parts) is semantically correct respecting to a database."""
 
-    def __init__(self, database: Database, evaluator_type: str = 'fixed'):
+    def __init__(self, database: Database):
         """
         Initializes a SemanticEvaluator instance respecting to a database.
 
@@ -21,16 +17,6 @@ class SemanticEvaluator:
         self.database = database
         self.tableNotFound = TableNotFoundError(database, '')
         self.columnNotFound = ColumnNotFoundError(database, '')
-        self.evaluator_type = evaluator_type
-        
-        if self.evaluator_type == 'fixed':
-            self.evaluator = FixedSemanticEvaluator(self.database)
-        elif self.evaluator_type == 'word_processing':
-            self.evaluator = WordProcessingSemanticEvaluator(self.database)
-        elif self.evaluator_type == 'embeddings':
-            self.evaluator = EmbeddingSemanticEvaluator(self.database)
-        else:
-            raise ValueError("Invalid evaluator type")
 
 
     def query_is_correct(self, query: Query) -> bool:

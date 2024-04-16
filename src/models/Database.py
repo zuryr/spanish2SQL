@@ -63,12 +63,29 @@ class Database:
     
     def get_all_attributes_from_table(self, table_name: str):
         """
-        Adds a new table to the database.
+        Return all colums from a specific table.
 
         Args:
-            table_name: name of the table to be added
-            column_names: list of column names for the new table
+            table_name: name of the table 
         """
         table = self.get_table_by_name(table_name)
         return table.get_all_colums_from_table()
+
+    def get_all_attributes(self) -> List[Column]:
+        """
+        Return all attributes from the database
+        """
+        all_attributes = []
+        for table in self.tables.values():
+            columns_in_table = table.columns.values()
+            for col in columns_in_table:
+                all_attributes.append(col)
+
+        return all_attributes
+
+    def column_exists(self, column_name: str) -> bool:
+        all_columns = self.get_all_attributes()
+        cols_names = map(lambda col: col.name, all_columns)
+
+        return column_name in cols_names
             

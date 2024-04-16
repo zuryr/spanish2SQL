@@ -22,12 +22,6 @@ class Database:
         """Check if the table exists in the database."""
         return table_name in list(self.tables.keys())
 
-    def column_exists(self, table: Table, column_name: str) -> bool:
-        """Check if the column exists in the given table."""
-        if self.table_exists(table):
-            return column_name in table.columns
-        return False
-
     def get_table_by_name(self, table_name: str) -> Table:
         """
         Returns a table by name.

@@ -3,6 +3,7 @@ from typing import List
 
 from Rule import Rule
 from Section import Section
+from src.models.Condition import Condition
 from src.models.Enums.Classifications import Classifications
 
 
@@ -45,7 +46,7 @@ class SectionExtractor:
 
         return extracted_sections
 
-    def generate_triplets(self, extracted_sections: list[Section]) -> list[tuple[Section]]:
+    def generate_triplets(self, cleaned_sections: list[Section | Condition]) -> list[tuple[Section | Condition]]:
         """
         Generates all possible valid triplets of sections.
 
@@ -59,17 +60,25 @@ class SectionExtractor:
                                  Classifications.CONDICION.value]
         possible_triplets = []
 
-        # A dictionary who defines the weights of each clasiffication
-        classification_weights = {Classifications.TABLA.value: 1, Classifications.ATRIBUTO.value: 2,
-                                  Classifications.CONDICION.value: 3}
-        extracted_sections = sorted(extracted_sections,
-                                    key=lambda x: classification_weights.get(x.classification, float('inf')))
+        found_tables = []
+        found_attributes = []
+        found_condition = []
 
-        # Genera todas las combinaciones posibles de tripletas
-        for triplet in combinations(extracted_sections, 3):
-            # Verifica si las clasificaciones son válidas
-            if all(section.classification in valid_classifications for section in triplet):
-                possible_triplets.append(triplet)
+        for section in cleaned_sections:
+            if type(section) is Section:
+                if section.classification in Classifications.TABLA.value:
+                    found_tables.append(section)
+                if section.classification in Classifications.ATRIBUTO.value:
+                    found_attributes.append(section)
+            else:
+                found_condition.append(section)
+
+        for table in found_tables:
+            for attribute in found_attributes:
+                for condition in found_condition:
+                    possible_triplets.append([table, attribute, condition])
+                possible_triplets.append([table,attribute, None])
+            possible_triplets.append([table, None, None])
 
         return possible_triplets
 

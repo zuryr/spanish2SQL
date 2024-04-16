@@ -1,6 +1,5 @@
 from Column import Column
 from typing import Dict
-from Database import Database
 
 
 # TODO: handle relations between tables
@@ -36,12 +35,14 @@ class Table:
         Args:
             attribute_name: name of the column
         """
+        if attribute_name in self.columns.keys():
+            return self.columns[attribute_name]
         
-        return self.columns[attribute_name]
+        return None
     
-    def column_exists(self, database: Database, column_name: str) -> bool:
-        """Check if the column exists in the given table."""
-        if database.table_exists(self.name):
-            return column_name in self.columns
-        return False
+    # def column_exists(self, database: Database, column_name: str) -> bool:
+    #     """Check if the column exists in the given table."""
+    #     if database.table_exists(self.name):
+    #         return column_name in self.columns
+    #     return False
     

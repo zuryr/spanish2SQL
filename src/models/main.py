@@ -1,18 +1,16 @@
-from Database import Database
-from SemanticEvaluator import SemanticEvaluator
-from SectionExtractor import SectionExtractor
-from QueryGenerator import QueryGenerator
-from CsvHandler import CsvHandler
-from Rule import Rule
 from Column import Column
+from Database import Database
+from QueryGenerator import QueryGenerator
+from Rule import Rule
+from SectionExtractor import SectionExtractor
+from SemanticEvaluator import SemanticEvaluator
 from src.models.EmbeddingPipeline import EmbeddingPipeline
-from src.models.SimplePipeline import SimplePipeline
 
 # Definir la estructura básica de la base de datos
-database = Database('Estudiantes')
-columns_1 = [Column('id', 'varchar'), Column('nombre', 'varchar'), Column('pais','varchar')]
+database = Database('Escuela')
+columns_1 = [Column('id', 'int', [1, 2, 3]), Column('nombre', 'varchar', ["Jose", "Jaime"]), Column('pais', 'varchar', ["México", "Argentina"])]
 database.add_table("Estudiantes", columns_1)
-columns_2 = [Column('id','varchar'), Column('nombre','varchar'), Column('profesor','varchar')]
+columns_2 = [Column('id', 'int', [1, 2, 3]), Column('nombre', 'varchar', ["Mate", "Español"]), Column('profesor', 'varchar', ["Ramon", "Bere"])]
 database.add_table("Cursos", columns_2)
 
 # rules_file_path = "src\data\ctx_general.csv" 

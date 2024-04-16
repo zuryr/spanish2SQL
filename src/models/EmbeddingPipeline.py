@@ -17,7 +17,7 @@ class EmbeddingPipeline(TextPipeline):
     def __init__(self, evaluator: SemanticEvaluator, extractor: SectionExtractor):
         super().__init__(evaluator, extractor)
 
-    def transform_sections(self, text: list[Section]) -> list[Section]:
+    def transform_sections(self, text: list[Section]) -> list[Section | Condition]:
         cleaned_sections = []
         for section in text:
             cleaned_sections.append(self.transform_section(section))
@@ -64,7 +64,7 @@ class EmbeddingPipeline(TextPipeline):
     def evaluate_condition(self, section: Section) -> Condition:
         """Evaluate the CONDITION section."""
         # TODO: Implement logic to evaluate condition
-        columnObserved = Column("prueba", "varchar")
+        columnObserved = Column("pais", "varchar", ["México", "Argentina"])
         condition = Condition(columnObserved, '500', '<')
         return condition
 

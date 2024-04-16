@@ -1,5 +1,6 @@
 from abc import ABC, abstractmethod
 
+from src.models.Condition import Condition
 from src.models.Section import Section
 from src.models.SectionExtractor import SectionExtractor
 from src.models.SemanticEvaluator import SemanticEvaluator
@@ -19,7 +20,7 @@ class TextPipeline(ABC):
         self.extractor = extractor
 
     @abstractmethod
-    def transform_sections(self, section_list: list[Section]) -> list[Section]:
+    def transform_sections(self, section_list: list[Section]) -> list[Section | Condition]:
         """
         Performs a transformation to a text.
 
@@ -31,7 +32,7 @@ class TextPipeline(ABC):
         pass
 
     @abstractmethod
-    def transform_section(self, section: Section) -> Section:
+    def transform_section(self, section: Section) -> Section | Condition:
         """
         Performs a transformation to a text.
 

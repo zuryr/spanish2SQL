@@ -49,23 +49,20 @@ class QueryGenerator:
         # TODO: filter sections by classification
 
         # TODO: generate combinations of query elements and save in queries
+        # TODO: evaluate queries and conserve those that are semantically correct
         possible_triplets = self.section_extractor.generate_triplets(cleaned_sections)
 
         generated_queries = []
 
         for triplet in possible_triplets:
             query = self.generate_query_from_triplet(triplet)
+            # if self.evaluator.query_is_correct(query):
+            #     generated_queries.append(query)
             generated_queries.append(query)
 
-        # TODO: evaluate queries and conserve those that are semantically correct
-        final = []
-        for query in generated_queries:
-            if self.evaluator.query_is_correct(query):
-                final.append(query)
+        return generated_queries
 
-        return final
-
-    def generate_query_from_triplet(self, triplet: tuple[Section]) -> Query:
+    def generate_query_from_triplet(self, triplet: tuple[Section | Condition]) -> Query:
         """
         Generates a semantically valid query from a triplet of sections.
 
@@ -77,26 +74,25 @@ class QueryGenerator:
         """
         
         # Evaluate sections using the selected evaluator
-        table, attribute, condition = triplet
-        table_name, attribute_name, condition_text = table.text, attribute.text, condition.text
+        table_section, column_section, condition_section = triplet
 
         # Check if the table exists in the database
-        if not table_name:
+        if not table_section:
             return None
 
         # Get table and column objects
-        table = self.database.get_table_by_name(table_name)
+        table = self.database.get_table_by_name(table_section.text)
         column = None
-        if attribute_name:
-            column = table.get_column_by_name(attribute_name)
+        if column_section:
+            column = table.get_column_by_name(column_section.text)
 
         # Convert condition text into Condition object
-        condition = None
+        condition = condition_section
         # if condition_text:
         #     condition = Condition(condition_text)
 
         # Return Query object
-        return Query(table=table, columns=[column], condition=condition)
+        return Query(table=table, column=column, condition=condition)
                 
             
         

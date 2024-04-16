@@ -85,7 +85,7 @@ class Database:
 
     def column_exists(self, column_name: str) -> bool:
         all_columns = self.get_all_attributes()
-        cols_names = map(lambda col: col.name, all_columns)
+        cols_names = list(map(lambda col: col.name, all_columns))
 
         return column_name in cols_names
             

@@ -44,6 +44,8 @@ class QueryGenerator:
         #TODO: clean sections with pipelines
         cleaned_sections = self.pipeline.transform_sections(extracted_sections)
 
+        print(cleaned_sections)
+
         # TODO: filter sections by classification
 
         # TODO: generate combinations of query elements and save in queries

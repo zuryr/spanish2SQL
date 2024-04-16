@@ -2,10 +2,10 @@ from Section import Section
 from src.models import SemanticEvaluator
 from src.models.SectionExtractor import SectionExtractor
 from src.models.TextPipeline import TextPipeline
-from src.models.enums.classifications import Classifications
+from src.models.Enums.Classifications import Classifications
 
 
-class FixedSemanticEvaluator(TextPipeline):
+class SimplePipeline(TextPipeline):
     """Semantic evaluator based on fixed rules."""
 
     def __init__(self, evaluator: SemanticEvaluator, extractor: SectionExtractor):

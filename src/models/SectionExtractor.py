@@ -1,11 +1,9 @@
-from datetime import datetime
+from itertools import combinations
 from typing import List
 
-from CsvHandler import CsvHandler
 from Rule import Rule
 from Section import Section
-
-from itertools import combinations
+from src.models.Enums.Classifications import Classifications
 
 
 class SectionExtractor:
@@ -46,7 +44,7 @@ class SectionExtractor:
                 print(e)
 
         return extracted_sections
-    
+
     def generate_triplets(self, extracted_sections: list[Section]) -> list[tuple[Section]]:
         """
         Generates all possible valid triplets of sections.
@@ -57,12 +55,15 @@ class SectionExtractor:
         Returns:
             A list of tuples, where each tuple represents a valid triplet of sections.
         """
-        valid_classifications = ["TABLA", "ATRIBUTO", "CONDICION"]
+        valid_classifications = [Classifications.TABLA.value, Classifications.ATRIBUTO.value,
+                                 Classifications.CONDICION.value]
         possible_triplets = []
-        
+
         # A dictionary who defines the weights of each clasiffication
-        classification_weights = {"TABLA": 1, "ATRIBUTO": 2, "CONDICION": 3}
-        extracted_sections = sorted(extracted_sections, key=lambda x: classification_weights.get(x.classification, float('inf')))
+        classification_weights = {Classifications.TABLA.value: 1, Classifications.ATRIBUTO.value: 2,
+                                  Classifications.CONDICION.value: 3}
+        extracted_sections = sorted(extracted_sections,
+                                    key=lambda x: classification_weights.get(x.classification, float('inf')))
 
         # Genera todas las combinaciones posibles de tripletas
         for triplet in combinations(extracted_sections, 3):
@@ -71,7 +72,6 @@ class SectionExtractor:
                 possible_triplets.append(triplet)
 
         return possible_triplets
-
 
 # Example of how to use SectionExtractor and save results to CSV
 # # rules = [

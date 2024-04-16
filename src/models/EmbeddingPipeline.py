@@ -1,15 +1,17 @@
 import spacy
 
 from Section import Section
+from src.models.Column import Column
+from src.models.Condition import Condition
 from src.models.SectionExtractor import SectionExtractor
 from src.models.SemanticEvaluator import SemanticEvaluator
 from src.models.TextPipeline import TextPipeline
-from src.models.enums.classifications import Classifications
+from src.models.Enums.Classifications import Classifications
 
 nlp = spacy.load("es_core_news_md")
 
 
-class EmbeddingSemanticEvaluator(TextPipeline):
+class EmbeddingPipeline(TextPipeline):
     """Semantic evaluator based on word embeddings."""
 
     def __init__(self, evaluator: SemanticEvaluator, extractor: SectionExtractor):
@@ -21,7 +23,7 @@ class EmbeddingSemanticEvaluator(TextPipeline):
             cleaned_sections.append(self.transform_section(section))
         return cleaned_sections
 
-    def transform_section(self, section: Section) -> Section:
+    def transform_section(self, section: Section) -> Section | Condition:
         if section.classification == Classifications.TABLA.value:
             return self.evaluate_table(section)
         if section.classification == Classifications.ATRIBUTO.value:
@@ -59,9 +61,10 @@ class EmbeddingSemanticEvaluator(TextPipeline):
 
         return Section(max_similarity[0], section.classification, section.right_context, section.left_context)
 
-    def evaluate_condition(self, section: Section) -> Section:
+    def evaluate_condition(self, section: Section) -> Condition:
         """Evaluate the CONDITION section."""
-        condition = section
-        # TODO: Implement logic to evluate condition
+        # TODO: Implement logic to evaluate condition
+        columnObserved = Column("prueba", "varchar")
+        condition = Condition(columnObserved, '500', '<')
         return condition
 

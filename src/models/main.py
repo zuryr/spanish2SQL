@@ -5,8 +5,8 @@ from QueryGenerator import QueryGenerator
 from CsvHandler import CsvHandler
 from Rule import Rule
 from Column import Column
-from src.models.EmbeddingSemanticEvaluator import EmbeddingSemanticEvaluator
-from src.models.FixedSemanticEvaluator import FixedSemanticEvaluator
+from src.models.EmbeddingPipeline import EmbeddingPipeline
+from src.models.SimplePipeline import SimplePipeline
 
 # Definir la estructura básica de la base de datos
 database = Database('Estudiantes')
@@ -14,8 +14,6 @@ columns_1 = [Column('id', 'varchar'), Column('nombre', 'varchar'), Column('pais'
 database.add_table("Estudiantes", columns_1)
 columns_2 = [Column('id','varchar'), Column('nombre','varchar'), Column('profesor','varchar')]
 database.add_table("Cursos", columns_2)
-
-print(database.tables)
 
 # rules_file_path = "src\data\ctx_general.csv" 
 # rules = CsvHandler.load_rules_from_csv(rules_file_path)
@@ -30,7 +28,8 @@ section_extractor = SectionExtractor(rules=rules)
 evaluator = SemanticEvaluator(database)
 
 # Definimos las pipelines
-pipelines = [FixedSemanticEvaluator(evaluator, section_extractor), EmbeddingSemanticEvaluator(evaluator, section_extractor)]
+# pipelines = [SimplePipeline(evaluator, section_extractor), EmbeddingPipeline(evaluator, section_extractor)]
+pipelines = [EmbeddingPipeline(evaluator, section_extractor)]
 
 for pipeline in pipelines:
     # Inicializar el generador de consultas

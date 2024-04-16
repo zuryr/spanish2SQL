@@ -37,4 +37,9 @@ class Table:
         """
         
         return self.columns[attribute_name]
-    
+
+    def column_exists_with_given_table(self, column_name: str) -> bool:
+        """Check if the column exists in the given table."""
+
+        return column_name in self.columns
+

@@ -5,6 +5,8 @@ from QueryGenerator import QueryGenerator
 from CsvHandler import CsvHandler
 from Rule import Rule
 from Column import Column
+from src.models.EmbeddingSemanticEvaluator import EmbeddingSemanticEvaluator
+from src.models.FixedSemanticEvaluator import FixedSemanticEvaluator
 
 # Definir la estructura básica de la base de datos
 database = Database('Estudiantes')
@@ -24,15 +26,22 @@ rules = [
 ]
 section_extractor = SectionExtractor(rules=rules)
 
-# Inicializar el generador de consultas
-query_generator = QueryGenerator(database, section_extractor)
+# Definimos el evaluador
+evaluator = SemanticEvaluator(database)
 
-# Consulta en lenguaje natural
-natural_language_query = "Muestra todos los estudiantes que estudian en Mexico"
+# Definimos las pipelines
+pipelines = [FixedSemanticEvaluator(evaluator, section_extractor), EmbeddingSemanticEvaluator(evaluator, section_extractor)]
 
-# Generar consultas SQL a partir de la consulta en lenguaje natural
-generated_queries = query_generator.generate_queries(natural_language_query)
+for pipeline in pipelines:
+    # Inicializar el generador de consultas
+    query_generator = QueryGenerator(database, evaluator, section_extractor, pipeline)
 
-# Imprimir las consultas generadas
-for query in generated_queries:
-    print(query.to_SQL_string())
+    # Consulta en lenguaje natural
+    natural_language_query = "Muestra todos los estudiantes que estudian en Mexico"
+
+    # Generar consultas SQL a partir de la consulta en lenguaje natural
+    generated_queries = query_generator.generate_queries(natural_language_query)
+
+    # Imprimir las consultas generadas
+    for query in generated_queries:
+        print(query.to_SQL_string())

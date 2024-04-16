@@ -1,41 +1,44 @@
-from Database import Database
 from Section import Section
-from Table import Table
-from Column import Column
-from Condition import Condition
+from src.models import SemanticEvaluator
+from src.models.SectionExtractor import SectionExtractor
+from src.models.TextPipeline import TextPipeline
+from src.models.enums.classifications import Classifications
 
-class FixedSemanticEvaluator:
+
+class FixedSemanticEvaluator(TextPipeline):
     """Semantic evaluator based on fixed rules."""
 
-    def __init__(self, database: Database):
-        self.database = database  # Database instance containing schema information
+    def __init__(self, evaluator: SemanticEvaluator, extractor: SectionExtractor):
+        super().__init__(evaluator, extractor)
 
-    def evaluate_table(self, section: Section) -> str:
+    def transform_sections(self, text: list[Section]) -> list[Section]:
+        cleaned_sections = []
+        for section in text:
+            cleaned_sections.append(self.transform_section(section))
+        return cleaned_sections
+
+    def transform_section(self, section: Section) -> Section:
+        if section.classification == Classifications.TABLA.value:
+            return self.evaluate_table(section)
+        if section.classification == Classifications.ATRIBUTO.value:
+            return self.evaluate_attribute(section)
+        if section.classification == Classifications.CONDICION.value:
+            return self.evaluate_condition(section)
+
+    def evaluate_table(self, section: Section) -> Section:
         """Evaluate the TABLE section."""
-        table_name = section.text
-        if self.database.table_exists(table_name):
-            return table_name
-        else:
-            return None
+        table = section
+        if self.evaluator.database.table_exists(table.text):
+            return table
 
-    def evaluate_attribute(self, section: Section, table_name: str) -> str:
+    def evaluate_attribute(self, section: Section) -> Section:
         """Evaluate the ATTRIBUTE section."""
-        attribute_name = section.text
-        if table_name and self.database.column_exists(table_name, attribute_name):
-            return attribute_name
-        else:
-            return None
+        attribute = section
+        if self.evaluator.database.column_exists(attribute.text):
+            return attribute
 
-    def evaluate_condition(self, section: Section, table_name: str) -> str:
+    def evaluate_condition(self, section: Section) -> Section:
         """Evaluate the CONDITION section."""
-        condition_text = section.text
+        condition = section
         # TODO: Implement logic to evluate condition
-        return condition_text if condition_text else None
-
-    def evaluate_sections(self, triplet: tuple[Section]) -> tuple[str]:
-        """Evaluate all sections in the triplet."""
-        table_section, attribute_section, condition_section = triplet
-        table_name = self.evaluate_table(table_section)
-        attribute_name = self.evaluate_attribute(attribute_section, table_name)
-        condition_text = self.evaluate_condition(condition_section, table_name)
-        return table_name, attribute_name, condition_text
+        return condition

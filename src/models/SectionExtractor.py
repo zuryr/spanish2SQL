@@ -1,11 +1,10 @@
-from datetime import datetime
+from itertools import combinations
 from typing import List
 
-from CsvHandler import CsvHandler
 from Rule import Rule
 from Section import Section
-
-from itertools import combinations
+from src.models.Condition import Condition
+from src.models.Enums.Classifications import Classifications
 
 
 class SectionExtractor:
@@ -46,8 +45,8 @@ class SectionExtractor:
                 print(e)
 
         return extracted_sections
-    
-    def generate_triplets(self, extracted_sections: list[Section]) -> list[tuple[Section]]:
+
+    def generate_triplets(self, cleaned_sections: list[Section | Condition]) -> list[tuple[Section | Condition]]:
         """
         Generates all possible valid triplets of sections.
 
@@ -57,21 +56,31 @@ class SectionExtractor:
         Returns:
             A list of tuples, where each tuple represents a valid triplet of sections.
         """
-        valid_classifications = ["TABLA", "ATRIBUTO", "CONDICION"]
+        valid_classifications = [Classifications.TABLA.value, Classifications.ATRIBUTO.value,
+                                 Classifications.CONDICION.value]
         possible_triplets = []
-        
-        # A dictionary who defines the weights of each clasiffication
-        classification_weights = {"TABLA": 1, "ATRIBUTO": 2, "CONDICION": 3}
-        extracted_sections = sorted(extracted_sections, key=lambda x: classification_weights.get(x.classification, float('inf')))
 
-        # Genera todas las combinaciones posibles de tripletas
-        for triplet in combinations(extracted_sections, 3):
-            # Verifica si las clasificaciones son válidas
-            if all(section.classification in valid_classifications for section in triplet):
-                possible_triplets.append(triplet)
+        found_tables = []
+        found_attributes = []
+        found_condition = []
+
+        for section in cleaned_sections:
+            if type(section) is Section:
+                if section.classification in Classifications.TABLA.value:
+                    found_tables.append(section)
+                if section.classification in Classifications.ATRIBUTO.value:
+                    found_attributes.append(section)
+            else:
+                found_condition.append(section)
+
+        for table in found_tables:
+            for attribute in found_attributes:
+                for condition in found_condition:
+                    possible_triplets.append([table, attribute, condition])
+                possible_triplets.append([table,attribute, None])
+            possible_triplets.append([table, None, None])
 
         return possible_triplets
-
 
 # Example of how to use SectionExtractor and save results to CSV
 # # rules = [

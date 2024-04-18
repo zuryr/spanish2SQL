@@ -20,10 +20,10 @@ class EmbeddingPipeline(TextPipeline):
     def transform_sections(self, text: list[Section]) -> list[Section | Condition]:
         cleaned_sections = []
         for section in text:
-            cleaned_sections.extend(self.transform_section(section))
+            cleaned_sections.append(self.transform_section(section))
         return cleaned_sections
 
-    def transform_section(self, section: Section) -> list[Section | Condition]:
+    def transform_section(self, section: Section) -> Section | Condition:
         if section.classification == Classifications.TABLA.value:
             return self.evaluate_table(section)
         if section.classification == Classifications.ATRIBUTO.value:
@@ -31,7 +31,7 @@ class EmbeddingPipeline(TextPipeline):
         if section.classification == Classifications.CONDICION.value:
             return self.evaluate_condition(section)
 
-    def evaluate_table(self, section: Section) -> list[Section]:
+    def evaluate_table(self, section: Section) -> Section:
         """Evaluate the TABLE section."""
         section_words = section.text.split()
         max_similarity = ('', 0)
@@ -44,26 +44,27 @@ class EmbeddingPipeline(TextPipeline):
                 if similarity > max_similarity[1]:
                     max_similarity = (str(doc2), similarity)
 
-        return [Section(max_similarity[0], section.classification, section.right_context, section.left_context)]
+        return Section(max_similarity[0], section.classification, section.right_context, section.left_context)
 
-    def evaluate_attribute(self, section: Section) -> list[Section]:
+    def evaluate_attribute(self, section: Section) -> Section:
         """Evaluate the ATTRIBUTE section."""
         section_words = section.text.split()
-        best_words = []
+        best_words_list = []
         for word in section_words:
             doc1 = nlp(word)
             for column in self.evaluator.database.get_all_attributes():
                 doc2 = nlp(column.name)
                 similarity = doc2.similarity(doc1)
                 if similarity >= self.threshold:
-                     best_words.append(Section(str(doc2), section.classification, section.right_context, section.left_context))
+                    best_words_list.append(str(doc2))
 
-        return best_words
+        best_words = ", ".join(set(best_words_list))
 
-    def evaluate_condition(self, section: Section) -> list[Condition]:
+        return Section(best_words, section.classification, section.right_context, section.left_context)
+
+    def evaluate_condition(self, section: Section) -> Condition:
         """Evaluate the CONDITION section."""
         # TODO: Implement logic to evaluate condition
         columnObserved = Column("pais", "varchar")
         condition = Condition(columnObserved, '500', '<')
-        return [condition]
-
+        return condition

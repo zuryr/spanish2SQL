@@ -8,7 +8,7 @@ class Table:
     Information about a table in a Database
     """
 
-    def __init__(self, name: str):
+    def __init__(self, name: str, columns: list[Column] = None):
         """
         Initializes an instance with information about the table.
 
@@ -18,6 +18,13 @@ class Table:
         """
         self.name = name
         self.columns: Dict[str, Column] = {}
+
+        if columns is None:
+            raise Exception("Columns are empty")
+        
+        for col in columns:
+            if col.name not in self.columns:
+                self.columns[col.name] = col
                 
         self.rows = []  # Assuming each table has a list of rows for data storage
         

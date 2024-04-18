@@ -19,5 +19,5 @@ class Condition:
         self.value = value
         self.operator = operator
 
-    def to_SQL_string(self):
+    def condition_to_string(self):
         return f"{self.column.name} {self.value} {self.operator}"

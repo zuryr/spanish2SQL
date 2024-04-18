@@ -1,12 +1,11 @@
-from SectionExtractor import SectionExtractor
+from Condition import Condition
 from Database import Database
 from Query import Query
-from SemanticEvaluator import SemanticEvaluator
 from Section import Section
-from Table import Table
-from Column import Column
-from Condition import Condition
+from SectionExtractor import SectionExtractor
+from SemanticEvaluator import SemanticEvaluator
 from TextPipeline import TextPipeline
+from src.models.Enums.Classifications import Classifications
 
 
 class QueryGenerator:
@@ -50,7 +49,7 @@ class QueryGenerator:
 
         # TODO: generate combinations of query elements and save in queries
         # TODO: evaluate queries and conserve those that are semantically correct
-        possible_triplets = self.section_extractor.generate_triplets(cleaned_sections)
+        possible_triplets = self.generate_triplets(cleaned_sections)
 
         generated_queries = []
 
@@ -58,9 +57,45 @@ class QueryGenerator:
             query = self.generate_query_from_triplet(triplet)
             # if self.evaluator.query_is_correct(query):
             #     generated_queries.append(query)
-            generated_queries.append(query)
+            if query is not None:
+                generated_queries.append(query)
 
         return generated_queries
+
+    def generate_triplets(self, cleaned_sections: list[Section | Condition]) -> list[list[Section | Condition] | list[Section | Condition | None]]:
+        """
+        Generates all possible valid triplets of sections.
+
+        Args:
+            extracted_sections: list of extracted sections
+
+        Returns:
+            A list of tuples, where each tuple represents a valid triplet of sections.
+        """
+
+        possible_triplets = []
+
+        found_tables = []
+        found_attributes = []
+        found_condition = []
+
+        for section in cleaned_sections:
+            if type(section) is Section:
+                if section.classification in Classifications.TABLA.value:
+                    found_tables.append(section)
+                if section.classification in Classifications.ATRIBUTO.value:
+                    found_attributes.append(section)
+            else:
+                found_condition.append(section)
+
+        for table in found_tables:
+            for attribute in found_attributes:
+                for condition in found_condition:
+                    possible_triplets.append([table, attribute, condition])
+                possible_triplets.append([table,attribute, None])
+            possible_triplets.append([table, None, None])
+
+        return possible_triplets
 
     def generate_query_from_triplet(self, triplet: tuple[Section | Condition]) -> Query:
         """
@@ -72,27 +107,23 @@ class QueryGenerator:
         Returns:
             A Query object representing the generated query.
         """
-        
-        # Evaluate sections using the selected evaluator
+
         table_section, column_section, condition_section = triplet
 
-        # Check if the table exists in the database
-        if not table_section:
-            return None
+        table_name = None
+        column_name = None
+        condition_name = None
 
-        # Get table and column objects
-        table = self.database.get_table_by_name(table_section.text)
-        column = None
+        if table_section:
+            table_name = table_section.text
+
         if column_section:
-            column = table.get_column_by_name(column_section.text)
+            column_name = column_section.text
 
-        # Convert condition text into Condition object
-        condition = condition_section
-        # if condition_text:
-        #     condition = Condition(condition_text)
+        if condition_section:
+            condition_name = condition_section.condition_to_string()
 
-        # Return Query object
-        return Query(table=table, column=column, condition=condition)
-                
+        return Query(table_name, [column_name], condition_name)
+
             
         

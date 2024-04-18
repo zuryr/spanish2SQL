@@ -42,9 +42,9 @@ class Query:
             select_clause = "SELECT "
             for col in self.columns:
                 if col:
-                    select_clause += f"{col},"
+                    select_clause += f"{col}"
                 else:
-                    '*'
+                    select_clause += '*'
 
         if self.condition is not None:
             # WHERE statement (if condition exists)

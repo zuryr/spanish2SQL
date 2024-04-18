@@ -8,9 +8,9 @@ from src.models.EmbeddingPipeline import EmbeddingPipeline
 
 # Definir la estructura básica de la base de datos
 database = Database('Escuela')
-columns_1 = [Column('id', 'int'), Column('nombre', 'varchar'), Column('pais', 'varchar')]
+columns_1 = [Column('identificador', 'int'), Column('nombre', 'varchar'), Column('pais', 'varchar')]
 database.add_table("Estudiantes", columns_1)
-columns_2 = [Column('id', 'int'), Column('nombre', 'varchar'), Column('profesor', 'varchar')]
+columns_2 = [Column('identificador', 'int'), Column('nombre', 'varchar'), Column('profesor', 'varchar')]
 database.add_table("Cursos", columns_2)
 
 # rules_file_path = "src\data\ctx_general.csv" 
@@ -26,7 +26,7 @@ section_extractor = SectionExtractor(rules=rules)
 evaluator = SemanticEvaluator(database)
 
 # Definimos el threshold para la similaridad
-threshold = 0.2
+threshold = 0.5
 
 # Definimos las pipelines
 # pipelines = [SimplePipeline(evaluator, section_extractor), EmbeddingPipeline(evaluator, section_extractor)]
@@ -37,7 +37,7 @@ for pipeline in pipelines:
     query_generator = QueryGenerator(database, evaluator, section_extractor, pipeline)
 
     # Consulta en lenguaje natural
-    natural_language_query = "Muestra todos los estudiantes que estudian en Mexico"
+    natural_language_query = "Muestra todos los nombres e identificadores que estudian en Mexico"
 
     # Generar consultas SQL a partir de la consulta en lenguaje natural
     generated_queries = query_generator.generate_queries(natural_language_query)

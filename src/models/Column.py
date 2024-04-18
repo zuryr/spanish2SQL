@@ -3,7 +3,7 @@ class Column:
     Information about a column contained in a Table
     """
 
-    def __init__(self, name: str, datatype: str, valuesColumn: [any]):
+    def __init__(self, name: str, datatype: str):
         """
         Initializes an instance with information about the column.
 
@@ -14,4 +14,3 @@ class Column:
         """
         self.name = name
         self.datatype = datatype
-        self.valuesColumn = valuesColumn

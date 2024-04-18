@@ -9,15 +9,17 @@ from src.models.SemanticEvaluator import SemanticEvaluator
 class TextPipeline(ABC):
     """Manages the behavior to perform a transformation to a text."""
 
-    def __init__(self, evaluator: SemanticEvaluator, extractor: SectionExtractor):
+    def __init__(self, evaluator: SemanticEvaluator, extractor: SectionExtractor, threshold: float):
         """
         Instantiates the pipeline.
         evaluator: SemanticEvaluator
         extractor: SectionExtractor initialized with value rules
+        threshold: Threshold to define how similar words should be between the real names and ther the predicted names
         """
 
         self.evaluator = evaluator
         self.extractor = extractor
+        self.threshold = threshold
 
     @abstractmethod
     def transform_sections(self, section_list: list[Section]) -> list[Section | Condition]:

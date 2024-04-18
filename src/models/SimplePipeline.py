@@ -8,8 +8,8 @@ from src.models.Enums.Classifications import Classifications
 class SimplePipeline(TextPipeline):
     """Semantic evaluator based on fixed rules."""
 
-    def __init__(self, evaluator: SemanticEvaluator, extractor: SectionExtractor):
-        super().__init__(evaluator, extractor)
+    def __init__(self, evaluator: SemanticEvaluator, extractor: SectionExtractor, threshold: float):
+        super().__init__(evaluator, extractor, threshold)
 
     def transform_sections(self, text: list[Section]) -> list[Section]:
         cleaned_sections = []

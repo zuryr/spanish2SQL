@@ -1,10 +1,7 @@
-from itertools import combinations
 from typing import List
 
 from Rule import Rule
 from Section import Section
-from src.models.Condition import Condition
-from src.models.Enums.Classifications import Classifications
 
 
 class SectionExtractor:
@@ -46,41 +43,6 @@ class SectionExtractor:
 
         return extracted_sections
 
-    def generate_triplets(self, cleaned_sections: list[Section | Condition]) -> list[tuple[Section | Condition]]:
-        """
-        Generates all possible valid triplets of sections.
-
-        Args:
-            extracted_sections: list of extracted sections
-
-        Returns:
-            A list of tuples, where each tuple represents a valid triplet of sections.
-        """
-        valid_classifications = [Classifications.TABLA.value, Classifications.ATRIBUTO.value,
-                                 Classifications.CONDICION.value]
-        possible_triplets = []
-
-        found_tables = []
-        found_attributes = []
-        found_condition = []
-
-        for section in cleaned_sections:
-            if type(section) is Section:
-                if section.classification in Classifications.TABLA.value:
-                    found_tables.append(section)
-                if section.classification in Classifications.ATRIBUTO.value:
-                    found_attributes.append(section)
-            else:
-                found_condition.append(section)
-
-        for table in found_tables:
-            for attribute in found_attributes:
-                for condition in found_condition:
-                    possible_triplets.append([table, attribute, condition])
-                possible_triplets.append([table,attribute, None])
-            possible_triplets.append([table, None, None])
-
-        return possible_triplets
 
 # Example of how to use SectionExtractor and save results to CSV
 # # rules = [

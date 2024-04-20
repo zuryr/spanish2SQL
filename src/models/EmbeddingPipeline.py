@@ -15,7 +15,12 @@ class EmbeddingPipeline(TextPipeline):
     """Semantic evaluator based on word embeddings."""
 
     def __init__(self, evaluator: SemanticEvaluator, extractor: SectionExtractor, threshold: float):
-        super().__init__(evaluator, extractor, threshold)
+        """
+        threshold: Threshold to define how similar words should be between the real names and the predicted names on
+        the embedding pipeline
+        """
+        super().__init__(evaluator, extractor)
+        self.threshold = threshold
 
     def transform_sections(self, text: list[Section]) -> list[Section | Condition]:
         cleaned_sections = []

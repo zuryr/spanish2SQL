@@ -1,5 +1,5 @@
 from typing import Dict, List
-
+from Column import Column
 from Table import Table
 
 
@@ -19,15 +19,8 @@ class Database:
         self.tables: Dict[str, Table] = {}
 
     def table_exists(self, table_name: str) -> bool:
-        """
-        Checks if a table exists in the database.
-
-        Args:
-            table_name: name of the table
-        Returns:
-            True if the table exists, False otherwise
-        """
-        return table_name in self.tables
+        """Check if the table exists in the database."""
+        return table_name in list(self.tables.keys())
 
     def get_table_by_name(self, table_name: str) -> Table:
         """
@@ -45,7 +38,7 @@ class Database:
         else:
             raise ValueError(f"Table '{table_name}' not found in the database")
 
-    def add_table(self, table_name: str, column_names: List[str]):
+    def add_table(self, table_name: str, columns: List[Column]):
         """
         Adds a new table to the database.
 
@@ -54,7 +47,7 @@ class Database:
             column_names: list of column names for the new table
         """
         if not self.table_exists(table_name):
-            new_table = Table(name=table_name, columns=column_names)
+            new_table = Table(name=table_name, columns=columns)
             self.tables[table_name] = new_table
         else:
             print(f"Table '{table_name}' already exists in the database.")
@@ -67,3 +60,32 @@ class Database:
             A list of table names
         """
         return list(self.tables.keys())
+    
+    def get_all_attributes_from_table(self, table_name: str):
+        """
+        Return all colums from a specific table.
+
+        Args:
+            table_name: name of the table 
+        """
+        table = self.get_table_by_name(table_name)
+        return table.get_all_colums_from_table()
+
+    def get_all_attributes(self) -> List[Column]:
+        """
+        Return all attributes from the database
+        """
+        all_attributes = []
+        for table in self.tables.values():
+            columns_in_table = table.columns.values()
+            for col in columns_in_table:
+                all_attributes.append(col)
+
+        return all_attributes
+
+    def column_exists(self, column_name: str) -> bool:
+        all_columns = self.get_all_attributes()
+        cols_names = list(map(lambda col: col.name, all_columns))
+
+        return column_name in cols_names
+            

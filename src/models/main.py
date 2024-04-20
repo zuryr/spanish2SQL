@@ -1,18 +1,18 @@
+from Column import Column
 from Database import Database
-from SemanticEvaluator import SemanticEvaluator
-from SectionExtractor import SectionExtractor
 from QueryGenerator import QueryGenerator
-from CsvHandler import CsvHandler
 from Rule import Rule
-
+from SectionExtractor import SectionExtractor
+from SemanticEvaluator import SemanticEvaluator
+from src.models.EmbeddingPipeline import EmbeddingPipeline
 
 # Definir la estructura básica de la base de datos
-database = Database('PRUEBA')
-database.add_table("Estudiantes", ["id", "nombre", "edad"])
-database.add_table("Cursos", ["id", "nombre", "profesor"])
+database = Database('Escuela')
+columns_1 = [Column('identificador', 'int'), Column('nombre', 'varchar'), Column('pais', 'varchar')]
+database.add_table("Estudiantes", columns_1)
+columns_2 = [Column('identificador', 'int'), Column('nombre', 'varchar'), Column('profesor', 'varchar')]
+database.add_table("Cursos", columns_2)
 
-# Inicializar el evaluador semántico y el extractor de secciones
-evaluator = SemanticEvaluator(database)
 # rules_file_path = "src\data\ctx_general.csv" 
 # rules = CsvHandler.load_rules_from_csv(rules_file_path)
 rules = [
@@ -22,15 +22,26 @@ rules = [
 ]
 section_extractor = SectionExtractor(rules=rules)
 
-# Inicializar el generador de consultas
-query_generator = QueryGenerator(database, evaluator, section_extractor)
+# Definimos el evaluador
+evaluator = SemanticEvaluator(database)
 
-# Consulta en lenguaje natural
-natural_language_query = "Muestra todos los estudiantes que estudian en Mexico"
+# Definimos el threshold para la similaridad
+threshold = 0.5
 
-# Generar consultas SQL a partir de la consulta en lenguaje natural
-generated_queries = query_generator.generate_queries(natural_language_query)
+# Definimos las pipelines
+# pipelines = [SimplePipeline(evaluator, section_extractor), EmbeddingPipeline(evaluator, section_extractor)]
+pipelines = [EmbeddingPipeline(evaluator, section_extractor, threshold)]
 
-# Imprimir las consultas generadas
-for query in generated_queries:
-    print(query.to_SQL_string())
+for pipeline in pipelines:
+    # Inicializar el generador de consultas
+    query_generator = QueryGenerator(database, evaluator, section_extractor, pipeline)
+
+    # Consulta en lenguaje natural
+    natural_language_query = "Muestra todos los nombres e identificadores que estudian en Mexico"
+
+    # Generar consultas SQL a partir de la consulta en lenguaje natural
+    generated_queries = query_generator.generate_queries(natural_language_query)
+
+    # Imprimir las consultas generadas
+    for query in generated_queries:
+        print(query.to_SQL_string())

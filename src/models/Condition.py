@@ -4,7 +4,7 @@ from Column import Column
 class Condition:
     """Condition in a SQL query."""
 
-    def __init__(self, column: Column, value: any, operator: str):
+    def __init__(self, column: Column, value: str, operator: str):
         """
         Initializes a condition for a SQL query.
 
@@ -15,3 +15,9 @@ class Condition:
         Raises:
             InvalidOperator: the operator isn't compatible with the column's datatype.
         """
+        self.column = column
+        self.value = value
+        self.operator = operator
+
+    def condition_to_string(self):
+        return f"{self.column.name} {self.value} {self.operator}"

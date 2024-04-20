@@ -5,6 +5,7 @@ from Rule import Rule
 from SectionExtractor import SectionExtractor
 from SemanticEvaluator import SemanticEvaluator
 from src.models.EmbeddingPipeline import EmbeddingPipeline
+from src.models.SimplePipeline import SimplePipeline
 
 # Definir la estructura básica de la base de datos
 database = Database('Escuela')
@@ -29,8 +30,8 @@ evaluator = SemanticEvaluator(database)
 threshold = 0.5
 
 # Definimos las pipelines
-# pipelines = [SimplePipeline(evaluator, section_extractor), EmbeddingPipeline(evaluator, section_extractor)]
-pipelines = [EmbeddingPipeline(evaluator, section_extractor, threshold)]
+pipelines = [SimplePipeline(evaluator, section_extractor), EmbeddingPipeline(evaluator, section_extractor, threshold)]
+# pipelines = [EmbeddingPipeline(evaluator, section_extractor, threshold)]
 
 for pipeline in pipelines:
     # Inicializar el generador de consultas

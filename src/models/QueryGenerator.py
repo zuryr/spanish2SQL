@@ -40,21 +40,18 @@ class QueryGenerator:
         # Extract relevant sections from the natural language query
         extracted_sections = self.section_extractor.extract(natural_language_query)
 
-        #TODO: clean sections with pipelines
+        # Clean the sections with the pipeline
         cleaned_sections = self.pipeline.transform_sections(extracted_sections)
 
-        print(cleaned_sections)
-
-        # TODO: filter sections by classification
-
-        # TODO: generate combinations of query elements and save in queries
-        # TODO: evaluate queries and conserve those that are semantically correct
+        # Generate combinations of query elements
         possible_triplets = self.generate_triplets(cleaned_sections)
 
         generated_queries = []
 
         for triplet in possible_triplets:
             query = self.generate_query_from_triplet(triplet)
+
+            # TODO: evaluate queries and conserve those that are semantically correct
             # if self.evaluator.query_is_correct(query):
             #     generated_queries.append(query)
             if query is not None:
@@ -67,7 +64,7 @@ class QueryGenerator:
         Generates all possible valid triplets of sections.
 
         Args:
-            extracted_sections: list of extracted sections
+            cleaned_sections: list of extracted sections
 
         Returns:
             A list of tuples, where each tuple represents a valid triplet of sections.
@@ -103,7 +100,6 @@ class QueryGenerator:
 
         Args:
             triplet: tuple containing three sections (TABLA, ATRIBUTO, CONDICION)
-            evaluator: Type of semantic evaluator
         Returns:
             A Query object representing the generated query.
         """

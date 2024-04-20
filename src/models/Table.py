@@ -18,6 +18,10 @@ class Table:
         """
         self.name = name
         self.columns: Dict[str, Column] = {}
+
+        if columns is None:
+            raise Exception("Columns are empty")
+        
         for col in columns:
             if col.name not in self.columns:
                 self.columns[col.name] = col

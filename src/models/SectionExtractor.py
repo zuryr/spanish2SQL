@@ -1,5 +1,4 @@
 from typing import List
-
 from Rule import Rule
 from Section import Section
 
@@ -42,7 +41,14 @@ class SectionExtractor:
                 print(e)
 
         return extracted_sections
-
+    
+    def extract_exact_match(self, text: str) -> List[str]:
+        classified_rules = []
+        for rule in self.rules:
+            if rule.does_match(text) == True:
+                classified_rules.append(rule.classification)
+        return classified_rules
+    
 
 # Example of how to use SectionExtractor and save results to CSV
 # # rules = [

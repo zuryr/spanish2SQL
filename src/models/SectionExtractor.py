@@ -42,7 +42,14 @@ class SectionExtractor:
                 print(e)
 
         return extracted_sections
-
+    
+    def extract_exact_match(self) -> List[str]:
+        classified_rules = []
+        for rule in self.rules:
+            if self.doesMatch(rule) == True:
+                classified_rules.append(rule)
+        return classified_rules
+    
 
 # Example of how to use SectionExtractor and save results to CSV
 # # rules = [

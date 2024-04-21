@@ -5,7 +5,7 @@ class Rule:
     Rule to perform section extraction.
     """
 
-    def __init__(self, left_context: str, right_context: str, classification: str):
+    def __init__(self, left_context: str, right_context: str, classification: str, exact_match = None):
         """
         Initializes an instance with the delimiters and classification to perform section extraction.
 
@@ -15,6 +15,8 @@ class Rule:
                            use "end" to indicate no delimiter
             classification: classification assigned to sections following this rule
         """
+        if exact_match != None:
+            self.exact_match = exact_match
         self.left_context = left_context
         self.right_context = right_context
         self.classification = classification
@@ -44,6 +46,14 @@ class Rule:
 
         extracted_text = text[start_index + len(self.left_context) + 1:end_index].strip()
         return Section(classification=self.classification, text=extracted_text, left_context=self.left_context, right_context=self.right_context)
+
+    def does_match(self, text: str) -> bool:
+        coincidence_index = text.find(self.exact_match)
+        if (coincidence_index != -1) == True:
+            return coincidence_index != -1
+        else:
+            return False
+
 
 # # Example of how to use the Rule class
 # rule_example = Rule(left_context="los", right_context="en", classification="TABLA")

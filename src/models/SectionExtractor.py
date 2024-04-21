@@ -45,7 +45,7 @@ class SectionExtractor:
     def extract_exact_match(self, text: str) -> List[str]:
         classified_rules = []
         for rule in self.rules:
-            if rule.doesMatch(text) == True:
+            if rule.does_match(text) == True:
                 classified_rules.append(rule.classification)
         return classified_rules
     

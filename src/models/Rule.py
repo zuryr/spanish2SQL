@@ -49,11 +49,8 @@ class Rule:
 
     def does_match(self, text: str) -> bool:
         coincidence_index = text.find(self.exact_match)
-        if (coincidence_index != -1) == True:
-            return coincidence_index != -1
-        else:
-            return False
-
+        
+        return coincidence_index != -1
 
 # # Example of how to use the Rule class
 # rule_example = Rule(left_context="los", right_context="en", classification="TABLA")

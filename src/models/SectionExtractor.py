@@ -1,5 +1,4 @@
 from typing import List
-
 from Rule import Rule
 from Section import Section
 
@@ -43,11 +42,11 @@ class SectionExtractor:
 
         return extracted_sections
     
-    def extract_exact_match(self) -> List[str]:
+    def extract_exact_match(self, text: str) -> List[str]:
         classified_rules = []
         for rule in self.rules:
-            if self.doesMatch(rule) == True:
-                classified_rules.append(rule)
+            if rule.doesMatch(text) == True:
+                classified_rules.append(rule.classification)
         return classified_rules
     
 

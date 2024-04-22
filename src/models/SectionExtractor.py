@@ -43,13 +43,14 @@ class SectionExtractor:
         return extracted_sections
     
     def extract_exact_match(self, text: str) -> List[str]:
+        """Get the exact match of the keywords of operators, return clasification of the found rules"""
         classified_rules = []
         for rule in self.rules:
-            if rule.does_match(text) == True:
+            if rule.does_match(text):
                 classified_rules.append(rule.classification)
         return classified_rules
+        #list of the possible keywords
     
-
 # Example of how to use SectionExtractor and save results to CSV
 # # rules = [
 # #     Rule(left_context="los", right_context="que", classification="TABLA")

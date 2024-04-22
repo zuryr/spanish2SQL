@@ -4,20 +4,20 @@ from Column import Column
 class Condition:
     """Condition in a SQL query."""
 
-    def __init__(self, column: Column, value: str, operator: str):
+    def __init__(self, column_name: str, value_name: str, logic_operator: str):
         """
         Initializes a condition for a SQL query.
 
         Args:
-            column: column that needs to meet the condition
-            value: value that needs to be meeted by the column
-            operator: conditional operator. Needs to be compatible with the column's datatype
+            column_name: column that needs to meet the condition
+            value_name: value that needs to be meeted by the column
+            logic_operator: conditional operator. Needs to be compatible with the column's datatype
         Raises:
             InvalidOperator: the operator isn't compatible with the column's datatype.
         """
-        self.column = column
-        self.value = value
-        self.operator = operator
+        self.column_name = column_name
+        self.value_name = value_name
+        self.logic_operator = logic_operator
 
     def condition_to_string(self):
-        return f"{self.column.name} {self.value} {self.operator}"
+        return f"{self.column_name} {self.value_name} {self.logic_operator}"

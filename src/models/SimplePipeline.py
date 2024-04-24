@@ -41,7 +41,7 @@ class SimplePipeline(TextPipeline):
             return attribute 
     
     def evaluate_condition(self, section: Section, ATR_CONDITION: str, VAL_CONDITION: str) -> Condition:
-        """Extract operator, conditional_value and conditional_atribute"""
+        """Extract operator, conditional_value and conditional_atribute """
         
         # TODO: extract operators
         operators = self.operator_extractor.extract_exact_match(section.text)
@@ -58,7 +58,7 @@ class SimplePipeline(TextPipeline):
 
         # TODO: generate condition
         condition = Condition()
-
+     
         if operators:
             first_operator = operators[0]
         if conditional_value:

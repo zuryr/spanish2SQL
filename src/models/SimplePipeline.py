@@ -40,20 +40,24 @@ class SimplePipeline(TextPipeline):
         if self.evaluator.database.column_exists(attribute.text):
             return attribute 
     
-    def evaluate_condition(self, section: Section) -> Condition:
-        """Evaluate the CONDITION section."""
+    def evaluate_condition(self, section: Section, ATR_CONDITION: str, VAL_CONDITION: str) -> Condition:
+        """."""
         #extract no evaluate
         # TODO: extract operators
         operators = self.operator_extractor.extract_exact_match(section.text)
         
         # TODO: extract conditional values
         # TODO: extract attributes
-        
+
         # Assume that the value extractor contains rules with
         # classification ATR_CONDICION y VALOR
         extracted_values = self.value_extractor.extract(section.text)
 
+        atribute = "ATR_CONDIcION"
+        value = "VALOR"
         #TODO: filter by conditional value and conditional attribute
+        conditional_value = [section for section in extracted_values if section.clasification == atribute] 
+        conditional_atribute = [section for section in extracted_values if section.clasification == value] 
 
         # TODO: generate condition
         condition = Condition()

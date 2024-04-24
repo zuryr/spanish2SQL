@@ -5,7 +5,7 @@ from Section import Section
 from SectionExtractor import SectionExtractor
 from SemanticEvaluator import SemanticEvaluator
 from TextPipeline import TextPipeline
-from src.models.Enums.Classifications import Classifications
+from Enums.Classifications import Classifications
 
 
 class QueryGenerator:
@@ -13,7 +13,13 @@ class QueryGenerator:
     Generates semantically correct queries using information about a specific database.
     """
 
-    def __init__(self, database: Database, evaluator: SemanticEvaluator, section_extractor: SectionExtractor, pipeline: TextPipeline):
+    def __init__(
+        self,
+        database: Database,
+        evaluator: SemanticEvaluator,
+        section_extractor: SectionExtractor,
+        pipeline: TextPipeline,
+    ):
         """
         Creates an instance of a query generator for a specific database.
 
@@ -59,7 +65,9 @@ class QueryGenerator:
 
         return generated_queries
 
-    def generate_triplets(self, cleaned_sections: list[Section | Condition]) -> list[list[Section | Condition] | list[Section | Condition | None]]:
+    def generate_triplets(
+        self, cleaned_sections: list[Section | Condition]
+    ) -> list[list[Section | Condition] | list[Section | Condition | None]]:
         """
         Generates all possible valid triplets of sections.
 
@@ -83,13 +91,14 @@ class QueryGenerator:
                 if section.classification in Classifications.ATRIBUTO.value:
                     found_attributes.append(section)
             else:
-                found_condition.append(section)
+                if not section.is_empty():
+                    found_condition.append(section)
 
         for table in found_tables:
             for attribute in found_attributes:
                 for condition in found_condition:
                     possible_triplets.append([table, attribute, condition])
-                possible_triplets.append([table,attribute, None])
+                possible_triplets.append([table, attribute, None])
             possible_triplets.append([table, None, None])
 
         return possible_triplets
@@ -120,6 +129,3 @@ class QueryGenerator:
             condition_name = condition_section.condition_to_string()
 
         return Query(table_name, [column_name], condition_name)
-
-            
-        

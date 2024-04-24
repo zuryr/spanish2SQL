@@ -1,9 +1,9 @@
 from abc import ABC, abstractmethod
 
-from src.models.Condition import Condition
-from src.models.Section import Section
-from src.models.SectionExtractor import SectionExtractor
-from src.models.SemanticEvaluator import SemanticEvaluator
+from Condition import Condition
+from Section import Section
+from SectionExtractor import SectionExtractor
+from SemanticEvaluator import SemanticEvaluator
 
 
 class TextPipeline(ABC):
@@ -17,7 +17,9 @@ class TextPipeline(ABC):
         self.evaluator = evaluator
 
     @abstractmethod
-    def transform_sections(self, section_list: list[Section]) -> list[Section | Condition]:
+    def transform_sections(
+        self, section_list: list[Section]
+    ) -> list[Section | Condition]:
         """
         Performs a transformation dirty sections to a cleaned sections.
 
@@ -41,16 +43,16 @@ class TextPipeline(ABC):
         pass
 
     @abstractmethod
-    def evaluate_table(self, section: Section) -> Section:
-        """Evaluate the TABLE in a section."""
+    def extract_table(self, section: Section) -> Section:
+        """Extracts the TABLE in a section."""
         pass
 
     @abstractmethod
-    def evaluate_attribute(self, section: Section) -> Section:
-        """Evaluate the attribute in a section."""
+    def extract_attribute(self, section: Section) -> Section:
+        """Extracts the attribute in a section."""
         pass
 
     @abstractmethod
-    def evaluate_condition(self, section: Section) -> Condition:
-        """Evaluate the condition in a section."""
+    def extract_condition(self, section: Section) -> Condition:
+        """Extracts the condition in a section."""
         pass

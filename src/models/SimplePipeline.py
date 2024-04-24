@@ -1,15 +1,30 @@
 from Section import Section
-from spanish2SQL.src.models.Condition import Condition
-from src.models import SemanticEvaluator
-from src.models.SectionExtractor import SectionExtractor
-from src.models.TextPipeline import TextPipeline
-from src.models.Enums.Classifications import Classifications
+from Condition import Condition
+from SemanticEvaluator import SemanticEvaluator
+from SectionExtractor import SectionExtractor
+from TextPipeline import TextPipeline
+from Enums.Classifications import Classifications
 
 
 class SimplePipeline(TextPipeline):
-    """Semantic evaluator based on fixed rules."""
+    """Pipeline based on fixed rules."""
 
-    def __init__(self, evaluator: SemanticEvaluator, operator_extractor: SectionExtractor, value_extractor: SectionExtractor):
+    def __init__(
+        self,
+        evaluator: SemanticEvaluator,
+        operator_extractor: SectionExtractor,
+        value_extractor: SectionExtractor,
+    ):
+        """
+        Pipeline based on a naive strategy.
+
+        It works by assuming that the incoming section contains the relevant element in its treated form and doesn't need any aditional treatment.
+
+        Args:
+            evaluator: previously initialized semantic evaluator
+            operator_extractor: instance of SectionExtractor initialized with logic operator extraction rules
+            value_extractor: instance of SectionExtractor initialized with value extraction rules (for conditional attribute and conditional value extraction)
+        """
         super().__init__(evaluator)
         self.operator_extractor = operator_extractor
         self.value_extractor = value_extractor
@@ -22,55 +37,52 @@ class SimplePipeline(TextPipeline):
 
     def transform_section(self, section: Section) -> Section:
         if section.classification == Classifications.TABLA.value:
-            return self.evaluate_table(section)
+            return self.extract_table(section)
         if section.classification == Classifications.ATRIBUTO.value:
-            return self.evaluate_attribute(section)
+            return self.extract_attribute(section)
         if section.classification == Classifications.CONDICION.value:
-            return self.evaluate_condition(section)
+            return self.extract_condition(section)
 
-    def evaluate_table(self, section: Section) -> Section:
-        """Evaluate the TABLE section."""
-        table = section
-        if self.evaluator.database.table_exists(table.text):
-            return table
+    def extract_table(self, section: Section) -> Section:
 
-    def evaluate_attribute(self, section: Section) -> Section:
-        """Evaluate the ATTRIBUTE section."""
-        attribute = section
-        if self.evaluator.database.column_exists(attribute.text):
-            return attribute 
-    
-    def evaluate_condition(self, section: Section, ATR_CONDITION: str, VAL_CONDITION: str) -> Condition:
-        """Extract operator, conditional_value and conditional_atribute """
-        
-        # TODO: extract operators
+        return section
+
+    def extract_attribute(self, section: Section) -> Section:
+
+        return section
+
+    def extract_condition(self, section: Section) -> Condition:
+        """Extracts a condition from a section"""
+
+        # Extract operators
         operators = self.operator_extractor.extract_exact_match(section.text)
-        
+
         # Assume that the value extractor contains rules with
-        # classification ATR_CONDICION y VALOR
+        # classification ATR_CONDICION y VALOR
         extracted_values = self.value_extractor.extract(section.text)
 
-        atribute = "ATR_CONDIcION"
+        # Relevant class names
+        atribute = "ATR_CONDICION"
         value = "VALOR"
-        #TODO: filter by conditional value and conditional attribute
-        conditional_value = [section for section in extracted_values if section.clasification == atribute] 
-        conditional_atribute = [section for section in extracted_values if section.clasification == value] 
 
-        # TODO: generate condition
-        condition = Condition()
-     
-        if operators:
-            first_operator = operators[0]
-        if conditional_value:
-            first_conditional_value = conditional_value[0]
-        if conditional_atribute:
-            first_conditional_atribute = conditional_atribute[0]
+        # Filter by conditional value and conditional attribute
+        conditional_value = [
+            section for section in extracted_values if section.clasification == atribute
+        ]
+        conditional_atribute = [
+            section for section in extracted_values if section.clasification == value
+        ]
 
-        condition.operator = first_operator
-        condition.conditional_value = first_conditional_value
-        condition.conditional_attribute = first_conditional_atribute
+        # Generate condition
+        if not operators or not conditional_atribute or not conditional_value:
+            return Condition()
 
-        condition = Condition(first_operator, first_conditional_value, first_conditional_atribute)
+        first_operator = operators[0]
+        first_conditional_value = conditional_value[0]
+        first_conditional_atribute = conditional_atribute[0]
+
+        condition = Condition(
+            first_operator, first_conditional_value, first_conditional_atribute
+        )
 
         return condition
-   

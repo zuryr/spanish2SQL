@@ -1,0 +1,426 @@
+Label,Text
+ATRIBUTO,año de creación
+ATRIBUTO,nombre 
+ATRIBUTO,presupuesto
+ATRIBUTO,llaman 
+!=,fuera
+ATR_CONDICION,estado
+VALOR,California
+ATRIBUTO,anfitriones 
+ATR_CONDICION,tema
+!=,no es
+VALOR,Alienígenas
+ATRIBUTO,anfitriones 
+ATR_CONDICION,tema 
+!=,no es
+VALOR,Aliens
+ATRIBUTO,nombres oficiales
+ATR_CONDICION,población
+>,mayor a
+<,menor a
+VALOR,1500
+OR, o 
+VALOR,500
+ATRIBUTO,nombres oficiales
+ATR_CONDICION,población
+>,superior a
+VALOR,1500
+OR,o
+<, inferior a
+VALOR,500
+ATRIBUTO,clasificación censal
+ATR_CONDICION,estado
+!=,no es
+VALOR,Pueblo
+ATRIBUTO,clasificaciones censales
+!=, no tienen
+ATR_CONDICION, estatus
+VALOR,pueblo
+ATRIBUTO,identificación de los estudiantes
+ATRIBUTO,identificaciones de todos los estudiantes
+ATRIBUTO,identificación de los candidatos
+ATR_CONDICION,código de evaluación
+=,es
+VALOR,Aprobar
+ATRIBUTO, identificadores de los candidatos
+=,tienen 
+ATR_CONDICION,código de resultado
+VALOR,Aprobado
+ATRIBUTO, ID de los estudiantes
+ATR_CONDICION,curso
+VALOR,301
+ATRIBUTO,identificaciones de los estudiantes
+VALOR,301
+ATR_CONDICION,curso
+ATRIBUTO,fechas
+ATR_CONDICION,temperatura máxima
+>,superior
+VALOR,85
+ATRIBUTO,fechas
+ATR_CONDICION, temperatura máxima
+>,superior
+ATRIBUTO,nombres
+ATR_CONDICION,latitud
+<, inferior
+VALOR,"37,5"
+ATRIBUTO,nombres
+ATR_CONDICION,latitud
+<,menor
+VALOR,"37,5"
+ATRIBUTO,Cuándo
+ATRIBUTO,código postal
+ATR_CONDICION,temperatura máxima
+=,alcanzó
+VALOR,80
+VALOR,Honolulu
+=,con
+ATR_CONDICION,destino
+ATRIBUTO,orígenes
+VALOR,Honolulu
+ATRIBUTO,procedencia
+ATR_CONDICION,dirigen
+=,a
+ATRIBUTO,fecha de salida
+ATRIBUTO,llegada
+ATR_CONDICION,vuelos
+=,de
+VALOR,Los Ángeles
+VALOR,Honolulu
+ATRIBUTO,número de vuelo
+>,con más de
+VALOR,2000 
+ATR_CONDICION,distancias
+ATRIBUTO,número de todos los vuelos
+ATR_CONDICION,distancia
+VALOR,2000
+>,más de
+ATRIBUTO,origen
+ATRIBUTO,destino
+VALOR,300
+>,superior a
+ATR_CONDICION,precio
+ATRIBUTO,origen
+ATRIBUTO,destino
+ATR_CONDICION,precio
+>,superior a 
+VALOR,300
+VALOR,gato
+=,al
+ATRIBUTO,tipo de alergia
+ATR_CONDICION,alergia
+VALOR,gatos
+=,a los
+ATRIBUTO,alergia
+ATR_CONDICION,tipo de alergia
+ATRIBUTO,nombre
+ATRIBUTO,apellido
+ATRIBUTO,edad
+ATR_CONDICION,estudiantes
+=,es
+VALOR,F
+ATRIBUTO,nombres completos
+ATRIBUTO,edades
+ATR_CONDICION,estudiantes 
+VALOR,F
+=,es
+ATRIBUTO,identificaciones de estudiantes
+ATR_CONDICION,estudiantes
+VALOR,varones
+=,para
+ATRIBUTO,identificaciones de estudiantes
+ATR_CONDICION,estudiantes 
+VALOR,varones
+=,para
+>,mayores de
+VALOR,20
+ATR_CONDICION,años
+ATRIBUTO,identificaciones de estudiantes
+ATRIBUTO,identificaciones de estudiantes
+>,mayores de 
+VALOR,20
+ATR_CONDICION,años
+VALOR,Kim
+=,es
+ATRIBUTO,ciudad
+ATR_CONDICION,apellido
+VALOR,Kim
+=,es
+ATR_CONDICION,apellido
+ATRIBUTO,ciudad
+VALOR,1004
+ATR_CONDICION,cédula
+ATRIBUTO,asesor del estudiante
+=,con
+ATRIBUTO,asesora
+ATR_CONDICION,estudiante
+VALOR,1004
+=,al
+ATRIBUTO,nombre
+ATRIBUTO,clase 
+ATRIBUTO,fecha 
+ATRIBUTO,nombres
+ATRIBUTO,clases 
+ATRIBUTO,fechas 
+ATRIBUTO,nombres
+ATR_CONDICION,dirección
+=,esté en
+OR,o
+VALOR,Harford
+VALOR,Waterbury
+ATRIBUTO,identificaciones
+ATRIBUTO,nombres
+ATR_CONDICION,años
+ATR_CONDICION,tarjeta de membresía
+VALOR,negra
+VALOR,30
+<,menores de
+OR,o
+ATRIBUTO,nombres
+ATRIBUTO,nombres
+ATRIBUTO,toda la información
+ATR_CONDICION,estado
+VALOR,NY
+ATRIBUTO,toda la información
+ATR_CONDICION,estado
+VALOR,Nueva York
+=,de
+ATRIBUTO,nombres
+ATRIBUTO,apellidos
+ATR_CONDICION,ciudad
+VALOR,Calgary
+=,de
+ATRIBUTO,nombres
+ATR_CONDICION,ciudad
+=,de
+VALOR,Calgary
+ATRIBUTO,nombre
+ATRIBUTO,apellido
+ATR_CONDICION,correo electrónico
+VALOR,luisg@embraer.com.br
+ATRIBUTO,nombre
+ATR_CONDICION,correo electrónico
+VALOR,luisg@embraer.com.br
+ATRIBUTO,teléfono
+ATRIBUTO,teléfono
+ATRIBUTO,fechas de nacimiento
+VALOR,Edmonton
+=,en
+ATRIBUTO,fechas de nacimiento
+ATR_CONDICION,ciudad
+=,de
+VALOR,Edmonton
+ATRIBUTO,teléfono
+ATRIBUTO,teléfono
+ATRIBUTO,teléfono
+ATR_CONDICION,póliza
+VALOR,Seguro de Vida
+ATR_CONDICION,póliza con el código
+VALOR,Seguro de Vida
+ATRIBUTO,teléfono
+ATRIBUTO,nombres
+ATRIBUTO,lugares
+ATRIBUTO,nombres
+ATRIBUTO,ubicaciones
+ATRIBUTO,producto
+ATRIBUTO,cromosoma
+ATRIBUTO,porfiria
+ATR_CONDICION,lugar
+VALOR,Citosol
+ATRIBUTO,producto
+ATRIBUTO,cromosoma
+ATRIBUTO,porfiria
+ATR_CONDICION,ubicadas
+VALOR,citosol
+=,en el
+ATRIBUTO,nombres
+!=,no
+ATR_CONDICION,producen
+VALOR,hemo
+ATRIBUTO,nombres
+ATR_CONDICION,producto
+!=,no es
+VALOR,hemo
+ATRIBUTO,nombres
+ATRIBUTO,nombres comerciales
+VALOR,Sí
+ATR_CONDICION,FDA
+=,tienen el valor
+ATRIBUTO,nombres
+ATRIBUTO,nombres comerciales
+ATR_CONDICION,FDA
+VALOR,aprobados
+ATRIBUTO,escuelas
+ATRIBUTO,ubicaciones
+VALOR,públicas
+VALOR,públicas
+ATRIBUTO,escuelas
+ATRIBUTO,ubicaciones
+ATRIBUTO, escuelas
+ATR_CONDICION,fundadas
+>,después de
+VALOR,1850
+OR,o
+VALOR,públicas
+ATRIBUTO,escuelas
+ATR_CONDICION,fundaron
+<,antes de
+VALOR,1850
+OR,o
+=,son
+VALOR,públicas
+ATRIBUTO,toda la información
+ATRIBUTO,toda la información
+ATRIBUTO,modelo de chip
+ATRIBUTO,modo de pantalla
+ATR_CONDICION,nombre de modelo de hardware
+VALOR,LG-P760
+ATRIBUTO,todos
+ATRIBUTO,nombre del país
+ATRIBUTO,capital
+ATRIBUTO,nombres
+ATRIBUTO,capitales
+ATRIBUTO,jugadores
+ATR_CONDICION,universidad
+VALOR,UCLA
+ATRIBUTO,jugadores
+VALOR,UCLA
+=,de
+ATRIBUTO,números de selección del draft
+ATRIBUTO,clases de draft
+ATR_CONDICION,posiciones
+=,son
+VALOR,defensores
+ATRIBUTO,números de selección
+ATRIBUTO,clases de draft
+ATR_CONDICION,posición
+=,de
+VALOR,Defensor
+ATRIBUTO,jugadores
+ATRIBUTO,años jugados
+ATRIBUTO,jugadores
+ATRIBUTO,años ha jugado
+ATRIBUTO,nombres
+ATRIBUTO,nombres
+ATRIBUTO,nombres
+ATR_CONDICION,país
+!=,no sea
+VALOR,Suiza
+ATRIBUTO,llaman
+VALOR,Suiza
+ATR_CONDICION,país
+!=,no son
+ATRIBUTO,países
+ATR_CONDICION,altura
+>,mayor a
+VALOR,5000
+ATRIBUTO,países
+ATR_CONDICION,altura
+>,mayor a
+VALOR,5000
+ATRIBUTO,nombres
+ATR_CONDICION,altura
+ATR_CONDICION,prominencia
+>,superior a
+>,superior a
+VALOR,5000
+VALOR,1000
+OR,o
+ATRIBUTO,llaman
+ATR_CONDICION,altura
+ATR_CONDICION,prominencia
+>,de más de
+>,de más de
+VALOR,5000
+VALOR,1000
+OR,o
+ATRIBUTO,toda la información
+ATRIBUTO,fechas
+ATRIBUTO,porcentajes de votos
+ATRIBUTO,nombres
+ATRIBUTO,partidos
+ATRIBUTO,nombres
+ATR_CONDICION,partido
+!=,no es
+VALOR,republicano
+ATRIBUTO,esperanza de vida
+ATR_CONDICION,estado
+=,de
+VALOR,Nueva York
+OR,o
+=,de
+ATR_CONDICION,estado
+VALOR,Indiana
+ATRIBUTO,finalización
+ATRIBUTO,fechas de inicio
+ATRIBUTO,fecha de inicio
+ATRIBUTO,finalización
+ATRIBUTO,nombres cortos
+ATR_CONDICION,gestionados
+=,por
+VALOR,Emma
+ATRIBUTO,nombres cortos
+ATR_CONDICION,gestiona
+VALOR,Emma
+ATRIBUTO,direcciones
+ATRIBUTO,teléfonos
+ATR_CONDICION,gestionados
+=,por
+VALOR,Brenden
+ATRIBUTO,dirección
+ATRIBUTO,número de teléfono
+ATR_CONDICION,gestionados
+=,por
+VALOR,Brenden
+ATRIBUTO,número de apartamento
+ATRIBUTO,número de habitaciones
+ATRIBUTO,número de apartamento
+ATRIBUTO,número de habitaciones
+ATRIBUTO,números de apartamento
+ATR_CONDICION,código
+=,de tipo
+VALOR,Piso
+ATRIBUTO,números de sus apartamentos
+ATR_CONDICION,código
+=,de tipo
+VALOR,Piso
+ATRIBUTO,nombres
+ATRIBUTO,apellidos
+ATRIBUTO,nombres
+ATRIBUTO,apellidos
+ATRIBUTO,fecha de nacimiento
+ATR_CONDICION,código de género
+=,con el
+VALOR,Masculino
+ATRIBUTO,fechas de nacimiento
+VALOR,masculino
+ATR_CONDICION,género
+=,es
+ATRIBUTO,temporada
+ATRIBUTO,equipo local
+ATRIBUTO,equipo visitante
+ATRIBUTO,asistencia promedio
+ATR_CONDICION,porcentaje de capacidad
+>,superior al
+VALOR,100%
+ATRIBUTO,nombre del jugador
+ATRIBUTO,fuente de información
+ATRIBUTO,el número de partidos
+VALOR,problema de rodilla
+ATR_CONDICION,lesión
+!=,no sufren
+ATRIBUTO,fechas
+ATRIBUTO,lugares
+ATRIBUTO,asistencia
+ATR_CONDICION,lugar
+VALOR,TD Garden
+VALOR,Bell Centre
+OR,o
+=,en el
+ATRIBUTO,nombres
+ATR_CONDICION,departamento
+=,de
+VALOR,informática
+ATRIBUTO,nombres
+VALOR,Comp. Ciencia
+=,del
+ATR_CONDICION,departamento

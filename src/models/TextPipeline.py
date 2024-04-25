@@ -19,7 +19,7 @@ class TextPipeline(ABC):
     @abstractmethod
     def transform_sections(
         self, section_list: list[Section]
-    ) -> list[Section | Condition]:
+    ) -> list[Section, Condition]:
         """
         Performs a transformation dirty sections to a cleaned sections.
 

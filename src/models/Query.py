@@ -27,9 +27,9 @@ class Query:
         Returns:
             A string with the SQL code equivalent to the query.
         """
-        select_clause = 'SELECT *'
-        from_clause = ''
-        where_clause = ''
+        select_clause = "SELECT *"
+        from_clause = ""
+        where_clause = ""
 
         if not self.table:
             raise TableNotFoundError("", self.table)
@@ -44,7 +44,7 @@ class Query:
                 if col:
                     select_clause += f"{col}"
                 else:
-                    select_clause += '*'
+                    select_clause += "*"
 
         if self.condition is not None:
             # WHERE statement (if condition exists)

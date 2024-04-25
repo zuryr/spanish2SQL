@@ -66,8 +66,8 @@ class QueryGenerator:
         return generated_queries
 
     def generate_triplets(
-        self, cleaned_sections: list[Section | Condition]
-    ) -> list[list[Section | Condition] | list[Section | Condition | None]]:
+        self, cleaned_sections: list[Section, Condition]
+    ) -> list[list[Section, Condition] | list[Section, Condition, None]]:
         """
         Generates all possible valid triplets of sections.
 
@@ -103,7 +103,7 @@ class QueryGenerator:
 
         return possible_triplets
 
-    def generate_query_from_triplet(self, triplet: tuple[Section | Condition]) -> Query:
+    def generate_query_from_triplet(self, triplet: tuple[Section, Condition]) -> Query:
         """
         Generates a semantically valid query from a triplet of sections.
 

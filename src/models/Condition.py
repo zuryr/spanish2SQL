@@ -23,7 +23,8 @@ class Condition:
 
     def condition_to_string(self) -> str:
         """Returns the equivalent string of the current string"""
-        return f"{self.column_name}{self.logic_operator}{self.value_name}"
+        # TODO: format according to the datatype
+        return f'"{self.column_name}"{self.logic_operator}{self.value_name}'
 
     def is_empty(self) -> bool:
         """Returns true if the current condition is empty"""

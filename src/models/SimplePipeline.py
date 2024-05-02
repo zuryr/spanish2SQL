@@ -67,10 +67,10 @@ class SimplePipeline(TextPipeline):
 
         # Filter by conditional value and conditional attribute
         conditional_value = [
-            section for section in extracted_values if section.clasification == atribute
+            section for section in extracted_values if section.classification == atribute
         ]
         conditional_atribute = [
-            section for section in extracted_values if section.clasification == value
+            section for section in extracted_values if section.classification == value
         ]
 
         # Generate condition
@@ -82,7 +82,7 @@ class SimplePipeline(TextPipeline):
         first_conditional_atribute = conditional_atribute[0]
 
         condition = Condition(
-            first_operator, first_conditional_value, first_conditional_atribute
+            first_operator, first_conditional_value.text, first_conditional_atribute.text
         )
 
         return condition

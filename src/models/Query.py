@@ -42,7 +42,7 @@ class Query:
             select_clause = "SELECT "
             for col in self.columns:
                 # Workaround for queries containing None at columns
-                select_clause += f'"{col}",' if col is not None else "* "
+                select_clause += f'"{col}",' if col is not None or col == '' else "* "
 
             # Remove last comma
             select_clause = select_clause[:-1]

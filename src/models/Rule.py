@@ -1,3 +1,5 @@
+import re
+
 from Section import Section
 
 class Rule:
@@ -44,13 +46,23 @@ class Rule:
         if end_index == -1:
             return None  # No right delimiter found, return None
 
-        extracted_text = text[start_index + len(self.left_context) + 1:end_index].strip()
+        extracted_text = text[start_index + len(self.left_context) + 1:end_index+1].strip()
         return Section(classification=self.classification, text=extracted_text, left_context=self.left_context, right_context=self.right_context)
 
     def does_match(self, text: str) -> bool:
-        coincidence_index = text.find(self.exact_match)
-        
-        return coincidence_index != -1
+        text_without_end = text.replace("<END>", "")
+
+        # coincidence_index = text_without_end.find(self.exact_match)
+        coincidence = re.search(r'\b' + self.exact_match + r'\b', text_without_end)
+
+        # if coincidence_index > -1:
+        #     print("que")
+        #
+        # return coincidence_index != -1
+
+        if coincidence:
+            return True
+        return False
 
 # # Example of how to use the Rule class
 # rule_example = Rule(left_context="los", right_context="en", classification="TABLA")

@@ -13,14 +13,13 @@ nlp = spacy.load("es_core_news_md")
 class EmbeddingPipeline(TextPipeline):
     """Semantic evaluator based on word embeddings."""
 
-    def __init__(self, evaluator: SemanticEvaluator, extractor: SectionExtractor, threshold: float,
-                 operator_extractor: SectionExtractor, value_extractor: SectionExtractor):
+    def __init__(self, evaluator: SemanticEvaluator, thresholdForAtrribute: float, operator_extractor: SectionExtractor, value_extractor: SectionExtractor):
         """
         threshold: Threshold to define how similar words should be between the real names and the predicted names on
         the embedding pipeline
         """
         super().__init__(evaluator)
-        self.threshold = threshold
+        self.thresholdForAtrribute = thresholdForAtrribute
         self.operator_extractor = operator_extractor
         self.value_extractor = value_extractor
 
@@ -62,10 +61,12 @@ class EmbeddingPipeline(TextPipeline):
             for column in self.evaluator.database.get_all_attributes():
                 doc2 = nlp(column.name)
                 similarity = doc2.similarity(doc1)
-                if similarity >= self.threshold:
+                if similarity >= self.thresholdForAtrribute:
                     best_words_list.append(str(doc2))
 
-        best_words = ", ".join(set(best_words_list))
+        best_words = None
+        if len(best_words_list) > 0:
+            best_words = ", ".join(set(best_words_list))
 
         return Section(best_words, section.classification, section.right_context, section.left_context)
 
@@ -87,7 +88,7 @@ class EmbeddingPipeline(TextPipeline):
         conditional_value = [
             section for section in extracted_values if section.classification == value
         ]
-        conditional_atribute = [
+        conditional_attribute = [
             section for section in extracted_values if section.classification == atribute
         ]
 
@@ -97,45 +98,37 @@ class EmbeddingPipeline(TextPipeline):
 
         first_operator = operators[0]
         best_conditional_attribute = None
-        first_conditional_value = None
+        best_conditional_value = None
 
-        if conditional_atribute:
-            first_conditional_atribute = conditional_atribute[0]
+        if conditional_attribute:
+            best_conditional_attribute, _ = self.getBestConditionalAttributeAndValue(conditional_attribute)
 
-            conditional_atribute_split = first_conditional_atribute.text.split()
-            best_words_list = []
-            for word in conditional_atribute_split:
-                doc1 = nlp(word)
-                for column in self.evaluator.database.get_all_attributes():
-                    doc2 = nlp(column.name)
-                    similarity = doc2.similarity(doc1)
-                    if similarity >= 0.3:
-                        best_words_list.append(str(doc2))
-
-            best_conditional_attribute = ", ".join(set(best_words_list))
-
-        if not conditional_atribute and conditional_value:
-            first_conditional_value = conditional_value[0]
-
-            conditional_value_split = first_conditional_value.text.split()
-            best_words_list = []
-            for word in conditional_value_split:
-                doc1 = nlp(word)
-                for column in self.evaluator.database.get_all_attributes():
-                    doc2 = nlp(column.name)
-                    similarity = doc2.similarity(doc1)
-                    if similarity >= 0.3:
-                        best_words_list.append(str(doc2))
-
-            best_conditional_attribute = ", ".join(set(best_words_list))
+        if not conditional_attribute and conditional_value:
+            best_conditional_attribute, best_conditional_value = self.getBestConditionalAttributeAndValue(conditional_value)
 
         # Generate condition
-        if not operators or not best_conditional_attribute or not first_conditional_value:
+        if not operators or not best_conditional_attribute:
             return Condition()
 
         condition = Condition(
-            best_conditional_attribute, first_conditional_value.text, first_operator
+            best_conditional_attribute, best_conditional_value, first_operator
         )
 
         return condition
+
+    def getBestConditionalAttributeAndValue(self, conditional_attribute_or_value: list[Section]) -> str or None:
+
+        max_similarity = ('', 0, '')
+        for conditionals in conditional_attribute_or_value:
+            possible_conditional_attributes_or_values = conditionals.text.split()
+
+            for attr_or_val in possible_conditional_attributes_or_values:
+                doc1 = nlp(attr_or_val)
+                for attribute in self.evaluator.database.get_all_attributes():
+                    doc2 = nlp(attribute.name)
+                    similarity = doc2.similarity(doc1)
+                    if similarity > max_similarity[1]:
+                        max_similarity = (str(doc2), similarity, attr_or_val)
+
+        return max_similarity[0], max_similarity[2]
 

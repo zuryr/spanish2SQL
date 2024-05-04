@@ -44,14 +44,18 @@ class SimplePipeline(TextPipeline):
             return self.extract_condition(section)
 
     def extract_table(self, section: Section) -> Section:
+        text = section.text
+        text_split = text.split()
 
-        return section
+        return Section("_".join(text_split), section.classification, section.right_context, section.left_context)
 
     def extract_attribute(self, section: Section) -> Section:
+        text = section.text
+        text_split = text.split()
 
-        return section
+        return Section("_".join(text_split), section.classification, section.right_context, section.left_context)
 
-    def extract_condition(self, section: Section) -> Condition:
+    def extract_condition(self, section: Section) -> Section | Condition:
         """Extracts a condition from a section"""
 
         # Extract operators

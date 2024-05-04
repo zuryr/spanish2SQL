@@ -1,5 +1,6 @@
 import json
 import os
+import pickle
 from typing import List
 from Column import Column
 from Table import Table
@@ -43,7 +44,6 @@ class DatabaseBuilder:
 
             for table_index, columns_list in columns_by_table_index.items():
                 table_name = tables_n[table_index]
-                print(tables_n)
                 tables[table_name] = Table(table_name, columns_list)
 
 
@@ -52,6 +52,15 @@ class DatabaseBuilder:
             databases.append(database)
 
         return databases
+    
+    def save_to_pickle(self, output_path: str):
+        """
+        Guarda la lista de bases de datos en un archivo pickle.
+
+        :param output_path: Ruta de salida para el archivo pickle.
+        """
+        with open(output_path, 'wb') as file:
+            pickle.dump(self.build_databases(), file)
 
 if __name__ == "__main__":
     script_dir = os.path.dirname(__file__)
@@ -59,8 +68,13 @@ if __name__ == "__main__":
     json_path = os.path.abspath(os.path.join(script_dir, '../../data/processed/tables_columns_spanish.json'))
 
     builder = DatabaseBuilder(json_path)
-    databases = builder.build_databases()
 
+    output_path = os.path.abspath(os.path.join(script_dir, '../../data/processed/databases.pickle'))
+
+    # Guardar la lista de bases de datos en un archivo pickle
+    builder.save_to_pickle(output_path)
+
+    databases = builder.build_databases()
 
     # Iterar sobre cada base de datos
     for db in databases:

@@ -9,7 +9,7 @@ class CsvHandler:
     """
 
     @staticmethod
-    def load_rules_from_csv(file_path: str) -> List[Rule]:
+    def load_general_rules_from_csv(file_path: str) -> List[Rule]:
         """
         Loads rules from a CSV file.
 
@@ -19,7 +19,49 @@ class CsvHandler:
             List of Rule objects
         """
         rules = []
-        with open(file_path, 'r') as csvfile:
+        with open(file_path, 'r', encoding="utf8") as csvfile:
+            csv_reader = csv.reader(csvfile, delimiter=',')
+            for row in csv_reader:
+                if len(row) == 3:
+                    rule = Rule(left_context=row[0], right_context=row[1], classification=row[2])
+                    rules.append(rule)
+                else:
+                    print("Invalid rule format in CSV:", row)
+        return rules
+
+    @staticmethod
+    def load_operators_rules_from_csv(file_path: str) -> List[Rule]:
+        """
+        Loads rules from a CSV file.
+
+        Args:
+            file_path: path to the CSV file containing rules
+        Returns:
+            List of Rule objects
+        """
+        rules = []
+        with open(file_path, 'r', encoding="utf8") as csvfile:
+            csv_reader = csv.reader(csvfile, delimiter=',')
+            for row in csv_reader:
+                if len(row) == 2:
+                    rule = Rule(left_context='', right_context='', exact_match=row[1], classification=row[0])
+                    rules.append(rule)
+                else:
+                    print("Invalid rule format in CSV:", row)
+        return rules
+
+    @staticmethod
+    def load_values_rules_from_csv(file_path: str) -> List[Rule]:
+        """
+        Loads rules from a CSV file.
+
+        Args:
+            file_path: path to the CSV file containing rules
+        Returns:
+            List of Rule objects
+        """
+        rules = []
+        with open(file_path, 'r', encoding="utf8") as csvfile:
             csv_reader = csv.reader(csvfile, delimiter=',')
             for row in csv_reader:
                 if len(row) == 3:

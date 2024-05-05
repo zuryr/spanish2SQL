@@ -120,12 +120,12 @@ class QueryGenerator:
         condition_name = None
 
         if table_section:
-            table_name = table_section.text
+            table_name = table_section.text if table_section.text else None
 
         if column_section:
-            column_name = column_section.text
+            column_name = column_section.text.split(',') if column_section.text else None
 
         if condition_section:
             condition_name = condition_section.condition_to_string()
 
-        return Query(table_name, [column_name], condition_name)
+        return Query(table_name, column_name, condition_name)

@@ -18,6 +18,7 @@ def definitionDatabase() -> Database:
         Column("identificador", "int"),
         Column("nombre", "varchar"),
         Column("pais", "varchar"),
+        Column("edad", "int"),
     ]
     database.add_table("Estudiantes", columns_1)
     columns_2 = [
@@ -93,6 +94,9 @@ if __name__ == "__main__":
         # Consulta en lenguaje natural
         natural_language_query = (
             "start Muestra todos los nombres de los alumnos y sus identificadores que estudian en Mexico end"
+        )
+        natural_language_query = (
+            "start Muestra todos los nombres de los alumnos menores de 20 end"
         )
 
         # Generar consultas SQL a partir de la consulta en lenguaje natural

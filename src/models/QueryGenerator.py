@@ -90,9 +90,10 @@ class QueryGenerator:
                     found_tables.append(section)
                 if section.classification in Classifications.ATRIBUTO.value:
                     found_attributes.append(section)
-            else:
-                if not section.is_empty():
-                    found_condition.append(section)
+            elif section:
+                for condition in section:
+                    found_condition.append(condition)
+
 
         for table in found_tables:
             for attribute in found_attributes:

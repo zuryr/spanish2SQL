@@ -1,3 +1,6 @@
+import random
+from typing import List
+
 import spacy
 
 from Section import Section
@@ -23,7 +26,7 @@ class EmbeddingPipeline(TextPipeline):
         self.operator_extractor = operator_extractor
         self.value_extractor = value_extractor
 
-    def transform_sections(self, text: list[Section]) -> list[Section | Condition]:
+    def transform_sections(self, text: list[Section]) -> list[Section | list[Condition]]:
         cleaned_sections = []
         for section in text:
             cleaned_sections.append(self.transform_section(section))
@@ -70,7 +73,7 @@ class EmbeddingPipeline(TextPipeline):
 
         return Section(best_words, section.classification, section.right_context, section.left_context)
 
-    def extract_condition(self, section: Section) -> Condition:
+    def extract_condition(self, section: Section) -> Condition | list[Condition] | None:
         """Extracts a condition from a section"""
 
         # Extract operators
@@ -94,27 +97,32 @@ class EmbeddingPipeline(TextPipeline):
 
         # Generate condition
         if not operators:
-            return Condition()
+            return None
 
-        first_operator = operators[0]
-        best_conditional_attribute = None
-        best_conditional_value = None
+        obtained_conditions = []
+        operators = set(operators)
 
-        if conditional_attribute:
-            best_conditional_attribute, _ = self.getBestConditionalAttributeAndValue(conditional_attribute)
+        for operator in operators:
+            best_conditional_attribute = None
+            best_conditional_value = None
 
-        if not conditional_attribute and conditional_value:
-            best_conditional_attribute, best_conditional_value = self.getBestConditionalAttributeAndValue(conditional_value)
+            if conditional_attribute:
+                best_conditional_attribute, _ = self.getBestConditionalAttributeAndValue(conditional_attribute)
 
-        # Generate condition
-        if not operators or not best_conditional_attribute:
-            return Condition()
+            if not conditional_attribute and conditional_value:
+                best_conditional_attribute, best_conditional_value = self.getBestConditionalAttributeAndValue(conditional_value)
 
-        condition = Condition(
-            best_conditional_attribute, best_conditional_value, first_operator
-        )
+            # Generate condition
+            if not operators or not best_conditional_attribute:
+                return Condition()
 
-        return condition
+            condition = Condition(
+                best_conditional_attribute, best_conditional_value, operator
+            )
+
+            obtained_conditions.append(condition)
+
+        return obtained_conditions
 
     def getBestConditionalAttributeAndValue(self, conditional_attribute_or_value: list[Section]) -> str or None:
 

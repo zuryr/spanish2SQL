@@ -1,9 +1,12 @@
+from typing import List
+
 from Section import Section
 from Condition import Condition
 from SemanticEvaluator import SemanticEvaluator
 from SectionExtractor import SectionExtractor
 from TextPipeline import TextPipeline
 from Enums.Classifications import Classifications
+from src.models.Condition import Condition
 
 
 class SimplePipeline(TextPipeline):
@@ -35,7 +38,7 @@ class SimplePipeline(TextPipeline):
             cleaned_sections.append(self.transform_section(section))
         return cleaned_sections
 
-    def transform_section(self, section: Section) -> Section:
+    def transform_section(self, section: Section) -> Section | Condition | list[Condition]:
         if section.classification == Classifications.TABLA.value:
             return self.extract_table(section)
         if section.classification == Classifications.ATRIBUTO.value:
@@ -55,7 +58,7 @@ class SimplePipeline(TextPipeline):
 
         return Section("_".join(text_split), section.classification, section.right_context, section.left_context)
 
-    def extract_condition(self, section: Section) -> Section | Condition:
+    def extract_condition(self, section: Section) -> list[Condition] | None:
         """Extracts a condition from a section"""
 
         # Extract operators
@@ -79,7 +82,7 @@ class SimplePipeline(TextPipeline):
 
         # Generate condition
         if not operators or not conditional_atribute or not conditional_value:
-            return Condition()
+            return None
 
         first_operator = operators[0]
         first_conditional_value = conditional_value[0]
@@ -89,4 +92,4 @@ class SimplePipeline(TextPipeline):
             first_operator, first_conditional_value.text, first_conditional_atribute.text
         )
 
-        return condition
+        return [condition]

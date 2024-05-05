@@ -31,7 +31,7 @@ class TextPipeline(ABC):
         pass
 
     @abstractmethod
-    def transform_section(self, section: Section) -> Section | Condition:
+    def transform_section(self, section: Section) -> Section | Condition | list[Condition]:
         """
         Performs a transformation of a section to cleaned section or condition.
 
@@ -53,6 +53,6 @@ class TextPipeline(ABC):
         pass
 
     @abstractmethod
-    def extract_condition(self, section: Section) -> Condition:
+    def extract_condition(self, section: Section) -> list[Condition] | None:
         """Extracts the condition in a section."""
         pass

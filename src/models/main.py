@@ -7,9 +7,12 @@ from SemanticEvaluator import SemanticEvaluator
 
 # from EmbeddingPipeline import EmbeddingPipeline
 from SimplePipeline import SimplePipeline
-from src.models.CsvHandler import CsvHandler
-from src.models.EmbeddingPipeline import EmbeddingPipeline
+from CsvHandler import CsvHandler
+from EmbeddingPipeline import EmbeddingPipeline
 
+# TODO ñtosql
+# TODO csv consultas sql y pregunta equivalente
+# TODO Parsear stringsql a objeto Query
 
 def definitionDatabase() -> Database:
     # Definir la estructura básica de la base de datos

@@ -4,11 +4,11 @@ from typing import List
 import spacy
 
 from Section import Section
-from src.models.Condition import Condition
-from src.models.Enums.Classifications import Classifications
-from src.models.SectionExtractor import SectionExtractor
-from src.models.SemanticEvaluator import SemanticEvaluator
-from src.models.TextPipeline import TextPipeline
+from Condition import Condition
+from Enums.Classifications import Classifications
+from SectionExtractor import SectionExtractor
+from SemanticEvaluator import SemanticEvaluator
+from TextPipeline import TextPipeline
 
 nlp = spacy.load("es_core_news_md")
 

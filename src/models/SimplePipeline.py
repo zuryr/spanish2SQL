@@ -6,7 +6,7 @@ from SemanticEvaluator import SemanticEvaluator
 from SectionExtractor import SectionExtractor
 from TextPipeline import TextPipeline
 from Enums.Classifications import Classifications
-from src.models.Condition import Condition
+from Condition import Condition
 
 
 class SimplePipeline(TextPipeline):

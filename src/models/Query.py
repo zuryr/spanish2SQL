@@ -19,7 +19,7 @@ class Query:
         self.table = table_name
         self.columns = columns_names
         self.condition = condition_name
-        self.tableNotFound = TableNotFoundError
+
 
     def to_SQL_string(self) -> str:
         """

@@ -44,9 +44,8 @@ class Table:
         
         return None
     
-    # def column_exists(self, database: Database, column_name: str) -> bool:
-    #     """Check if the column exists in the given table."""
-    #     if database.table_exists(self.name):
-    #         return column_name in self.columns
-    #     return False
+    def column_exists(self, column_name: str) -> bool:
+        """Check if the column exists in the given table."""
+
+        return column_name in self.columns
     

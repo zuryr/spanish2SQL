@@ -28,6 +28,14 @@ class SemanticEvaluator:
         pattern = r"^[-+]?\d*\.?\d+$"
         
         return re.match(pattern, string_to_evaluate) is not None
+    
+    def is_time(self, string_to_evaluate: str):
+
+        pattern_time = r'^\d{2}:\d{2}:\d{2}(\.\d{1,3})?$'
+
+        pattern_date = r'^\d{4}-\d{2}-\d{2}$'
+
+        return ((re.match(pattern_time, string_to_evaluate) is not None) or (re.match(pattern_date, string_to_evaluate) is not None))
 
     def query_is_correct(self, query: Query) -> bool:
         """
@@ -79,11 +87,13 @@ class SemanticEvaluator:
             valid_varchar_operators = ['=', '!=']
             valid_numeric_operators = ['<', '>', '=', '<=', '>=', '!=']
             
-            if conditional_column.datatype == DataTypes.VARCHAR.value and ((conditional_operator not in valid_varchar_operators)):
+            if conditional_column.datatype == DataTypes.TEXT.value and ((conditional_operator not in valid_varchar_operators)):
                 return False
             
-            if conditional_column.datatype == DataTypes.NUMERIC.value and ((conditional_operator not in valid_numeric_operators) or (not self.has_numbers(conditional_value))):
+            if conditional_column.datatype == DataTypes.NUMBER.value and ((conditional_operator not in valid_numeric_operators) or (not self.has_numbers(conditional_value))):
                 return False
             
+            if conditional_column.datatype == DataTypes.TIME.value and ((conditional_operator not in valid_numeric_operators) or (not self.is_time(conditional_value))):
+                return False
             
         return True

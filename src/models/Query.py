@@ -32,9 +32,12 @@ class Query:
         """
         if not isinstance(other, Query):
             return False
+        
+        for column in self.columns:
+            if column not in other.columns:
+                return False
 
         return (self.table == other.table and
-                self.columns == other.columns and
                 self.condition == other.condition)
 
 

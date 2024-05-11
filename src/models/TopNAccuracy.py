@@ -41,10 +41,11 @@ class TopNAccuracyValidator:
 if __name__ == '__main__':
 
     # Crear instancias de Query para probar
-    query1 = Query("Table1", ["Column1", "Column2"], "Condition1")
+    query1 = Query("Table1", ["Column1", "Column2", "column10"], "Condition1")
     query2 = Query("Table2", ["Column3", "Column4"], "Condition2")
     query3 = Query("Table3", ["Column5", "Column6"], "Condition3")
     query4 = Query("Table4", ["Column7", "Column8"], "Condition4")
+    query1_1 = Query("Table1", ["Column2", "column10", "Column1"], "Condition1")
 
     # Crear una lista de predicciones y verdaderos Query para probar el validador
     y_pred = [
@@ -53,7 +54,7 @@ if __name__ == '__main__':
         [query1, query2, query4]   # Predicciones para la tercera consulta verdadera
     ]
 
-    y_true = [query4, query4, query4]  # Consultas verdaderas
+    y_true = [query1_1, query1_1, query4]  # Consultas verdaderas
 
     # Crear una instancia del validador con N = 2
     validator = TopNAccuracyValidator(n=3)

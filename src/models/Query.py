@@ -20,6 +20,23 @@ class Query:
         self.columns = columns_names
         self.condition = condition_name
 
+    def __eq__(self, other):
+        """
+        Compares whether two Query objects are equal.
+
+        Args:
+            other: Another Query object to compare.
+
+        Returns:
+            True if the objects are equal, False otherwise.
+        """
+        if not isinstance(other, Query):
+            return False
+
+        return (self.table == other.table and
+                self.columns == other.columns and
+                self.condition == other.condition)
+
 
     def to_SQL_string(self) -> str:
         """

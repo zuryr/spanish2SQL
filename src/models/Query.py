@@ -33,6 +33,9 @@ class Query:
         if not isinstance(other, Query):
             return False
         
+        if len(self.columns) != len(other.columns):
+            return False
+
         for column in self.columns:
             if column not in other.columns:
                 return False

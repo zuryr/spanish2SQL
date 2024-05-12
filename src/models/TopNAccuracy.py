@@ -2,7 +2,8 @@ from Query import Query
 
 class TopNAccuracyValidator:
 
-    def calculate_accuracy(self, y_pred: list[list[Query]], y_true: list[Query]) -> float:
+    @staticmethod
+    def calculate_accuracy(y_pred: list[list[Query]], y_true: list[Query]) -> float:
         """
         Calculates the Top-N accuracy given predicted queries and true queries.
 

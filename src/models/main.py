@@ -7,24 +7,27 @@ from SemanticEvaluator import SemanticEvaluator
 
 # from EmbeddingPipeline import EmbeddingPipeline
 from SimplePipeline import SimplePipeline
-from src.models.CsvHandler import CsvHandler
-from src.models.EmbeddingPipeline import EmbeddingPipeline
+from CsvHandler import CsvHandler
+from EmbeddingPipeline import EmbeddingPipeline
 
+# TODO ñtosql
+# TODO csv consultas sql y pregunta equivalente
+# TODO Parsear stringsql a objeto Query
 
 def definitionDatabase() -> Database:
     # Definir la estructura básica de la base de datos
     database = Database("Escuela")
     columns_1 = [
-        Column("identificador", "int"),
-        Column("nombre", "varchar"),
-        Column("pais", "varchar"),
-        Column("edad", "int"),
+        Column("identificador", "number"),
+        Column("nombre", "text"),
+        Column("pais", "text"),
+        Column("edad", "number"),
     ]
     database.add_table("Estudiantes", columns_1)
     columns_2 = [
-        Column("identificador", "int"),
-        Column("nombre", "varchar"),
-        Column("profesor", "varchar"),
+        Column("identificador", "number"),
+        Column("nombre", "text"),
+        Column("profesor", "text"),
     ]
     database.add_table("Cursos", columns_2)
 

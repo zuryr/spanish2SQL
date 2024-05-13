@@ -58,10 +58,11 @@ class QueryGenerator:
             query = self.generate_query_from_triplet(triplet)
 
             # TODO: evaluate queries and conserve those that are semantically correct
-            # if self.evaluator.query_is_correct(query):
-            #     generated_queries.append(query)
-            if query is not None:
+            if query is None:
+                continue
+            if self.evaluator.query_is_correct(query):
                 generated_queries.append(query)
+
 
         return generated_queries
 
@@ -119,6 +120,7 @@ class QueryGenerator:
         table_name = None
         column_name = None
         condition_name = None
+
 
         if table_section:
             table_name = table_section.text if table_section.text else None

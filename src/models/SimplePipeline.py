@@ -38,11 +38,13 @@ class SimplePipeline(TextPipeline):
             cleaned_sections.append(self.transform_section(section))
         return cleaned_sections
 
-    def transform_section(self, section: Section) -> Section | Condition | list[Condition]:
+    def transform_section(
+        self, section: Section
+    ) -> Section | Condition | list[Condition]:
         if section.classification == Classifications.TABLA.value:
             return self.extract_table(section)
         if section.classification == Classifications.ATRIBUTO.value:
-            return self.extract_attribute(section)
+            return self.extract_attributes(section)
         if section.classification == Classifications.CONDICION.value:
             return self.extract_condition(section)
 
@@ -50,13 +52,23 @@ class SimplePipeline(TextPipeline):
         text = section.text
         text_split = text.split()
 
-        return Section("_".join(text_split), section.classification, section.right_context, section.left_context)
+        return Section(
+            "_".join(text_split),
+            section.classification,
+            section.right_context,
+            section.left_context,
+        )
 
-    def extract_attribute(self, section: Section) -> Section:
+    def extract_attributes(self, section: Section) -> list[Section]:
         text = section.text
         text_split = text.split()
 
-        return Section("_".join(text_split), section.classification, section.right_context, section.left_context)
+        return Section(
+            "_".join(text_split),
+            section.classification,
+            section.right_context,
+            section.left_context,
+        )
 
     def extract_condition(self, section: Section) -> list[Condition] | None:
         """Extracts a condition from a section"""
@@ -74,7 +86,9 @@ class SimplePipeline(TextPipeline):
 
         # Filter by conditional value and conditional attribute
         conditional_value = [
-            section for section in extracted_values if section.classification == atribute
+            section
+            for section in extracted_values
+            if section.classification == atribute
         ]
         conditional_atribute = [
             section for section in extracted_values if section.classification == value
@@ -89,7 +103,9 @@ class SimplePipeline(TextPipeline):
         first_conditional_atribute = conditional_atribute[0]
 
         condition = Condition(
-            first_operator, first_conditional_value.text, first_conditional_atribute.text
+            first_operator,
+            first_conditional_value.text,
+            first_conditional_atribute.text,
         )
 
         return [condition]

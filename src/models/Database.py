@@ -60,13 +60,13 @@ class Database:
             A list of table names
         """
         return list(self.tables.keys())
-    
+
     def get_all_attributes_from_table(self, table_name: str):
         """
         Return all colums from a specific table.
 
         Args:
-            table_name: name of the table 
+            table_name: name of the table
         """
         table = self.get_table_by_name(table_name)
         return table.get_all_colums_from_table()
@@ -83,9 +83,20 @@ class Database:
 
         return all_attributes
 
+    def get_all_attribute_table_pairs(self) -> List[tuple[Column, Table]]:
+        """
+        Returns all attribute-table pairs from the database
+        """
+        all_pairs = []
+        for table in self.tables.values():
+            columns_in_table = table.columns.values()
+            for col in columns_in_table:
+                all_pairs.append((col, table))
+
+        return all_pairs
+
     def column_exists(self, column_name: str) -> bool:
         all_columns = self.get_all_attributes()
         cols_names = list(map(lambda col: col.name, all_columns))
 
         return column_name in cols_names
-            

@@ -4,7 +4,7 @@ cada,end,TABLA
 los,que,TABLA
 se,los,ATRIBUTO
 que,end,CONDICION
-¿El,Enumere,CONDICION
+El,Enumere,CONDICION
 la,.,ATRIBUTO
 cuyo,end,CONDICION
 los,de,ATRIBUTO
@@ -46,13 +46,13 @@ una,?,CONDICION
 los,de,ATRIBUTO
 las,con,TABLA
 una,?,CONDICION
-¿,la,ATRIBUTO
+start,la,ATRIBUTO
 la,?,CONDICION
 de,?,TABLA
 los,que,ATRIBUTO
 que,Los,CONDICION
 Mostrar,con,ATRIBUTO
-con,Honolulu.,CONDICION
+con,Honolulu,CONDICION
 destino,.,TABLA
 la,que,ATRIBUTO
 que,?,CONDICION
@@ -76,7 +76,7 @@ los,.,TABLA
 los,?,TABLA
 los,de,ATRIBUTO
 diferentes,?,TABLA
-las,especialidades?,CONDICION
+las,especialidades,CONDICION
 el,.,ATRIBUTO
 Su,es,TABLA
 es,.,CONDICION
@@ -91,7 +91,7 @@ estudiantes,.,CONDICION
 las,mayores,ATRIBUTO
 las,para,ATRIBUTO
 para,?,CONDICION
-"""","""?",CONDICION
+es,?,CONDICION
 el,cuyo,TABLA
 cuyo,es,CONDICION
 cuyo,es,ATRIBUTO
@@ -109,9 +109,9 @@ miembros,end,CONDICION
 de,menores,TABLA
 los,de,ATRIBUTO
 de,los,CONDICION
-los,musicales.,TABLA
+los,musicales,TABLA
 los,de,ATRIBUTO
-diferentes,musicales?,TABLA
+diferentes,musicales,TABLA
 Encuentra,de,ATRIBUTO
 de,en,TABLA
 el,end,CONDICION
@@ -149,7 +149,7 @@ la,end,CONDICION
 los,donde,ATRIBUTO
 las,pueden,TABLA
 los,de,ATRIBUTO
-las,enumeradas?,TABLA
+las,enumeradas,TABLA
 el,relacionados,ATRIBUTO
 las,que,TABLA
 el,end,CONDICION
@@ -244,7 +244,7 @@ los,de,ATRIBUTO
 los,gestionados,TABLA
 edificios,end,CONDICION
 los,de,ATRIBUTO
-¿Qué,gestiona,TABLA
+Qué,gestiona,TABLA
 edificios,Dame,CONDICION
 las,de,ATRIBUTO
 los,gestionados,TABLA
@@ -260,7 +260,7 @@ los,de,ATRIBUTO
 los,con,TABLA
 con,end,CONDICION
 los,end,ATRIBUTO
-¿Qué,tienen,TABLA
+Qué,tienen,TABLA
 el,Dame,CONDICION
 los,de,ATRIBUTO
 los,end,TABLA
@@ -289,4 +289,4 @@ los,del,TABLA
 del,end,CONDICION
 los,de,ATRIBUTO
 los,del,TABLA
-del,¿departamento?,CONDICION
+del,departamento,CONDICION

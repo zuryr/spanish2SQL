@@ -8,16 +8,18 @@ from EmbeddingPipeline import EmbeddingPipeline
 from QueryGenerator import QueryGenerator
 from SectionExtractor import SectionExtractor
 from SemanticEvaluator import SemanticEvaluator
+
 # from EmbeddingPipeline import EmbeddingPipeline
 from SimplePipeline import SimplePipeline
-from src.models.Query import Query
-from src.models.Rule import Rule
-from src.models.TopNAccuracy import TopNAccuracyValidator
+from Query import Query
+from Rule import Rule
+from TopNAccuracy import TopNAccuracyValidator
 
 
 # TODO ñtosql
 # TODO csv consultas sql y pregunta equivalente
 # TODO Parsear stringsql a objeto Query
+
 
 def definitionDatabase() -> Database:
     # Definir la estructura básica de la base de datos
@@ -38,6 +40,7 @@ def definitionDatabase() -> Database:
 
     return database
 
+
 def loadRealDatabases():
     databases_file_path = "../../data/processed/databases.pickle"
     databases = pd.read_pickle(databases_file_path)
@@ -45,14 +48,14 @@ def loadRealDatabases():
     for database in databases:
         db_dict[database.name] = database
 
-
     return db_dict
+
 
 def loadRules():
     general_rules_file_path = "../../data/processed/ctx_general_reduced.csv"
     rules = CsvHandler.load_general_rules_from_csv(general_rules_file_path)
 
-    general_rules_file_path = "../../data/processed/detailed_labels.csv"
+    general_rules_file_path = "../../data/processed/detailed_labels_reduced.csv"
     operator_rules = CsvHandler.load_operators_rules_from_csv(general_rules_file_path)
 
     general_rules_file_path = "../../data/processed/ctx_detallado_reduced.csv"
@@ -88,7 +91,8 @@ def loadObjectsQuerys() -> list[Query]:
 
     return querys
 
-def loadNaturalLanguageQuerys() -> (list[str], list[str]):
+
+def loadNaturalLanguageQuerys() -> tuple:
     natural_language_query_file_path = "../../data/processed/out_json.json"
     list_natural_language_querys = []
     file = open(natural_language_query_file_path, "r", encoding="utf-8")
@@ -102,6 +106,7 @@ def loadNaturalLanguageQuerys() -> (list[str], list[str]):
         dbs.append(line["db_id"])
 
     return list_natural_language_querys, dbs
+
 
 def executeExample():
     database = definitionDatabase()
@@ -120,23 +125,29 @@ def executeExample():
     # Definimos las pipelines
     # pipelines = [SimplePipeline(evaluator, operator_extractor, value_extractor),
     #              EmbeddingPipeline(evaluator, thresholdForAttribute, operator_extractor, value_extractor)]
-    pipelines = [EmbeddingPipeline(evaluator, thresholdForAttribute, operator_extractor, value_extractor)]
+    pipelines = [
+        EmbeddingPipeline(
+            evaluator, thresholdForAttribute, operator_extractor, value_extractor
+        )
+    ]
     # pipelines = [SimplePipeline(evaluator, operator_extractor, value_extractor)]
 
     for pipeline in pipelines:
         print()
         # Inicializar el generador de consultas
-        query_generator = QueryGenerator(database, evaluator, section_extractor, pipeline)
+        query_generator = QueryGenerator(
+            database, evaluator, section_extractor, pipeline
+        )
 
         # Consulta en lenguaje natural
-        natural_language_query = (
-            "start Muestra todos los nombres de los alumnos y sus identificadores que estudian en Mexico end"
-        )
+        natural_language_query = "start Muestra todos los nombres de los alumnos y sus identificadores que estudian en Mexico end"
         # natural_language_query = (
         #     "start Muestra todos los nombres de los alumnos menores de 20 end"
         # )
 
-        querys_objects = [Query("Estudiantes", ["nombre", "identificador"], 'pais = "Mexico"')]
+        querys_objects = [
+            Query("Estudiantes", ["nombre", "identificador"], 'pais = "Mexico"')
+        ]
         list_natural_language_query = [natural_language_query]
         final_generated_queries = []
         list_querys_strings = []
@@ -157,8 +168,11 @@ def executeExample():
 
         if len(final_generated_queries) > 0:
             validator = TopNAccuracyValidator()
-            top_n_accuracy = validator.calculate_accuracy(final_generated_queries, querys_objects)
+            top_n_accuracy = validator.calculate_accuracy(
+                final_generated_queries, querys_objects
+            )
             print("Top-N Accuracy:", top_n_accuracy)
+
 
 def executeRealData():
     real_databases = loadRealDatabases()
@@ -179,12 +193,18 @@ def executeRealData():
 
         # Definimos las pipelines
         # pipelines = [SimplePipeline(evaluator, operator_extractor, value_extractor)]
-        pipelines = [EmbeddingPipeline(evaluator, thresholdForAttribute, operator_extractor, value_extractor)]
+        pipelines = [
+            EmbeddingPipeline(
+                evaluator, thresholdForAttribute, operator_extractor, value_extractor
+            )
+        ]
 
         for pipeline in pipelines:
             print()
             # Inicializar el generador de consultas
-            query_generator = QueryGenerator(database, evaluator, section_extractor, pipeline)
+            query_generator = QueryGenerator(
+                database, evaluator, section_extractor, pipeline
+            )
 
             list_querys_strings = []
 
@@ -203,7 +223,9 @@ def executeRealData():
 
     if len(final_generated_queries) > 0:
         validator = TopNAccuracyValidator()
-        top_n_accuracy = validator.calculate_accuracy(final_generated_queries, querys_objects[:])
+        top_n_accuracy = validator.calculate_accuracy(
+            final_generated_queries, querys_objects[:]
+        )
         print("Top-N Accuracy:", top_n_accuracy)
 
 

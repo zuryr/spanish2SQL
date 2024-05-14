@@ -57,7 +57,7 @@ class QueryGenerator:
         for triplet in possible_triplets:
             query = self.generate_query_from_triplet(triplet)
 
-            # TODO: evaluate queries and conserve those that are semantically correct
+            # evaluate queries and conserve those that are semantically correct
             if query is None:
                 continue
             if self.evaluator.query_is_correct(query):
@@ -107,7 +107,6 @@ class QueryGenerator:
                 for condition in section:
                     found_condition.append(condition)
 
-
         for table in found_tables:
             for attribute in found_attributes:
                 for condition in found_condition:
@@ -133,12 +132,13 @@ class QueryGenerator:
         column_name = None
         condition_name = None
 
-
         if table_section:
             table_name = table_section.text if table_section.text else None
 
         if column_section:
-            column_name = column_section.text.split(',') if column_section.text else None
+            column_name = (
+                column_section.text.split(",") if column_section.text else None
+            )
             if column_name:
                 column_name = [col.strip() for col in column_name]
 

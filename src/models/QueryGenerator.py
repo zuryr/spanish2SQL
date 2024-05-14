@@ -62,9 +62,21 @@ class QueryGenerator:
                 continue
             if self.evaluator.query_is_correct(query):
                 generated_queries.append(query)
+            # generated_queries.append(query)
 
+        unique_queries = self.remove_duplicates(generated_queries)
 
-        return generated_queries
+        return unique_queries
+
+    def remove_duplicates(self, queries):
+        """Remove duplicates from a list of Query objects."""
+        seen = set()
+        unique_queries = []
+        for query in queries:
+            if query not in seen:
+                unique_queries.append(query)
+                seen.add(query)
+        return unique_queries
 
     def generate_triplets(
         self, cleaned_sections: list[Section, Condition]
@@ -127,6 +139,8 @@ class QueryGenerator:
 
         if column_section:
             column_name = column_section.text.split(',') if column_section.text else None
+            if column_name:
+                column_name = [col.strip() for col in column_name]
 
         if condition_section:
             condition_name = condition_section.condition_to_string()

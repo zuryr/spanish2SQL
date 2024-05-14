@@ -70,13 +70,13 @@ class SemanticEvaluator:
 
         if query.columns is not None:
             for column in query.columns:
+                column = column.strip()
                 if not table.column_exists(column):
                     return False
                     
         
-        if query.condition is not None:
+        if query.condition is not None and query.condition != "":
             condition = query.condition
-        
             conditional_attribute, conditional_operator, conditional_value = condition.split()
 
             if not table.column_exists(conditional_attribute):

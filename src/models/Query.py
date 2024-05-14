@@ -30,21 +30,25 @@ class Query:
         Returns:
             True if the objects are equal, False otherwise.
         """
-        if not isinstance(other, Query):
+        # Check if both columns are None
+        if self.columns is None and other.columns is None:
+            return self.table == other.table
+                #     and \
+                # self.condition == other.condition
+
+        # If one column is None and the other is not, they are not equal
+        if self.columns is None or other.columns is None:
             return False
-        
-        if len(self.columns) != len(other.columns):
-            return False
 
-        for column in self.columns:
-            if column not in other.columns:
-                return False
+        # Both columns are not None, compare sets
+        return self.table == other.table and \
+            set(self.columns) == set(other.columns)
 
-        return (self.table == other.table and
-                self.condition == other.condition)
+    def __hash__(self):
+        """Override hash function."""
+        return hash((self.table, tuple(self.columns or []), self.condition or ""))
 
-
-    def to_SQL_string(self) -> str:
+    def SQL_to_string(self) -> str:
         """
         Transforms the query into SQL code.
         Returns:

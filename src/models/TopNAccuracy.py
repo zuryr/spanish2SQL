@@ -24,7 +24,10 @@ class TopNAccuracyValidator:
             # Check if true query is in top N predictions
             for prediction in top_n_predictions:
                 if true_query == prediction:
+                    print("True query", true_query.SQL_to_string())
+                    print("Prediction", prediction.SQL_to_string())
                     correct_predictions += 1
+                    break
 
         # Calculate accuracy
         accuracy = correct_predictions / total_queries if total_queries > 0 else 0.0

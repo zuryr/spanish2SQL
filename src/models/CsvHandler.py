@@ -20,7 +20,7 @@ class CsvHandler:
         """
         rules = []
         with open(file_path, 'r', encoding="utf8") as csvfile:
-            csv_reader = csv.reader(csvfile, delimiter=',')
+            csv_reader = csv.reader(csvfile, delimiter=',',)
             for row in csv_reader:
                 if len(row) == 3:
                     rule = Rule(left_context=row[0], right_context=row[1], classification=row[2])

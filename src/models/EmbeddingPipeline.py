@@ -29,7 +29,14 @@ class EmbeddingPipeline(TextPipeline):
     def transform_sections(self, text: list[Section]) -> list[Section | list[Condition]]:
         cleaned_sections = []
         for section in text:
-            cleaned_sections.append(self.transform_section(section))
+            # if section.classification == 'ATRIBUTO' and section.text == 'creación, nombre y presupuesto':
+            #     print("")
+            clean_section = self.transform_section(section)
+            # if clean_section is None:
+            #     continue
+            # if type(clean_section) is Section and clean_section.text is None:
+            #     continue
+            cleaned_sections.append(clean_section)
         return cleaned_sections
 
     def transform_section(self, section: Section) -> Section | Condition:
@@ -62,10 +69,12 @@ class EmbeddingPipeline(TextPipeline):
         for word in section_words:
             doc1 = nlp(word)
             for column in self.evaluator.database.get_all_attributes():
-                doc2 = nlp(column.name)
-                similarity = doc2.similarity(doc1)
-                if similarity >= self.thresholdForAtrribute:
-                    best_words_list.append(str(doc2))
+                for column_part in column.name.split():
+                    column_part = column_part.strip()
+                    doc2 = nlp(column_part)
+                    similarity = doc2.similarity(doc1)
+                    if similarity >= self.thresholdForAtrribute:
+                        best_words_list.append(column.name)
 
         best_words = None
         if len(best_words_list) > 0:
@@ -108,13 +117,18 @@ class EmbeddingPipeline(TextPipeline):
 
             if conditional_attribute:
                 best_conditional_attribute, _ = self.getBestConditionalAttributeAndValue(conditional_attribute)
+                if conditional_value:
+                    for val in conditional_value:
+                        best_conditional_value = val.text
+                        best_conditional_value = best_conditional_value.replace(" ", "_")
+                        obtained_conditions.append(Condition(best_conditional_attribute, best_conditional_value, operator))
 
             if not conditional_attribute and conditional_value:
                 best_conditional_attribute, best_conditional_value = self.getBestConditionalAttributeAndValue(conditional_value)
 
             # Generate condition
-            if not operators or not best_conditional_attribute:
-                return Condition()
+            if not best_conditional_attribute or not best_conditional_value:
+                return None
 
             condition = Condition(
                 best_conditional_attribute, best_conditional_value, operator
@@ -122,11 +136,13 @@ class EmbeddingPipeline(TextPipeline):
 
             obtained_conditions.append(condition)
 
+            obtained_conditions = self.remove_conditon_duplicates(obtained_conditions)
+
         return obtained_conditions
 
     def getBestConditionalAttributeAndValue(self, conditional_attribute_or_value: list[Section]) -> str or None:
 
-        max_similarity = ('', 0, '')
+        max_similarity = (None, 0, None)
         for conditionals in conditional_attribute_or_value:
             possible_conditional_attributes_or_values = conditionals.text.split()
 
@@ -137,6 +153,21 @@ class EmbeddingPipeline(TextPipeline):
                     similarity = doc2.similarity(doc1)
                     if similarity > max_similarity[1]:
                         max_similarity = (str(doc2), similarity, attr_or_val)
+        attr, val = None, None
+        if max_similarity[0]:
+            attr = max_similarity[0].replace(" ", "_")
+        if max_similarity[2]:
+            val = max_similarity[2].replace(" ", "_")
 
-        return max_similarity[0], max_similarity[2]
+        return attr, val
 
+
+    def remove_conditon_duplicates(self, conditions):
+        """Remove duplicates from a list of Condition objects."""
+        seen = set()
+        unique_conditions = []
+        for cond in conditions:
+            if cond not in seen:
+                unique_conditions.append(cond)
+                seen.add(cond)
+        return unique_conditions

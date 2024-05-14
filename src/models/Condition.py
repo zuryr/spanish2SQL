@@ -5,7 +5,7 @@ class Condition:
     """Condition in a SQL query."""
 
     def __init__(
-        self, column_name: str = "", value_name: str = "", logic_operator: str = "="
+        self, column_name: str | None, value_name: str | None, logic_operator: str = "="
     ):
         """
         Initializes a condition for a SQL query.
@@ -29,3 +29,22 @@ class Condition:
     def is_empty(self) -> bool:
         """Returns true if the current condition is empty"""
         return self.column_name == "" or self.value_name == ""
+
+    def __eq__(self, other) -> bool:
+        """
+        Compares whether two Conditions objects are equal.
+
+        Args:
+            other: Another Condition object to compare.
+
+        Returns:
+            True if the objects are equal, False otherwise.
+        """
+        # Check if both columns are None
+        return self.column_name == other.column_name and self.value_name == other.value_name and self.logic_operator == other.logic_operator
+
+    def __hash__(self):
+        """Override hash function."""
+        return hash((self.column_name, self.value_name, self.logic_operator))
+
+

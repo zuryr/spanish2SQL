@@ -9,6 +9,7 @@ from Enums.Classifications import Classifications
 from SectionExtractor import SectionExtractor
 from SemanticEvaluator import SemanticEvaluator
 from TextPipeline import TextPipeline
+from Tokenizer import Tokenizer
 
 nlp = spacy.load("es_core_news_md")
 
@@ -16,7 +17,13 @@ nlp = spacy.load("es_core_news_md")
 class EmbeddingPipeline(TextPipeline):
     """Semantic evaluator based on word embeddings."""
 
-    def __init__(self, evaluator: SemanticEvaluator, thresholdForAtrribute: float, operator_extractor: SectionExtractor, value_extractor: SectionExtractor):
+    def __init__(
+        self,
+        evaluator: SemanticEvaluator,
+        thresholdForAtrribute: float,
+        operator_extractor: SectionExtractor,
+        value_extractor: SectionExtractor,
+    ):
         """
         threshold: Threshold to define how similar words should be between the real names and the predicted names on
         the embedding pipeline
@@ -26,7 +33,9 @@ class EmbeddingPipeline(TextPipeline):
         self.operator_extractor = operator_extractor
         self.value_extractor = value_extractor
 
-    def transform_sections(self, text: list[Section]) -> list[Section | list[Condition]]:
+    def transform_sections(
+        self, text: list[Section]
+    ) -> list[Section | list[Condition]]:
         cleaned_sections = []
         for section in text:
             # if section.classification == 'ATRIBUTO' and section.text == 'creación, nombre y presupuesto':
@@ -49,8 +58,8 @@ class EmbeddingPipeline(TextPipeline):
 
     def extract_table(self, section: Section) -> Section:
         """Evaluate the TABLE section."""
-        section_words = section.text.split()
-        max_similarity = ('', 0)
+        section_words = Tokenizer.tokenize_question(section.text)
+        max_similarity = ("", 0)
 
         for word in section_words:
             doc1 = nlp(word)
@@ -60,17 +69,21 @@ class EmbeddingPipeline(TextPipeline):
                 if similarity > max_similarity[1]:
                     max_similarity = (str(doc2), similarity)
 
-        return Section(max_similarity[0], section.classification, section.right_context, section.left_context)
+        return Section(
+            max_similarity[0],
+            section.classification,
+            section.right_context,
+            section.left_context,
+        )
 
     def extract_attribute(self, section: Section) -> Section:
         """Evaluate the ATTRIBUTE section."""
-        section_words = section.text.split()
+        section_words = Tokenizer.tokenize_question(section.text)
         best_words_list = []
         for word in section_words:
             doc1 = nlp(word)
             for column in self.evaluator.database.get_all_attributes():
-                for column_part in column.name.split():
-                    column_part = column_part.strip()
+                for column_part in Tokenizer.tokenize_question(column.name):
                     doc2 = nlp(column_part)
                     similarity = doc2.similarity(doc1)
                     if similarity >= self.thresholdForAtrribute:
@@ -80,7 +93,12 @@ class EmbeddingPipeline(TextPipeline):
         if len(best_words_list) > 0:
             best_words = ", ".join(set(best_words_list))
 
-        return Section(best_words, section.classification, section.right_context, section.left_context)
+        return Section(
+            best_words,
+            section.classification,
+            section.right_context,
+            section.left_context,
+        )
 
     def extract_condition(self, section: Section) -> Condition | list[Condition] | None:
         """Extracts a condition from a section"""
@@ -101,7 +119,9 @@ class EmbeddingPipeline(TextPipeline):
             section for section in extracted_values if section.classification == value
         ]
         conditional_attribute = [
-            section for section in extracted_values if section.classification == atribute
+            section
+            for section in extracted_values
+            if section.classification == atribute
         ]
 
         # Generate condition
@@ -116,15 +136,27 @@ class EmbeddingPipeline(TextPipeline):
             best_conditional_value = None
 
             if conditional_attribute:
-                best_conditional_attribute, _ = self.getBestConditionalAttributeAndValue(conditional_attribute)
+                best_conditional_attribute, _ = (
+                    self.getBestConditionalAttributeAndValue(conditional_attribute)
+                )
                 if conditional_value:
                     for val in conditional_value:
                         best_conditional_value = val.text
-                        best_conditional_value = best_conditional_value.replace(" ", "_")
-                        obtained_conditions.append(Condition(best_conditional_attribute, best_conditional_value, operator))
+                        best_conditional_value = best_conditional_value.replace(
+                            " ", "_"
+                        )
+                        obtained_conditions.append(
+                            Condition(
+                                best_conditional_attribute,
+                                best_conditional_value,
+                                operator,
+                            )
+                        )
 
             if not conditional_attribute and conditional_value:
-                best_conditional_attribute, best_conditional_value = self.getBestConditionalAttributeAndValue(conditional_value)
+                best_conditional_attribute, best_conditional_value = (
+                    self.getBestConditionalAttributeAndValue(conditional_value)
+                )
 
             # Generate condition
             if not best_conditional_attribute or not best_conditional_value:
@@ -140,11 +172,15 @@ class EmbeddingPipeline(TextPipeline):
 
         return obtained_conditions
 
-    def getBestConditionalAttributeAndValue(self, conditional_attribute_or_value: list[Section]) -> str or None:
+    def getBestConditionalAttributeAndValue(
+        self, conditional_attribute_or_value: list[Section]
+    ) -> str | None:
 
         max_similarity = (None, 0, None)
         for conditionals in conditional_attribute_or_value:
-            possible_conditional_attributes_or_values = conditionals.text.split()
+            possible_conditional_attributes_or_values = Tokenizer.tokenize_question(
+                conditionals.text
+            )
 
             for attr_or_val in possible_conditional_attributes_or_values:
                 doc1 = nlp(attr_or_val)
@@ -160,7 +196,6 @@ class EmbeddingPipeline(TextPipeline):
             val = max_similarity[2].replace(" ", "_")
 
         return attr, val
-
 
     def remove_conditon_duplicates(self, conditions):
         """Remove duplicates from a list of Condition objects."""

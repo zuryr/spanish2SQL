@@ -21,7 +21,7 @@ from TopNAccuracy import TopNAccuracyValidator
 # TODO Parsear stringsql a objeto Query
 
 
-def definitionDatabase() -> Database:
+def definition_database() -> Database:
     # Definir la estructura básica de la base de datos
     database = Database("Escuela")
     columns_1 = [
@@ -41,7 +41,7 @@ def definitionDatabase() -> Database:
     return database
 
 
-def loadRealDatabases():
+def load_real_databases():
     databases_file_path = "../../data/processed/databases.pickle"
     databases = pd.read_pickle(databases_file_path)
     db_dict = {}
@@ -51,7 +51,7 @@ def loadRealDatabases():
     return db_dict
 
 
-def loadRules():
+def load_rules():
     general_rules_file_path = "../../data/processed/ctx_general_reduced.csv"
     rules = CsvHandler.load_general_rules_from_csv(general_rules_file_path)
 
@@ -84,7 +84,7 @@ def loadRules():
     return rules, operator_rules, value_rules
 
 
-def loadObjectsQuerys() -> list[Query]:
+def load_objects_querys() -> list[Query]:
     querys_file_path = "../../data/processed/equivalent_queries.pkl"
 
     querys = pd.read_pickle(querys_file_path)
@@ -92,7 +92,7 @@ def loadObjectsQuerys() -> list[Query]:
     return querys
 
 
-def loadNaturalLanguageQuerys() -> tuple:
+def load_natural_language_querys() -> tuple:
     natural_language_query_file_path = "../../data/processed/out_json.json"
     list_natural_language_querys = []
     file = open(natural_language_query_file_path, "r", encoding="utf-8")
@@ -108,9 +108,9 @@ def loadNaturalLanguageQuerys() -> tuple:
     return list_natural_language_querys, dbs
 
 
-def executeExample():
-    database = definitionDatabase()
-    rules, operator_rules, value_rules = loadRules()
+def execute_example():
+    database = definition_database()
+    rules, operator_rules, value_rules = load_rules()
 
     section_extractor = SectionExtractor(rules=rules)
     operator_extractor = SectionExtractor(rules=operator_rules)
@@ -174,29 +174,29 @@ def executeExample():
             print("Top-N Accuracy:", top_n_accuracy)
 
 
-def executeRealData():
-    real_databases = loadRealDatabases()
-    rules, operator_rules, value_rules = loadRules()
+def execute_real_data(n=None, threshold=0.75):
+    real_databases = load_real_databases()
+    rules, operator_rules, value_rules = load_rules()
     section_extractor = SectionExtractor(rules=rules)
     operator_extractor = SectionExtractor(rules=operator_rules)
     value_extractor = SectionExtractor(rules=value_rules)
-    querys_objects = loadObjectsQuerys()
-    list_natural_language_query, dbs = loadNaturalLanguageQuerys()
+    querys_objects = load_objects_querys()
+    list_natural_language_query, dbs = load_natural_language_querys()
     final_generated_queries = []
-    for natural_language_query, db_id in zip(list_natural_language_query[:], dbs[:]):
+
+    if n is None:
+        n = len(list_natural_language_query)
+    for natural_language_query, db_id in zip(list_natural_language_query[:n], dbs[:n]):
         database = real_databases[db_id]
         # Definimos el evaluador
         evaluator = SemanticEvaluator(database)
 
         # Definimos el threshold para la similaridad
-        thresholdForAttribute = 0.75
 
         # Definimos las pipelines
         # pipelines = [SimplePipeline(evaluator, operator_extractor, value_extractor)]
         pipelines = [
-            EmbeddingPipeline(
-                evaluator, thresholdForAttribute, operator_extractor, value_extractor
-            )
+            EmbeddingPipeline(evaluator, threshold, operator_extractor, value_extractor)
         ]
 
         for pipeline in pipelines:
@@ -224,11 +224,11 @@ def executeRealData():
     if len(final_generated_queries) > 0:
         validator = TopNAccuracyValidator()
         top_n_accuracy = validator.calculate_accuracy(
-            final_generated_queries, querys_objects[:]
+            final_generated_queries, querys_objects[:n]
         )
         print("Top-N Accuracy:", top_n_accuracy)
 
 
 if __name__ == "__main__":
-    executeRealData()
+    execute_real_data(100)
     # executeExample()

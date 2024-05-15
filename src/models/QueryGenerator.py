@@ -104,9 +104,8 @@ class QueryGenerator:
                 if section.classification in Classifications.ATRIBUTO.value:
                     found_attributes.append(section)
             elif section:
-                for condition in section:
-                    found_condition.append(condition)
-
+                found_condition.append(section)
+        found_condition = list(set(found_condition))
         for table in found_tables:
             for attribute in found_attributes:
                 for condition in found_condition:

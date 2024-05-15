@@ -6,6 +6,7 @@ import spacy
 from Section import Section
 from Condition import Condition
 from Enums.Classifications import Classifications
+from Enums.ClassNames import ClassNames
 from SectionExtractor import SectionExtractor
 from SemanticEvaluator import SemanticEvaluator
 from TextPipeline import TextPipeline
@@ -45,7 +46,7 @@ class EmbeddingPipeline(TextPipeline):
             #     continue
             # if type(clean_section) is Section and clean_section.text is None:
             #     continue
-            cleaned_sections.append(clean_section)
+            cleaned_sections.extend(clean_section)
         return cleaned_sections
 
     def transform_section(self, section: Section) -> Section | Condition:
@@ -58,6 +59,7 @@ class EmbeddingPipeline(TextPipeline):
 
     def extract_table(self, section: Section) -> Section:
         """Evaluate the TABLE section."""
+        # TODO: use a threshold
         section_words = Tokenizer.tokenize_question(section.text)
         max_similarity = ("", 0)
 
@@ -69,12 +71,14 @@ class EmbeddingPipeline(TextPipeline):
                 if similarity > max_similarity[1]:
                     max_similarity = (str(doc2), similarity)
 
-        return Section(
-            max_similarity[0],
-            section.classification,
-            section.right_context,
-            section.left_context,
-        )
+        return [
+            Section(
+                max_similarity[0],
+                section.classification,
+                section.right_context,
+                section.left_context,
+            )
+        ]
 
     def extract_attributes(self, section: Section) -> list[Section]:
         """Evaluate the ATTRIBUTE section."""
@@ -96,8 +100,9 @@ class EmbeddingPipeline(TextPipeline):
                         tables_found.append(table.name)
 
         best_words = ""
-        if len(attributes_found) > 0:
-            best_words = ", ".join(set(attributes_found))
+        if len(attributes_found) == 0:
+            return []
+        best_words = ", ".join(set(attributes_found))
 
         output = [
             Section(
@@ -107,7 +112,10 @@ class EmbeddingPipeline(TextPipeline):
                 section.left_context,
             )
         ]
-        output.extend(set(tables_found))
+        tables = [
+            Section(t, Classifications.TABLA.value, "", "") for t in set(tables_found)
+        ]
+        output.extend(tables)
 
         return output
 
@@ -121,18 +129,16 @@ class EmbeddingPipeline(TextPipeline):
         # classification ATR_CONDICION y VALOR
         extracted_values = self.value_extractor.extract(section.text)
 
-        # Relevant class names
-        atribute = "ATR_CONDICION"
-        value = "VALOR"
-
         # Filter by conditional value and conditional attribute
         possible_conditional_values = [
-            section for section in extracted_values if section.classification == value
+            section
+            for section in extracted_values
+            if section.classification == ClassNames.CONDITIONAL_VALUE.value
         ]
         possible_conditional_attributes = [
             section
             for section in extracted_values
-            if section.classification == atribute
+            if section.classification == ClassNames.CONDITIONAL_ATTRIBUTE.value
         ]
 
         no_conditional_values = len(possible_conditional_values) == 0
@@ -158,16 +164,16 @@ class EmbeddingPipeline(TextPipeline):
 
             if possible_conditional_attributes:
                 best_conditional_attribute, _ = (
-                    self.getBestConditionalAttributeAndValue(
+                    self.get_best_conditional_attribute_and_value(
                         possible_conditional_attributes
                     )
                 )
                 if possible_conditional_values:
                     for val in possible_conditional_values:
                         best_conditional_value = val.text
-                        best_conditional_value = best_conditional_value.replace(
-                            " ", "_"
-                        )
+                        # best_conditional_value = best_conditional_value.replace(
+                        #    " ", "_"
+                        # )
                         obtained_conditions.append(
                             Condition(
                                 best_conditional_attribute,
@@ -178,14 +184,14 @@ class EmbeddingPipeline(TextPipeline):
 
             if not possible_conditional_attributes and possible_conditional_values:
                 best_conditional_attribute, best_conditional_value = (
-                    self.getBestConditionalAttributeAndValue(
+                    self.get_best_conditional_attribute_and_value(
                         possible_conditional_values
                     )
                 )
 
             # Generate condition
             if not best_conditional_attribute or not best_conditional_value:
-                return None
+                return []
 
             condition = Condition(
                 best_conditional_attribute, best_conditional_value, operator
@@ -193,7 +199,7 @@ class EmbeddingPipeline(TextPipeline):
 
             obtained_conditions.append(condition)
 
-            obtained_conditions = self.remove_conditon_duplicates(obtained_conditions)
+            obtained_conditions = self.remove_condition_duplicates(obtained_conditions)
 
         return obtained_conditions
 
@@ -216,9 +222,9 @@ class EmbeddingPipeline(TextPipeline):
                         max_similarity = (str(doc2), similarity, attr_or_val)
         attr, val = None, None
         if max_similarity[0]:
-            attr = max_similarity[0].replace(" ", "_")
+            attr = max_similarity[0]  # .replace(" ", "_")
         if max_similarity[2]:
-            val = max_similarity[2].replace(" ", "_")
+            val = max_similarity[2]  # .replace(" ", "_")
 
         return attr, val
 

@@ -41,10 +41,12 @@ class Condition:
             True if the objects are equal, False otherwise.
         """
         # Check if both columns are None
-        return self.column_name == other.column_name and self.value_name == other.value_name and self.logic_operator == other.logic_operator
+        return (
+            self.column_name == other.column_name
+            # and self.value_name == other.value_name # value its omitted because can't be compared with translation
+            and self.logic_operator == other.logic_operator
+        )
 
     def __hash__(self):
         """Override hash function."""
         return hash((self.column_name, self.value_name, self.logic_operator))
-
-

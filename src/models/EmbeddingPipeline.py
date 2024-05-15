@@ -6,6 +6,7 @@ import spacy
 from Section import Section
 from Condition import Condition
 from Enums.Classifications import Classifications
+from Enums.ClassNames import ClassNames
 from SectionExtractor import SectionExtractor
 from SemanticEvaluator import SemanticEvaluator
 from TextPipeline import TextPipeline
@@ -29,7 +30,7 @@ class EmbeddingPipeline(TextPipeline):
         the embedding pipeline
         """
         super().__init__(evaluator)
-        self.thresholdForAtrribute = thresholdForAtrribute
+        self.attribute_threshold = thresholdForAtrribute
         self.operator_extractor = operator_extractor
         self.value_extractor = value_extractor
 
@@ -45,19 +46,20 @@ class EmbeddingPipeline(TextPipeline):
             #     continue
             # if type(clean_section) is Section and clean_section.text is None:
             #     continue
-            cleaned_sections.append(clean_section)
+            cleaned_sections.extend(clean_section)
         return cleaned_sections
 
     def transform_section(self, section: Section) -> Section | Condition:
         if section.classification == Classifications.TABLA.value:
             return self.extract_table(section)
         if section.classification == Classifications.ATRIBUTO.value:
-            return self.extract_attribute(section)
+            return self.extract_attributes(section)
         if section.classification == Classifications.CONDICION.value:
             return self.extract_condition(section)
 
     def extract_table(self, section: Section) -> Section:
         """Evaluate the TABLE section."""
+        # TODO: use a threshold
         section_words = Tokenizer.tokenize_question(section.text)
         max_similarity = ("", 0)
 
@@ -69,38 +71,55 @@ class EmbeddingPipeline(TextPipeline):
                 if similarity > max_similarity[1]:
                     max_similarity = (str(doc2), similarity)
 
-        return Section(
-            max_similarity[0],
-            section.classification,
-            section.right_context,
-            section.left_context,
-        )
+        return [
+            Section(
+                max_similarity[0],
+                section.classification,
+                section.right_context,
+                section.left_context,
+            )
+        ]
 
-    def extract_attribute(self, section: Section) -> Section:
+    def extract_attributes(self, section: Section) -> list[Section]:
         """Evaluate the ATTRIBUTE section."""
         section_words = Tokenizer.tokenize_question(section.text)
-        best_words_list = []
+        attributes_found = []
+        tables_found = []
         for word in section_words:
+            # TODO: extract method into a correct attribute-table' one
             doc1 = nlp(word)
-            for column in self.evaluator.database.get_all_attributes():
+            for (
+                column,
+                table,
+            ) in self.evaluator.database.get_all_attribute_table_pairs():
                 for column_part in Tokenizer.tokenize_question(column.name):
                     doc2 = nlp(column_part)
                     similarity = doc2.similarity(doc1)
-                    if similarity >= self.thresholdForAtrribute:
-                        best_words_list.append(column.name)
+                    if similarity >= self.attribute_threshold:
+                        attributes_found.append(column.name)
+                        tables_found.append(table.name)
 
-        best_words = None
-        if len(best_words_list) > 0:
-            best_words = ", ".join(set(best_words_list))
+        best_words = ""
+        if len(attributes_found) == 0:
+            return []
+        best_words = ", ".join(set(attributes_found))
 
-        return Section(
-            best_words,
-            section.classification,
-            section.right_context,
-            section.left_context,
-        )
+        output = [
+            Section(
+                best_words,
+                section.classification,
+                section.right_context,
+                section.left_context,
+            )
+        ]
+        tables = [
+            Section(t, Classifications.TABLA.value, "", "") for t in set(tables_found)
+        ]
+        output.extend(tables)
 
-    def extract_condition(self, section: Section) -> Condition | list[Condition] | None:
+        return output
+
+    def extract_condition(self, section: Section) -> list[Condition]:
         """Extracts a condition from a section"""
 
         # Extract operators
@@ -110,41 +129,51 @@ class EmbeddingPipeline(TextPipeline):
         # classification ATR_CONDICION y VALOR
         extracted_values = self.value_extractor.extract(section.text)
 
-        # Relevant class names
-        atribute = "ATR_CONDICION"
-        value = "VALOR"
-
         # Filter by conditional value and conditional attribute
-        conditional_value = [
-            section for section in extracted_values if section.classification == value
-        ]
-        conditional_attribute = [
+        possible_conditional_values = [
             section
             for section in extracted_values
-            if section.classification == atribute
+            if section.classification == ClassNames.CONDITIONAL_VALUE.value
+        ]
+        possible_conditional_attributes = [
+            section
+            for section in extracted_values
+            if section.classification == ClassNames.CONDITIONAL_ATTRIBUTE.value
         ]
 
+        no_conditional_values = len(possible_conditional_values) == 0
+        no_conditional_attributes = len(possible_conditional_attributes) == 0
+        if no_conditional_attributes and no_conditional_values:
+            return []
+
         # Generate condition
-        if not operators:
-            return None
+        if len(operators) == 0:
+            # Default behavior
+            operators = ["="]
 
         obtained_conditions = []
+        obtained_conditional_attributes = []
+        obtained_conditional_values = []
         operators = set(operators)
 
+        # NOTE: this is a combinatory problem, it isn't necessary to go through a for loop when the results will be the same
+        # NOTE: There is no best conditional attr/value, only valid ones
         for operator in operators:
             best_conditional_attribute = None
             best_conditional_value = None
 
-            if conditional_attribute:
+            if possible_conditional_attributes:
                 best_conditional_attribute, _ = (
-                    self.getBestConditionalAttributeAndValue(conditional_attribute)
+                    self.get_best_conditional_attribute_and_value(
+                        possible_conditional_attributes
+                    )
                 )
-                if conditional_value:
-                    for val in conditional_value:
+                if possible_conditional_values:
+                    for val in possible_conditional_values:
                         best_conditional_value = val.text
-                        best_conditional_value = best_conditional_value.replace(
-                            " ", "_"
-                        )
+                        # best_conditional_value = best_conditional_value.replace(
+                        #    " ", "_"
+                        # )
                         obtained_conditions.append(
                             Condition(
                                 best_conditional_attribute,
@@ -153,14 +182,16 @@ class EmbeddingPipeline(TextPipeline):
                             )
                         )
 
-            if not conditional_attribute and conditional_value:
+            if not possible_conditional_attributes and possible_conditional_values:
                 best_conditional_attribute, best_conditional_value = (
-                    self.getBestConditionalAttributeAndValue(conditional_value)
+                    self.get_best_conditional_attribute_and_value(
+                        possible_conditional_values
+                    )
                 )
 
             # Generate condition
             if not best_conditional_attribute or not best_conditional_value:
-                return None
+                return []
 
             condition = Condition(
                 best_conditional_attribute, best_conditional_value, operator
@@ -168,14 +199,14 @@ class EmbeddingPipeline(TextPipeline):
 
             obtained_conditions.append(condition)
 
-            obtained_conditions = self.remove_conditon_duplicates(obtained_conditions)
+            obtained_conditions = self.remove_condition_duplicates(obtained_conditions)
 
         return obtained_conditions
 
-    def getBestConditionalAttributeAndValue(
+    def get_best_conditional_attribute_and_value(
         self, conditional_attribute_or_value: list[Section]
     ) -> str | None:
-
+        # TODO: replace for all attributes that surpass the threshold
         max_similarity = (None, 0, None)
         for conditionals in conditional_attribute_or_value:
             possible_conditional_attributes_or_values = Tokenizer.tokenize_question(
@@ -191,13 +222,13 @@ class EmbeddingPipeline(TextPipeline):
                         max_similarity = (str(doc2), similarity, attr_or_val)
         attr, val = None, None
         if max_similarity[0]:
-            attr = max_similarity[0].replace(" ", "_")
+            attr = max_similarity[0]  # .replace(" ", "_")
         if max_similarity[2]:
-            val = max_similarity[2].replace(" ", "_")
+            val = max_similarity[2]  # .replace(" ", "_")
 
         return attr, val
 
-    def remove_conditon_duplicates(self, conditions):
+    def remove_condition_duplicates(self, conditions):
         """Remove duplicates from a list of Condition objects."""
         seen = set()
         unique_conditions = []

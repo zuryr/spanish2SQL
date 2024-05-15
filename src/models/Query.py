@@ -30,19 +30,25 @@ class Query:
         Returns:
             True if the objects are equal, False otherwise.
         """
+
+        condition_met = True
+        if self.condition is not None and other.condition is not None:
+            condition_met = self.condition == other.condition
+
         # Check if both columns are None
         if self.columns is None and other.columns is None:
-            return self.table == other.table
-                #     and \
-                # self.condition == other.condition
+            return self.table == other.table and condition_met
 
         # If one column is None and the other is not, they are not equal
         if self.columns is None or other.columns is None:
             return False
 
         # Both columns are not None, compare sets
-        return self.table == other.table and \
-            set(self.columns) == set(other.columns)
+        return (
+            self.table == other.table
+            and set(self.columns) == set(other.columns)
+            and condition_met
+        )
 
     def __hash__(self):
         """Override hash function."""
@@ -62,14 +68,14 @@ class Query:
             raise TableNotFoundError("", self.table)
 
         # FROM statement
-        from_clause = f'FROM {self.table}'
+        from_clause = f"FROM {self.table}"
 
         if self.columns is not None:
             # SELECT statement
             select_clause = "SELECT "
             for col in self.columns:
                 # Workaround for queries containing None at columns
-                select_clause += f'{col},' if col is not None or col == '' else "* "
+                select_clause += f"{col}," if col is not None or col == "" else "* "
 
             # Remove last comma
             select_clause = select_clause[:-1]

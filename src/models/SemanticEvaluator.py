@@ -60,7 +60,7 @@ class SemanticEvaluator:
 
         table_name = query.table
 
-        if table_name is None:
+        if table_name == "":
             return False
 
         if not self.database.table_exists(table_name):
@@ -68,13 +68,13 @@ class SemanticEvaluator:
 
         table = self.database.get_table_by_name(table_name)
 
-        if query.columns is not None:
+        if len(query.columns) > 0:
             for column in query.columns:
                 column = column.strip()
                 if not table.column_exists(column):
                     return False
 
-        if query.condition is not None and query.condition != "":
+        if query.condition != "":
             condition = query.condition
             conditional_attribute, conditional_operator, conditional_value = (
                 Tokenizer.tokenize_condition(condition)

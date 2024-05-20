@@ -80,7 +80,7 @@ class Query:
             # Remove last comma
             select_clause = select_clause[:-1]
 
-        if self.condition is not None:
+        if self.condition != "":
             # WHERE statement (if condition exists)
             where_clause = f" WHERE {self.condition}"
 

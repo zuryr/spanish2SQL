@@ -58,8 +58,6 @@ class QueryGenerator:
             query = self.generate_query_from_triplet(triplet)
 
             # evaluate queries and conserve those that are semantically correct
-            if query is None:
-                continue
             if self.evaluator.query_is_correct(query):
                 generated_queries.append(query)
             # generated_queries.append(query)
@@ -105,7 +103,9 @@ class QueryGenerator:
                     found_attributes.append(section)
             elif section:
                 found_condition.append(section)
+
         found_condition = list(set(found_condition))
+
         for table in found_tables:
             for attribute in found_attributes:
                 for condition in found_condition:
@@ -127,17 +127,15 @@ class QueryGenerator:
 
         table_section, column_section, condition_section = triplet
 
-        table_name = None
-        column_name = None
-        condition_name = None
+        table_name = ""
+        column_name = ""
+        condition_name = ""
 
         if table_section:
-            table_name = table_section.text if table_section.text else None
+            table_name = table_section.text if table_section.text else ""
 
         if column_section:
-            column_name = (
-                column_section.text.split(",") if column_section.text else None
-            )
+            column_name = column_section.text.split(",") if column_section.text else ""
             if column_name:
                 column_name = [col.strip() for col in column_name]
 

@@ -41,17 +41,18 @@ class EmbeddingPipeline(TextPipeline):
         for section in text:
             # if section.classification == 'ATRIBUTO' and section.text == 'creación, nombre y presupuesto':
             #     print("")
-            clean_section = self.transform_section(section)
+            if section.classification != Classifications.TABLA.value:
+                clean_section = self.transform_section(section)
             # if clean_section is None:
             #     continue
             # if type(clean_section) is Section and clean_section.text is None:
             #     continue
-            cleaned_sections.extend(clean_section)
+                cleaned_sections.extend(clean_section)
         return cleaned_sections
 
     def transform_section(self, section: Section) -> Section | Condition:
-        if section.classification == Classifications.TABLA.value:
-            return self.extract_table(section)
+        # if section.classification == Classifications.TABLA.value:
+        #     return self.extract_table(section)
         if section.classification == Classifications.ATRIBUTO.value:
             return self.extract_attributes(section)
         if section.classification == Classifications.CONDICION.value:
@@ -159,55 +160,42 @@ class EmbeddingPipeline(TextPipeline):
         # NOTE: this is a combinatory problem, it isn't necessary to go through a for loop when the results will be the same
         # NOTE: There is no best conditional attr/value, only valid ones
         for operator in operators:
-            best_conditional_attribute = ""
-            best_conditional_value = ""
+            best_conditional_attribute = []
 
             if possible_conditional_attributes:
-                best_conditional_attribute, _ = (
-                    self.get_best_conditional_attribute_and_value(
+                best_conditional_attribute = (
+                    self.get_most_probable_conditional_attribute(
                         possible_conditional_attributes
                     )
                 )
                 if possible_conditional_values:
-                    for val in possible_conditional_values:
-                        best_conditional_value = val.text
-                        # best_conditional_value = best_conditional_value.replace(
-                        #    " ", "_"
-                        # )
-                        obtained_conditions.append(
-                            Condition(
-                                best_conditional_attribute,
-                                best_conditional_value,
-                                operator,
+                    for attribute in best_conditional_attribute:
+                        for val in possible_conditional_values:
+                            value = val.text
+                            # best_conditional_value = best_conditional_value.replace(
+                            #    " ", "_"
+                            # )
+                            obtained_conditions.append(
+                                Condition(
+                                    attribute,
+                                    value,
+                                    operator,
+                                )
                             )
-                        )
-
-            if not possible_conditional_attributes and possible_conditional_values:
-                best_conditional_attribute, best_conditional_value = (
-                    self.get_best_conditional_attribute_and_value(
-                        possible_conditional_values
-                    )
-                )
 
             # Generate condition
-            if not best_conditional_attribute or not best_conditional_value:
+            if not best_conditional_attribute:
                 return []
-
-            condition = Condition(
-                best_conditional_attribute, best_conditional_value, operator
-            )
-
-            obtained_conditions.append(condition)
 
             obtained_conditions = self.remove_condition_duplicates(obtained_conditions)
 
         return obtained_conditions
 
-    def get_best_conditional_attribute_and_value(
+    def get_most_probable_conditional_attribute(
         self, conditional_attribute_or_value: list[Section]
     ) -> str:
         # TODO: replace for all attributes that surpass the threshold
-        max_similarity = ("", 0, "")
+        attributes = []
         for conditionals in conditional_attribute_or_value:
             possible_conditional_attributes_or_values = Tokenizer.tokenize_question(
                 conditionals.text
@@ -218,15 +206,13 @@ class EmbeddingPipeline(TextPipeline):
                 for attribute in self.evaluator.database.get_all_attributes():
                     doc2 = nlp(attribute.name)
                     similarity = doc2.similarity(doc1)
-                    if similarity > max_similarity[1]:
-                        max_similarity = (str(doc2), similarity, attr_or_val)
-        attr, val = "", ""
-        if max_similarity[0]:
-            attr = max_similarity[0]  # .replace(" ", "_")
-        if max_similarity[2]:
-            val = max_similarity[2]  # .replace(" ", "_")
+                    if similarity > self.attribute_threshold:
+                        attributes.append(str(doc2)) # .replace(" ", "_")
+        probable_attr = []
+        if attributes:
+            probable_attr = attributes
 
-        return attr, val
+        return probable_attr
 
     def remove_condition_duplicates(self, conditions):
         """Remove duplicates from a list of Condition objects."""

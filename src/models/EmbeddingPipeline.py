@@ -159,8 +159,8 @@ class EmbeddingPipeline(TextPipeline):
         # NOTE: this is a combinatory problem, it isn't necessary to go through a for loop when the results will be the same
         # NOTE: There is no best conditional attr/value, only valid ones
         for operator in operators:
-            best_conditional_attribute = None
-            best_conditional_value = None
+            best_conditional_attribute = ""
+            best_conditional_value = ""
 
             if possible_conditional_attributes:
                 best_conditional_attribute, _ = (
@@ -205,9 +205,9 @@ class EmbeddingPipeline(TextPipeline):
 
     def get_best_conditional_attribute_and_value(
         self, conditional_attribute_or_value: list[Section]
-    ) -> str | None:
+    ) -> str:
         # TODO: replace for all attributes that surpass the threshold
-        max_similarity = (None, 0, None)
+        max_similarity = ("", 0, "")
         for conditionals in conditional_attribute_or_value:
             possible_conditional_attributes_or_values = Tokenizer.tokenize_question(
                 conditionals.text
@@ -220,7 +220,7 @@ class EmbeddingPipeline(TextPipeline):
                     similarity = doc2.similarity(doc1)
                     if similarity > max_similarity[1]:
                         max_similarity = (str(doc2), similarity, attr_or_val)
-        attr, val = None, None
+        attr, val = "", ""
         if max_similarity[0]:
             attr = max_similarity[0]  # .replace(" ", "_")
         if max_similarity[2]:

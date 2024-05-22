@@ -1,11 +1,16 @@
 from Column import Column
+from Enums.DataTypes import DataTypes
 
 
 class Condition:
     """Condition in a SQL query."""
 
     def __init__(
-        self, column_name: str | None, value_name: str | None, logic_operator: str = "="
+        self,
+        column_name: str,
+        value_name: str,
+        logic_operator: str = "=",
+        datatype: str = DataTypes.TEXT.value,
     ):
         """
         Initializes a condition for a SQL query.
@@ -20,11 +25,14 @@ class Condition:
         self.column_name = column_name
         self.value_name = value_name
         self.logic_operator = logic_operator
+        self.datatype = datatype
 
     def condition_to_string(self) -> str:
         """Returns the equivalent string of the current string"""
-        # TODO: format according to the datatype
-        return f'{self.column_name} {self.logic_operator} "{self.value_name}"'
+        value = f'"{self.value_name}"'
+        if self.datatype == DataTypes.NUMBER.value:
+            value = self.value_name
+        return f"{self.column_name} {self.logic_operator} {value}"
 
     def is_empty(self) -> bool:
         """Returns true if the current condition is empty"""

@@ -32,30 +32,27 @@ class SectionExtractor:
         """
         extracted_sections = []
         for rule in self.rules:
-            try:
-                extracted_section = rule.extract(text)
-                if extracted_section is not None:
-                    extracted_sections.append(extracted_section)
-            except ValueError as e:
-                # Handle exception (e.g., rule delimiters not found)
-                print(e)
+            extracted_section = rule.extract(text)
+            if extracted_section.text != "":
+                extracted_sections.append(extracted_section)
 
         return extracted_sections
-    
+
     def extract_exact_match(self, text: str) -> List[str]:
         """Get the exact match of the keywords of operators, return clasification of the found rules"""
         classified_rules = []
         for rule in self.rules:
             if rule.does_match(text):
                 classified_rules.append(rule.classification)
+        # list of the possible keywords
         return classified_rules
-        #list of the possible keywords
-    
+
+
 # Example of how to use SectionExtractor and save results to CSV
 # # rules = [
 # #     Rule(left_context="los", right_context="que", classification="TABLA")
 # # ]
-# rules_file_path = "src\data\ctx_general.csv" 
+# rules_file_path = "src\data\ctx_general.csv"
 # rules = CsvHandler.load_rules_from_csv(rules_file_path)
 
 # section_extractor = SectionExtractor(rules=rules)

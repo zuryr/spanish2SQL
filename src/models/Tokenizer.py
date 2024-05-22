@@ -11,10 +11,14 @@ class Tokenizer:
     def tokenize_condition(condition: str) -> list[str]:
         """Tokenizes a simple condition into its parts"""
         m = re.findall(r"""[\wáéíóúñ"\s,'.]+|[=!><]+""", condition)
-        return [sub_condition.strip() for sub_condition in m]
+        tokens = [sub_condition.strip() for sub_condition in m]
+        if len(tokens) != 3:
+            return ["", "", ""]
+        return tokens
 
     @staticmethod
     def tokenize_attributes(attributes: str) -> list[str]:
         """Tokenizes a text potentially containing attributes on commas and whitespaces"""
         m = re.findall(r"[a-zA-Záéíóúñ]+(?=[\s,]|$)", attributes)
+        # y its a common nexus when mentioning attributes
         return [attr for attr in m if attr != "y"]

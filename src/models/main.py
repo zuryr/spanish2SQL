@@ -1,3 +1,5 @@
+import pickle
+import re
 import pandas as pd
 
 from Column import Column
@@ -14,31 +16,6 @@ from SimplePipeline import SimplePipeline
 from Query import Query
 from Rule import Rule
 from TopNAccuracy import TopNAccuracyValidator
-
-
-# TODO ñtosql
-# TODO csv consultas sql y pregunta equivalente
-# TODO Parsear stringsql a objeto Query
-
-
-def definition_database() -> Database:
-    # Definir la estructura básica de la base de datos
-    database = Database("Escuela")
-    columns_1 = [
-        Column("identificador", "number"),
-        Column("nombre", "text"),
-        Column("pais", "text"),
-        Column("edad", "number"),
-    ]
-    database.add_table("Estudiantes", columns_1)
-    columns_2 = [
-        Column("identificador", "number"),
-        Column("nombre", "text"),
-        Column("profesor", "text"),
-    ]
-    database.add_table("Cursos", columns_2)
-
-    return database
 
 
 def load_real_databases():
@@ -61,26 +38,6 @@ def load_rules():
     general_rules_file_path = "../../data/processed/ctx_detallado_reduced.csv"
     value_rules = CsvHandler.load_values_rules_from_csv(general_rules_file_path)
 
-    # rules = [
-    #     Rule(left_context="los", right_context="que", classification="ATRIBUTO"),
-    #     Rule(left_context="que", right_context="en", classification="TABLA"),
-    #     Rule(left_context="en", right_context="end", classification="CONDICION"),
-    # ]
-    # operator_rules = [
-    #     Rule(left_context="", right_context="", exact_match="en", classification="="),
-    #     Rule(left_context="", right_context="", exact_match="mayor", classification=">"),
-    # ]
-    # value_rules = [
-    #     Rule(left_context="que", right_context="end", classification="VALOR"),
-    #     Rule(
-    #         left_context="aquellos", right_context="que", classification="ATR_CONDICIONAL"
-    #     ),
-    # ]
-
-    # print(rules)
-    # print(operator_rules)
-    # print(value_rules)
-
     return rules, operator_rules, value_rules
 
 
@@ -101,6 +58,10 @@ def load_natural_language_querys() -> tuple:
     dbs = []
     for line in js:
         natural_language_query = line["question"]
+        # TODO: what is this for?
+        # natural_language_query = re.sub(
+        #    r"""[^\w<>!=áéíóúñ"\s,'.¿?]""", "", natural_language_query
+        # )
         natural_language_query = "start " + natural_language_query.strip() + " end"
         list_natural_language_querys.append(natural_language_query)
         dbs.append(line["db_id"])
@@ -108,73 +69,7 @@ def load_natural_language_querys() -> tuple:
     return list_natural_language_querys, dbs
 
 
-def execute_example():
-    database = definition_database()
-    rules, operator_rules, value_rules = load_rules()
-
-    section_extractor = SectionExtractor(rules=rules)
-    operator_extractor = SectionExtractor(rules=operator_rules)
-    value_extractor = SectionExtractor(rules=value_rules)
-
-    # Definimos el evaluador
-    evaluator = SemanticEvaluator(database)
-
-    # Definimos el threshold para la similaridad
-    thresholdForAttribute = 0.6
-
-    # Definimos las pipelines
-    # pipelines = [SimplePipeline(evaluator, operator_extractor, value_extractor),
-    #              EmbeddingPipeline(evaluator, thresholdForAttribute, operator_extractor, value_extractor)]
-    pipelines = [
-        EmbeddingPipeline(
-            evaluator, thresholdForAttribute, operator_extractor, value_extractor
-        )
-    ]
-    # pipelines = [SimplePipeline(evaluator, operator_extractor, value_extractor)]
-
-    for pipeline in pipelines:
-        print()
-        # Inicializar el generador de consultas
-        query_generator = QueryGenerator(
-            database, evaluator, section_extractor, pipeline
-        )
-
-        # Consulta en lenguaje natural
-        natural_language_query = "start Muestra todos los nombres de los alumnos y sus identificadores que estudian en Mexico end"
-        # natural_language_query = (
-        #     "start Muestra todos los nombres de los alumnos menores de 20 end"
-        # )
-
-        querys_objects = [
-            Query("Estudiantes", ["nombre", "identificador"], 'pais = "Mexico"')
-        ]
-        list_natural_language_query = [natural_language_query]
-        final_generated_queries = []
-        list_querys_strings = []
-
-        for natural_language_query in list_natural_language_query:
-
-            # Generar consultas SQL a partir de la consulta en lenguaje natural
-            generated_queries = query_generator.generate_queries(natural_language_query)
-            final_generated_queries.append(generated_queries)
-
-            # Imprimir las consultas generadas
-            for query in generated_queries:
-                list_querys_strings.append(query.SQL_to_string())
-
-            list_querys_strings = set(list_querys_strings)
-            for query in list_querys_strings:
-                print(query)
-
-        if len(final_generated_queries) > 0:
-            validator = TopNAccuracyValidator()
-            top_n_accuracy = validator.calculate_accuracy(
-                final_generated_queries, querys_objects
-            )
-            print("Top-N Accuracy:", top_n_accuracy)
-
-
-def execute_real_data(n=None, threshold=0.75):
+def execute_real_data(m=0, n=None, threshold=0.75):
     real_databases = load_real_databases()
     rules, operator_rules, value_rules = load_rules()
     section_extractor = SectionExtractor(rules=rules)
@@ -186,7 +81,11 @@ def execute_real_data(n=None, threshold=0.75):
 
     if n is None:
         n = len(list_natural_language_query)
-    for natural_language_query, db_id in zip(list_natural_language_query[:n], dbs[:n]):
+
+    i = 0
+    for natural_language_query, db_id in zip(
+        list_natural_language_query[m:n], dbs[m:n]
+    ):
         database = real_databases[db_id]
         # Definimos el evaluador
         evaluator = SemanticEvaluator(database)
@@ -219,16 +118,24 @@ def execute_real_data(n=None, threshold=0.75):
             for query in list_querys_strings:
                 print(query)
 
-        print(natural_language_query)
+        # print(natural_language_query)
+        i += 1
+        print(i)
+        if i % 50 == 0:
+            with open("./predicted_queries.pkl", "wb+") as f:
+                pickle.dump(final_generated_queries, f)
 
     if len(final_generated_queries) > 0:
         validator = TopNAccuracyValidator()
         top_n_accuracy = validator.calculate_accuracy(
-            final_generated_queries, querys_objects[:n]
+            final_generated_queries, querys_objects[m:n]
         )
         print("Top-N Accuracy:", top_n_accuracy)
+        print(
+            f"Respuestas correctas: {int(len(final_generated_queries)*top_n_accuracy)} / {len(final_generated_queries)}"
+        )
 
 
 if __name__ == "__main__":
-    execute_real_data(100)
+    execute_real_data(0, 2)
     # executeExample()

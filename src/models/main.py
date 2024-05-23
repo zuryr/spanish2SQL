@@ -7,6 +7,8 @@ from CsvHandler import CsvHandler
 from Database import Database
 import json
 from EmbeddingPipeline import EmbeddingPipeline
+from GreedyStrategy import GreedyStrategy
+from MaxAttributesInTableStrategy import MaxAttributesInTableStrategy
 from QueryGenerator import QueryGenerator
 from SectionExtractor import SectionExtractor
 from SemanticEvaluator import SemanticEvaluator
@@ -87,6 +89,8 @@ def execute_real_data(m=0, n=None, threshold=0.75):
         list_natural_language_query[m:n], dbs[m:n]
     ):
         database = real_databases[db_id]
+
+        strategy = MaxAttributesInTableStrategy(database)
         # Definimos el evaluador
         evaluator = SemanticEvaluator(database)
 
@@ -102,7 +106,7 @@ def execute_real_data(m=0, n=None, threshold=0.75):
             print()
             # Inicializar el generador de consultas
             query_generator = QueryGenerator(
-                database, evaluator, section_extractor, pipeline
+                database, evaluator, section_extractor, pipeline, strategy
             )
 
             list_querys_strings = []

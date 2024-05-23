@@ -1,5 +1,6 @@
 from Condition import Condition
 from Database import Database
+from GroupStrategy import GroupStrategy
 from Query import Query
 from Section import Section
 from SectionExtractor import SectionExtractor
@@ -19,6 +20,7 @@ class QueryGenerator:
         evaluator: SemanticEvaluator,
         section_extractor: SectionExtractor,
         pipeline: TextPipeline,
+        group_strategy: GroupStrategy,
     ):
         """
         Creates an instance of a query generator for a specific database.
@@ -33,6 +35,7 @@ class QueryGenerator:
         self.section_extractor = section_extractor
         self.evaluator = evaluator
         self.pipeline = pipeline
+        self.group_strategy = group_strategy
 
     def generate_queries(self, natural_language_query: str) -> list[Query]:
         """
@@ -43,6 +46,7 @@ class QueryGenerator:
         Returns:
             A list of all the semantically valid (but not necessarily correct) queries that match the NL query.
         """
+
         # Extract relevant sections from the natural language query
         extracted_sections = self.section_extractor.extract(natural_language_query)
 
@@ -105,12 +109,13 @@ class QueryGenerator:
                 found_condition.append(section)
 
         found_condition = list(set(found_condition))
+        attribute_groups = self.group_strategy.group_attributes(found_attributes)
 
         for table in found_tables:
-            for attribute in found_attributes:
+            for attribute_group in attribute_groups:
                 for condition in found_condition:
-                    possible_triplets.append([table, attribute, condition])
-                possible_triplets.append([table, attribute, None])
+                    possible_triplets.append([table, attribute_group, condition])
+                possible_triplets.append([table, attribute_group, None])
             possible_triplets.append([table, None, None])
 
         return possible_triplets
@@ -124,22 +129,20 @@ class QueryGenerator:
         Returns:
             A Query object representing the generated query.
         """
-
+        # TODO: condition instead of condition_str
         table_section, column_section, condition_section = triplet
 
         table_name = ""
-        column_name = ""
-        condition_name = ""
+        columns = []
+        condition = ""  # Condition("", "", "")
 
         if table_section:
             table_name = table_section.text if table_section.text else ""
 
         if column_section:
-            column_name = column_section.text.split(",") if column_section.text else ""
-            if column_name:
-                column_name = [col.strip() for col in column_name]
+            columns = [column.text for column in column_section]
 
         if condition_section:
-            condition_name = condition_section.condition_to_string()
+            condition = condition_section.condition_to_string()
 
-        return Query(table_name, column_name, condition_name)
+        return Query(table_name, columns, condition)

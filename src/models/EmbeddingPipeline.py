@@ -49,7 +49,7 @@ class EmbeddingPipeline(TextPipeline):
             cleaned_sections.extend(clean_section)
         return cleaned_sections
 
-    def transform_section(self, section: Section) -> Section | Condition:
+    def transform_section(self, section: Section) -> list[Section] | list[Condition]:
         if section.classification == Classifications.TABLA.value:
             return self.extract_table(section)
         if section.classification == Classifications.ATRIBUTO.value:
@@ -99,18 +99,18 @@ class EmbeddingPipeline(TextPipeline):
                         attributes_found.append(column.name)
                         tables_found.append(table.name)
 
-        best_words = ""
+        attributes_found = set(attributes_found)
         if len(attributes_found) == 0:
             return []
-        best_words = ", ".join(set(attributes_found))
 
         output = [
             Section(
-                best_words,
+                attribute,
                 section.classification,
                 section.right_context,
                 section.left_context,
             )
+            for attribute in attributes_found
         ]
         tables = [
             Section(t, Classifications.TABLA.value, "", "") for t in set(tables_found)

@@ -1,23 +1,19 @@
+import json
 import pickle
-import re
+
 import pandas as pd
 
-from Column import Column
 from CsvHandler import CsvHandler
-from Database import Database
-import json
 from EmbeddingPipeline import EmbeddingPipeline
-from GreedyStrategy import GreedyStrategy
 from MaxAttributesInTableStrategy import MaxAttributesInTableStrategy
+from Query import Query
 from QueryGenerator import QueryGenerator
 from SectionExtractor import SectionExtractor
 from SemanticEvaluator import SemanticEvaluator
-
-# from EmbeddingPipeline import EmbeddingPipeline
-from SimplePipeline import SimplePipeline
-from Query import Query
-from Rule import Rule
 from TopNAccuracy import TopNAccuracyValidator
+from Tokenizer import Tokenizer
+from GreedyStrategy import GreedyStrategy
+from ContextStrategy import ContextStrategy
 
 
 def load_real_databases():
@@ -71,7 +67,7 @@ def load_natural_language_querys() -> tuple:
     return list_natural_language_querys, dbs
 
 
-def execute_real_data(m=0, n=None, threshold=0.75):
+def execute_real_data(m=0, n=None, threshold=0.8):
     real_databases = load_real_databases()
     rules, operator_rules, value_rules = load_rules()
     section_extractor = SectionExtractor(rules=rules)
@@ -81,6 +77,8 @@ def execute_real_data(m=0, n=None, threshold=0.75):
     list_natural_language_query, dbs = load_natural_language_querys()
     final_generated_queries = []
 
+    strategy = ContextStrategy()
+
     if n is None:
         n = len(list_natural_language_query)
 
@@ -89,8 +87,9 @@ def execute_real_data(m=0, n=None, threshold=0.75):
         list_natural_language_query[m:n], dbs[m:n]
     ):
         database = real_databases[db_id]
+        natural_language_query = " ".join(Tokenizer.tokenize_question(natural_language_query))
 
-        strategy = MaxAttributesInTableStrategy(database)
+        # strategy = MaxAttributesInTableStrategy(database)
         # Definimos el evaluador
         evaluator = SemanticEvaluator(database)
 
@@ -103,7 +102,7 @@ def execute_real_data(m=0, n=None, threshold=0.75):
         ]
 
         for pipeline in pipelines:
-            print()
+            print(natural_language_query)
             # Inicializar el generador de consultas
             query_generator = QueryGenerator(
                 database, evaluator, section_extractor, pipeline, strategy
@@ -129,6 +128,9 @@ def execute_real_data(m=0, n=None, threshold=0.75):
             with open("./predicted_queries.pkl", "wb+") as f:
                 pickle.dump(final_generated_queries, f)
 
+    for query in querys_objects[m:n]:
+        print(query.SQL_to_string())
+
     if len(final_generated_queries) > 0:
         validator = TopNAccuracyValidator()
         top_n_accuracy = validator.calculate_accuracy(
@@ -141,5 +143,5 @@ def execute_real_data(m=0, n=None, threshold=0.75):
 
 
 if __name__ == "__main__":
-    execute_real_data(0, 2)
+    execute_real_data(9, 10)
     # executeExample()

@@ -53,6 +53,6 @@ class TextPipeline(ABC):
         pass
 
     @abstractmethod
-    def extract_condition(self, section: Section) -> list[Condition] | None:
+    def extract_condition(self, section: Section) -> list[Condition]:
         """Extracts the condition in a section."""
         pass

@@ -2,7 +2,7 @@ from abc import ABC
 
 from Database import Database
 from Section import Section
-
+from itertools import combinations
 
 class GroupStrategy(ABC):
     """Defines the strategy to group attributes"""

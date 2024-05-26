@@ -194,7 +194,7 @@ class EmbeddingPipeline(TextPipeline):
     def get_most_probable_conditional_attribute(
         self, conditional_attribute_or_value: list[Section]
     ) -> str:
-        # TODO: replace for all attributes that surpass the threshold
+
         attributes = []
         for conditionals in conditional_attribute_or_value:
             possible_conditional_attributes_or_values = Tokenizer.tokenize_question(

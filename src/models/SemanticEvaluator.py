@@ -74,11 +74,11 @@ class SemanticEvaluator:
                 if not table.column_exists(column):
                     return False
 
-        if query.condition != "":
+        if not query.condition.is_empty():
             condition = query.condition
-            conditional_attribute, conditional_operator, conditional_value = (
-                Tokenizer.tokenize_condition(condition)
-            )
+            conditional_attribute = condition.column_name
+            conditional_operator = condition.logic_operator
+            conditional_value = condition.value_name
 
             if not table.column_exists(conditional_attribute):
                 return False

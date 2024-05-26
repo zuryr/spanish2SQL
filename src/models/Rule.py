@@ -42,7 +42,9 @@ class Rule:
         final_section = Section("", "", "", "")
         escaped_left_context = re.escape(self.left_context)
         escaped_right_context = re.escape(self.right_context)
-        pattern = f"(?:\\s|^){escaped_left_context}(?:\\s|$)(.*?)(?:\\s|^){escaped_right_context}(?:\\s|$)"
+        # escaped_right_context = escaped_right_context.replace("\\", "")
+        # escaped_right_context = escaped_right_context.replace(".", "")
+        pattern = f"(?:\\s|^){escaped_left_context}(?:\\s)(.*?)(?:\\s){escaped_right_context}(?:\\s|$)"
         matches = re.search(pattern, text)
         if matches is None:
             return final_section

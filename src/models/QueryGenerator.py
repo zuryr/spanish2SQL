@@ -141,6 +141,7 @@ class QueryGenerator:
 
         if column_section:
             columns = [column.text for column in column_section]
+            columns = list(set(columns))
 
         if condition_section:
             condition = condition_section.condition_to_string()

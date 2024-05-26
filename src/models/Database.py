@@ -100,3 +100,12 @@ class Database:
         cols_names = list(map(lambda col: col.name, all_columns))
 
         return column_name in cols_names
+
+    def database_to_string(self):
+        all_tables = self.get_all_table_names()
+        for i, table in enumerate(all_tables):
+            print(f"Nombre de la tabla {i+1}: {table}")
+            all_columns_from_table = self.get_all_attributes_from_table(table)
+
+            for j, column in enumerate(all_columns_from_table):
+                print(f"Columna {j+1}: {column.name}")

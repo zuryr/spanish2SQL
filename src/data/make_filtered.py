@@ -6,6 +6,9 @@ import json
 import Parser
 from Query import Query
 
+from Condition import Condition
+
+EMPTY_CONDITION = Condition("","","","")
 AGG_OPS = ("NONE", "MAX", "MIN", "COUNT", "SUM", "AVG")
 FILTERED_TOKENS = (
     "SELECT",
@@ -119,8 +122,8 @@ if __name__ == "__main__":
         db_name = query["db_id"]
         original_attributes = query_obj.columns
         original_attributes = [element.lower() for element in original_attributes]
-        original_conditional_elements = query_obj.condition.split(" ")
-        original_conditional_attribute = original_conditional_elements[0].lower()
+        # original_conditional_elements = query_obj.condition.split(" ")
+        original_conditional_attribute = query_obj.condition.column_name.lower()
 
         current_db = databases[db_name]
         original_columns = current_db["column_names_original"]
@@ -149,15 +152,14 @@ if __name__ == "__main__":
             equivalent_attributes.append(equivalent_attribute)
 
         for i, table_name in enumerate(original_tables):
-            if table_name != query_obj.table:
-                continue
             equivalent_table = translated_tables[i]
             break
+
 
         # early return if no condition is fouund
         if original_conditional_attribute == "":
             equivalent_queries.append(
-                Query(equivalent_table, equivalent_attributes, "")
+                Query(equivalent_table, equivalent_attributes, EMPTY_CONDITION)
             )
             continue
 
@@ -171,7 +173,9 @@ if __name__ == "__main__":
             break
 
         # equivalent_conditional_attribute
-        equivalent_condition = f"{equivalent_conditional_attribute} {original_conditional_elements[1]} {original_conditional_elements[2]}"
+        query_obj.condition.column_name = equivalent_conditional_attribute
+        equivalent_condition = query_obj.condition
+
         # TODO: early stop when all elements have been found
         # TODO: add _ to attributes separated by a whitespace
         equivalent_queries.append(

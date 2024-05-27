@@ -1,9 +1,11 @@
+from itertools import combinations
+
 from GroupStrategy import GroupStrategy
 from Database import Database
 from Section import Section
 
 
-class MaxAttributesInTableStrategy(GroupStrategy):
+class CombinatorialStrategy(GroupStrategy):
     """
     Group strategy based in the maximization of attributes in a table
     """
@@ -34,11 +36,16 @@ class MaxAttributesInTableStrategy(GroupStrategy):
             current_group = set()
             for attribute in attributes:
                 exists_in_table = (
-                        current_table.get_column_by_name(attribute.text) is not None
+                    current_table.get_column_by_name(attribute.text) != None
                 )
                 if exists_in_table:
                     current_group.add(attribute)
 
-            attribute_groups.append(list(current_group))
+            combinaciones = []
+            # Genera combinaciones de todas las longitudes posibles
+            for i in range(1, len(current_group) + 1):
+                combinaciones.extend(list(map(list,combinations(current_group, i))))
+
+            attribute_groups.append(combinaciones)
 
         return attribute_groups

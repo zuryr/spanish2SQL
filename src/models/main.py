@@ -3,17 +3,19 @@ import pickle
 
 import pandas as pd
 
+from Column import Column
+from ContextStrategy import ContextStrategy
 from CsvHandler import CsvHandler
+from Database import Database
 from EmbeddingPipeline import EmbeddingPipeline
 from MaxAttributesInTableStrategy import MaxAttributesInTableStrategy
 from Query import Query
 from QueryGenerator import QueryGenerator
 from SectionExtractor import SectionExtractor
 from SemanticEvaluator import SemanticEvaluator
-from TopNAccuracy import TopNAccuracyValidator
+from Table import Table
 from Tokenizer import Tokenizer
-from GreedyStrategy import GreedyStrategy
-from ContextStrategy import ContextStrategy
+from TopNAccuracy import TopNAccuracyValidator
 
 
 def load_real_databases():
@@ -56,10 +58,6 @@ def load_natural_language_querys() -> tuple:
     dbs = []
     for line in js:
         natural_language_query = line["question"]
-        # TODO: what is this for?
-        # natural_language_query = re.sub(
-        #    r"""[^\w<>!=áéíóúñ"\s,'.¿?]""", "", natural_language_query
-        # )
         natural_language_query = "start " + natural_language_query.strip() + " end"
         list_natural_language_querys.append(natural_language_query)
         dbs.append(line["db_id"])
@@ -68,6 +66,10 @@ def load_natural_language_querys() -> tuple:
 
 
 def execute_real_data(m=0, n=None, threshold=0.8):
+    """
+    A function that executes the real examples from spider dataset and its evaluation
+    """
+
     real_databases = load_real_databases()
     rules, operator_rules, value_rules = load_rules()
     section_extractor = SectionExtractor(rules=rules)
@@ -88,29 +90,18 @@ def execute_real_data(m=0, n=None, threshold=0.8):
     ):
         database = real_databases[db_id]
         natural_language_query = " ".join(Tokenizer.tokenize_question(natural_language_query))
-
-        # strategy = MaxAttributesInTableStrategy(database)
-        # Definimos el evaluador
         evaluator = SemanticEvaluator(database)
 
-        # Definimos el threshold para la similaridad
-
-        # Definimos las pipelines
-        # pipelines = [SimplePipeline(evaluator, operator_extractor, value_extractor)]
         pipelines = [
             EmbeddingPipeline(evaluator, threshold, operator_extractor, value_extractor)
         ]
 
         for pipeline in pipelines:
             print(natural_language_query)
-            # Inicializar el generador de consultas
-            query_generator = QueryGenerator(
-                database, evaluator, section_extractor, pipeline, strategy
-            )
+            query_generator = QueryGenerator(database, evaluator, section_extractor, pipeline, strategy)
 
             list_querys_strings = []
 
-            # Generar consultas SQL a partir de la consulta en lenguaje natural
             generated_queries = query_generator.generate_queries(natural_language_query)
             final_generated_queries.append(generated_queries)
 
@@ -121,7 +112,6 @@ def execute_real_data(m=0, n=None, threshold=0.8):
             for query in list_querys_strings:
                 print(query)
 
-        # print(natural_language_query)
         i += 1
         print(i)
         if i % 50 == 0:
@@ -133,15 +123,205 @@ def execute_real_data(m=0, n=None, threshold=0.8):
 
     if len(final_generated_queries) > 0:
         validator = TopNAccuracyValidator()
-        top_n_accuracy = validator.calculate_accuracy(
-            final_generated_queries, querys_objects[m:n]
-        )
+        top_n_accuracy = validator.calculate_accuracy(final_generated_queries, querys_objects[m:n])
         print("Top-N Accuracy:", top_n_accuracy)
-        print(
-            f"Respuestas correctas: {int(len(final_generated_queries)*top_n_accuracy)} / {len(final_generated_queries)}"
-        )
+        print(f"Respuestas correctas: {int(len(final_generated_queries)*top_n_accuracy)} / {len(final_generated_queries)}"        )
+
+def definitionDatabase() -> Database:
+    """
+    Function that returns a example Database object
+    """
+
+    database = Database("Escuela")
+    columns_1 = [
+        Column("identificador", "number"),
+        Column("nombre", "text"),
+        Column("pais", "text"),
+        Column("edad", "number"),
+    ]
+    database.add_table("Estudiantes", columns_1)
+    columns_2 = [
+        Column("identificador", "number"),
+        Column("nombre", "text"),
+        Column("profesor", "text"),
+    ]
+    database.add_table("Cursos", columns_2)
+
+    return database
+
+def definitionPersonalDatabase() -> Database:
+    """
+    Function that creates a personal database to work with
+
+    Returns:
+        Database: Personal database
+    """
+
+    print("A continuación se le solicitara los datos del esquema de su base de datos")
+
+    tablesNotFinished = 's'
+    i = 1
+    database_name = input("Ingrese el nombre de su base datos: ")
+
+    input_database = Database(database_name)
+
+    while tablesNotFinished == 's' or tablesNotFinished == 'S':
+        table_name = input(f"Ingrese el nombre su tabla {i}: ")
+        columns = []
+
+        columnsNotFinished = 's'
+
+        j = 1
+        while columnsNotFinished == 's' or columnsNotFinished == 'S':
+            column_name = input(f"Ingrese el nombre de su columna: ")
+            print(f"Escoja el tipo de dato de su columna {j}: \n"
+                  "1. text \n"
+                  "2. number")
+            opc_column = int(input(f"Ingrese el tipo de dato: "))
+            column_type = "number" if opc_column == 2 else "text"
+            columns.append(Column(column_name, column_type))
+
+            columnsNotFinished = input("\nDesea ingresar más columnas? [S/N] : ")
+            j += 1
+
+        input_database.add_table(table_name, columns)
+
+        tablesNotFinished = input("\nDesea ingresar más tablas? [S/N] : ")
+        i += 1
+
+    return input_database
+
+
+def executeConsoleExample():
+    """
+    Implementación de ejemplo en consola de spanish2SQL
+    """
+
+    print("Bienvenido al sistema de ñ2SQL\n")
+    opc_database = input("Desea ingresar su propio esquema de base datos? s/n: ")
+    database = definitionDatabase() if opc_database != 's' else definitionPersonalDatabase()
+
+    print("Se ingresó la base da datos personalizada") if (opc_database == 's' or opc_database == 'S') else\
+        print("Se ingresó la base datos predeterminada")
+
+    print("\nLa base de datos de entrada es:\n")
+    database.database_to_string()
+
+    opc_make_another_query = 's'
+    while opc_make_another_query == 's' or opc_make_another_query == 'S':
+
+        rules, operator_rules, value_rules = load_rules()
+        section_extractor = SectionExtractor(rules=rules)
+        operator_extractor = SectionExtractor(rules=operator_rules)
+        value_extractor = SectionExtractor(rules=value_rules)
+        strategy = MaxAttributesInTableStrategy(database)
+        evaluator = SemanticEvaluator(database)
+
+        generated_queries = []
+        list_querys_strings = []
+        natural_language_query = ''
+
+        noQueriesResults = True
+        while noQueriesResults:
+            natural_language_query = input("\nIntroduzca su consulta en lenguaje natural: ")
+            natural_language_query = "start " + natural_language_query + " end"
+            natural_language_query = " ".join(Tokenizer.tokenize_question(natural_language_query))
+            threshold = float(input("\nIntroduzca el umbral de precisión: "))
+
+            pipeline = EmbeddingPipeline(evaluator, threshold, operator_extractor, value_extractor)
+            query_generator = QueryGenerator(database, evaluator, section_extractor, pipeline, strategy)
+
+            generated_queries = query_generator.generate_queries(natural_language_query)
+            noQueriesResults = len(generated_queries) == 0
+
+            if len(generated_queries) == 0:
+                print("ñ2SQL no ha encontrado resultados. Por favor, reformule su consulta o modifique su umbral e"
+                      " intentelo de nuevo.\n")
+
+        for query in generated_queries:
+            list_querys_strings.append(query.SQL_to_string())
+        list_querys_strings = set(list_querys_strings)
+
+        print("A continuación, los resultados: \n")
+
+        for query in list_querys_strings:
+            print(query)
+
+        opc_make_another_query = input("\nDesea realizar otra consulta? [S/N] ")
+
+    print("Hasta luego...")
+
+
+def create_database_from_json(json_data: str) -> Database:
+    """
+    Creates a Database object from JSON data.
+
+    Args:
+        json_data: A string containing the JSON data.
+
+    Returns:
+        An instance of Database.
+    """
+    data = json.loads(json_data)
+    database_name = data['database_name']
+    db = Database(database_name)
+
+    for table_data in data['tables']:
+        for table_name, table_info in table_data.items():
+            columns = []
+            for col in table_info['columns']:
+                for col_name, col_info in col.items():
+                    column = Column(name=col_info['col_name'], datatype=col_info['datatype'])
+                    columns.append(column)
+            table = Table(name=table_name, columns=columns)
+            db.tables[table.name] = table
+
+    return db
+
+def executeSpanishToSQL(natural_language_query: str,  database_scheme: str = None) -> list[str]:
+    """
+    Spanish2SQL service
+
+    Args:
+        natural_language_query: A natural language query for input
+        database_scheme: The database scheme to work with
+
+    Returns:
+        A list of the generated SQL queries
+    """
+
+    database = create_database_from_json(database_scheme)
+    if not database:
+        return []
+    threshold = 0.6
+    rules, operator_rules, value_rules = load_rules()
+    section_extractor = SectionExtractor(rules=rules)
+    operator_extractor = SectionExtractor(rules=operator_rules)
+    value_extractor = SectionExtractor(rules=value_rules)
+    strategy = MaxAttributesInTableStrategy(database)
+    evaluator = SemanticEvaluator(database)
+
+    generated_queries = []
+    list_querys_strings = []
+
+    natural_language_query = "start " + natural_language_query + " end"
+    natural_language_query = " ".join(Tokenizer.tokenize_question(natural_language_query))
+
+    pipeline = EmbeddingPipeline(evaluator, threshold, operator_extractor, value_extractor)
+    query_generator = QueryGenerator(database, evaluator, section_extractor, pipeline, strategy)
+
+    generated_queries = query_generator.generate_queries(natural_language_query)
+
+    for query in generated_queries:
+        list_querys_strings.append(query.SQL_to_string())
+    list_querys_strings = list(set(list_querys_strings))
+
+    return list_querys_strings
 
 
 if __name__ == "__main__":
-    execute_real_data(9, 10)
+    # execute_real_data(9, 10)
     # executeExample()
+
+    executeConsoleExample()
+

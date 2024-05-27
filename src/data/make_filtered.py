@@ -152,8 +152,6 @@ if __name__ == "__main__":
             equivalent_attributes.append(equivalent_attribute)
 
         for i, table_name in enumerate(original_tables):
-            if table_name != query_obj.table:
-                continue
             equivalent_table = translated_tables[i]
             break
 

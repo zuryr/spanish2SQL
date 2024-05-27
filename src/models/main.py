@@ -198,11 +198,12 @@ def executeConsoleExample():
     """
 
     print("Bienvenido al sistema de ñ2SQL\n")
-    opc_database = input("Desea ingresar su propio esquema de base datos? s/n: ")
-    database = definitionDatabase() if opc_database != 's' else definitionPersonalDatabase()
-
-    print("Se ingresó la base da datos personalizada") if (opc_database == 's' or opc_database == 'S') else\
-        print("Se ingresó la base datos predeterminada")
+    # opc_database = input("Desea ingresar su propio esquema de base datos? s/n: ")
+    # database = definitionDatabase() if opc_database != 's' else definitionPersonalDatabase()
+    #
+    # print("Se ingresó la base da datos personalizada") if (opc_database == 's' or opc_database == 'S') else\
+    #     print("Se ingresó la base datos predeterminada")
+    database = definitionDatabase()
 
     print("\nLa base de datos de entrada es:\n")
     database.database_to_string()
@@ -235,7 +236,7 @@ def executeConsoleExample():
             noQueriesResults = len(generated_queries) == 0
 
             if len(generated_queries) == 0:
-                print("ñ2SQL no ha encontrado resultados. Por favor, reformule su consulta o modifique su umbral e"
+                print("ñ2SQL no ha encontrado resultados. Por favor, reformule su consulta e "
                       " intentelo de nuevo.\n")
 
         for query in generated_queries:

@@ -1,6 +1,9 @@
 ctx_i,ctx_d,class
+es,.,VALOR
+cuyo,es,ATR_CONDICION
 del,de,ATR_CONDICION
 de,?,VALOR
+cuya,es,ATR_CONDICION
 cuyo,no,ATR_CONDICION
 es,?,VALOR
 una,mayor,ATR_CONDICION
@@ -8,9 +11,7 @@ a,o,VALOR
 a,.,VALOR
 una,superior,ATR_CONDICION
 a,?,VALOR
-es,.,VALOR
 el,de,ATR_CONDICION
-cuyo,es,ATR_CONDICION
 un,Aprobado,ATR_CONDICION
 resultado,?,VALOR
 el,301,ATR_CONDICION

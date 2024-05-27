@@ -326,5 +326,6 @@ if __name__ == "__main__":
     # execute_real_data(0)
     # executeExample()
 
-    execute_real_data()
+    executeConsoleExample()
+
 

@@ -117,6 +117,8 @@ def execute_real_data(m=0, n=None, threshold=0.8):
         if i % 50 == 0:
             with open("./predicted_queries.pkl", "wb+") as f:
                 pickle.dump(final_generated_queries, f)
+    with open("./predicted_queries.pkl", "wb+") as f:
+                pickle.dump(final_generated_queries, f)
 
     for query in querys_objects[m:n]:
         print(query.SQL_to_string())
@@ -320,8 +322,8 @@ def executeSpanishToSQL(natural_language_query: str,  database_scheme: str = Non
 
 
 if __name__ == "__main__":
-    execute_real_data(0)
+    # execute_real_data(0)
     # executeExample()
 
-    # executeConsoleExample()
+    execute_real_data()
 

@@ -228,7 +228,7 @@ def executeConsoleExample():
             natural_language_query = input("\nIntroduzca su consulta en lenguaje natural: ")
             natural_language_query = "start " + natural_language_query + " end"
             natural_language_query = " ".join(Tokenizer.tokenize_question(natural_language_query))
-            threshold = float(input("\nIntroduzca el umbral de precisión: "))
+            threshold = 0.6
 
             pipeline = EmbeddingPipeline(evaluator, threshold, operator_extractor, value_extractor)
             query_generator = QueryGenerator(database, evaluator, section_extractor, pipeline, strategy)
@@ -322,7 +322,7 @@ def executeSpanishToSQL(natural_language_query: str,  database_scheme: str = Non
 
 
 if __name__ == "__main__":
-    # execute_real_data(9, 10)
+    # execute_real_data(0)
     # executeExample()
 
     execute_real_data()

@@ -103,6 +103,7 @@ class Database:
 
     def database_to_string(self):
         all_tables = self.get_all_table_names()
+        print("Nombre de la base de datos: ",self.name)
         for i, table in enumerate(all_tables):
             print(f"Nombre de la tabla {i+1}: {table}")
             all_columns_from_table = self.get_all_attributes_from_table(table)

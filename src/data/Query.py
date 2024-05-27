@@ -1,5 +1,5 @@
 from Condition import Condition
-from Exceptions.TableNotFoundError import TableNotFoundError
+# from Exceptions.TableNotFoundError import TableNotFoundError
 
 
 class Query:
@@ -30,16 +30,16 @@ class Query:
         """
 
         condition_met = True
-        if not self.condition.is_empty() and not other.condition.is_empty():
+        if self.condition is not None and other.condition is not None:
             condition_met = self.condition == other.condition
 
-        # Check if both columns are None (shouldn't be empty)
-        # if self.columns != [] and other.columns != []:
-        #   return self.table == other.table and condition_met
+        # Check if both columns are None
+        if self.columns is None and other.columns is None:
+            return self.table == other.table and condition_met
 
         # If one column is None and the other is not, they are not equal
-        # if self.columns is None or other.columns is None:
-        #    return False
+        if self.columns is None or other.columns is None:
+            return False
 
         # Both columns are not None, compare sets
         return (
@@ -62,9 +62,8 @@ class Query:
         from_clause = ""
         where_clause = ""
 
-
         if not self.table:
-            raise TableNotFoundError("", self.table)
+            raise Exception("xd") #TableNotFoundError("", self.table)
 
         # FROM statement
         from_clause = f"FROM {self.table}"

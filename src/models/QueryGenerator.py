@@ -1,3 +1,5 @@
+from itertools import combinations
+
 from Condition import Condition
 from Database import Database
 from GroupStrategy import GroupStrategy
@@ -99,6 +101,8 @@ class QueryGenerator:
         found_attributes = []
         found_condition = []
 
+        all_columns = [Section("*",Classifications.ATRIBUTO.value,"","")]
+
         for section in cleaned_sections:
             if type(section) is Section:
                 if section.classification in Classifications.TABLA.value:
@@ -116,7 +120,7 @@ class QueryGenerator:
                 for condition in found_condition:
                     possible_triplets.append([table, attribute_group, condition])
                 possible_triplets.append([table, attribute_group, None])
-            possible_triplets.append([table, None, None])
+            possible_triplets.append([table, all_columns, None])
 
         return possible_triplets
 
@@ -134,7 +138,7 @@ class QueryGenerator:
 
         table_name = ""
         columns = []
-        condition = ""  # Condition("", "", "")
+        condition = Condition("", "", "")
 
         if table_section:
             table_name = table_section.text if table_section.text else ""
@@ -144,6 +148,6 @@ class QueryGenerator:
             columns = list(set(columns))
 
         if condition_section:
-            condition = condition_section.condition_to_string()
+            condition = condition_section
 
         return Query(table_name, columns, condition)

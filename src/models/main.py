@@ -97,7 +97,8 @@ def execute_real_data(m=0, n=None, threshold=0.8):
         ]
 
         for pipeline in pipelines:
-            print(natural_language_query)
+            print(f"\n{i+1}. Consulta en lenguaje natural: {natural_language_query}")
+            print(f"{i+1}. Consulta en SQL real: {querys_objects[i].SQL_to_string()}\n")
             query_generator = QueryGenerator(database, evaluator, section_extractor, pipeline, strategy)
 
             list_querys_strings = []
@@ -113,7 +114,6 @@ def execute_real_data(m=0, n=None, threshold=0.8):
                 print(query)
 
         i += 1
-        print(i)
         if i % 50 == 0:
             with open("./predicted_queries.pkl", "wb+") as f:
                 pickle.dump(final_generated_queries, f)
@@ -200,11 +200,12 @@ def executeConsoleExample():
     """
 
     print("Bienvenido al sistema de ñ2SQL\n")
-    opc_database = input("Desea ingresar su propio esquema de base datos? s/n: ")
-    database = definitionDatabase() if opc_database != 's' else definitionPersonalDatabase()
-
-    print("Se ingresó la base da datos personalizada") if (opc_database == 's' or opc_database == 'S') else\
-        print("Se ingresó la base datos predeterminada")
+    # opc_database = input("Desea ingresar su propio esquema de base datos? s/n: ")
+    # database = definitionDatabase() if opc_database != 's' else definitionPersonalDatabase()
+    #
+    # print("Se ingresó la base da datos personalizada") if (opc_database == 's' or opc_database == 'S') else\
+    #     print("Se ingresó la base datos predeterminada")
+    database = definitionDatabase()
 
     print("\nLa base de datos de entrada es:\n")
     database.database_to_string()
@@ -237,7 +238,7 @@ def executeConsoleExample():
             noQueriesResults = len(generated_queries) == 0
 
             if len(generated_queries) == 0:
-                print("ñ2SQL no ha encontrado resultados. Por favor, reformule su consulta o modifique su umbral e"
+                print("ñ2SQL no ha encontrado resultados. Por favor, reformule su consulta e "
                       " intentelo de nuevo.\n")
 
         for query in generated_queries:
@@ -322,8 +323,9 @@ def executeSpanishToSQL(natural_language_query: str,  database_scheme: str = Non
 
 
 if __name__ == "__main__":
-    # execute_real_data(0)
+    execute_real_data(10, 11)
     # executeExample()
 
-    execute_real_data()
+    # executeConsoleExample()
+
 

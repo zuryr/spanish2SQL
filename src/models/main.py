@@ -97,7 +97,8 @@ def execute_real_data(m=0, n=None, threshold=0.8):
         ]
 
         for pipeline in pipelines:
-            print(natural_language_query)
+            print(f"\n{i+1}. Consulta en lenguaje natural: {natural_language_query}")
+            print(f"{i+1}. Consulta en SQL real: {querys_objects[i].SQL_to_string()}\n")
             query_generator = QueryGenerator(database, evaluator, section_extractor, pipeline, strategy)
 
             list_querys_strings = []
@@ -113,7 +114,6 @@ def execute_real_data(m=0, n=None, threshold=0.8):
                 print(query)
 
         i += 1
-        print(i)
         if i % 50 == 0:
             with open("./predicted_queries.pkl", "wb+") as f:
                 pickle.dump(final_generated_queries, f)
@@ -323,8 +323,9 @@ def executeSpanishToSQL(natural_language_query: str,  database_scheme: str = Non
 
 
 if __name__ == "__main__":
-    # execute_real_data(0)
+    execute_real_data(10, 11)
     # executeExample()
 
-    execute_real_data()
+    # executeConsoleExample()
+
 

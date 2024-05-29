@@ -8,6 +8,7 @@ from ContextStrategy import ContextStrategy
 from CsvHandler import CsvHandler
 from Database import Database
 from EmbeddingPipeline import EmbeddingPipeline
+from BertPipeline import BertPipeline
 from MaxAttributesInTableStrategy import MaxAttributesInTableStrategy
 from Query import Query
 from QueryGenerator import QueryGenerator
@@ -93,7 +94,7 @@ def execute_real_data(m=0, n=None, threshold=0.8):
         evaluator = SemanticEvaluator(database)
 
         pipelines = [
-            EmbeddingPipeline(evaluator, threshold, operator_extractor, value_extractor)
+            BertPipeline(evaluator, threshold, operator_extractor, value_extractor)
         ]
 
         for pipeline in pipelines:
@@ -231,7 +232,7 @@ def executeConsoleExample():
             natural_language_query = " ".join(Tokenizer.tokenize_question(natural_language_query))
             threshold = 0.6
 
-            pipeline = EmbeddingPipeline(evaluator, threshold, operator_extractor, value_extractor)
+            pipeline = BertPipeline(evaluator, threshold, operator_extractor, value_extractor)
             query_generator = QueryGenerator(database, evaluator, section_extractor, pipeline, strategy)
 
             generated_queries = query_generator.generate_queries(natural_language_query)
@@ -323,7 +324,7 @@ def executeSpanishToSQL(natural_language_query: str,  database_scheme: str = Non
 
 
 if __name__ == "__main__":
-    execute_real_data(10, 11)
+    execute_real_data(0, 10)
     # executeExample()
 
     # executeConsoleExample()

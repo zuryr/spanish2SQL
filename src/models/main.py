@@ -89,7 +89,9 @@ def execute_real_data(m=0, n=None, threshold=0.8):
         list_natural_language_query[m:n], dbs[m:n]
     ):
         database = real_databases[db_id]
-        natural_language_query = " ".join(Tokenizer.tokenize_question(natural_language_query))
+        natural_language_query = " ".join(
+            Tokenizer.tokenize_question(natural_language_query)
+        )
         evaluator = SemanticEvaluator(database)
 
         pipelines = [
@@ -97,8 +99,11 @@ def execute_real_data(m=0, n=None, threshold=0.8):
         ]
 
         for pipeline in pipelines:
-            print(natural_language_query)
-            query_generator = QueryGenerator(database, evaluator, section_extractor, pipeline, strategy)
+            print(f"\n{i+1}. Consulta en lenguaje natural: {natural_language_query}")
+            print(f"{i+1}. Consulta en SQL real: {querys_objects[i].SQL_to_string()}\n")
+            query_generator = QueryGenerator(
+                database, evaluator, section_extractor, pipeline, strategy
+            )
 
             list_querys_strings = []
 
@@ -113,21 +118,25 @@ def execute_real_data(m=0, n=None, threshold=0.8):
                 print(query)
 
         i += 1
-        print(i)
         if i % 50 == 0:
             with open("./predicted_queries.pkl", "wb+") as f:
                 pickle.dump(final_generated_queries, f)
     with open("./predicted_queries.pkl", "wb+") as f:
-                pickle.dump(final_generated_queries, f)
+        pickle.dump(final_generated_queries, f)
 
     for query in querys_objects[m:n]:
         print(query.SQL_to_string())
 
     if len(final_generated_queries) > 0:
         validator = TopNAccuracyValidator()
-        top_n_accuracy = validator.calculate_accuracy(final_generated_queries, querys_objects[m:n])
+        top_n_accuracy = validator.calculate_accuracy(
+            final_generated_queries, querys_objects[m:n]
+        )
         print("Top-N Accuracy:", top_n_accuracy)
-        print(f"Respuestas correctas: {int(len(final_generated_queries)*top_n_accuracy)} / {len(final_generated_queries)}"        )
+        print(
+            f"Respuestas correctas: {int(len(final_generated_queries)*top_n_accuracy)} / {len(final_generated_queries)}"
+        )
+
 
 def definitionDatabase() -> Database:
     """
@@ -151,6 +160,7 @@ def definitionDatabase() -> Database:
 
     return database
 
+
 def definitionPersonalDatabase() -> Database:
     """
     Function that creates a personal database to work with
@@ -161,24 +171,24 @@ def definitionPersonalDatabase() -> Database:
 
     print("A continuación se le solicitara los datos del esquema de su base de datos")
 
-    tablesNotFinished = 's'
+    tablesNotFinished = "s"
     i = 1
     database_name = input("Ingrese el nombre de su base datos: ")
 
     input_database = Database(database_name)
 
-    while tablesNotFinished == 's' or tablesNotFinished == 'S':
+    while tablesNotFinished == "s" or tablesNotFinished == "S":
         table_name = input(f"Ingrese el nombre su tabla {i}: ")
         columns = []
 
-        columnsNotFinished = 's'
+        columnsNotFinished = "s"
 
         j = 1
-        while columnsNotFinished == 's' or columnsNotFinished == 'S':
+        while columnsNotFinished == "s" or columnsNotFinished == "S":
             column_name = input(f"Ingrese el nombre de su columna: ")
-            print(f"Escoja el tipo de dato de su columna {j}: \n"
-                  "1. text \n"
-                  "2. number")
+            print(
+                f"Escoja el tipo de dato de su columna {j}: \n" "1. text \n" "2. number"
+            )
             opc_column = int(input(f"Ingrese el tipo de dato: "))
             column_type = "number" if opc_column == 2 else "text"
             columns.append(Column(column_name, column_type))
@@ -210,8 +220,8 @@ def executeConsoleExample():
     print("\nLa base de datos de entrada es:\n")
     database.database_to_string()
 
-    opc_make_another_query = 's'
-    while opc_make_another_query == 's' or opc_make_another_query == 'S':
+    opc_make_another_query = "s"
+    while opc_make_another_query == "s" or opc_make_another_query == "S":
 
         rules, operator_rules, value_rules = load_rules()
         section_extractor = SectionExtractor(rules=rules)
@@ -222,24 +232,34 @@ def executeConsoleExample():
 
         generated_queries = []
         list_querys_strings = []
-        natural_language_query = ''
+        natural_language_query = ""
 
         noQueriesResults = True
         while noQueriesResults:
-            natural_language_query = input("\nIntroduzca su consulta en lenguaje natural: ")
+            natural_language_query = input(
+                "\nIntroduzca su consulta en lenguaje natural: "
+            )
             natural_language_query = "start " + natural_language_query + " end"
-            natural_language_query = " ".join(Tokenizer.tokenize_question(natural_language_query))
+            natural_language_query = " ".join(
+                Tokenizer.tokenize_question(natural_language_query)
+            )
             threshold = 0.6
 
-            pipeline = EmbeddingPipeline(evaluator, threshold, operator_extractor, value_extractor)
-            query_generator = QueryGenerator(database, evaluator, section_extractor, pipeline, strategy)
+            pipeline = EmbeddingPipeline(
+                evaluator, threshold, operator_extractor, value_extractor
+            )
+            query_generator = QueryGenerator(
+                database, evaluator, section_extractor, pipeline, strategy
+            )
 
             generated_queries = query_generator.generate_queries(natural_language_query)
             noQueriesResults = len(generated_queries) == 0
 
             if len(generated_queries) == 0:
-                print("ñ2SQL no ha encontrado resultados. Por favor, reformule su consulta e "
-                      " intentelo de nuevo.\n")
+                print(
+                    "ñ2SQL no ha encontrado resultados. Por favor, reformule su consulta e "
+                    " intentelo de nuevo.\n"
+                )
 
         for query in generated_queries:
             list_querys_strings.append(query.SQL_to_string())
@@ -266,22 +286,27 @@ def create_database_from_json(json_data: str) -> Database:
         An instance of Database.
     """
     data = json.loads(json_data)
-    database_name = data['database_name']
+    database_name = data["database_name"]
     db = Database(database_name)
 
-    for table_data in data['tables']:
+    for table_data in data["tables"]:
         for table_name, table_info in table_data.items():
             columns = []
-            for col in table_info['columns']:
+            for col in table_info["columns"]:
                 for col_name, col_info in col.items():
-                    column = Column(name=col_info['col_name'], datatype=col_info['datatype'])
+                    column = Column(
+                        name=col_info["col_name"], datatype=col_info["datatype"]
+                    )
                     columns.append(column)
             table = Table(name=table_name, columns=columns)
             db.tables[table.name] = table
 
     return db
 
-def executeSpanishToSQL(natural_language_query: str,  database_scheme: str = None) -> list[str]:
+
+def executeSpanishToSQL(
+    natural_language_query: str, database_scheme: str = None
+) -> list[str]:
     """
     Spanish2SQL service
 
@@ -308,10 +333,16 @@ def executeSpanishToSQL(natural_language_query: str,  database_scheme: str = Non
     list_querys_strings = []
 
     natural_language_query = "start " + natural_language_query + " end"
-    natural_language_query = " ".join(Tokenizer.tokenize_question(natural_language_query))
+    natural_language_query = " ".join(
+        Tokenizer.tokenize_question(natural_language_query)
+    )
 
-    pipeline = EmbeddingPipeline(evaluator, threshold, operator_extractor, value_extractor)
-    query_generator = QueryGenerator(database, evaluator, section_extractor, pipeline, strategy)
+    pipeline = EmbeddingPipeline(
+        evaluator, threshold, operator_extractor, value_extractor
+    )
+    query_generator = QueryGenerator(
+        database, evaluator, section_extractor, pipeline, strategy
+    )
 
     generated_queries = query_generator.generate_queries(natural_language_query)
 
@@ -323,9 +354,7 @@ def executeSpanishToSQL(natural_language_query: str,  database_scheme: str = Non
 
 
 if __name__ == "__main__":
-    # execute_real_data(0)
+    execute_real_data(10, 11)
     # executeExample()
 
-    executeConsoleExample()
-
-
+    # executeConsoleExample()

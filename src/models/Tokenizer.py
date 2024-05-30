@@ -21,4 +21,4 @@ class Tokenizer:
         """Tokenizes a text potentially containing attributes on commas and whitespaces"""
         m = re.findall(r"[a-zA-Záéíóúñ]+(?=[\s,]|$)", attributes)
         # y its a common nexus when mentioning attributes
-        return [attr for attr in m if attr != "y"]
+        return [attr for attr in m]

@@ -28,7 +28,9 @@ class CsvHandler:
             for row in csv_reader:
                 if len(row) == 3:
                     rule = Rule(
-                        left_context=row[0], right_context=row[1], classification=row[2]
+                        left_context=row[0].strip(),
+                        right_context=row[1].strip(),
+                        classification=row[2].strip(),
                     )
                     rules.append(rule)
                 else:
@@ -53,7 +55,7 @@ class CsvHandler:
                     rule = Rule(
                         left_context="",
                         right_context="",
-                        exact_match=row[1],
+                        exact_match=row[1].strip(),
                         classification=row[0],
                     )
                     rules.append(rule)
@@ -77,7 +79,9 @@ class CsvHandler:
             for row in csv_reader:
                 if len(row) == 3:
                     rule = Rule(
-                        left_context=row[0], right_context=row[1], classification=row[2]
+                        left_context=row[0].strip(),
+                        right_context=row[1].strip(),
+                        classification=row[2].strip(),
                     )
                     rules.append(rule)
                 else:

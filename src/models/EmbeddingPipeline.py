@@ -1,4 +1,5 @@
 import random
+import re
 from typing import List
 
 import spacy
@@ -43,10 +44,10 @@ class EmbeddingPipeline(TextPipeline):
             #     print("")
             if section.classification != Classifications.TABLA.value:
                 clean_section = self.transform_section(section)
-            # if clean_section is None:
-            #     continue
-            # if type(clean_section) is Section and clean_section.text is None:
-            #     continue
+                # if clean_section is None:
+                #     continue
+                # if type(clean_section) is Section and clean_section.text is None:
+                #     continue
                 cleaned_sections.extend(clean_section)
         return cleaned_sections
 
@@ -83,40 +84,49 @@ class EmbeddingPipeline(TextPipeline):
 
     def extract_attributes(self, section: Section) -> list[Section]:
         """Evaluate the ATTRIBUTE section."""
-        section_words = Tokenizer.tokenize_question(section.text)
-        attributes_found = []
-        tables_found = []
-        for word in section_words:
-            # TODO: extract method into a correct attribute-table' one
-            doc1 = nlp(word)
-            for (
-                column,
-                table,
-            ) in self.evaluator.database.get_all_attribute_table_pairs():
-                for column_part in Tokenizer.tokenize_question(column.name):
-                    doc2 = nlp(column_part)
-                    similarity = doc2.similarity(doc1)
-                    if similarity >= self.attribute_threshold:
-                        attributes_found.append(column.name)
-                        tables_found.append(table.name)
 
-        attributes_found = set(attributes_found)
-        if len(attributes_found) == 0:
-            return []
+        # Common nexus
+        attributes = re.split(r"\sy\s|,\s?", section.text)
+        output = []
 
-        output = [
-            Section(
-                attribute,
-                section.classification,
-                section.right_context,
-                section.left_context,
-            )
-            for attribute in attributes_found
-        ]
-        tables = [
-            Section(t, Classifications.TABLA.value, "", "") for t in set(tables_found)
-        ]
-        output.extend(tables)
+        for i, attribute in enumerate(attributes):
+            section_words = Tokenizer.tokenize_question(attribute)
+            attributes_found = []
+            tables_found = []
+            for word in section_words:
+                # TODO: extract method into a correct attribute-table' one
+                doc1 = nlp(word)
+                for (
+                    column,
+                    table,
+                ) in self.evaluator.database.get_all_attribute_table_pairs():
+                    for column_part in Tokenizer.tokenize_question(column.name):
+                        doc2 = nlp(column_part)
+                        similarity = doc2.similarity(doc1)
+                        if similarity >= self.attribute_threshold:
+                            attributes_found.append(column.name)
+                            tables_found.append(table.name)
+
+            attributes_found = set(attributes_found)
+            if len(attributes_found) == 0:
+                continue
+
+            attributes_sections = [
+                Section(
+                    attribute,
+                    section.classification,
+                    section.right_context,
+                    section.left_context,
+                    i,
+                )
+                for attribute in attributes_found
+            ]
+            tables = [
+                Section(t, Classifications.TABLA.value, "", "")
+                for t in set(tables_found)
+            ]
+            attributes_sections.extend(tables)
+            output.extend(attributes_sections)
 
         return output
 
@@ -207,7 +217,7 @@ class EmbeddingPipeline(TextPipeline):
                     doc2 = nlp(attribute.name)
                     similarity = doc2.similarity(doc1)
                     if similarity > self.attribute_threshold:
-                        attributes.append(str(doc2)) # .replace(" ", "_")
+                        attributes.append(str(doc2))  # .replace(" ", "_")
         probable_attr = []
         if attributes:
             probable_attr = attributes

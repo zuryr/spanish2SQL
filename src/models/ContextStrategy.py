@@ -1,3 +1,4 @@
+import itertools
 from GroupStrategy import GroupStrategy
 from Database import Database
 from Section import Section
@@ -32,10 +33,18 @@ class ContextStrategy(GroupStrategy):
         for attribute in attributes:
             group_id = f"{attribute.left_context}-{attribute.right_context}"
             if group_id not in attribute_groups:
-                attribute_groups[group_id] = []
-            attribute_groups[group_id].append(attribute)
+                attribute_groups[group_id] = {}
 
-        for group_id, attributes in attribute_groups.items():
-            final_attributes.append(attributes)
+            if attribute.tracker not in attribute_groups[group_id]:
+                attribute_groups[group_id][attribute.tracker] = []
+
+            attribute_groups[group_id][attribute.tracker].append(attribute)
+
+        for group_id, group in attribute_groups.items():
+            # TODO: debug here
+            values = list(group.values())
+            current_group_combinations = list(itertools.product(*values))
+
+            final_attributes.extend(current_group_combinations)
 
         return final_attributes

@@ -29,9 +29,7 @@ class Query:
             True if the objects are equal, False otherwise.
         """
 
-        condition_met = True
-        if not self.condition.is_empty() and not other.condition.is_empty():
-            condition_met = self.condition == other.condition
+        condition_met = self.condition == other.condition
 
         # Check if both columns are None (shouldn't be empty)
         # if self.columns != [] and other.columns != []:
@@ -61,7 +59,6 @@ class Query:
         select_clause = "SELECT *"
         from_clause = ""
         where_clause = ""
-
 
         if not self.table:
             raise TableNotFoundError("", self.table)

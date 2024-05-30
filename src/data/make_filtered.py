@@ -8,7 +8,7 @@ from Query import Query
 
 from Condition import Condition
 
-EMPTY_CONDITION = Condition("","","","")
+EMPTY_CONDITION = Condition("", "", "", "")
 AGG_OPS = ("NONE", "MAX", "MIN", "COUNT", "SUM", "AVG")
 FILTERED_TOKENS = (
     "SELECT",
@@ -121,6 +121,7 @@ if __name__ == "__main__":
         query_obj = Parser.Parser.str_to_query(query["query"])
         db_name = query["db_id"]
         original_attributes = query_obj.columns
+        query_obj.table = query_obj.table.lower()
         original_attributes = [element.lower() for element in original_attributes]
         # original_conditional_elements = query_obj.condition.split(" ")
         original_conditional_attribute = query_obj.condition.column_name.lower()
@@ -152,9 +153,9 @@ if __name__ == "__main__":
             equivalent_attributes.append(equivalent_attribute)
 
         for i, table_name in enumerate(original_tables):
-            equivalent_table = translated_tables[i]
-            break
-
+            if table_name.lower() == query_obj.table:
+                equivalent_table = translated_tables[i]
+                break
 
         # early return if no condition is fouund
         if original_conditional_attribute == "":

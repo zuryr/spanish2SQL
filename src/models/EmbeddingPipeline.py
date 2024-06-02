@@ -216,7 +216,7 @@ class EmbeddingPipeline(TextPipeline):
                 for attribute in self.evaluator.database.get_all_attributes():
                     doc2 = nlp(attribute.name)
                     similarity = doc2.similarity(doc1)
-                    if similarity > self.attribute_threshold:
+                    if similarity > 0.1:
                         attributes.append(str(doc2))  # .replace(" ", "_")
         probable_attr = []
         if attributes:

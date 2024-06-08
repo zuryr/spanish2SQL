@@ -354,7 +354,7 @@ def executeSpanishToSQL(
 
 
 if __name__ == "__main__":
-    execute_real_data(10, 11)
+    # execute_real_data(10, 11)
     # executeExample()
 
-    # executeConsoleExample()
+    executeConsoleExample()
